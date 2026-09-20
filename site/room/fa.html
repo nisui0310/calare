@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" id="gallery">
 
 <head>
  <meta charset="UTF-8" />
@@ -95,9 +95,65 @@
 
  <!-- メインコンテンツ -->
  <main class="mainwrapper" id="js-main">
+  <div class="gallery-header">
+   <h2 class="headingL">Gallery</h2>
+
+   <!-- galleryメニュー -->
+   <ul class="flex">
+    <li><a href="#landscape">風景</a></li>
+    <li><a href="#plants">植物</a></li>
+    <li><a href="#zakka">雑貨</a></li>
+    <li><a href="#animal">動物</a></li>
+   </ul>
+  </div>
+
+  <!-- 一覧表示エリア -->
+  <div class="gallery-content">
+   <section id="landscape">
+    <h3 class="headingM">Landscape <small>-風景-</small></h3>
+    <ul id="list-view" class="gallerylist">
+     <li class="gallerylist__item" data-full="../../photo/la-1.jpg" data-caption="説明文を記載してください">
+      <img src="images/カガミ.webp" alt="説明" loading="lazy">
+     </li>
+     <li class="gallerylist__item" data-full="../../photo/la-4.jpg" data-caption="説明文を記載してください">
+      <img src="images/ogp.webp" alt="" loading="lazy">
+     </li>
+     <li class="gallerylist__item" data-full="../../photo/la-8.jpg" data-caption="説明文を記載してください">
+      <img src="images/カガミ.webp" alt="" loading="lazy">
+     </li>
+
+    </ul>
+   </section>
+
+   <section id="plants">
+    <h3 class="headingM">Plants <small>-植物-</small></h3>
+    <ul class="gallerylist">
+     <li class="gallerylist__item" data-full="../../photo/pl-1.jpg" data-caption="説明文を記載してください">
+      <img src="images/カガミ.webp " alt="" loading="lazy">
+     </li>
+     <li class="gallerylist__item" data-full="../../photo/pl-5.jpg" data-caption="説明文を記載してください">
+      <img src="images/ogp.webp" alt="" loading="lazy">
+     </li>
+     <li class="gallerylist__item" data-full="../../photo/pl-7.jpg" data-caption="説明文を記載してください">
+      <img src="images/カガミ.webp " alt="" loading="lazy">
+     </li>
+
+    </ul>
+   </section>
 
 
 
+
+
+   <!-- 全画面表示エリア（初期状態は非表示） -->
+   <div id="detail-view" class="hidden">
+    <div class="detail-content">
+     <img id="full-image" src="" alt="">
+     <p id="detail-caption">ここに説明文などが表示されます。</p>
+    </div>
+   </div>
+
+  </div>
  </main><!-- メインコンテンツここまで -->
 
  <!-- ページUP -->
