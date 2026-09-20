@@ -232,6 +232,30 @@ h6 {
  }
 }
 
+
+
+/* リンク版は padding を label 自体から a タグ側へ移す */
+.gridlist .gridlist__label_link {
+  padding: 0;
+}
+
+.gridlist .gridlist__label_link a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: clamp(10px, 3%, 30px) 30px;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* お好みでホバー時の視認性を出す */
+.gridlist .gridlist__label_link a:hover {
+  background-color: color-mix(in srgb, var(--color-sub) 80%, black);
+}
+
+
+
 /*－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
 
 入力フォーム、ボタン
