@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
+ <meta charset="UTF-8" />
+ <meta name="robots" content="noindex,nofollow">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>ABOUT KAGAMI</title>
+ <link href="css/reset.css" rel="stylesheet">
+ <link href="css/common.css" rel="stylesheet" type="text/css">
+ <link href="css/each.css" rel="stylesheet" type="text/css">
+
+ <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+
+ <!-- OGP -->
+ <meta property="og:title" content="ABOUT KAGAMI">
+ <meta property="og:description" content="カガミのプロフィールサイト">
+ <meta property="og:url" content="https://calare.vercel.app/site/room/">
+ <meta property="og:image" content="https://calare.vercel.app/site/room/images/ogp.webp">
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:type" content="website">
+ <meta property="og:site_name" content="KAGAMI'S ROOM">
+ <meta property="og:locale" content="ja_JP">
+ 
+
+ <!-- Twitter -->
+ <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
+ <!-- SVGフィルター定義 -->
+ <svg width="0" height="0" style="position:absolute">
+  <defs>
+   <filter id="outline" x="-10%" y="-10%" width="120%" height="120%">
+    <!-- radiusでフチの太さを調整 -->
+    <feMorphology operator="dilate" radius="2" in="SourceGraphic" result="expanded" />
+    <feFlood flood-color="currentcolor" result="color" />
+    <feComposite in="color" in2="expanded" operator="in" result="outline" />
+    <feMerge>
+     <feMergeNode in="outline" />
+     <feMergeNode in="SourceGraphic" />
+    </feMerge>
+   </filter>
+  </defs>
+ </svg>
+
+ <!--  ヘッダー -->
+ <header class="header">
+  <div class="header-inner">
+   <h1 class="sitename"><a href="index.html">KAGAMI'S ROOM</a></h1>
+
+   <!-- ハンバーガーメニュー -->
+   <button id="js-hamburger" class="hamburger"><span class="hamburger__line"></span></button>
+
+   <!-- メニュー -->
+   <nav id="js-globalnav" class="globalnav">
+    <ul class="globalnav__main">
+     <li class="globalnav__item"><a href="index.html">HOME</a></li>
+     <li class="globalnav__item"><a href="gallery.html">GALLERY</a></li>
+     
+     <!----
+     <li class="globalnav__item"><a href="blog.html">BLOG</a></li>
+     -->
+
+
+     <li class="globalnav__item"><a href="sample.html">SAMPLE</a></li>
+    </ul>
+
+    <!-- SNSリスト -->
+    <ul class="social-icons">
+     <li class="social-icons__item x"><a href="https://x.com/Kagami_hyaku" target="_blank" rel="noreferrer">
+       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+         d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+       </svg></a>
+     </li>
+
+
+     <li class="social-icons__item pixiv">
+      <a href="https://www.pixiv.net/users/53702365" target="_blank" rel="noreferrer">
+       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+         d="M4.94 0A4.953 4.953 0 0 0 0 4.94v14.12A4.953 4.953 0 0 0 4.94 24h14.12A4.953 4.953 0 0 0 24 19.06c-.014 1.355 0-14.12 0-14.12A4.953 4.953 0 0 0 19.06 0Zm1.783 5.465h.904a.37.37 0 0 1 .31.17l.752 1.17a6.172 6.172 0 0 1 10.01 4.834 6.172 6.172 0 0 1-9.394 5.265v2.016a.37.37 0 0 1-.37.367H6.724a.37.37 0 0 1-.37-.367V5.834a.37.37 0 0 1 .37-.37m5.804 2.951a3.222 3.222 0 1 0-.002 6.443 3.222 3.222 0 0 0 .002-6.443" />
+       </svg></a>
+     </li>
+
+     <!--
+     <li class="social-icons__item contact">
+      <a href="index.html#contact" rel="noreferrer">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+        class="icon icon-tabler icons-tabler-filled icon-tabler-mail">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path
+         d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" />
+        <path
+         d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" />
+       </svg></a>
+     </li> -->
+    </ul><!-- SNSリストここまで -->
+
+   </nav><!-- メニューここまで -->
+ </header>
+
+ <!-- メインコンテンツ -->
+ <main class="mainwrapper" id="js-main">
+  <div class="fv --2column">
+   <div class="fv_illust">
+    <img src="images/カガミ.webp" alt="写真"><!-- トップ絵 -->
+   </div>
+   <div class="fv_text">
+    <!-- インフォメーション -->
+    <section id="information">
+     <h2 class="headingL">Information</h2>
+     <p><strong>KAGAMI`S ROOM</strong>は、作品の載せてある<a href="http://kagam1.s325.xrea.com/calare/" target="_blank">落日</a>とは別に、
+      カガミにまつわる雑記をまとめたサブサイトです。<br>
+      プロフィールやファンアート、イメージソング、履修作品など、
+      創作の周辺にある好きなものや記録を置いていこうと思っています。
+    </p>
+
+     <!-- 更新履歴 
+     <div class="update__wrap">
+      <h3 class="headingM">Update</h3>
+      <ul class="update">
+       <li class="update__item">
+        <time>20XX/XX/XX</time><span>更新内容を記載してください更新内容を記載してください更新内容を記載してください更新内容を記載してください更新内容を記載してください</span>
+       </li>
+       <li class="update__item"><time>20XX/XX/XX</time><span>更新内容を記載してください</span></li>
+       <li class="update__item"><time>20XX/XX/XX</time><span>更新内容を記載してください</span></li>
+       <li class="update__item"><time>20XX/XX/XX</time><span>更新内容を記載してください</span></li>
+       <li class="update__item"><time>20XX/XX/XX</time><span>更新内容を記載してください</span></li>
+       <li class="update__item"><time>20XX/XX/XX</time><span>更新内容を記載してください</span></li>
+      </ul>
+
+     </div> 更新履歴ここまで -->
+    </section><!-- インフォメーションここまで -->
+
+    <!-- アバウト -->
+    <section id="about">
+     <h2 class="headingL">About</h2>
+     <!-- このサイトについて -->
+     <section class="aboutsite">
+      <h3 class="headingM">Me</h3>
+      <p>　カガミです。<br>
+        　主にpixiv、Twitter(X)、個人サイト（落日）で活動しています。<br>
+        　長編夢小説を中心に書いており、その他にデザイン、イラストの勉強をしています。
+        夢小説は十万字からが本番だと思っていますが（※イカれている）、
+        これは自分に課した枷であり、短編を書ける人を尊敬してもいます。<br>
+        　努力をする人間の美しさが好きで、
+        その過程で起こる暴力や後悔、葛藤、決断も一緒に愛しています。
+        誰かがひどい目に遭えば遭うほど、立ち上がる時のきらめきが輝かしくなると
+        思っているので、大体そういう話ばかりを書いています。<br>
+        　長編ではずっと愛の話をしているつもりです。</p>
+
+        <p>　</p>
+
+
+      <h3 class="headingM">Follow / X</h3>
+      <h5 class="headingSS">Attention</h5>
+      <p>　固定夢主やありとあらゆるif・パラレル、
+        エロ・グロや作品のネタバレが息をするように投稿される可能性があります。
+        18歳未満の方のフォローは非推奨です。<br>
+        　インターネットが苦手で、表のアカウントではフォロバは基本的にしていません。
+        ご了承ください。<br>
+        　サブアカではフォロバをしています。
+        こちらは人と仲良くなる用のアカウントです。
+        お気軽にフォローしたり、話しかけてくださると嬉しいです。<br>
+        　それでもよければフォローしてください。
+      </p>
+
+      <!-- 
+
+      <dl class="gridlist">
+       <div class="gridlist__line">
+        <dt class="gridlist__label">Site name</dt>
+        <dd class="gridlist__text">KAGAMI`S ROOM</dd>
+       </div>
+       <div class="gridlist__line">
+        <dt class="gridlist__label">Master</dt>
+        <dd class="gridlist__text">カガミ</dd>
+       </div>
+       <div class="gridlist__line">
+        <dt class="gridlist__label">URL</dt>
+        <dd class="gridlist__text">https://calare.vercel.app/site//</dd>
+       </div>
+      </dl>
+
+      -->
+
+
+     </section><!-- このサイトについてここまで -->
+    </section>
+    <!-- アバウトここまで -->
+
+    <!-- SNSリンク -->
+
+    <section id="sns">
+     <h2 class="headingL">LINK</h2>
+
+       <dl class="gridlist">
+
+        <div class="gridlist__line">
+          <dt class="gridlist__label gridlist__label_link">
+            <a href="https://www.pixiv.net/users/53702365" target="_blank" rel="noopener noreferrer">pixiv</a>
+          </dt>
+          <dd class="gridlist__text">長編・短編問わず掲載。</dd>
+        </div>
+
+        <p></p>
+
+        <div class="gridlist__line">
+          <dt class="gridlist__label gridlist__label_link">
+            <a href="https://x.com/Kagami_hyaku" target="_blank" rel="noopener noreferrer">X</a>
+          </dt>
+          <dd class="gridlist__text">@Kagami_hyaku<br>メインアカウント。主に作品について投稿している。</dd>
+        </div>
+
+        <div class="gridlist__line">
+          <dt class="gridlist__label gridlist__label_link">
+            <a href="https://x.com/Kagami_sab" target="_blank" rel="noopener noreferrer">Xサブ</a>
+          </dt>
+          <dd class="gridlist__text">@Kagami_sab<br>サブアカウント。自我・交流用のため鍵。
+            フォロバしますが、フォロリクは蹴っていただいても構いません。</dd>
+        </div>
+        
+
+        <div class="gridlist__line">
+          <dt class="gridlist__label gridlist__label_link">
+            <a href="https://posfie.com/@Kagami_hyaku" target="_blank" rel="noopener noreferrer">posfie</a>
+          </dt>
+          <dd class="gridlist__text">夢ツイまとめ。</dd>
+        </div>
+        <p></p>
+
+        <div class="gridlist__line">
+          <dt class="gridlist__label gridlist__label_link">
+            <a href="https://marshmallow-qa.com/kagami_hyaku" target="_blank" rel="noopener noreferrer">マシュマロ</a>
+          </dt>
+          <dd class="gridlist__text">感想。1000字送れて、1000字返信可能。</dd>
+        </div>
+
+        <div class="gridlist__line">
+          <dt class="gridlist__label gridlist__label_link">
+            <a href="https://wavebox.me/wave/79fcahuzi1ro1b1k/" target="_blank" rel="noopener noreferrer">Wave Box</a>
+          </dt>
+          <dd class="gridlist__text">感想・誤字脱字報告・リク。10000字送れて、400字返信可能。</dd>
+        </div>
+        <p></p>
+
+        <div class="gridlist__line">
+          <dt class="gridlist__label gridlist__label_link">
+            <a href="https://privatter.net/u/Kagami_hyaku" target="_blank" rel="noopener noreferrer">ぷらいべったー</a>
+          </dt>
+          <dd class="gridlist__text">pixivにあげるほどではない短編や進捗を掲載。</dd>
+        </div>
+
+        <div class="gridlist__line">
+          <dt class="gridlist__label gridlist__label_link">
+            <a href="http://kagam1.s325.xrea.com/calare/" target="_blank" rel="noopener noreferrer">落日</a>
+          </dt>
+          <dd class="gridlist__text">作品置き場。pixivやTwitterのものを順次投稿。</dd>
+        </div>
+
+      </dl>
+
+      
+    </section>
+
+
+   </div>
+
+
+
+  </div>
+
+
+
+
+<!--２カラム-->
+
+
+
+
+
+  <div class="--2column">
+   <!--トピック一覧-->
+
+   
+
+
+   <section id="topic">
+    <h2 class="headingL">Topic</h2>
+    <ul class="topiclist">
+     <li class="topiclist__item grid"><a href="" target="_blank"><img
+        src="https://placehold.jp/dddddd/ffffff/675x182.png?text=sample" alt=""></a>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+       magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+       consequat.</p>
+     </li>
+     <li class="topiclist__item grid"><a href="" target="_blank"><img
+        src="https://placehold.jp/dddddd/ffffff/675x182.png?text=sample" alt=""></a>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+       magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+       consequat.</p>
+     </li>
+     <li class="topiclist__item grid"><a href="" target="_blank"><img
+        src="https://placehold.jp/dddddd/ffffff/675x182.png?text=sample" alt=""></a>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+       magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+       consequat.</p>
+     </li>
+    </ul>
+   </section>
+   <!--トピック一覧ここまで-->
+
+   <!-- リンク -->
+   <section id="link">
+    <h2 class="headingL">Link</h2>
+    <section>
+     <h3 class="headingM">Favorite</h3>
+     <ul class="linklist flex">
+      <li class="linklist__item"><a href=""><img src="https://placehold.jp/dddddd/ffffff/200x40.png?text=sample"
+         alt=""></a></li>
+      <li class="linklist__item"><a href=""><img src="https://placehold.jp/dddddd/ffffff/200x40.png?text=sample"
+         alt=""></a></li>
+      <li class="linklist__item"><a href=""><img src="https://placehold.jp/dddddd/ffffff/200x40.png?text=sample"
+         alt=""></a></li>
+      <li class="linklist__item"><a href=""><img src="https://placehold.jp/dddddd/ffffff/200x40.png?text=sample"
+         alt=""></a></li>
+      <li class="linklist__item"><a href=""><img src="https://placehold.jp/dddddd/ffffff/200x40.png?text=sample"
+         alt=""></a></li>
+      <li class="linklist__item"><a href=""><img src="https://placehold.jp/dddddd/ffffff/200x40.png?text=sample"
+         alt=""></a></li>
+      <li class="linklist__item"><a href=""><img src="https://placehold.jp/dddddd/ffffff/200x40.png?text=sample"
+         alt=""></a></li>
+      <li class="linklist__item"><a href=""><img src="https://placehold.jp/dddddd/ffffff/200x40.png?text=sample"
+         alt=""></a></li>
+      <li class="linklist__item"><a href=""><img src="https://placehold.jp/dddddd/ffffff/200x40.png?text=sample"
+         alt=""></a></li>
+      <li class="linklist__item"><a href=""><img src="https://placehold.jp/dddddd/ffffff/200x40.png?text=sample"
+         alt=""></a></li>
+     </ul>
+    </section>
+    <section>
+     <h3 class="headingM">Thanks</h3>
+     <ul class="linklist flex">
+      <li class="linklist__item"><a href="">テキストリンク</a></li>
+      <li class="linklist__item"><a href="">テキストリンク</a></li>
+      <li class="linklist__item"><a href="">テキストリンク</a></li>
+      <li class="linklist__item"><a href="">テキストリンク</a></li>
+      <li class="linklist__item"><a href="">テキストリンク</a></li>
+      <li class="linklist__item"><a href="">テキストリンク</a></li>
+      <li class="linklist__item"><a href="">テキストリンク</a></li>
+      <li class="linklist__item"><a href="">テキストリンク</a></li>
+      <li class="linklist__item"><a href="">テキストリンク</a></li>
+      <li class="linklist__item"><a href="">テキストリンク</a></li>
+     </ul>
+    </section>
+   </section>
+   <!-- リンクここまで -->
+  </div>
+
+  <div class="--2column">
+   <section class="profile">
+    <!-- プロフィール -->
+    <h3 class="headingL">Profile</h3>
+    <div class="profile__inner grid"><!-- 横並びに -->
+     <!-- プロフィール画像 -->
+     <div class="profile__img"><img src="https://placehold.jp/dddddd/ffffff/400x400.png?text=sample" alt=""></div>
+     <!-- プロフィール文章 -->
+     <div class="profile__text">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ullam ipsam, molestias at nobis rem eaque
+       in suscipit minima laudantium, qui exercitationem accusantium ducimus magnam voluptatibus quod, ad inventore?
+       Ipsa.</p>
+      <!-- SNSリスト -->
+      <ul class="social-icons">
+       <li class="social-icons__item x"><a href="https://x.com/" target="_blank" rel="noreferrer">
+         <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+           d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+         </svg></a>
+       </li>
+       <li class="social-icons__item pixiv">
+        <a href="https://pixiv.com/" target="_blank" rel="noreferrer">
+         <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+           d="M4.94 0A4.953 4.953 0 0 0 0 4.94v14.12A4.953 4.953 0 0 0 4.94 24h14.12A4.953 4.953 0 0 0 24 19.06c-.014 1.355 0-14.12 0-14.12A4.953 4.953 0 0 0 19.06 0Zm1.783 5.465h.904a.37.37 0 0 1 .31.17l.752 1.17a6.172 6.172 0 0 1 10.01 4.834 6.172 6.172 0 0 1-9.394 5.265v2.016a.37.37 0 0 1-.37.367H6.724a.37.37 0 0 1-.37-.367V5.834a.37.37 0 0 1 .37-.37m5.804 2.951a3.222 3.222 0 1 0-.002 6.443 3.222 3.222 0 0 0 .002-6.443" />
+         </svg></a>
+       </li>
+      </ul><!-- SNSリストここまで -->
+     </div><!-- プロフィール文章ここまで -->
+    </div>
+   </section><!-- プロフィールここまで -->
+
+   <!-- コンタクト -->
+   <section id="contact">
+    <h2 class="headingL">Contact</h2>
+    <form action="" method="post" class="mailform">
+     <input id="name" type="text" name="Name" placeholder="お名前">
+     <input id="mail" type="email" name="Mail" placeholder="メールアドレス">
+     <input id="url" type="url" name="URL" placeholder="URL">
+     <textarea id="message" name="Message" placeholder="メッセージ"></textarea>
+     <button class="btn">送信</button>
+    </form>
+    <small>※サンプルにつき動作しません。メールフォームの機能を使うには、PHP等のプログラムが必要です。</small>
+   </section>
+   <!-- コンタクトここまで -->
+  </div>
+
+
+ </main><!-- メインコンテンツここまで -->
+ <!-- ページUP -->
+ <a href="#" class="pageup" id="js-pageup">
+  <div class="arrow"></div>
+ </a><!-- ページUPここまで -->
+
+ <!-- フッター -->
+ <footer>
+  <!-- クレジット -->
+  <small>©  <a href="index.html">KAGAMI'S ROOM</a>. Designed by <a href="https://hiro-design.net/utsusemi/" target="_blank">Utsusemi
+    Design</a>.</small>
+  <!-- クレジットここまで -->
+ </footer>
+
+
+ <!--JavaScrip 読込-->
+ <script src="js/common.js" type="text/javascript"></script>
+</body>
+
+</html>
