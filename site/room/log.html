@@ -119,7 +119,7 @@
 
     <div class="worklist-header">
     <h1 class="headingL">LOG</h1>
-    <p>読んだ本やコンテンツの記録<br>最新順に掲載してあります。</p>
+    <p>読んだ本やコンテンツの記録。<br>だいたい最新順に掲載してあります。日付は読んだ・見た時のものです。</p>
     </div>
 
     <div class="worklist-filter">
@@ -140,7 +140,10 @@
         <button class="filter-btn" data-filter-type="tag" data-filter-value="ギャグ">ギャグ</button>
         <button class="filter-btn" data-filter-type="tag" data-filter-value="ホラー">ホラー</button>
         <button class="filter-btn" data-filter-type="tag" data-filter-value="妖怪">妖怪</button>
+        <button class="filter-btn" data-filter-type="tag" data-filter-value="ファンタジー">ファンタジー</button>
         <button class="filter-btn" data-filter-type="tag" data-filter-value="歴史">歴史</button>
+        <button class="filter-btn" data-filter-type="tag" data-filter-value="ティーン">ティーン向け</button>
+        <button class="filter-btn" data-filter-type="tag" data-filter-value="青春">青春</button>
         <button class="filter-btn" data-filter-type="tag" data-filter-value="favorite">お気に入り</button>
         <!-- タグの種類が増えたらここにボタンを追加してください -->
     </div>
@@ -148,12 +151,24 @@
 
     <ul class="worklist">
 
+        <li class="worklist__item" data-category="novel">
+            <p class="worklist__meta">NOVEL</p>
+            <h3 class="worklist__title">プロジェクト・ヘイル・メアリー</h3>
+            <p class="worklist__author">アンディ・ウィアー / Andy Weir</p>
+            <p class="worklist__comment">深夜二時まで読んでた。</p>
+            <div class="worklist__divider"></div>
+            <div class="worklist__footer">
+            <div class="worklist__tags">
+                <span class="worklist__tag" data-filter="SF">SF</span>
+            </div>
+            <time class="worklist__date" datetime="2026-05">2026.05</time>
+            </div>
+        </li>
         <li class="worklist__item" data-category="manga">
             <p class="worklist__meta">MANGA</p>
             <h3 class="worklist__title">カグラバチ</h3>
             <p class="worklist__author">外薗健 / Hokazono Takeru</p>
 
-            <!-- 推しがいない作品では、このdivごと削除してOK -->
             <div class="worklist__oshi">
             <span class="worklist__oshi-label">推し</span>
             <span class="worklist__oshi-name">六平千鉱、柴登吾</span>
@@ -163,7 +178,6 @@
             <div class="worklist__divider"></div>
             <div class="worklist__footer">
             <div class="worklist__tags">
-                <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
                 <span class="worklist__tag" data-filter="ジャンプ">ジャンプ</span>
                 <span class="worklist__tag" data-filter="バトル">バトル</span>
                 <span class="worklist__tag" data-filter="favorite">お気に入り</span>
@@ -176,7 +190,6 @@
             <h3 class="worklist__title">ジャンケットバンク</h3>
             <p class="worklist__author">田中一行 / Tanaka Ikko</p>
 
-            <!-- 推しがいない作品では、このdivごと削除してOK -->
             <div class="worklist__oshi">
             <span class="worklist__oshi-label">推し</span>
             <span class="worklist__oshi-name">獅子神敬一</span>
@@ -196,7 +209,6 @@
             <h3 class="worklist__title">THISコミュニケーション</h3>
             <p class="worklist__author">六内円栄 / Rokudai Maruei</p>
 
-                <!-- 推しがいない作品では、このdivごと削除してOK -->
                 <div class="worklist__oshi">
                 <span class="worklist__oshi-label">推し</span>
                 <span class="worklist__oshi-name">デルウハ</span>
@@ -206,7 +218,6 @@
                 <div class="worklist__divider"></div>
                 <div class="worklist__footer">
                 <div class="worklist__tags">
-                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
                     <span class="worklist__tag" data-filter="SF">SF</span>
                     <span class="worklist__tag" data-filter="favorite">お気に入り</span>
                 </div>
@@ -218,7 +229,6 @@
             <h3 class="worklist__title">銀魂 -吉原大炎上-</h3>
             <p class="worklist__author">空知英秋 / Sorachi Hideaki</p>
 
-                <!-- 推しがいない作品では、このdivごと削除してOK -->
                 <div class="worklist__oshi">
                 <span class="worklist__oshi-label">推し</span>
                 <span class="worklist__oshi-name">いっぱい</span>
@@ -228,7 +238,6 @@
                 <div class="worklist__divider"></div>
                 <div class="worklist__footer">
                 <div class="worklist__tags">
-                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
                     <span class="worklist__tag" data-filter="ジャンプ">ジャンプ</span>
                     <span class="worklist__tag" data-filter="SF">SF</span>
                     <span class="worklist__tag" data-filter="ギャグ">ギャグ</span>
@@ -245,7 +254,6 @@
                 <div class="worklist__divider"></div>
                 <div class="worklist__footer">
                 <div class="worklist__tags">
-                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
                     <span class="worklist__tag" data-filter="love">恋愛</span>
                     <span class="worklist__tag" data-filter="hora-">ホラー</span>
                 </div>
@@ -261,7 +269,6 @@
                 <div class="worklist__divider"></div>
                 <div class="worklist__footer">
                 <div class="worklist__tags">
-                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
                     <span class="worklist__tag" data-filter="バトル">バトル</span>
                     <span class="worklist__tag" data-filter="歴史">歴史</span>
                 </div>
@@ -282,7 +289,6 @@
                 <div class="worklist__divider"></div>
                 <div class="worklist__footer">
                 <div class="worklist__tags">
-                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
                     <span class="worklist__tag" data-filter="SF">SF</span>
                     <span class="worklist__tag" data-filter="favorite">お気に入り</span>
                 </div>
@@ -301,12 +307,469 @@
                 <div class="worklist__divider"></div>
                 <div class="worklist__footer">
                 <div class="worklist__tags">
-                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
                     <span class="worklist__tag" data-filter="ミステリー">ミステリー</span>
                     <span class="worklist__tag" data-filter="コメディ">コメディ</span>
                     <span class="worklist__tag" data-filter="妖怪">妖怪</span>
                 </div>
                 <time class="worklist__date" datetime="2025-08">2025.08</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="movie">
+            <p class="worklist__meta">MOVIE</p>
+            <h3 class="worklist__title">忍たま乱太郎 ドクタケ忍者隊最強の軍師</h3>
+            <p class="worklist__author">尼子騒兵衛 / Amako Sobe</p>
+                <div class="worklist__oshi">
+                <span class="worklist__oshi-label">推し</span>
+                <span class="worklist__oshi-name">網問、七松小平太</span>
+                </div>
+                <p class="worklist__comment">ありえない角度で七松に沼り、ありえない速度で網問に沼った</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="バトル">バトル</span>
+                    <span class="worklist__tag" data-filter="ギャグ">ギャグ</span>
+                    <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+                </div>
+                <time class="worklist__date" datetime="2025-01">2025.01</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="movie">
+            <p class="worklist__meta">MOVIE</p>
+            <h3 class="worklist__title">ラストマイル</h3>
+            <p class="worklist__author">乃木亜紀子 / Nogi Akiko</p>
+                <p class="worklist__comment">映画のクライマックスがわかりやすくて面白かった。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="ミステリー">ミステリー</span>
+                </div>
+                <time class="worklist__date" datetime="2024-09">2024.09</time>
+                </div>
+        </li>
+
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">ダンジョン飯</h3>
+            <p class="worklist__author">九井諒子 / Kui Ryoko</p>
+                <div class="worklist__oshi">
+                <span class="worklist__oshi-label">推し</span>
+                <span class="worklist__oshi-name">ライオス</span>
+                </div>
+                <p class="worklist__comment">ライオスはイカれた男だけど、誠実であろうとする姿勢が好き。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="ファンタジー">ファンタジー</span>
+                    <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+                </div>
+                <time class="worklist__date" datetime="2024-06">2024.06</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="movie">
+            <p class="worklist__meta">MOVIE</p>
+            <h3 class="worklist__title">ヴァイオレット・エヴァーガーデン</h3>
+            <p class="worklist__author">暁佳奈 / Akatsuki Kana</p>
+                <p class="worklist__comment">映画もアニメも小説も全部読んで号泣した。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="ファンタジー">ファンタジー</span>
+                    <span class="worklist__tag" data-filter="恋愛">恋愛</span>
+                </div>
+                <time class="worklist__date" datetime="2024-02">2024.02</time>
+                </div>
+        </li>
+
+        <li class="worklist__item" data-category="movie">
+            <p class="worklist__meta">MOVIE</p>
+            <h3 class="worklist__title">カラオケ行こ！</h3>
+            <p class="worklist__author">和山やま / Wayama Yama</p>
+                <p class="worklist__comment">映画を見た後漫画も読んだ。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="コメディ">コメディ</span>
+                </div>
+                <time class="worklist__date" datetime="2024-02">2024.02</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="novel">
+            <p class="worklist__meta">NOVEL</p>
+            <h3 class="worklist__title">TSUGUMI</h3>
+            <p class="worklist__author">吉本ばなな / Yoshimoto Banana</p>
+                <p class="worklist__comment">私ってこういう小説が書きたい。理想だ。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="青春">青春</span>
+                </div>
+                <time class="worklist__date" datetime="2024-02">2024.02</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">宝石の国</h3>
+            <p class="worklist__author">市川春子 / Ichikawa Haruko</p>
+                <p class="worklist__comment">二日くらいで全部読んで、体調不良になるくらい面白かった。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="SF">SF</span>
+                    <span class="worklist__tag" data-filter="ファンタジー">ファンタジー</span>
+                </div>
+                <time class="worklist__date" datetime="2023-02">2023.02</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="novel">
+            <p class="worklist__meta">NOVEL</p>
+            <h3 class="worklist__title">レヴォリューションNo.3</h3>
+            <p class="worklist__author">金城一紀 / Kaneshiro Kazuki</p>
+              <div class="worklist__oshi">
+              <span class="worklist__oshi-label">推し</span>
+              <span class="worklist__oshi-name">アギー、朴舜臣</span>
+              </div>
+
+                <p class="worklist__comment">この本を含むゾンビーズシリーズが私のバイブル。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="青春">青春</span>
+                    <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+                </div>
+                <time class="worklist__date" datetime="2022-07">2022.07</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">忘却バッテリー</h3>
+            <p class="worklist__author">みかわ絵子 / Mikawa Eko</p>
+
+                <p class="worklist__comment">ギャグセンが高い。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="ギャグ">ギャグ</span>
+                    <span class="worklist__tag" data-filter="青春">青春</span>
+                </div>
+                <time class="worklist__date" datetime="2022-04">2022.04</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">SAKAMOTO DAYS</h3>
+            <p class="worklist__author">鈴木祐斗 / Suzuki Yuto</p>
+              <div class="worklist__oshi">
+              <span class="worklist__oshi-label">推し</span>
+              <span class="worklist__oshi-name">神々廻</span>
+              </div>
+                <p class="worklist__comment">26巻くらいまで読んだ。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="ジャンプ">ジャンプ</span>
+                    <span class="worklist__tag" data-filter="バトル">バトル</span>
+                </div>
+                <time class="worklist__date" datetime="2022-04">2022</time>
+                </div>
+        </li>
+
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">ブルーロック</h3>
+            <p class="worklist__author">金城宗幸 / Kaneshiro Muneyuki</p>
+              <div class="worklist__oshi">
+              <span class="worklist__oshi-label">推し</span>
+              <span class="worklist__oshi-name">國神錬介</span>
+              </div>
+                <p class="worklist__comment">アニメ途中までしか見てない。國神闇堕ちするってマジ？</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="ジャンプ">ジャンプ</span>
+                </div>
+                <time class="worklist__date" datetime="2022-04">2022</time>
+                </div>
+        </li>
+
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">ワールドトリガー</h3>
+            <p class="worklist__author">葦原大介 / Ashihara Daisuke</p>
+              <div class="worklist__oshi">
+              <span class="worklist__oshi-label">推し</span>
+              <span class="worklist__oshi-name">生駒達人</span>
+              </div>
+                <p class="worklist__comment">シンプルに面白すぎてびっくりする。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="ジャンプ">ジャンプ</span>
+                    <span class="worklist__tag" data-filter="バトル">バトル</span>
+                </div>
+                <time class="worklist__date" datetime="2022-04">2022</time>
+                </div>
+        </li>
+
+        <li class="worklist__item" data-category="novel">
+            <p class="worklist__meta">NOVEL</p>
+            <h3 class="worklist__title">十二国記シリーズ</h3>
+            <p class="worklist__author">小野不由美 / Ono Fuyumi</p>
+
+                <p class="worklist__comment">政治っておもれ〜！</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="歴史">歴史</span>
+                    <span class="worklist__tag" data-filter="ファンタジー">ファンタジー</span>
+                </div>
+                <time class="worklist__date" datetime="2021-07">2021.07</time>
+                </div>
+        </li>
+
+        <li class="worklist__item" data-category="novel">
+            <p class="worklist__meta">NOVEL</p>
+            <h3 class="worklist__title">ゴーストハント</h3>
+            <p class="worklist__author">小野不由美 / Ono Fuyumi</p>
+              <div class="worklist__oshi">
+              <span class="worklist__oshi-label">推し</span>
+              <span class="worklist__oshi-name">ぼーさん</span>
+              </div>
+                <p class="worklist__comment">現実的な小説の面白さに目覚めた本。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="ホラー">ホラー</span>
+                    <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+                </div>
+                <time class="worklist__date" datetime="2021-07">2021.07</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">ブルーピリオド</h3>
+            <p class="worklist__author">山口つばさ / Ymaguchi Tsubasa</p>
+              <div class="worklist__oshi">
+              <span class="worklist__oshi-label">推し</span>
+              <span class="worklist__oshi-name">村井八雲</span>
+              </div>
+
+                <p class="worklist__comment">藝大行きたくて泣いてた時あった。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+                </div>
+                <time class="worklist__date" datetime="2021">2021</time>
+                </div>
+        </li>
+
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">呪術廻戦</h3>
+            <p class="worklist__author">芥見下々 / Akutami Gege</p>
+                <p class="worklist__comment">みんな好きであんまり推しが決められない。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="ジャンプ">ジャンプ</span>
+                    <span class="worklist__tag" data-filter="バトル">バトル</span>
+                    <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+                </div>
+                <time class="worklist__date" datetime="2021">2021</time>
+                </div>
+        </li>
+
+        
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">僕のヒーローアカデミア</h3>
+            <p class="worklist__author">堀越耕平 / Horikoshi Kohei</p>
+              <div class="worklist__oshi">
+              <span class="worklist__oshi-label">推し</span>
+              <span class="worklist__oshi-name">エンデヴァー</span>
+              </div>
+
+                <p class="worklist__comment">エンデヴァー、一番人間らしくて頑張れって思う。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="ジャンプ">ジャンプ</span>
+                    <span class="worklist__tag" data-filter="バトル">バトル</span>
+                    <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+                </div>
+                <time class="worklist__date" datetime="2021">2021？</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="other">
+            <p class="worklist__meta">OTHER</p>
+            <h3 class="worklist__title">MIU404</h3>
+            <p class="worklist__author">乃木亜紀子 / Nogi Akiko</p>
+              <div class="worklist__oshi">
+              <span class="worklist__oshi-label">推し</span>
+              <span class="worklist__oshi-name">志摩一未、伊吹藍</span>
+              </div>
+                <p class="worklist__comment">アンナチュラルも見てた。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+                </div>
+                <time class="worklist__date" datetime="2020">2020</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">ハイキュー!!</h3>
+            <p class="worklist__author">古舘春一 / Furudate Haruichi</p>
+              <div class="worklist__oshi">
+              <span class="worklist__oshi-label">推し</span>
+              <span class="worklist__oshi-name">木兎光太郎、北信介</span>
+              </div>
+                <p class="worklist__comment">木兎さんに出会って脳みそが焼かれた。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="ジャンプ">ジャンプ</span>
+                    <span class="worklist__tag" data-filter="青春">青春</span>
+                    <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+                </div>
+                <time class="worklist__date" datetime="2019">2019</time>
+                </div>
+        </li>
+
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">Dr.STONE</h3>
+            <p class="worklist__author">稲垣理一郎 / Inagaki Richiro</p>
+
+                <p class="worklist__comment">推しが決められない。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="ジャンプ">ジャンプ</span>
+                    <span class="worklist__tag" data-filter="SF">SF</span>
+                </div>
+                <time class="worklist__date" datetime="2019">2019</time>
+                </div>
+        </li>
+
+
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">鬼滅の刃</h3>
+            <p class="worklist__author">吾峠呼世晴 / Gotoge Koyoharu</p>
+              <div class="worklist__oshi">
+              <span class="worklist__oshi-label">推し</span>
+              <span class="worklist__oshi-name">煉獄杏寿郎</span>
+              </div>
+                <p class="worklist__comment">100万字以上夢小説書いた。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="ジャンプ">ジャンプ</span>
+                    <span class="worklist__tag" data-filter="バトル">バトル</span>
+                    <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+                </div>
+                <time class="worklist__date" datetime="2019">2019</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">文豪ストレイドッグス</h3>
+            <p class="worklist__author">朝霧カフカ / Asagiri Kafuka</p>
+              <div class="worklist__oshi">
+              <span class="worklist__oshi-label">推し</span>
+              <span class="worklist__oshi-name">織田作之助</span>
+              </div>
+                <p class="worklist__comment">オタクの目覚め。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="バトル">バトル</span>
+                    <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+                </div>
+                <time class="worklist__date" datetime="2017">2017</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">ONE PIECE</h3>
+            <p class="worklist__author">尾田栄一郎 / Oda Eiichiro</p>
+            <p class="worklist__comment">ワノ国らへんからわかんなくなって、ぼんやり読んでる。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="ジャンプ">ジャンプ</span>
+                    <span class="worklist__tag" data-filter="バトル">バトル</span>
+                    
+                </div>
+                <time class="worklist__date" datetime="子供時代">子供時代</time>
+                </div>
+        </li>
+
+        <li class="worklist__item" data-category="novel">
+            <p class="worklist__meta">NOVEL</p>
+            <h3 class="worklist__title">死神うどんカフェ１号店</h3>
+            <p class="worklist__author">石川宏千花 / Ishikawa Hirochika</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="妖怪">妖怪</span>
+                    <span class="worklist__tag" data-filter="青春">青春</span>
+                    <span class="worklist__tag" data-filter="ティーン">ティーン</span>
+                </div>
+                <time class="worklist__date" datetime="子供時代">子供時代</time>
+                </div>
+        </li>
+
+        <li class="worklist__item" data-category="novel">
+            <p class="worklist__meta">NOVEL</p>
+            <h3 class="worklist__title">妖怪アパートの幽雅な日常</h3>
+            <p class="worklist__author">香月日輪 / Koduki Hinowa</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="妖怪">妖怪</span>
+                    <span class="worklist__tag" data-filter="青春">青春</span>
+                    <span class="worklist__tag" data-filter="ティーン">ティーン</span>
+                </div>
+                <time class="worklist__date" datetime="子供時代">子供時代</time>
+                </div>
+        </li>
+
+        <li class="worklist__item" data-category="novel">
+            <p class="worklist__meta">NOVEL</p>
+            <h3 class="worklist__title">ダレン・シャン</h3>
+            <p class="worklist__author">ダレン・シャン / Darren Shan</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="ファンタジー">ファンタジー</span>
+                    <span class="worklist__tag" data-filter="ティーン">ティーン</span>
+                </div>
+                <time class="worklist__date" datetime="子供時代">子供時代</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="novel">
+            <p class="worklist__meta">NOVEL</p>
+            <h3 class="worklist__title">タラ・ダンカン</h3>
+            <p class="worklist__author">ソフィー・オドワン＝マミコニアン / Sophie Audouin-Mamikonian</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <span class="worklist__tag" data-filter="ファンタジー">ファンタジー</span>
+                    <span class="worklist__tag" data-filter="ティーン">ティーン</span>
+                </div>
+                <time class="worklist__date" datetime="子供時代">子供時代</time>
                 </div>
         </li>
 
@@ -315,8 +778,6 @@
 
 
 
-
-        
 
     <!-- ここから1作品分。data-category と、中のテキストを差し替えて数だけ繰り返す -->
 <!--

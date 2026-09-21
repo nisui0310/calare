@@ -546,7 +546,8 @@ Works（作品一覧）
   font-weight: 700;
   line-height: 1.45;
   margin: 0 0 10px;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
+  word-break: auto-phrase;
 }
 
 .worklist__author {
