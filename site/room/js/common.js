@@ -148,3 +148,61 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+
+
+// 作品一覧ページの絞り込み（カテゴリ・要素タグ。お気に入りも要素タグの一種として扱う）
+// このスクリプトは .worklist があるページでのみ動きます。
+(function () {
+  const buttons = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.worklist__item');
+  const emptyMsg = document.querySelector('.worklist-empty');
+
+  if (!items.length) return;
+
+  const selected = { category: new Set(), tag: new Set() };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const type = btn.dataset.filterType;
+      const value = btn.dataset.filterValue;
+
+      if (selected[type].has(value)) {
+        selected[type].delete(value);
+        btn.classList.remove('is-active');
+      } else {
+        selected[type].add(value);
+        btn.classList.add('is-active');
+      }
+      applyFilter();
+    });
+  });
+
+  function applyFilter() {
+    let visibleCount = 0;
+
+    items.forEach((item) => {
+      const category = item.dataset.category;
+      const tags = Array.from(item.querySelectorAll('.worklist__tag')).map(
+        (t) => t.dataset.filter
+      );
+
+      // カテゴリは選択したどれか1つでも一致すればOK（複数選択可）
+      const categoryMatch =
+        selected.category.size === 0 || selected.category.has(category);
+
+      // タグ（お気に入りも同じ扱い）は選んだどれか1つでも含んでいればOK（OR）
+      const tagMatch =
+        selected.tag.size === 0 || tags.some((t) => selected.tag.has(t));
+
+      const show = categoryMatch && tagMatch;
+      item.classList.toggle('is-hidden', !show);
+      if (show) visibleCount++;
+    });
+
+    if (emptyMsg) {
+      emptyMsg.classList.toggle('is-visible', visibleCount === 0);
+    }
+  }
+})();

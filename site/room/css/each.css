@@ -401,3 +401,231 @@ Blog
   color: var(--color-white);
  }
 }
+
+
+
+/*－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+Works（作品一覧）
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－*/
+
+/* .worklist の中だけbox-sizingをborder-boxにする（サイト全体には影響させない） */
+.worklist,
+.worklist * {
+  box-sizing: border-box;
+}
+
+.worklist-header {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 4px solid var(--color-main);
+}
+
+.worklist-header h1 {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 1.291rem + 2.55vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.worklist-header p {
+  margin: 0;
+  color: var(--color-main);
+  font-size: 0.9rem;
+}
+
+/*－－－－－－－－－－ 絞り込みフィルター －－－－－－－－－－*/
+.worklist-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+.worklist-filter__group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.worklist-filter__label {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--color-main);
+  opacity: 0.7;
+  text-transform: uppercase;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+.filter-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-family: var(--font-base);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--color-main);
+  background-color: transparent;
+  color: var(--color-main);
+  transition: 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.filter-btn.is-active {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.worklist__item.is-hidden {
+  display: none;
+}
+
+.worklist-empty {
+  display: none;
+  color: var(--color-main);
+  font-size: 0.9rem;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.worklist-empty.is-visible {
+  display: block;
+}
+
+/*－－－－－－－－－－ 作品一覧本体 －－－－－－－－－－*/
+.worklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  /* 最小320px 〜 折り返し。.gallerylistや.gridと同じ考え方 */
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 30px;
+}
+
+.worklist__item {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-main);
+  border-radius: 24px;
+  padding: clamp(20px, 4%, 30px) clamp(20px, 5%, 34px);
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+}
+
+.worklist__item:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+.worklist__meta {
+  font-family: var(--font-base);
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  color: var(--color-main);
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin: 0 0 14px;
+}
+
+.worklist__title {
+  font-family: var(--font-title);
+  font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 0 0 10px;
+  overflow-wrap: break-word;
+}
+
+.worklist__author {
+  font-size: 0.85rem;
+  color: var(--color-main);
+  margin: 0 0 20px;
+}
+
+.worklist__oshi {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 14px;
+}
+
+.worklist__oshi-label {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  letter-spacing: 2px;
+}
+
+.worklist__oshi-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  overflow-wrap: break-word;
+}
+
+.worklist__comment {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0 0 20px;
+}
+
+.worklist__divider {
+  border-top: 1px solid var(--color-sub);
+  margin-bottom: 16px;
+}
+
+.worklist__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin-top: auto;
+}
+
+.worklist__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.worklist__tag {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background-color: var(--color-sub);
+  color: var(--color-main);
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.worklist__date {
+  font-size: 0.72rem;
+  color: var(--color-main);
+  letter-spacing: 1px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* スマホでは日付が折り返した時に見切れないよう調整 */
+@media screen and (max-width: 380px) {
+  .worklist__date {
+    margin-left: 0;
+  }
+}

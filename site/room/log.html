@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAGAMI`S ROOM</title>
+  <link href="css/reset.css" rel="stylesheet">
+  <link href="css/common.css" rel="stylesheet" type="text/css">
+  <link href="css/each.css" rel="stylesheet" type="text/css">
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+
+  <!-- OGP -->
+  <meta property="og:title" content="KAGAMI'S ROOM">
+  <meta property="og:description" content="カガミのプロフィールサイト">
+  <meta property="og:url" content="https://calare.vercel.app/site/room/">
+  <meta property="og:image" content="https://calare.vercel.app/site/room/images/ogp.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KAGAMI'S ROOM">
+  <meta property="og:locale" content="ja_JP">
+  
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+ </head>
+
+<body>
+ <!-- headingLのSVGフィルター定義 -->
+ <svg width="0" height="0" style="position:absolute">
+  <defs>
+   <filter id="outline" x="-10%" y="-10%" width="120%" height="120%">
+    <!-- radiusでフチの太さを調整 -->
+    <feMorphology operator="dilate" radius="2" in="SourceGraphic" result="expanded" />
+    <feFlood flood-color="currentcolor" result="color" />
+    <feComposite in="color" in2="expanded" operator="in" result="outline" />
+    <feMerge>
+     <feMergeNode in="outline" />
+     <feMergeNode in="SourceGraphic" />
+    </feMerge>
+   </filter>
+  </defs>
+ </svg><!-- headingLのSVGフィルター定義ここまで -->
+
+ <!--  ヘッダー -->
+ <header class="header">
+  <div class="header-inner">
+   <h1 class="sitename"><a href="index.html">KAGAMI'S ROOM</a></h1>
+
+   <!-- ハンバーガーメニュー -->
+   <button id="js-hamburger" class="hamburger"><span class="hamburger__line"></span></button>
+
+   <!-- メニュー -->
+   <nav id="js-globalnav" class="globalnav">
+    <ul class="globalnav__main">
+     <li class="globalnav__item"><a href="index.html">HOME</a></li>
+     <li class="globalnav__item"><a href="fa.html">FA</a></li>
+     <li class="globalnav__item"><a href="log.html">LOG</a></li>
+     <!--
+     <li class="globalnav__item"><a href="gallery.html">GALLERY</a></li>
+     -->
+     <!----
+     <li class="globalnav__item"><a href="blog.html">BLOG</a></li>
+     -->
+
+<!--
+     <li class="globalnav__item"><a href="sample.html">SAMPLE</a></li>
+     -->
+    </ul>
+
+    <!-- SNSリスト -->
+    <ul class="social-icons">
+     <li class="social-icons__item x"><a href="https://x.com/Kagami_hyaku" target="_blank" rel="noreferrer">
+       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+         d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+       </svg></a>
+     </li>
+
+
+     <li class="social-icons__item pixiv">
+      <a href="https://www.pixiv.net/users/53702365" target="_blank" rel="noreferrer">
+       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+         d="M4.94 0A4.953 4.953 0 0 0 0 4.94v14.12A4.953 4.953 0 0 0 4.94 24h14.12A4.953 4.953 0 0 0 24 19.06c-.014 1.355 0-14.12 0-14.12A4.953 4.953 0 0 0 19.06 0Zm1.783 5.465h.904a.37.37 0 0 1 .31.17l.752 1.17a6.172 6.172 0 0 1 10.01 4.834 6.172 6.172 0 0 1-9.394 5.265v2.016a.37.37 0 0 1-.37.367H6.724a.37.37 0 0 1-.37-.367V5.834a.37.37 0 0 1 .37-.37m5.804 2.951a3.222 3.222 0 1 0-.002 6.443 3.222 3.222 0 0 0 .002-6.443" />
+       </svg></a>
+     </li>
+
+     <!--
+     <li class="social-icons__item contact">
+      <a href="index.html#contact" rel="noreferrer">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+        class="icon icon-tabler icons-tabler-filled icon-tabler-mail">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path
+         d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" />
+        <path
+         d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" />
+       </svg></a>
+     </li> -->
+    </ul><!-- SNSリストここまで -->
+
+   </nav><!-- メニューここまで -->
+ </header>
+
+ <!-- メインコンテンツ -->
+ <main class="mainwrapper" id="js-main">
+
+
+
+<!--
+  これを既存ページの .mainwrapper の中（ヘッダーやハンバーガーメニューのincludeはそのまま）に
+  貼り付けてください。<li class="worklist__item"> は作品の数だけ繰り返します。
+-->
+
+    <div class="worklist-header">
+    <h1 class="headingL">LOG</h1>
+    <p>読んだ本やコンテンツの記録<br>最新順に掲載してあります。</p>
+    </div>
+
+    <div class="worklist-filter">
+    <div class="worklist-filter__group">
+        <span class="worklist-filter__label">カテゴリ</span>
+        <button class="filter-btn" data-filter-type="category" data-filter-value="manga">MANGA</button>
+        <button class="filter-btn" data-filter-type="category" data-filter-value="novel">NOVEL</button>
+        <button class="filter-btn" data-filter-type="category" data-filter-value="movie">MOVIE</button>
+        <button class="filter-btn" data-filter-type="category" data-filter-value="other">OTHER</button>
+    </div>
+    <div class="worklist-filter__group">
+        <span class="worklist-filter__label">ジャンル</span>
+        <button class="filter-btn" data-filter-type="tag" data-filter-value="jamp">ジャンプ</button>
+        <button class="filter-btn" data-filter-type="tag" data-filter-value="バトル">バトル</button>
+        <button class="filter-btn" data-filter-type="tag" data-filter-value="恋愛">恋愛</button>
+        <button class="filter-btn" data-filter-type="tag" data-filter-value="コメディ">コメディ</button>
+        <button class="filter-btn" data-filter-type="tag" data-filter-value="ミステリー">ミステリー</button>
+        <button class="filter-btn" data-filter-type="tag" data-filter-value="ギャグ">ギャグ</button>
+        <button class="filter-btn" data-filter-type="tag" data-filter-value="ホラー">ホラー</button>
+        <button class="filter-btn" data-filter-type="tag" data-filter-value="妖怪">妖怪</button>
+        <button class="filter-btn" data-filter-type="tag" data-filter-value="歴史">歴史</button>
+        <button class="filter-btn" data-filter-type="tag" data-filter-value="favorite">お気に入り</button>
+        <!-- タグの種類が増えたらここにボタンを追加してください -->
+    </div>
+    </div>
+
+    <ul class="worklist">
+
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">カグラバチ</h3>
+            <p class="worklist__author">外薗健 / Hokazono Takeru</p>
+
+            <!-- 推しがいない作品では、このdivごと削除してOK -->
+            <div class="worklist__oshi">
+            <span class="worklist__oshi-label">推し</span>
+            <span class="worklist__oshi-name">六平千鉱、柴登吾</span>
+            </div>
+
+            <p class="worklist__comment">カッコいいキャラが多くて嬉しい。シンプルに面白い。</p>
+            <div class="worklist__divider"></div>
+            <div class="worklist__footer">
+            <div class="worklist__tags">
+                <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                <span class="worklist__tag" data-filter="ジャンプ">ジャンプ</span>
+                <span class="worklist__tag" data-filter="バトル">バトル</span>
+                <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+            </div>
+            <time class="worklist__date" datetime="2026-05">2026.05</time>
+            </div>
+        </li>
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">ジャンケットバンク</h3>
+            <p class="worklist__author">田中一行 / Tanaka Ikko</p>
+
+            <!-- 推しがいない作品では、このdivごと削除してOK -->
+            <div class="worklist__oshi">
+            <span class="worklist__oshi-label">推し</span>
+            <span class="worklist__oshi-name">獅子神敬一</span>
+            </div>
+
+            <p class="worklist__comment">FFにおすすめされた。ゲームの内容が一切わからない。</p>
+            <div class="worklist__divider"></div>
+            <div class="worklist__footer">
+            <div class="worklist__tags">
+                <span class="worklist__tag" data-filter="バトル">バトル</span>
+            </div>
+            <time class="worklist__date" datetime="2026-05">2026.05</time>
+            </div>
+        </li>
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">THISコミュニケーション</h3>
+            <p class="worklist__author">六内円栄 / Rokudai Maruei</p>
+
+                <!-- 推しがいない作品では、このdivごと削除してOK -->
+                <div class="worklist__oshi">
+                <span class="worklist__oshi-label">推し</span>
+                <span class="worklist__oshi-name">デルウハ</span>
+                </div>
+
+                <p class="worklist__comment">久々に面白すぎてびっくりした。本当に面白い。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="SF">SF</span>
+                    <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+                </div>
+                <time class="worklist__date" datetime="2026-04">2026.04</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="movie">
+            <p class="worklist__meta">MOVIE</p>
+            <h3 class="worklist__title">銀魂 -吉原大炎上-</h3>
+            <p class="worklist__author">空知英秋 / Sorachi Hideaki</p>
+
+                <!-- 推しがいない作品では、このdivごと削除してOK -->
+                <div class="worklist__oshi">
+                <span class="worklist__oshi-label">推し</span>
+                <span class="worklist__oshi-name">いっぱい</span>
+                </div>
+
+                <p class="worklist__comment">夢女になった原因が銀魂だったことを思い出した。神威と阿伏兎の夢女になる。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="ジャンプ">ジャンプ</span>
+                    <span class="worklist__tag" data-filter="SF">SF</span>
+                    <span class="worklist__tag" data-filter="ギャグ">ギャグ</span>
+                </div>
+                <time class="worklist__date" datetime="2026-03">2026.03</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="moanga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">青野くんに触りたいから死にたい</h3>
+            <p class="worklist__author">椎名うみ / Shina Umi</p>
+
+                <p class="worklist__comment">トラウマが刺激される作品だったが、シンプルに面白い。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="love">恋愛</span>
+                    <span class="worklist__tag" data-filter="hora-">ホラー</span>
+                </div>
+                <time class="worklist__date" datetime="2026-03">2026.01</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="moanga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">青のミブロ</h3>
+            <p class="worklist__author">安田剛士 / Yasuda Tsuyoshi</p>
+
+                <p class="worklist__comment">芹沢さんがカッコ良すぎて困る。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="バトル">バトル</span>
+                    <span class="worklist__tag" data-filter="歴史">歴史</span>
+                </div>
+                <time class="worklist__date" datetime="2025-11">2025.11</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="other">
+            <p class="worklist__meta">OTHER</p>
+            <h3 class="worklist__title">銀河特急 ミルキー☆サブウェイ</h3>
+            <p class="worklist__author">亀山陽平 / Kameyama Yohei</p>
+                <div class="worklist__oshi">
+                <span class="worklist__oshi-label">推し</span>
+                <span class="worklist__oshi-name">カート・クレイマー</span>
+                </div>
+
+
+                <p class="worklist__comment">会話劇のテンポが非常に好き。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="SF">SF</span>
+                    <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+                </div>
+                <time class="worklist__date" datetime="2025-09">2025.09</time>
+                </div>
+        </li>
+        <li class="worklist__item" data-category="manga">
+            <p class="worklist__meta">MANGA</p>
+            <h3 class="worklist__title">出禁のモグラ</h3>
+            <p class="worklist__author">江口夏美 / Eguchi Natsumi</p>
+                <div class="worklist__oshi">
+                <span class="worklist__oshi-label">推し</span>
+                <span class="worklist__oshi-name">猫附梗史郎</span>
+                </div>
+                <p class="worklist__comment">FFにおすすめされた。梗ちゃんと百暗が好き。途中までしか追ってない。</p>
+                <div class="worklist__divider"></div>
+                <div class="worklist__footer">
+                <div class="worklist__tags">
+                    <!-- タグはこの作品に当てはまる分だけ並べる。お気に入りに入れたい作品にはdata-filter="favorite"のタグも追加 -->
+                    <span class="worklist__tag" data-filter="ミステリー">ミステリー</span>
+                    <span class="worklist__tag" data-filter="コメディ">コメディ</span>
+                    <span class="worklist__tag" data-filter="妖怪">妖怪</span>
+                </div>
+                <time class="worklist__date" datetime="2025-08">2025.08</time>
+                </div>
+        </li>
+
+
+
+
+
+
+
+        
+
+    <!-- ここから1作品分。data-category と、中のテキストを差し替えて数だけ繰り返す -->
+<!--
+    <li class="worklist__item" data-category="movie">
+        <p class="worklist__meta">MOVIE</p>
+        <h3 class="worklist__title">作品タイトル</h3>
+        <p class="worklist__author">監督名 / Director</p>
+
+        <div class="worklist__oshi">
+        <span class="worklist__oshi-label">推し</span>
+        <span class="worklist__oshi-name">キャラクター名</span>
+        </div>
+
+        <p class="worklist__comment">ここに一言コメントを書く。</p>
+        <div class="worklist__divider"></div>
+        <div class="worklist__footer">
+        <div class="worklist__tags">
+            <span class="worklist__tag" data-filter="SF">SF</span>
+            <span class="worklist__tag" data-filter="favorite">お気に入り</span>
+        </div>
+        <time class="worklist__date" datetime="2026-09">鑑賞日 2026.09</time>
+        </div>
+    </li>
+-->
+    <!-- ここまでが1作品分。以降、必要な数だけ <li class="worklist__item">〜</li> を複製する -->
+
+    </ul>
+
+    <p class="worklist-empty">該当する作品がありません。</p>
+
+
+
+ </main><!-- メインコンテンツここまで -->
+
+ <!-- ページUP -->
+ <a href="#" class="pageup" id="js-pageup">
+  <div class="arrow"></div>
+ </a><!-- ページUPここまで -->
+
+ <!-- フッター -->
+ <footer>
+  <!-- クレジット -->
+  <small>©  <a href="index.html">KAGAMI'S ROOM</a>. Designed by <a href="https://hiro-design.net/utsusemi/" target="_blank">Utsusemi
+    Design</a>.</small>
+  <!-- クレジットここまで -->
+ </footer>
+
+ <!--JavaScrip 読込-->
+ <script src="js/common.js" type="text/javascript"></script>
+</body>
+
+</html>
