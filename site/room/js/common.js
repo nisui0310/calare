@@ -40,16 +40,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailView = document.getElementById('detail-view');
     const fullImage = document.getElementById('full-image');
     const detailCaption = document.getElementById('detail-caption');
-    const listItems = document.querySelectorAll('.gallerylist__item');
+    const prevBtn = document.getElementById('detail-prev');
+    const nextBtn = document.getElementById('detail-next');
+    const listItems = Array.from(document.querySelectorAll('.gallerylist__item'));
 
     let scrollPosition = 0;
+    let currentIndex = 0;
 
-    const openDetail = (src, caption) => {
+    const renderItem = (index) => {
+        const item = listItems[index];
+        fullImage.src = item.getAttribute('data-full');
+        fullImage.alt = item.getAttribute('data-caption') || '';
+        detailCaption.innerHTML = item.getAttribute('data-caption') || '';
+    };
+
+    const openDetail = (index) => {
+        currentIndex = index;
         scrollPosition = window.pageYOffset;
 
-        fullImage.src = src;
-        fullImage.alt = caption || '';
-        detailCaption.innerHTML = caption || '';
+        renderItem(currentIndex);
         detailView.classList.remove('hidden');
 
         document.body.style.position = 'fixed';
@@ -75,27 +84,67 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 0);
     };
 
-    listItems.forEach(item => {
+    const showPrev = () => {
+        currentIndex = (currentIndex - 1 + listItems.length) % listItems.length;
+        renderItem(currentIndex);
+    };
+
+    const showNext = () => {
+        currentIndex = (currentIndex + 1) % listItems.length;
+        renderItem(currentIndex);
+    };
+
+    listItems.forEach((item, index) => {
         item.addEventListener('click', () => {
-            openDetail(
-                item.getAttribute('data-full'),
-                item.getAttribute('data-caption')
-            );
+            openDetail(index);
         });
     });
 
-    // 画像以外(背景・余白・キャプション)をクリックしたら閉じる
     detailView.addEventListener('click', closeDetail);
 
-    // 画像自体のクリックだけは閉じる処理を止める
     fullImage.addEventListener('click', (e) => {
         e.stopPropagation();
     });
 
-    // ESCキーで閉じる
+    // 矢印ボタン(背景クリックの閉じる処理に巻き込まれないよう stopPropagation)
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showPrev();
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showNext();
+    });
+
+    // キーボード操作
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !detailView.classList.contains('hidden')) {
-            closeDetail();
+        if (detailView.classList.contains('hidden')) return;
+
+        if (e.key === 'Escape') closeDetail();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+    });
+
+    // スワイプ(フリック)操作
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const SWIPE_THRESHOLD = 50; // これ以上動いたらスワイプと判定(px)
+
+    detailView.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    detailView.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchEndX - touchStartX;
+
+        if (Math.abs(diff) > SWIPE_THRESHOLD) {
+            if (diff > 0) {
+                showPrev(); // 右にスワイプ → 前の画像
+            } else {
+                showNext(); // 左にスワイプ → 次の画像
+            }
         }
     });
 });

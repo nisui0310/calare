@@ -264,6 +264,55 @@ Gallery
  display: none !important;
 }
 
+
+.detail-nav {
+ position: fixed;
+ top: 50%;
+ transform: translateY(-50%);
+ width: 44px;
+ height: 44px;
+ border: none;
+ border-radius: 50%;
+ background-color: transparent;   /* 透明に変更 */
+ color: #000000;
+ font-size: 24px;                 /* 文字だけになる分、少し大きくすると見やすいです */
+ cursor: pointer;
+ z-index: 2010;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+/* PCなど、本当にマウスホバーができる環境だけに適用 */
+@media (hover: hover) {
+ .detail-nav:hover {
+  color: rgba(255, 255, 255, 0.7);
+ }
+}
+
+.detail-nav--prev {
+ left: 12px;
+}
+
+.detail-nav--next {
+ right: 12px;
+}
+
+/* PC(画面幅601px以上)のときだけ内側に寄せる */
+@media (min-width: 601px) {
+ .detail-nav--prev {
+  left: 60px;
+  font-size: 40px; /* PCでは少し大きくして押しやすく */
+ }
+
+ .detail-nav--next {
+  right: 60px;
+  font-size: 40px; /* PCでは少し大きくして押しやすく */
+ }
+}
+
+
+
 /*－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
 
 Blog
