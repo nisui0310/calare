@@ -3,8 +3,8 @@
    ========================================== */
 document.addEventListener("DOMContentLoaded", function(){
     // 保存された名前を取得
-    const last  = localStorage.getItem("Your"); 
-    const first = localStorage.getItem("Name"); 
+    const last  = localStorage.getItem("userYour"); 
+    const first = localStorage.getItem("userName"); 
 
     // 苗字（class="user-your"）を一括書き換え
     document.querySelectorAll(".user-your").forEach(el => {
