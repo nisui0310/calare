@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+/* ===================================================================
+   blue/assets/css/novel.css
+   ・小説本文の表示スタイル（Asteroidテンプレート）
+   ・閲覧設定（縦横切り替え、背景色、文字サイズ、行間）
+   =================================================================== */
+
+:root {
+    --n-red: #e81a35;
+    --n-details-bd-color: #222;
+    --n-label-radio-bd-color: #ccc;
+    --n-accent-color: #006aff;      /* 設定パネルのアクセントカラー */
+
+    --n-common-value-1: 1.125em;
+    --n-common-side-padding: min(5%, var(--n-common-value-1));
+    --n-common-max-width: 45em;      /* 本文エリアの最大横幅 */
+}
+
+/* 閲覧設定メニュー (.n-details / .n-collection) */
+.n-details[open] .n-summary {
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* 背景色切り替えテーマ */
+.bg-color-white  { --n-bg-color: #fff;     --n-t-color: #333; }
+.bg-color-black  { --n-bg-color: #1f1f1f;  --n-t-color: #ddd; }
+.bg-color-gray   { --n-bg-color: #f1f1f2;  --n-t-color: #222; }
+.bg-color-blue   { --n-bg-color: #e6f1fa;  --n-t-color: #1c1d1e; }
+.bg-color-yellow { --n-bg-color: #fff8eb;  --n-t-color: #3f2b12; }
+
+/* 縦書き・多段組み切り替え設定 */
+.direction-tate-dan {
+    writing-mode: vertical-rl;
+    width: 100%;
+    height: 85vh;
+    overflow-y: scroll;
+    column-count: 2;
+}
+
+.direction-yoko .n-inner {
+    max-width: var(--n-common-max-width);
+    margin: 0 auto;
+}

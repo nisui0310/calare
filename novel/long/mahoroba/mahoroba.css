@@ -145,7 +145,7 @@ h1 {
     flex: none;
     width: 11rem;
     aspect-ratio: 5 / 8;
-    background-image: url("../../images/mahoroba.jpg");
+    background-image: url("/images/mahoroba.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
