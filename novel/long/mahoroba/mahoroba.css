@@ -1,0 +1,287 @@
+@charset "UTF-8";
+
+/* ==========================================
+   Variables & Root
+   ========================================== */
+:root {
+    --bg-gradient: linear-gradient(40deg, rgba(206,176,211,1) 11%, rgba(174,194,210,1) 63%);
+    --blue: #7b90aa;
+    --dark-blue: #06023c;
+    --font-serif: 'Shippori Mincho', "游明朝", YuMincho, serif;
+    --font-sans: 'Roboto Condensed', 'Noto Sans JP', sans-serif;
+}
+
+/* ==========================================
+   Base
+   ========================================== */
+html {
+    font-size: 12px; /* スマホ */
+    background: var(--bg-gradient) no-repeat;
+    background-size: 100% 100%;
+    background-color: #aec2d2;
+}
+
+@media screen and (min-width: 768px) {
+    html { font-size: 15px; } /* タブレット（Ginevra共通） */
+}
+@media screen and (min-width: 1280px) {
+    html { font-size: 16px; } /* PC（Ginevra共通） */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: var(--font-serif);
+    color: #FFF;
+    letter-spacing: 0.1em;
+    line-height: 1.9;
+}
+
+/* 背景グラデーションは固定レイヤーに（iOSでも崩れにくい） */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;     /* 画面より大きくして、ツールバーの下まで背景を届かせる */
+    z-index: -1;
+    background: var(--bg-gradient);
+}
+
+.wrap {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+}
+
+a {
+    color: var(--dark-blue);
+    text-decoration: none;
+    border-bottom: none;
+    transition: color 0.2s ease, padding 0.2s ease;
+}
+a:focus-visible {
+    outline: 2px solid #FFF;
+    outline-offset: 2px;
+}
+
+/* 強調文字（このページでは未使用だが残している） */
+strong {
+    font-weight: 600;
+    border-bottom: 2px solid #FFF;
+}
+.highlight {
+    background: linear-gradient(transparent 65%, #B5EAEA 70%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/* ==========================================
+   Navigation（装飾なし・余白だけで区切る）
+   ========================================== */
+nav {
+    margin: 1.8rem 0 3rem;
+    text-align: center;
+    font-family: var(--font-sans);
+}
+nav ul {
+    display: inline-flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav a {
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dark-blue);
+    opacity: 0.7;
+}
+nav a:hover {
+    opacity: 1;
+}
+
+/* ==========================================
+   Layout（スマホ：縦積み／PC：2カラム）
+   ========================================== */
+.layout {
+    display: block;
+}
+
+/* ---------- タイトルと画像（枠なし） ---------- */
+.top {
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+    margin: 0 0 4rem;
+}
+
+/* 縦書きタイトル */
+.title {
+    align-self: flex-start;
+    writing-mode: vertical-rl;
+    text-shadow: 0 0 1.2rem rgba(6, 2, 60, 0.2);
+}
+h1 {
+    margin: 0 0 0 1.2rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.3em;
+}
+.title p {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+    opacity: 0.9;
+}
+
+/* 画像（相対パス: ../../images/mahoroba.jpg） */
+.image {
+    flex: none;
+    width: 11rem;
+    aspect-ratio: 5 / 8;
+    background-image: url("../../images/mahoroba.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ---------- 目次エリア ---------- */
+main {
+    max-width: 36rem;
+    margin: 0 auto;
+}
+
+/* 章：左に縦書きの見出し、右に目次 */
+.chapter {
+    --chap: #636CCB;                 /* 章ごとのアクセント色（番号に使用） */
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr);
+    column-gap: 1.2rem;
+    margin: 0 0 5rem;
+}
+.chapter.chap-color-1 { --chap: #636CCB; }
+.chapter.chap-color-2 { --chap: #8785A2; }
+
+/* 見出し（スクロールしても章の間は残る） */
+.chap-head {
+    position: sticky;
+    top: 2rem;
+
+}
+.chap-no {
+    display: block;
+    margin: 0 0 1.2rem;
+    font-family: var(--font-sans);
+    font-size: 2.6rem;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.85);
+}
+.chap-text {
+    writing-mode: vertical-rl;
+}
+h3.chap-label {
+    margin: 0 0 0 0.9rem;      /* 縦書きの左側＝タイトルとの間隔 */
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.4em;
+    color: var(--dark-blue);
+    opacity: 0.65;
+}
+h4.chap-title {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.25em;
+    color: var(--dark-blue);
+}
+
+/* 目次リスト（左寄せ） */
+.chapter-list {
+    list-style: none;
+    margin: 0.2rem 0 0;
+    padding: 2rem;
+    text-align: left;
+}
+.chapter-list a {
+    display: grid;
+    grid-template-columns: 3.2rem 1fr;   /* 番号 | タイトル（折り返してもそろう） */
+    align-items: baseline;
+    padding: 0.2rem 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    letter-spacing: 0.08em;
+}
+.chapter-list a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.4em;
+    padding-left: 0.3rem;
+}
+.chapter-list .no {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--chap);
+    color: color-mix(in srgb, var(--chap) 70%, var(--dark-blue));
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+footer {
+    margin: 3rem auto 1rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    text-align: center;
+}
+footer a {
+    color: #FFF;
+    border-bottom: 1px dotted #FFF;
+}
+
+/* ==========================================
+   PC：2カラム（左に画像を固定、右に目次）
+   ========================================== */
+@media screen and (min-width: 860px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 25rem minmax(0, 1fr);
+        gap: 3rem;
+        align-items: start;
+    }
+    .top {
+        position: sticky;
+        top: 2rem;
+        justify-content: flex-start;
+        margin: 0;
+    }
+    .image {
+        width: 12.5rem;
+    }
+    main {
+        max-width: none;
+        margin: 0;
+    }
+}
+
+/* ==========================================
+   Responsive (< 500px)
+   ========================================== */
+@media screen and (max-width: 500px) {
+    nav ul { gap: 1.2rem; }
+    nav a { font-size: 1.2rem; }
+    .chapter { grid-template-columns: 4.4rem minmax(0, 1fr); column-gap: 1rem; }
+    .chap-no { font-size: 2.2rem; }
+    h4.chap-title { font-size: 1.4rem; }
+}

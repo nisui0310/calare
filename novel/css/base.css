@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* 
+  Template & Designed by Asteroid
+  https://asteroid19.netlify.app/
+*/
+/*
+  ※旧バージョンではI'll be NET様のpixiv小説のように縦書き表示する方法-2019版を元に作成していましたが、技術の進化に合わせて全面的に刷新しています。
+*/
+/* ******************************************************************************** */
+/*  I'll be NET jQuery Novel
+/*  作成：I'll be NET（http://illbenet.jp/）
+/* ******************************************************************************** */
+
+
+/* ******************************************************************************** */
+/* 最低限のスタイル設定。
+/* 自分のサイトで使用しているCSSに差し替えても動きます。
+/* ******************************************************************************** */
+
+/* CSS変数(このファイル内でのみ使用する) */
+:root {
+  --n-text-color: #2d272f;         /* ダークチャコール */
+  --n-background-color: #fafafa;   /* novel.html風のすっきりした明るい白 */
+  --n-link-color: #c4696a;         /* 朱ローズ */
+  --n-link-visited-color: #a88d85; /* くすみローズ */
+  --n-hr-bd-color: #d5cebc;        /* サンドベージュ */
+}
+
+/* body */
+body {
+    font-family: "Helvetica Neue", "Arial", sans-serif; /* フォントの種類 */
+    font-size: clamp(0.75rem, 3.8vw, 1rem); /* フォントサイズを「12px以上1rem以下の3.8」にしています。お好みで変更してください。 */
+    line-height: 1.8; /* 行の高さ */
+    text-align: left; /* 左寄せ */
+    overflow-wrap: break-word;
+    overflow-wrap: anywhere;  /* 文字の折り返し。収まらない場合に折り返す。anywhereが非対応時のフォールバックとしてbreak-wordも指定。 */
+    line-break: strict; /* 強い禁則処理(通常はnormal) */
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%; /* 文字サイズの自動調整を制御 */
+    hanging-punctuation: allow-end; /* 句読点のぶら下げ。対応ブラウザは少ない。不要ならば削除してください。 */
+    color: var(--n-text-color); /* 文字色 */
+    background-color: var(--n-background-color);  /* 背景色 */
+}
+
+/* リンク */
+/* 未訪問リンク（基本） */
+:where(a) {
+    color: var(--n-link-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--n-link-color); /* 下線を控えめな点線に */
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/* 訪問済みリンク（少し薄く落ち着いた表示） */
+:where(a:visited) {
+    color: var(--n-link-visited-color);
+    border-bottom-color: var(--n-link-visited-color); /* 下線も薄い色に同期 */
+}
+
+/* マウスを乗せたとき・タップ時（ホバー） */
+:where(a:is(:hover, :active)) {
+    color: #d96a58;                /* 少し明るい朱赤に変化 */
+    border-bottom-style: solid;    /* 点線から実線に変わって分かりやすく */
+    border-bottom-color: #d96a58;
+}
+
+/* :where(center){ text-align: revert;}は
+nanoやalice+で center タグを使っている場合は必要。不要なら削除 */
+:where(center) {
+    text-align: revert;
+}
+
+/* ol, ulタグ */
+:where(ol, ul) {
+    list-style: revert;
+    padding-inline-start: 2em;
+}
