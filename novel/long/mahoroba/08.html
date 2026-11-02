@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="まほろばのくにをみていた。">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/mahoroba-OGP.webp">
+    <meta property="og:title" content="まほろばのくに - 落日 | Kagami">
+    <meta property="og:description" content="まほろばのくにをみていた。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://calare.vercel.app/images/mahoroba-OGP.webp">
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <!-- 小説以外で最低限適用するベースのCSS。自分のサイトで使用しているCSSに差し替えても動きます。 -->
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <!-- 小説用のCSS -->
+  <link rel="stylesheet" href="novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+  <script defer src="/assets/js/name.js"></script>
+
+  <!-- ページタイトル -->
+  <title>カペラ、良い夢を｜まほろばのくに</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン 書き換え-->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">007</span>
+    <h1 class="novel-title">カペラ、良い夢を</h1>
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション 書き換え　-->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="07-05.html">前へ</a> ｜ <a href="mahoroba.html">一覧へ戻る</a> ｜ <a href="09.html">次へ</a>
+      </div>
+    </div>
+
+    <!-- 前書き本文（不要な話ではこの div ブロック全体を削除OK） -->
+
+
+    <!-- ========================================== -->
+    <!-- ここまで 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+    
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+        <!-- 書き換え -->
+　三人はそこから忍術学園の様々なところ──食堂、保健室、図書室、用具倉庫なんかを案内してくれたけど、あんまり今日は人が集まっていないようで、私が挨拶できたのは数人だった。最後に見たのは火薬倉庫だったのだが、それは別に『じゃあ、最後に火薬倉庫に行こう！』となったのではなく、火薬倉庫の前を通りがかったときに土井先生という方が飛び出してきたからだった。<br>
+<br>
+「ああっ、ちょ、乱太郎、きり丸、しんべヱ！　止まりなさい！」<br>
+<br>
+　ん？　と四人揃って声に振り向くと、乱太郎くんが「あ、土井先生」と名前を呼んでくれたのが助かった。土井先生は「あの、あなたは<span class="user-name"></span>さんですか？」と足早に来て、ずいっと顔を近づけて訊ねてくる。ち、近い。戦国の人のパーソナルスペース、やっぱりおかしいんだよなあ。<br>
+<br>
+「あ、はい、兵庫水軍から来ました<span class="user-name"></span>と申します」<br>
+「やっぱり。さっき重さんと舳丸さんがこちらに来て探してたんですよ。乱太郎、きり丸、しんべヱと一緒にいるはずだって言って」<br>
+「あ……ああ！　うわ、すいません、ありがとうございます！」<br>
+<br>
+　まずいまずい、早く戻らないと。そういえばただ単に舳丸さんを待っていたのであって、私が忍術学園を探検するだけの時間というワケではないのだった。<br>
+<br>
+「ら、乱太郎くんたち、正門まで案内してくれる？　私もう帰らないと」<br>
+「お任せください！　土井先生、ありがとうございましたー！」<br>
+「ありがとうございました！」<br>
+「いえ、こちらこそ三人がご迷惑を……お気をつけて！」<br>
+<br>
+　走り出した三人に手を引かれ、後ろを振り返りながらもう一度お礼を叫ぶと、土井先生は柔らかく笑って手を振ってくれた。<br>
+　──と勢いよく走り出したは良いものの、早々にわたしが息切れを起こし、三人は呆れた表情で私を見ていた。いや、二人だな。しんべヱくんだけは私と同じように「も、もう疲れたよ〜」と言ってゼエゼエ息を切らしている。し、しんべヱくん、君だけは私の味方だよな……。<br>
+<br>
+「は、はあッ……、あ、歩いていこう、ここからは。はあ……っ、人生では、時にゆっくりと進むことも、はあ、必要になるからね」<br>
+「なに言ってんすか<span class="user-name"></span>さん」<br>
+「ボク疲れた〜……。もうだめ、」<br>
+<br>
+　ぺたんと座り込んでしまったしんべヱくんに、乱太郎くんが「しんべヱ、大丈夫？」と言って駆け寄る。私もしんべヱくんの介抱をしてあげたいけど、本当に情けないことに私も人のことを助けられる状態じゃなかった。<br>
+<br>
+「きり丸、ワタシはしんべヱと一緒に後からいくから、きり丸は<span class="user-name"></span>さんのこと正門まで送ってあげて」<br>
+「え、オレぇ！？　い、いいけど、」<br>
+「ちょ、ご、ごめんきり丸くん、手ぇ繋いでいこう、」<br>
+「いやそんな無理して走んなくても……、あーもう、行きますよ！」<br>
+<br>
+　一度沈黙したきり丸くんは、ややあって吹っ切れたようにそう叫ぶと、私の手を引いて走り出した。きり丸くんと走るスピードは、そりゃあ足のリーチもあって最初は違ったけれど、私の体力が尽きてからは彼のほうが優勢だ。けれども子どもらしい小さな手でギュッと握ってくれているきり丸くんに迷惑をかけるわけにもいかず、痛くないくらいに握りかえして走る。<br>
+　──ところが正門に着いても、そこには目的の人影は見当たらなかった。<br>
+<br>
+「あれえ？　舳丸さんと重さん、いないですね。まだ探しに行ってるのかな」<br>
+「は、はあ……っ、なんにせよ、けほ、正門で待っておいたほうがいいだろうし、私はここに残るよ。連れてきてくれてありがとう」<br>
+<br>
+　きり丸くんは二人のところに戻ってあげて、と言うと、きり丸くんはちょっと躊躇うような顔をして、何故だか手を離してくれなかった。うん？　なんだろう。気を遣ってくれているのかな。<br>
+<br>
+「どうかした？」<br>
+「いや……その」<br>
+<br>
+　気まずそうに目を逸らされるが、膝をかがめて彼と同じ目線できり丸くんの言葉をじっと待つと、彼は意を決したように口を開いた。<br>
+<br>
+「──<span class="user-name"></span>さんって、」<br>
+「いけいけどんど〜ん！！」<br>
+<br>
+　突如として巻き起こった突風がきり丸くんの言葉を遮った。私は咄嗟に彼の矮躯を抱きしめて、その土埃と風に耐える。誰かが叫ぶ声が重なって聞こえたけど、なんと言っているかはよくわからなかった。げほ、げほ、と咳き込みながら土煙を手で軽く払って、きり丸くんが窒息しないように力を緩め、彼を地面に下ろす。<br>
+<br>
+「げ……ゲホッ、ゲホ！　な、なんなんすかあ一体、」<br>
+「いや、わかんない、な、なんかものすごい大きな物体がものすごいスピードで突っ込んできたことしか……」<br>
+<br>
+　なにが起こったんだ、本当に？　と目を凝らす私たちの前で、土煙がだんだんと晴れていく。その先に、緑の装束に身を包んだ青年が立っているのが見えた。<br>
+<br>
+「うん？　なんだ、誰もついてきてないじゃないか！　鍛錬が足りないなあ」<br>
+<br>
+　ボサボサの髪を伸ばしたその青年は、誰もいない後ろを振り返るとつまらなそうに唇を尖らせる。まだ手を握りっぱなしだったきり丸くんが、「あー！」と言ってすこし揺れる。<br>
+　私は目を離せないでいる。<br>
+<br>
+「六年ろ組の、七松小平太先輩！」<br>
+「お？　どうした、きり丸！　おまえも私たち体育委員会と一緒にマラソンする気になったか！」<br>
+「ずえっっっったいにイヤですッ！　というか、他の体育委員会の方々はどうされたんですか？」<br>
+「途中までついてきていたんだけどな。細かいことは気にするな！」<br>
+「いや、たぶん細かくないと……。……？　<span class="user-name"></span>さん？」<br>
+<br>
+　鼓動がする。私の耳の真横で、誰かがシンバルを打ち鳴らしている。<br>
+　ここにいないはずのひと。向こうに置いてきてしまったはずのひと。私の人生で家族と同じほどの時間を過ごした、たった一人の幼馴染。<br>
+<br>
+「──小平太？」<br>
+<br>
+<br>
+　＋　＋<br>
+<br>
+<br>
+　<span class="user-name"></span>さんが零したその声は、隣で聞いてたオレがびっくりしてしまうくらい、驚き！　っていう感情でいっぱいで、でもそれ以上に、愛しいとか、親愛とか、そういう気持ちも含まれてるように聞こえた。<br>
+　だけどそれはおかしい。<span class="user-name"></span>さんは七松先輩とは初対面のはずだからだ。案の定七松先輩も、きょとんとした顔でオレと<span class="user-name"></span>さんを見比べていた。<br>
+<br>
+「七松先輩、この人は──」<br>
+<br>
+　<span class="user-name"></span>さんの紹介をしようとしたオレの手を、<span class="user-name"></span>さんはするりと手放して七松先輩に駆け寄った。えっ、と驚いたオレは慌ててその手を掴み直そうとしたけど、間に合わなかった。<span class="user-name"></span>さんは七松先輩のギリギリまで駆け寄って（あの七松先輩が仰け反りかけるくらい！）、またあの震える声で、「こへいた？」と呟いた。<br>
+　な──なんだ、なにが起こってるんだ？<br>
+　オレはワケがわからなかったけど、とりあえず七松先輩に弁明をしようと、同じように<span class="user-name"></span>さんに駆けよる。<br>
+<br>
+「<span class="user-name"></span>さん、」<br>
+「こ、小平太、どうして」<br>
+<br>
+　<span class="user-name"></span>さんの表情を見て、オレはハッとした。<span class="user-name"></span>さんは明らかに泣き出す寸前だった。潤んだ瞳がぶるぶると震えて、瞬きをしたら溢れ出してしまいそうなくらいだ。オレは何故だか<span class="user-name"></span>さんのそんな表情になんにも言えなくなってしまって、その場にデクノボーみたいに突っ立った。<br>
+<br>
+「お、おまえもここにいたの？　いつから、いや、ちがう、だ、大丈夫だった？」<br>
+<br>
+　<span class="user-name"></span>さんは七松先輩の服を触って、あろうことか七松先輩の顔にまで触れた！　ギョッとして手を払おうとした七松先輩だけど、流石にくのたまでもない女の人に乱暴するのはためらったのか、<span class="user-name"></span>さんがすぐ手を離したこともあって、結局動かなかった。<br>
+<br>
+「ど、どうやって来たの。怪我とかしてない、わ、私死にかけたんだ、今まで、ほ、本当に大変でっ、こへ、小平太……！　な、なんで来ちゃったんだ、……ああ……！　ど、どうして、おまえまで……！」<br>
+<br>
+　ぽろぽろと涙をこぼす<span class="user-name"></span>さんに、オレも七松先輩も、ちょっとだって動けなかった。たぶん七松先輩もオレと同じことを感じていたんだと思う。目の前で人が死んじゃったってくらいに悲痛そうな声で、心底つらそうな表情で泣いている<span class="user-name"></span>さんは、オレたちが少しでも動いたら壊れちゃうんじゃないかってくらいだった。ほんの少しでも空気を動かしたら、その空気が<span class="user-name"></span>さんのことを陶器みたいに粉々にしてしまうんじゃないかって。<br>
+　だから、つまり──その時動いたのはオレでも七松先輩でもなく、七松先輩に置いて行かれた同じく体育委員の平滝夜叉丸先輩だったっていうこと。<br>
+<br>
+「な、七松先輩っ、ハアッ、一人で走っていかないでください……！　ゲホッゴホ、はっ、ハアッ、」<br>
+<br>
+　正門からフラフラと入ってきた滝夜叉丸先輩に、オレの呼びかけには全く応じなかった<span class="user-name"></span>さんが振り返った。そうして、やっぱりその瞳いっぱいに涙を溜めたままで、<br>
+<br>
+「……滝くん？」<br>
+<br>
+　と言ったのだ。その時のオレの衝撃って言ったらなかった。滝夜叉丸先輩のことを、まさか『滝くん』なんて呼ぶ人がこの世にいるなんて思いもしなかったから。そしてもう一つ、オレは滝夜叉丸先輩の名前を今日一回も出していなかったので、<span class="user-name"></span>さんは最初から滝夜叉丸先輩のことを知っていたことになるから。<br>
+　<span class="user-name"></span>さんは七松先輩に駆け寄ったときと同じように、でもいくらか力の抜けた足でまたよろよろと滝夜叉丸先輩に近づいて、また変なことを言った。<br>
+<br>
+「た──滝くん？　な、なんできみまで……！　どうしたの、だ、大丈夫、ねえっ、け、怪我とかしてないよね？」<br>
+「ハ、ッ？　え、いえ──」<br>
+「ああ、よ、よかった……！　ぶ、無事でほんとによかった、」<br>
+<br>
+　滝夜叉丸先輩は本気で困惑した表情で、とりあえずは<span class="user-name"></span>さんの言うことに返事をしたようだけど、顔にはハッキリ『誰だこの人は』と書いてあった。でも<span class="user-name"></span>さんはそれに全然気づかない様子で、そのまま滝夜叉丸先輩に手を伸ばす。七松先輩と同じように。<br>
+<br>
+「滝夜叉丸に触るな」<br>
+「────」<br>
+<br>
+　七松先輩はオレが目で追えないほど早く動き、滝夜叉丸先輩に伸ばされていた<span class="user-name"></span>さんの手を弾いた。あっ、と思わず声が出た。七松先輩はびっくりするくらい怖い顔で──いや、いつも笑顔の七松先輩に見慣れていたからそう思っただけかもしれないけど──二人の間に、滝夜叉丸先輩のことを庇うように立った。<br>
+<br>
+「──は？」<br>
+「ちっ、違うんです七松先輩！　この人は兵庫水軍から来た人で、」<br>
+<br>
+　オレの役立たずだった足と手は、そこでようやく使い物になった。兵庫水軍、という言葉を聞いた七松先輩はちょっと警戒を緩めたように見えたけど、やっぱりその鋭い眼光は変わらない。ビビってない、と言えば、嘘になる。<br>
+　<span class="user-name"></span>さんは短く困惑の声を発し、貼り付けたような笑みを浮かべて手を弾かれた体勢のまま止まった。<br>
+<br>
+「小平太、なあ、なにを言ってるの。ていうか、なんでそんな髪が長いんだ、ここで何年過ごしたって──」<br>
+「ちょっ、ちょっと<span class="user-name"></span>さん止まって」<br>
+「私はおまえを知らない」<br>
+<br>
+　なおも二人に迫ろうとする<span class="user-name"></span>さんの体を止めようとしたけど、オレの小っちゃな体じゃあ彼女は全然止まってくれなくて、止めたのは七松先輩の氷のような言葉だった。ひゅう、と<span class="user-name"></span>さんが息を吸い込む音が頭上から聞こえた。<br>
+　咄嗟に上を見あげると、<span class="user-name"></span>さんはまるで、目の前で全ての希望が打ち砕かれたみたいな表情で七松先輩を見ていた。──待ってよ、って、思わず声が出た。<span class="user-name"></span>さんに対して言ったのか、七松先輩に対して言ったのか、自分でもわからない。でもとにかく待って、止まってほしかった。このまんまじゃ、このまんまじゃこの人、<br>
+<br>
+「滝夜叉丸は？　知ってるか？」<br>
+「ハイ？　い、いや、生憎ですが……。すみません、どこかでお会いしましたか」<br>
+「────」<br>
+<br>
+　喉の引きつれるような音が聞こえる。オレは、もう、本当に怖くなってしまって、<span class="user-name"></span>さんの体を抱きしめた──といっても、体格差があるので実際には腰に抱きついただけ、みたいになったけど。<br>
+　その音は、まるで<span class="user-name"></span>さんの魂が壊れるみたいな音だった。障子を踏み倒すとか、つぼを割るとか、そういうのにちょっと似ている。でも、もっとずっと、取り返しのつかないような音。オレはその音を聞いたことがある。オレはその音を知っている。そして、その音を出した人間が、いったいどんなふうになってしまうのかを、身をもって経験したことがある。<br>
+<br>
+「……どうして？」<br>
+<br>
+　<span class="user-name"></span>さんはぽつりと言って、糸の切れた人形みたいにガクンと力を失って座りこんだ。そうして赤ちゃんみたいに顔をぐしゃぐしゃにして、ワッと泣き声をあげる。わああん、って、ガキがぐずるみたいな泣き方だった。<br>
+<br>
+「<span class="user-name"></span>さんっ、<span class="user-name"></span>さん！」<br>
+<br>
+　地面にぺったりと尻をついたせいで彼女の小袖は汚れている。でもそんなことは無視して、<span class="user-name"></span>さんは両手で顔を覆って泣きじゃくった。ねえ、ねえって声をかけるオレの声はちっとだって届いていなくて、それが泣きたくなるくらい悔しかった。大人の女の人が、こんなに人目も憚らず号泣するのがホントに可哀想だった。<br>
+　<span class="user-name"></span>さん、ねえ<span class="user-name"></span>さん、オレ<span class="user-name"></span>さんのこと全然知らないし、七松先輩と滝夜叉丸先輩とどんな関係なのかも知らない。でも二人には本当に悪気がなくって、<span class="user-name"></span>さんのこと傷つけようとしたワケじゃないんだよ。誰も<span class="user-name"></span>さんのこと傷つけようと思ってないよ。<br>
+　オレはなんとかそんなようなことを口に出そうとしたけど、でもそれをどう正しく伝えたら<span class="user-name"></span>さんが傷つかないで済むのかわかんなくって、結局なんにもできないガキみたいに「<span class="user-name"></span>さん」って名前を呼ぶことしかできなかった。ガキみたいに、じゃない。オレはなんにもできないガキだった。<br>
+<br>
+「──<span class="user-name"></span>？」<br>
+<br>
+　目の前でいきなり泣き出した見知らぬ女の人に、ほとほと困り果てたような表情をしていた七松先輩と滝夜叉丸先輩が、その声に反応した。オレもパッと振り向いて、ヤベ、と思った。<br>
+　呆然と<span class="user-name"></span>さんの名前を呼んだのは、重さんだった。目を丸くして、おっきな声でわんわん泣いている<span class="user-name"></span>さんのことを見つめている。ぱちぱち、と目を瞬いた重さんは、泣いている<span class="user-name"></span>さんと立ち尽くす七松先輩に滝夜叉丸先輩を見て、きっと誤解をした。いや、泣かせたという意味では誤解じゃないんだけど、でも経緯を正しく理解していないっていう意味で、誤解をしていると思う。<br>
+<br>
+「──なにしてんだッ！！」<br>
+<br>
+　とにかく、次の瞬間には重さんの怒声がオレの鼓膜をブッ叩いていた。信じられないくらい大きな声で、オレは真横から耳ごとひっぱたかれたんじゃないかって勘違いしそうだった。水軍の人は声が大きい。たぶん嵐の中でもみんなに指示を通したり、船のいろんなところから情報を交換したりしなきゃいけないからだろう。滝夜叉丸先輩も流石にビビったみたいで、ひい、といつもの自慢げな声とは打って変わって情けない声をあげ、七松先輩の後ろに隠れた。<br>
+<br>
+「ま、待ってください、重さん！　違うんです、二人は本当になにもしてなくて、」<br>
+「何もしてなくてコイツが泣くかッ！　<span class="user-name"></span>になにしたんだ！」<br>
+「いやいや、きり丸の言う通りですよ。誰かと訊ねたら泣き出したんです、こっちからはほとんど触れてません」<br>
+<br>
+　たいがいの喧嘩には喜んで身を投じそうな七松先輩だけど、流石に誤解が原因の元の喧嘩に応じようとは思わないのか、胸倉を掴む勢いで迫った重さんに両手を上げる。<br>
+　そんなわけ、と言いかけた重さんは、<span class="user-name"></span>さんの「重？」という言葉で止まった。ハッとした表情になった重さんは、七松先輩に迫るのをやめて<span class="user-name"></span>さんに駆けよる。<span class="user-name"></span>さんは瞳を真っ赤にしたまんまで重さんのことを見上げて、またくしゃりと顔を歪めた。<br>
+<br>
+「し、重ぇ～～……っ！」<br>
+「うん、俺だよ、どうしたんだよ。誰かになんかされたか？　目ぇ擦るなよ、跡になるだろ」<br>
+「う、う〜〜……！　こ、こへいたにあいたい、」<br>
+<br>
+　ぎゅっと抱きつかれた重さんは、<span class="user-name"></span>さんのことを軽々持ち上げて質問したけれど、返ってきた言葉にギョッとした表情のまま硬直した。いや、重さんだけじゃない、ここにいる全員が。<br>
+　重さんが『え？』という表情のままで七松先輩を見て、滝夜叉丸先輩とオレがやっぱり疑りぶかそうな目で『知り合いなんですか？』と追撃をかければ、七松先輩は『違う！　本当に見たことない！　名前も知らない！』という表情で、ぶんぶんと手と首を振った。<br>
+<br>
+「ともだちにあいたい」<br>
+「────」<br>
+「か、かぞくにあいたい。もっかい、浪人してもいいから、もっかい学校にいきたい……！」<br>
+<br>
+　帰りたいよお、と<span class="user-name"></span>さんは泣いた。重さんはその言葉を聞くなり、ぎゅうっと眉根を寄せて悲痛そうな顔になって、<span class="user-name"></span>さんを抱きしめる力を強くした。<br>
+<br>
+「わ──わかってる。そうだよな。大丈夫だよ、<span class="user-name"></span>……」<br>
+「う、うーっ、か、かえりたい……！　し、しげえ、かえりたいよう、」<br>
+「知ってる……、知ってるよ。わかってるから、俺ら……、ちゃ、ちゃんと、帰すから。泣くな」<br>
+<br>
+　重さんの顔は、決して『わかってる』人の表情じゃなかった。でもそれを必死に誤魔化して、そうだよな、って<span class="user-name"></span>さんのことを必死になだめようとしていた。泣いてる<span class="user-name"></span>さんも、なだめる重さんも、すごくつらそうで、オレだってなにかしてやりたかったけど、なんにも思いつかなかった。<br>
+　結局そのあと、すぐに舳丸さんが来て、重さんとオレが事情を説明して、その場はすぐにお開きになった。<span class="user-name"></span>さんは小松田さんに心配されるくらいずっと泣いたままで、そのまま重さんにおぶられたまま帰った。オレは三人が帰ったあと、ためしにもう一回七松先輩と滝夜叉丸先輩に確認してみたけど、二人とも口をそろえて「知らない」と言った。嘘じゃない、と思うけど、<span class="user-name"></span>さんの言っていたことも嘘じゃないんだと思う。どっちが本当かは、オレの小さな脳ミソじゃわからないまんまだった。<br>
+<br>
+　遅れて正門に来た乱太郎としんべヱにも話をしようと思ったし、二人からもなにがあったの、と訊かれた。でもオレは、さっきオレが見た全てのことをどうやったら二人に事細かに説明できるのかわからなかった。一から十まで説明したとしても、そこには足りない零とか十一とか、飛んじゃった十五とかがあるはずだ。その零とか十五の表しかたをオレは知らなかったから、結局二人には「帰った」以外の説明ができなかった。<br>
+　長屋で眠るときに、<span class="user-name"></span>さんの泣いてる顔が頭から離れなかった。オレたちに向けていたニコニコの顔とは全然違う、丸めたテスト用紙みたいにひどい顔。<br>
+<br>
+『かぞくにあいたい』<br>
+<br>
+　大人でもそんなことを思うんだな、とぼんやり思った。<br>
+　その日は夢に誰かが出てきて、オレはひどく懐かしい気持ちでその夢を楽しんでいたけれど、朝になったら内容はスッカリ忘れていた。でも<span class="user-name"></span>さんの泣き顔だけはやっぱり忘れらんなくて、オレは朝から頭をかきむしる破目になったのだった。<br>
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+    <!-- あとがきなど。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-common">
+        <p>あとがきなど。不要ならば削除。小説閲覧設定切り替えテンプレートです。</p>      
+      </div>
+    </div>
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="07-05.html">前へ</a> ｜ <a href="mahoroba.html">一覧へ戻る</a> ｜ <a href="09.html">次へ</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/main.html">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>

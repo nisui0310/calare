@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="まほろばのくにをみていた。">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/mahoroba-OGP.webp">
+    <meta property="og:title" content="まほろばのくに - 落日 | Kagami">
+    <meta property="og:description" content="まほろばのくにをみていた。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://calare.vercel.app/images/mahoroba-OGP.webp">
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <!-- 小説以外で最低限適用するベースのCSS。自分のサイトで使用しているCSSに差し替えても動きます。 -->
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <!-- 小説用のCSS -->
+  <link rel="stylesheet" href="novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+  <script defer src="/assets/js/name.js"></script>
+
+  <!-- ページタイトル -->
+  <title>乙女道五十三次｜まほろばのくに</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン 書き換え-->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">003</span>
+    <h1 class="novel-title">乙女道五十三次</h1>
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション 書き換え　-->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="02.html">前へ</a> ｜ <a href="mahoroba.html">一覧へ戻る</a> ｜ <a href="04.html">次へ</a>
+      </div>
+    </div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここまで 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+    
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+        <!-- 書き換え -->
+　水軍に居候してから一月ほど経ったころ、「なにか欲しいものはあるか」と訊ねられた私は「布ですね」と即答した。<br>
+<br>
+「布ぉ？　なんに使うってんだ」<br>
+「え、えーと……用途はちょっと」<br>
+<br>
+　居候とはいえど仕事はきちんとある。その一環である皿洗いをしている最中の私は、思わず言葉を濁した。質問してきた義丸さんは「ああ？」と限りなくガラの悪い返答をして、私の肩に手を回した。網問よりも大柄で筋肉質な義丸さんにのしかかられてはたまらない。<br>
+<br>
+「水軍は家族よりも固い絆で結ばれてるんだぞ。オレたちに言えないことなんてあっちゃいけねぇよなあ？」<br>
+「は、初耳……。私がタイムスリップしたことみんなに隠してるのに……」<br>
+「それはそれだろ」<br>
+<br>
+　うりうり、と頬をつつかれていじめられる。すごい！　この一ヶ月の間になにが！？　初対面で刃物を突きつけたとは思えぬビフォーアフター。私の頑張りが認められたっていうことでいいのだろうか。<br>
+　ぐだぐだもちもちうりうりしながら（されながら？）なんとか皿洗いを終えたワケだけど、それでもまだ義丸さんは引き下がらなかった。ふう、と一息ついてお茶を淹れたところで誤魔化せるハズもなく、じい、とその二枚目俳優のように色気のある瞳で見つめられる。う。う、うう。<br>
+<br>
+「……その。……し、下着がほしくて」<br>
+「下着？」<br>
+<br>
+　義丸さんは素っ頓狂な声をあげた。はい、と消え入りそうな声で頷く。真っ赤になった私の顔を、義丸さんは心底不可解そうな顔で見た。<br>
+<br>
+「女にゃ必要ないだろう。押さえるモンもねえんだし」<br>
+「と、とんでもないセクハラされました今？」<br>
+<br>
+　意味がわからない、という顔をする義丸さん。な、なにが悲しくて二十歳半ばのイケメンに自分の下着事情を話さなきゃならないんだ……！？<br>
+　けれどもこの時代の下着に対しての価値観やコンプライアンスに対しての意識が、私には計り知れぬほど現代と乖離しているのはわかっているので、もう小学生に説明する心持ちで説明する。現代には下着やプライベートゾーンというものがあり、単に体を隠すだけでなく衣服を清潔に保つためのものであり……、うんぬんかんぬん。今は毎日洗って干してを繰り返しているので、予備の下着がほしいということもつけ加えた。<br>
+<br>
+「その、大層なものでなくていいので。さらし……さらしってありますかね？　そういうの」<br>
+「ああ、おまえが部屋に干してる布きれか」<br>
+「────」<br>
+<br>
+　はい？<br>
+<br>
+「毎日部屋に干しているだろう。紺色の、ずいぶん装飾の凝った、」<br>
+「イヤ──ッギャ──ッキャア──ッッッ！！　ひっ、へんっ、変態！！」<br>
+「頭すり潰すぞ」<br>
+「ヤクザ──ッ！」<br>
+<br>
+　なに言ってんだおまえ、と呆れた顔の義丸さん。いや、いやいや、今あなたは変態の名を冠するにじゅうぶん相応しい言動でしたよ。布きれ？　布きれって言った？　サイズがないせいで専門販売店にまで行って買ってきた私のブラジャーのこと、あ、あなた、こともあろうに布きれと仰いました？　というかなぜ私が泣く泣く天日干しではなく部屋干しで済ませている下着の存在を知っているんですか？<br>
+<br>
+「ここの掃除は当番制だろう、みんな知ってるんじゃないか」<br>
+「し、しぬしかない」<br>
+「ア゙？」<br>
+「ひえっ、あっ、嘘、嘘ですっ」<br>
+<br>
+　しぬ、という単語を出した瞬間に、義丸さんは普段より三オクターブくらい低い声でドスをきかせてきた。あ、怖い、怖いですお客様！　胸ぐら掴まないで、はだける、まさにそのブラが見える！　たすけて！<br>
+　嘘つきましたあ、ごめんなさい、生き恥晒して生きます、と半泣きになる私をじっと見下ろした義丸さんは、パッ、と唐突に襟を離した。はあ……ふう……はあ……。<br>
+　来たばかりの頃の情緒不安定な時期に「もう死ぬ！」とか騒ぎまくっていたせいで、一月近く経ってもまだ水軍のみんなはその言葉に敏感だった。いや、その時の私が本気じゃなかったと言うワケじゃないけれど、現代人は感情表現がちょっと大袈裟なだけでしてね……あっあっ嘘、また嘘つきましたごめんなさい、もうなにも言いませんホントに。<br>
+<br>
+「と……とにかくですね、私にとっては生活必需品なんです」<br>
+<br>
+　はだけた胸元を直し、結論を再度伝える。義丸さんは目元を細めて、ふうん、といかにもぞんざいな様子で相槌を打った。年頃の娘がプライベートすぎる内容を話したのに、なんなんだその態度は。私が無駄に恥をかいただけじゃないか。<br>
+<br>
+「まあ──わかった。とにかく必要なんだろう？　明日は船を出さないから、一緒に町に行こう。買ってやるよ」<br>
+「え。本当にいいんですか？　いちおう自費で買う予定だったんですけど」<br>
+<br>
+　賄いも宿泊場所も提供してもらっているため、普通よりもだいぶん少ないけれど、お給料自体はもらえるそうだ。初のお給料は当然下着に突っこむつもりだった。<br>
+<br>
+「女のワガママは聞いてやるのが男だろ」<br>
+「義丸さんは港に女がいっぱいいるから、そういうこと言われたら無視しろよって鬼蜘蛛丸さんに言われました……」<br>
+「鬼さああん！　ちょっと話してえことがあるんですけど、ツラ貸してもらって良いですかァ！？」<br>
+<br>
+<br>
+　＋　＋<br>
+　<br>
+<br>
+「わぶっ」<br>
+「おっ、と……。危ないですよ」<br>
+<br>
+　あてがわれている自室から急いで外に出ると、たまたま通りがかった誰かとぶつかった。相手は微動だにしなかったどころか、くぐもった悲鳴をあげて後ろに倒れかけた私を支えてくれた。いたた、とぶつかった額を押さえながら「ご、ごめんなさい、舳丸さん」と彼の名を呼ぶ。<br>
+　切れ長で三白眼ぎみの瞳は、その第一印象よりもずっと柔らかく細められて「いえ」と私が気負わないように気遣いを見せた。シャープな線を描く鼻梁や薄い唇、義丸さんとはまた違ったタイプの美丈夫である彼に抱き止められているのも気まずく、すみません、と再度謝りながら自分の足で立つ。<br>
+　き、気まずいな〜……。舳丸さんとはちょっと、いや結構いろいろあったから、時間が経った今でも気まずい。<br>
+<br>
+「どこかへ行くんですか？」<br>
+「はい、あの……町に出かけようと」<br>
+「ああ。俺も買い出しに行くので、一緒に行きましょうか」<br>
+「あ。ええと」<br>
+<br>
+　言い淀む。義丸さんと先に約束しているから、断った方がいいだろうか。でも二人きりで行こうって約束したワケじゃないし、断る方がおかしいかな。<br>
+　なんと言おうか迷っている私に、舳丸は一瞬怪訝そうな顔をしてから、「髪は結ばないんですか」とさらに訊ねた。う。ええと。<br>
+<br>
+「もしかして、まだ結べないんですか？」<br>
+「お、お恥ずかしながら」<br>
+<br>
+　この時代は男女関わらず、基本的にみな長髪である。髪を結ぶには組紐や元結と呼ばれる紙（巫女さんが髪を結ぶようなやう）を使っており、それは私にも貸し与えられているのだけれど、現代の髪ゴムに慣れきってしまった私には扱いづらいことこのうえない代物だった。引っ張ったら破れちゃいそうで怖いし、伸縮性のない物質でどうやって髪を結べばいいのか。<br>
+<br>
+「いや、この前重たちが教えてたでしょう」<br>
+「ぐう」<br>
+「ぐうの音……？」<br>
+<br>
+　重や網問、不器用代表みたいな顔をしている（ド偏見）間切でさえ、そのボサボサな髪を軽々組紐で結ぶのだ。朝の支度に毎朝洗面所を占有して三面鏡を使いながら髪を結んでいた私に、そんなことができるはずもない。そうだ、こういうのって髪がからまってる方が結びやすそうだし。私がサラツヤキューティクル満タンストレートなせいだね。うんうん。そういうことにしておこう。<br>
+　だいたい、教えてもらって一回でできるようなら塾や予備校なんていらないのだ。できないほうが普通だし、というか別に結んでいたっていなくたって変わらないし。<br>
+<br>
+「食事の支度のときは結んでいるでしょう」<br>
+「それは網問が結んでくれるので……」<br>
+「…………」<br>
+<br>
+　い、いたっ。沈黙が痛い。舳丸さんの冷たい視線も痛い。違う、だって、別に私から頼んでいるワケではなくてですね。網問がやってあげるよって言うので、人からのご厚意を断るのも悪いっていうモンじゃないですか、それにああいう年頃の子って自分ができることを年上に見せびらかしたくなるものでしょ、そういう心理も考慮してですね……。<br>
+　もごもごむにゃむにゃと言い訳を並べる私を、やっぱり冷めた目で見下げた舳丸さんは、すっと私の髪を触った。距離の近さに、思わず息を呑んで身を引く。舳丸さんはそんな私に眉を上げつつ、「俺が結びましょうか」と言った。へ？<br>
+<br>
+「いえ、そんな。舳丸さんに結んでもらうほどでは」<br>
+「時間も取りません。すぐ終わりますよ」<br>
+「いや時間とかそういう話ではなく」<br>
+<br>
+　単純に私の不出来が理由でそんなことをさせるのは、流石に申し訳ない。いえ本当にいいです、という私の拒絶も飽きたのか、肩を掴んでくるりと反転させられる。え、な、私の体幹弱すぎ……？<br>
+　何度か手櫛を通される感触がする。「綺麗な髪ですね」と掠れた低音で言われたのは、流石に口説かれているかと勘違いしそうだった。すべて計算尽くしでやっていそうな義丸さんとは違い、本当にそう思って口に出しただけ、みたいな舳丸さんはむしろタチが悪い。<br>
+<br>
+「常に海に入っている皆さんよりは、そりゃあクセもないですよ」<br>
+「そうですか？　町人と比べても綺麗だと思いますよ」<br>
+<br>
+　な、なんていう男なんだ舳丸……。当たり障りなく受け流したというのに、なおも追撃を喰らわせてきた。私が取りうる手段はもはや沈黙しかない。そりゃあ褒めてもらえるのは嬉しいけれど、あまりにもストレートな言い方だとやっぱりちょっと恥ずかしい。<br>
+　幸運なことに舳丸さんもそれ以上なにかを言うことはなく、すぐにキュッと髪をくくられる感覚があった。本人の申告どおり、確かに手際が良い。手を後ろに回して触れてみると、水軍のみんなのように頭近くで結ばれているのではなく、余裕をもたせてすこし下の方で結ばれていた。ああ、確かに昔の女性はこんな髪型をしていたような、と思う。髪の長いほうが好きということはなく、単に幼馴染が髪は長くしておけってうるさいから切っていなかっただけなのだが、この時代に馴染むためには言う通りにしていて良かった。<br>
+<br>
+「すみません、ありがとうございます。お上手ですね」<br>
+「毎日結んでいれば上手くなりますよ。<span class="user-name"></span>さんも練習しておいたほうがいい」<br>
+<br>
+　歩み出した舳丸さんに小走りでついていく。全くもってその通りだ。はい、とちょっとシュンとする。<br>
+<br>
+「給料はもうもらったんです？」<br>
+「ああ、いえ、それはまだ」<br>
+<br>
+　舳丸さんは不思議そうな顔をした。お金もないのに町に出かける理由がわからないのだろう。今日は義丸さんが、と言いかけたところで、またもやごつんと額がぶつかる。や、厄日？　私の危機察知能力ってひょっとしてカカポ並みにない感じ？<br>
+　たたらを踏む私の頭をガシリ、とわしづかみにして「遅いぞ」と文句を言うのは、なにを隠そう義丸さんであった。頭の位置を固定されているせいで表情はうかがえないが、どちらかというとからかっている声音だ。少なくとも怒っているよりは助かる。<br>
+<br>
+「いたっ、ちょっ、ごめんなさいごめんなさい！　ただいま参りました！　はい！」<br>
+「兄貴。どうしたんです」<br>
+「舳丸こそ。出かけるのか」<br>
+「ど、どうして私の頭をわしづかみにしたまま話が……！？」<br>
+<br>
+　ぺちぺちと義丸さんの丸太のような腕を叩いて、半泣きになりながら懇願することでようやく頭蓋骨を解放してもらう。砕けるところだった、冗談抜きで。義丸さん私の頭のことなんだと思ってるの？　ひょっとして筋トレの道具だと勘違いしてる？<br>
+　舳丸さんはさっきの私への返答と同じように「買い出しです」と言った。<br>
+<br>
+「塩がそろそろ足りなくなってきたので。調味料を補充してこいと、お頭が」<br>
+「なるほどな。……で、なんでおまえは遅かったんだ」<br>
+「わ、わざとじゃないんですう、舳丸さんに髪を結んでもらっていただけで」<br>
+<br>
+　義丸さんは今日はじめて驚いた顔を見せる。「おまえが？」と訊ねられた舳丸さんは、なにか問題でも、といった顔で「はい」と頷いた。ヘェ、と口角をあげる義丸さん。<br>
+<br>
+「女の髪を結ぶ趣味があるとはな。オレはほどく趣味しかないんでわからなかった」<br>
+「拾ったモンの面倒は、拾ったヤツが最後までみるものでしょう」<br>
+「え……。え？　な、なんの話してます？　それ私？」<br>
+<br>
+　話の流れは完全に私の話だと思ったけど、義丸さんは私のことを全く女扱いしないし、舳丸さんに至ってはペットを飼う時に子どもが親から百回くらい注意されるようなことを言っている。私じゃないよね。舳丸さんは私のことペットだなんて思ってないもんね、と不安の滲む目で二人を見上げた。<br>
+　義丸さんは「まあいいさ」と軽く肩をすくめる。<br>
+<br>
+「オレと<span class="user-name"></span>は二人きりで出かける予定だったんでね。邪魔さえしなけりゃ一緒に来てもいいぜ」<br>
+<br>
+　いえ、別に二人きりまでは言ってないんですが。<br>
+<br>
+「町に行くなら義丸の兄貴にも荷物持ちはしてもらいますよ。どうせ大したもの買わないでしょう」<br>
+「おい<span class="user-name"></span>、聞いたか。こいつおまえの下着を大したもんじゃないってよ」<br>
+「世が世ならセクハラで社会的に死んでますよ義丸さん」<br>
+<br>
+　下着？　と怪訝な顔をした舳丸さんをなんでもないですの一点張りで通した。<br>
+　結局、義丸さんは前日の約束通り私の望むぶんの生地を購入してくれて、舳丸さんが買った味噌の壷も持ってやっていた。ときおり言い合いになったりしているのを見る二人だけれど、やはり長年の付き合いというだけあって、二人にとってはじゃれ合いに等しいものなのだろう。良かったなと思った。はやく慣れなきゃな。私だってもう、助けてもらうばかりじゃいけないから。<br>
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+    <!-- あとがきなど。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-common">
+        <p>あとがきなど。不要ならば削除。小説閲覧設定切り替えテンプレートです。</p>      
+      </div>
+    </div>
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="02.html">前へ</a> ｜ <a href="mahoroba.html">一覧へ戻る</a> ｜ <a href="03.html">次へ</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/main.html">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>
