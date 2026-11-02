@@ -1,0 +1,339 @@
+/* ---------------------------------------- 
+   UTF-8 エンコーディング指定
+---------------------------------------- */
+@charset "UTF-8";
+
+/* ---------------------------------------- 
+   Google Fonts 読み込み
+---------------------------------------- */
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Noto+Serif+JP&display=swap');
+
+/* ---------------------------------------- 
+   全体リセット & ベース設定
+---------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-family: 'EB Garamond', 'Noto Serif JP', serif;
+}
+
+body {
+    text-align: justify;
+    word-break: break-all;
+    background-color: #fff;
+    line-height: 1.7;
+    letter-spacing: 0.1em;
+    font-size: 13px;
+    color: #000;
+}
+
+/* ---------------------------------------- 
+   背景固定
+---------------------------------------- */
+body::before {
+    position: fixed;
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    width: 100%;
+    height: 100vh;
+    background: url('/images/syura.webp'); /* 背景画像指定 */
+    background-size: cover; /* 画面全体にフィットさせる */
+}
+
+/* ---------------------------------------- 
+   リンク設定
+---------------------------------------- */
+
+
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: #363062;
+}
+
+/* ---------------------------------------- 
+   ヘッダー
+---------------------------------------- */
+header {
+    margin: 40vh auto 20vh;
+    padding-right: 5%;
+}
+
+header h1 {
+    margin-bottom: 3em;
+    text-align: right;
+    letter-spacing: 0.5em;
+    text-shadow: 5px 5px 0 #fff;
+    font-size: 1.2em;
+    color: #4D4C7D;
+    animation: FadeIn 4s;
+}
+
+/* ---------------------------------------- 
+   ナビゲーション
+---------------------------------------- */
+nav ul li {
+    position: relative;
+    margin: 1em auto;
+    list-style-type: none;
+}
+
+nav ul li::before {
+    position: absolute;
+    content: '';
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 0.7px;
+    background-color: #000;
+}
+
+nav ul li a {
+    text-shadow: 2px 2px 1px #fff;
+}
+
+nav ul li {
+    text-shadow: 1px 1px 0.7px #fff;
+}
+
+nav ul li a,
+nav ul li span {
+    margin-left: 60px;
+}
+
+nav ul li span {
+    color: #808080;
+}
+
+/* ---------------------------------------- 
+   セクション
+---------------------------------------- */
+section {
+    margin: 3em auto;
+    padding: 3em;
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+}
+
+section h2 {
+    position: relative;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+section h2::before {
+    position: absolute;
+    content: '';
+    display: block;
+    bottom: -0.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 1px;
+    background-color: #000;
+}
+
+/* セクション内共通装飾 
+section a:not(.link) {
+    text-decoration: underline;
+}
+*/
+section span {
+    border-bottom: thin dashed #c0c4fc;
+}
+
+section mark {
+    background: linear-gradient(transparent 60%, #dce4fc 40%);
+}
+
+section em {
+    padding: 0.2em 0.5em;
+    background-color: #fff;
+    font-style: normal;
+    font-weight: bold;
+}
+
+section strong {
+    font-weight: bold;
+    color: red;
+}
+
+section p,
+section dl,
+section ul,
+footer {
+    margin: 1em auto 1.5em;
+}
+
+section dd {
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+section ul {
+    list-style-type: none;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 5px solid #dce4fc;
+}
+
+/* フロートリスト */
+.float li {
+    margin-right: 1em;
+    float: left;
+}
+
+.float::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+/* ---------------------------------------- 
+   フッター
+---------------------------------------- */
+footer {
+    text-align: center;
+}
+
+/* 枠線リンク */
+.link {
+    display: inline-block;
+    margin: 0.2em auto;
+    padding: 0.2em 0.5em;
+    border: thin solid #000;
+}
+
+/* ---------------------------------------- 
+   フォーム系
+---------------------------------------- */
+textarea,
+input[type] {
+    -webkit-appearance: none;
+    padding: 0.2em 0.5em;
+    background-color: #fff;
+    border: thin solid #000;
+    border-radius: 0;
+}
+
+textarea {
+    width: 280px;
+    height: 200px;
+}
+
+input[type=text] {
+    width: 80px;
+}
+
+input[type=submit] {
+    width: auto;
+}
+
+/* ---------------------------------------- 
+   アニメーション
+---------------------------------------- */
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ---------------------------------------- 
+   レスポンシブ設定
+---------------------------------------- */
+
+/* 横幅768px以上 */
+@media screen and (min-width:768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul li a {
+        font-size: 1.2em;
+    }
+}
+
+/* 横幅1024px以上 */
+@media screen and (min-width:1024px) {
+    header,
+    nav,
+    section {
+        max-width: 800px;
+    }
+}
+
+/* ================================
+   top navigation
+================================ */
+
+/* nav共通の影響を打ち消す */
+.top-nav ul li {
+    position: static;              /* relative解除 */
+    margin: 0 0.6rem;              /* 再指定 */
+    list-style-type: none;
+    display: inline-block;
+}
+
+/* 擬似要素の下線を消す */
+.top-nav ul li::before {
+    content: none;                 /* ← これで完全削除 */
+}
+
+/* 既存 text-shadow を消す */
+.top-nav ul li a {
+    text-shadow: none;
+}
+
+/* 既存 margin-left:60px を解除 */
+.top-nav ul li a,
+.top-nav ul li span {
+    margin-left: 0;
+}
+
+/* span色のリセット */
+.top-nav ul li span {
+    color: inherit;
+}
+
+/* ---------------------------- */
+
+.top-nav {
+    display: block;
+    position: relative;
+    text-align: center;
+    background: transparent;
+    width: 100%;
+    z-index: 100;
+    margin: 2rem 0 6rem;
+    font-family: 'Roboto Condensed', 'Noto Sans JP', sans-serif;
+}
+
+.top-nav ul {
+    margin: 0 auto;
+    padding-left: 0;
+    display: inline-block;
+}
+
+.top-nav a {
+    border-bottom: none !important;
+    color: #363062;
+    font-size: 1.3em;
+    text-transform: uppercase;
+}
