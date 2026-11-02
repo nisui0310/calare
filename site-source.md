@@ -22,14 +22,14 @@
     <meta name="description" content="忘れてしまいたい。">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://calare.vercel.app/images/ogp.png">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
     <meta property="og:title" content="落日 | Kagami">
     <meta property="og:description" content="忘れてしまいたい。">
     <meta property="og:url" content="https://calare.vercel.app/">
     <meta property="og:site_name" content="落日">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name=”twitter:image” content="https://calare.vercel.app/images/ogp.png">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
 
     <!-- title -->
     <title>Article - 落日 | Kerry</title>
@@ -2240,14 +2240,14 @@ document.addEventListener("DOMContentLoaded", function(){
     <meta name="description" content="忘れてしまいたい。">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://calare.vercel.app/images/ogp.png">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
     <meta property="og:title" content="落日 | Kagami">
     <meta property="og:description" content="忘れてしまいたい。">
     <meta property="og:url" content="https://calare.vercel.app/">
     <meta property="og:site_name" content="落日">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name=”twitter:image” content="https://calare.vercel.app/images/ogp.png">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
 
     <!-- title -->
     <title>Elements - 落日 | Kerry</title>
@@ -2591,14 +2591,14 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
     <meta name="description" content="忘れてしまいたい。">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://calare.vercel.app/images/ogp.png">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
     <meta property="og:title" content="落日 | Kagami">
     <meta property="og:description" content="忘れてしまいたい。">
     <meta property="og:url" content="https://calare.vercel.app/">
     <meta property="og:site_name" content="落日">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name=”twitter:image” content="https://calare.vercel.app/images/ogp.png">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
 
     <!-- title -->
     <title>Information - 落日 | Kerry</title>
@@ -2822,14 +2822,14 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
     <meta name="description" content="忘れてしまいたい。">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://calare.vercel.app/images/ogp.png">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
     <meta property="og:title" content="落日 | Kagami">
     <meta property="og:description" content="忘れてしまいたい。">
     <meta property="og:url" content="https://calare.vercel.app/">
     <meta property="og:site_name" content="落日">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name=”twitter:image” content="https://calare.vercel.app/images/ogp.png">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
 
     <!-- title -->
     <title>Long - 落日 | Kerry</title>
@@ -2994,14 +2994,14 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
     <meta name="description" content="忘れてしまいたい。">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://calare.vercel.app/images/ogp.png">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
     <meta property="og:title" content="落日 | Kagami">
     <meta property="og:description" content="忘れてしまいたい。">
     <meta property="og:url" content="https://calare.vercel.app/">
     <meta property="og:site_name" content="落日">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name=”twitter:image” content="https://calare.vercel.app/images/ogp.png">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
 
     <!-- title -->
     <title>Main contents - 落日 | Kerry</title>
@@ -3286,14 +3286,14 @@ document.getElementById("usernameForm")?.addEventListener("submit", function(e){
     <meta name="description" content="忘れてしまいたい。">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://calare.vercel.app/images/ogp.png">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
     <meta property="og:title" content="落日 | Kagami">
     <meta property="og:description" content="忘れてしまいたい。">
     <meta property="og:url" content="https://calare.vercel.app/">
     <meta property="og:site_name" content="落日">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name=”twitter:image” content="https://calare.vercel.app/images/ogp.png">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
 
     <title>Main contents - 落日 | Kagami</title>
     <!-- stylesheet -->
@@ -3561,14 +3561,14 @@ document.getElementById("usernameForm")?.addEventListener("submit", function(e){
     <meta name="description" content="忘れてしまいたい。">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://calare.vercel.app/images/ogp.png">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
     <meta property="og:title" content="落日 | Kagami">
     <meta property="og:description" content="忘れてしまいたい。">
     <meta property="og:url" content="https://calare.vercel.app/">
     <meta property="og:site_name" content="落日">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name=”twitter:image” content="https://calare.vercel.app/images/ogp.png">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
 
     <!-- title -->
     <title>Main contents - 落日 | Kerry</title>
@@ -3976,14 +3976,14 @@ document.getElementById("usernameForm")?.addEventListener("submit", function(e){
     <meta name="description" content="忘れてしまいたい。">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://calare.vercel.app/images/ogp.png">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
     <meta property="og:title" content="落日 | Kagami">
     <meta property="og:description" content="忘れてしまいたい。">
     <meta property="og:url" content="https://calare.vercel.app/">
     <meta property="og:site_name" content="落日">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name=”twitter:image” content="https://calare.vercel.app/images/ogp.png">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
 
     <!-- title -->
     <title>Main contents - 落日 | Kerry</title>
@@ -4347,14 +4347,14 @@ document.getElementById("usernameForm")?.addEventListener("submit", function(e){
     <meta name="description" content="忘れてしまいたい。">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://calare.vercel.app/images/ogp.png">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
     <meta property="og:title" content="落日 | Kagami">
     <meta property="og:description" content="忘れてしまいたい。">
     <meta property="og:url" content="https://calare.vercel.app/">
     <meta property="og:site_name" content="落日">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name=”twitter:image” content="https://calare.vercel.app/images/ogp.png">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
 
     <!-- title -->
     <title>Notebook - 落日 | Kerry</title>
@@ -6389,14 +6389,14 @@ footer a {
     <meta name="description" content="忘れてしまいたい。">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://calare.vercel.app/images/ogp.png">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
     <meta property="og:title" content="落日 | Kagami">
     <meta property="og:description" content="忘れてしまいたい。">
     <meta property="og:url" content="https://calare.vercel.app/">
     <meta property="og:site_name" content="落日">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name=”twitter:image” content="https://calare.vercel.app/images/ogp.png">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
 
     <!-- title -->
     <title>Novel - 落日 | Kerry</title>
