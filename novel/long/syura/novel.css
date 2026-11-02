@@ -644,3 +644,25 @@ aside.n-common {
 }
 
 
+/* =============================== */
+/* 小説ページ背景設定（固定背景＋透明ヘッダー） */
+/* =============================== */
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)),  /* 文字を読みやすくする白い膜 */
+        url("/images/syura.webp") center / cover no-repeat;
+}
+
+
+header, footer {
+  background-color: transparent !important;
+  z-index: 10;
+}
