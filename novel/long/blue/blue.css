@@ -1,74 +1,1641 @@
 @charset "UTF-8";
 
-/* ===================================================================
-   blue/assets/css/style.css
-   ・サイト全体レイアウト
-   ・星空・流れ星背景アニメーション
-   ・ナビゲーション・余白パーツ
-   =================================================================== */
+/* Template & Designed by Orihashi Ren */
+/* http://kerry.php.xdomain.jp/ */
 
-/* -------------------------------------------------------------------
-   1. Webフォントインポート & 全体リセット
-   ------------------------------------------------------------------- */
-@import url('[suspicious link removed]');
+/* webフォント */
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&family=Roboto:ital@0;1&display=swap');
 
+/* 全体設定 */
 * {
     padding: 0;
     margin: 0;
+}
+*, *::after, *::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    -ms-overflow-style: none;    /* スクロールバー非表示（IE, Edge） */
-    scrollbar-width: none;       /* スクロールバー非表示（Firefox） */
+}
+* {
+    -ms-overflow-style: none;    /* IE, Edge 対応 */
+    scrollbar-width: none;       /* Firefox 対応 */
+}
+*::-webkit-scrollbar{  /* Chrome, Safari 対応 */
+    display: none;
+}
+@-ms-viewport {
+    width: device-width;
 }
 
-*::-webkit-scrollbar {
-    display: none;              /* スクロールバー非表示（Chrome, Safari） */
-}
+/* 基本設定 */
 
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;}
+html,body {
+    padding:0;
+    margin:0;
+    height: 100%;
+}
 html {
+
     font-size: 16px;
 }
-@media screen and (max-width: 1280px) { html { font-size: 14px; } }
-@media screen and (max-width: 360px)  { html { font-size: 13px; } }
-
+@media screen and (max-width: 1680px) {
+    html {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+}
 body {
     width: 100%;
     text-align: justify;
-    word-wrap: break-word;
+    word-wrap: break-word; /* 禁則処理 */
     overflow-wrap: break-word;
+    -webkit-text-size-adjust: 100%; /* Safari横向き対策 */
     background-color: #fff;
     color: #fff;
-    font-family: 'Roboto', "Hiragino Sans W3", "ヒラギノ角ゴ ProN W3", "メイリオ", sans-serif;
+    font-family: 'Roboto',"Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+@media screen and (max-width: 480px) {
+    html, body {
+        min-width: 320px;
+    }
+}
+body, input, select, textarea {
+    font-weight: 400;
+    font-size: 1rem;
     line-height: 1.7rem;
     letter-spacing: 0.055em;
 }
+@media screen and (min-width: 768px) {
+    body, input, select, textarea {
+        font-size: 1rem;
+    }
+}
 
-/* -------------------------------------------------------------------
-   2. リンク・文字装飾設定
-   ------------------------------------------------------------------- */
+/* リンク */
 a {
+    -moz-transition: color .8s ease-in-out, background-color .8s ease-in-out, border-bottom-color .8s ease-in-out;
+    -webkit-transition: color .8s ease-in-out, background-color .8s ease-in-out, border-bottom-color .8s ease-in-out;
+    -ms-transition: color .8s ease-in-out, background-color .8s ease-in-out, border-bottom-color .8s ease-in-out;
     transition: color .8s ease-in-out, background-color .8s ease-in-out, border-bottom-color .8s ease-in-out;
     border-bottom: dotted 1px #D7CAC8;
     text-decoration: none;
-    color: #7583A2; /* 基本リンク色 */
+    outline: none;
+    color: #7583A2;
 }
 a:hover {
     border-bottom-color: transparent;
-    color: #AD8F9F; /* ホバー時カラー */
+    color: #AD8F9F;
 }
 
-strong { color: #E20613; font-weight: 700; }
-em     { font-style: italic; border-bottom: 1px dashed #E20613; }
+/* 文字装飾 */
+strong, b, .b {
+    font-weight: 700; /*太字*/
+}
+strong {
+    color: #E20613;
+}
+em, i {
+    font-style: italic; /*斜体*/
+}
+em {
+    border-bottom: 1px dashed #E20613;
+}
 
-/* -------------------------------------------------------------------
-   3. レイアウト余白補助クラス（自由に高さ調整可能）
-   ------------------------------------------------------------------- */
-.space-sm { height: 0.5rem; }  /* 小さめの余白 */
-.space-md { height: 1.0rem; }  /* 標準の余白 */
-.space-lg { height: 2.0rem; }  /* 見出し前の大きな余白 */
+/* text */
+p {
+    text-align: justify;
+    margin: 0 0;
+    padding: 0rem 0;
+    line-height: 1.7rem; /*行間*/
+}
+h1, h2, h3, h4, h5, h6,
+.h3, .h5 {
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.7rem;
+    letter-spacing: 0.055em; /*文字間隔*/
+    font-family: 'Nova Square', "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    border-bottom: 0;
+    color: inherit;
+    text-decoration: none;
+}
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin: 1rem 0rem 1rem;
+}
+h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin: 1rem 0rem 1rem;
+}
+h3 {
+    font-size: 1.3rem;
+    margin: 1rem 0rem 1rem;
+}
+h4 {
+    font-size: 1.2rem;
+    margin: 1rem 0rem 1rem;
+}
+h5 {
+    font-size: 1.1rem;
+    margin: 1rem 0rem 1rem;
+}
+h6 {
+    font-size: 1.05rem;
+    margin: 1rem 0rem 1rem;
+}
 
-/* -------------------------------------------------------------------
-   4. ナビゲーションバー (nav)
-   ------------------------------------------------------------------- */
+/* 上付き */
+sub {
+    font-size: 0.6rem;
+    position: relative;
+    top: 0.5rem;
+}
+/* 下付き */
+sup {
+    font-size: 0.6rem;
+    position: relative;
+    top: -0.5rem;
+}
+
+/* マーカー */
+mark {
+    display: inline-block;
+    padding: .1rem .5rem;
+    margin: 0rem 0;
+    background: linear-gradient(transparent 10%, #7583A2 10%);
+    color: #fff;
+    text-shadow: none;
+}
+
+/* 引用 */
+blockquote {
+    position: relative;
+    padding: 5px 15px 5px 55px;
+    box-sizing: border-box;
+    font-style: italic;
+    border-radius: 0px;
+    color: #141c1c;
+    background: rgba(255,255,255,.7);
+}
+blockquote:before{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 8px;
+    width: 38px;
+    height: 30px;
+    text-align: center;
+    content: "\f10d";
+    font-family: "Font Awesome 5 Free";
+    color: #fff;
+    font-size: 18px;
+    line-height: 30px;
+    background: #7583A2;
+    font-weight: 900;
+}
+blockquote:after{
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 30px;
+    height: 0;
+    width: 0;
+    border-left: 19px solid #7583A2;
+    border-right: 19px solid #7583A2;
+    border-bottom: 10px solid transparent;
+}
+blockquote p {
+    position: relative;
+    padding: 0;
+    margin: 10px 0;
+    z-index: 3;
+    line-height: 1.7;
+}
+blockquote cite {
+    display: block;
+    text-align: right;
+    font-size: 0.9em;
+    color: #888888;
+    opacity: .8;
+}
+
+/* コード */
+code {
+    border: none;
+    font-family: "Courier New", monospace !important;
+    margin: 0 0.25rem;
+    padding: 0.25rem 0.65rem;
+    background: rgba(255,255,255, .7);
+    border: solid 1px #eeeeee;
+    color: #000417;
+}
+pre {
+    width :100% !important;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    text-align: left;
+    font-family: "Courier New", monospace !important;
+    margin: .5rem 0;
+}
+pre code {
+    width: 100% !important;
+    overflow-x: auto;
+    display: block;
+    line-height: 1.5;
+    padding: .25rem 1.5rem;
+    box-sizing: border-box !important;
+}
+
+/* 区分線 */
+hr {
+    border: 0;
+    border-bottom: solid 2px;
+    margin: 3rem 0rem;
+    border-bottom-color: #fff;
+}
+
+/* 文字揃え */
+/*  <span class="align-center">例</span> 等と使用してください  */
+.align-left {
+    text-align: left;
+}
+.align-center,
+.align-center p {
+    text-align: center;
+}
+.align-right {
+    text-align: right;
+}
+
+/* Box */
+.box {
+    text-align: left;
+    width: 100%;
+    height: auto;
+    margin: 3rem 0rem;
+    padding: 1.5rem;
+    border-radius: 0px;
+}
+.box-1 {
+    border: 1px solid #fff;
+    background: transparent;
+}
+.box-2 {
+    border: 1px solid #7583A2;
+    background: #7583A2;
+    color: #fff;
+}
+.box > p {
+    padding: 0 0;
+    text-shadow: none;
+}
+
+/* lists */
+ol, ul {
+    text-align: left;
+    margin: .5rem 0;
+    list-style: none;
+}
+.list_no {
+    list-style: none;
+}
+.list_un {
+    list-style: disc;
+}
+.list_or {
+    list-style: decimal;
+}
+.list_no > li,
+.list_un > li,
+.list_or > li {
+    margin: 0 0 0 2rem;
+    line-height: 1.5rem;
+    padding-left: .5rem;
+    text-align: left;
+}
+.float {
+    margin: 0;
+}
+.float li {
+    float: left;
+    margin: 0 0.5rem;
+}
+.float:after {
+    display: block;
+    content: '';
+    clear: both
+}
+
+/* dl */
+dl {
+    text-align: left;
+}
+.dltype1 {
+    text-align: left;
+    margin: 0.5rem 1rem;
+}
+.dltype1 > dt a,
+.dltype1 > dt {
+    color: #7583A2;
+    font-size: 1rem;
+    border-bottom: none;
+}
+.dltype1 > dd {
+    margin-left: 1.3rem;
+    font-size: 1rem;
+}
+
+/* table */
+.table_div {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    margin: 0 0rem;
+}
+table {
+    margin: 0rem 0rem;
+    width: 100%;
+}
+table thead {
+    border-bottom: solid 2px #231d25;
+}
+table tbody tr {
+    border: solid 1px;
+    border-left: 0;
+    border-right: 0;
+    border-color: #231d25;
+}
+table tbody tr:nth-child(odd) {
+    background-color: rgba(255,255,255, .7);
+    color: #141c1c;
+}
+table td {
+    padding: 0.75rem 0.75rem;
+}
+table th {
+    font-family: 'Roboto',"Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.075em;
+    line-height: 1.5;
+    padding: 0 0.75rem 0.75rem 0.75rem;
+    text-align: left;
+}
+table tfoot {
+    border-top: solid 2px;
+    border-top-color: #eeeeee;
+}
+@media screen and (max-width: 980px) {
+    table th {
+        font-size: 0.9rem;
+    }
+}
+
+/* link button */
+.link {
+    display: inline-block;
+    height: 25px;
+    line-height: 21px;
+    margin: .2rem auto;
+    padding: .1rem .3rem;
+    border-radius: 5px;
+    border: 1px solid #7583A2 !important;
+    color: #7583A2 !important;
+    transition: all .5s;
+}
+.link:hover {
+    background-color: #7583A2;
+    color: #fff !important;
+}
+.btn {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    position: relative;
+    white-space: nowrap;
+    border: none;
+    margin: 1rem;
+    padding: 9px 24px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.1rem;
+    font-weight: 400;
+    border-radius: 4px;
+    text-decoration: none;
+    -webkit-transition: all .5s  !important;
+    transition: all .5s !important;
+    -moz-transition: all .5s !important;
+    font-family: 'Roboto',"Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif　!important;
+}
+.btn-1 {
+    background: #7583A2;
+    border: 1px solid #7583A2;
+    color: #fff !important;
+}
+.btn-1:hover {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #7583A2 !important;
+}
+.btn-2 {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #7583A2 !important;
+}
+.btn-2:hover {
+    background: #7583A2;
+    border: 1px solid #7583A2;
+    color: #fff !important;
+}
+.btn-3 {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #97A8CA !important;
+}
+.btn-3:hover {
+    background: #D7CAC8;
+    border: 1px solid #D7CAC8;
+    color: #fff !important;
+}
+.btn-1:hover svg {
+    fill: #7583A2;
+}
+.btn svg {
+    position: relative;
+    left: -4px;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: top;
+    font-weight: normal;
+    margin: 2px 0;
+    fill: #fff;
+    transition: all .5s;
+}
+
+/* form */
+form {
+    text-align: center;
+}
+.box-a {
+    max-width: 340px;
+    margin: 1rem auto;
+    padding: 0rem;
+    border: 1px solid transparent;
+    background: transparent;
+}
+input[type=text],
+textarea {
+    outline: none;
+    display: block;
+    width: 100%;
+    -webkit-appearance: none;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,1);
+    border-radius: 4px;
+    padding: 8px 16px;
+    line-height: 22px;
+    color: #fff;
+}
+input[type=text]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: rgba(255,255,255,.8);
+}
+input[type=text]::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: rgba(255,255,255,.8);
+}
+input[type=text]:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: rgba(255,255,255,.8);
+}
+input[type=text]::placeholder,
+textarea::placeholder {
+    color: rgba(255,255,255,.8);
+}
+input[type],
+textarea,
+.cp_ipselect select {
+    -moz-transition: border-color .4s ease-in-out, box-shadow .4s ease-in-out, background-color .4s ease-in-out;
+    -webkit-transition: border-color .4s ease-in-out, box-shadow .4s ease-in-out, background-color .4s ease-in-out;
+    -ms-transition: border-color .4s ease-in-out, box-shadow .4s ease-in-out, background-color .4s ease-in-out;
+    transition: border-color .4s ease-in-out, box-shadow .4s ease-in-out, background-color .4s ease-in-out;
+    font-family: 'Roboto',"Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif !important;
+}
+input[type=text]:focus,
+textarea:focus,
+.cp_ipselect select:focus {
+    outline: none;
+    border-color: rgba(255,255,255,1);
+    background: rgba(255,255,255,.25);
+    color: #fff;
+}
+.form-element {
+    margin-bottom: 20px;
+}
+form label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: var(--text-color-headline);
+    font-weight: 500;
+}
+.cp_ipselect {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.cp_ipselect select {
+    width: 100%;
+    padding-right: 1em;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-image: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.cp_ipselect select::-ms-expand {
+    display: none;
+}
+.cp_ipselect.cp_sl01 {
+    position: relative;
+    border: 1px solid rgba(255,255,255,1);
+    border-radius: 4px;
+    background: transparent;
+}
+.cp_ipselect.cp_sl01::before {
+    position: absolute;
+    top: 0.8em;
+    right: 0.9em;
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(255,255,255,.5);
+    pointer-events: none;
+}
+.cp_ipselect.cp_sl01 select {
+    padding: 8px 38px 8px 8px;
+    color: rgba(255,255,255,.6)
+}
+.cp_ipselect select option{
+    background-color: #7583A2;
+    color: #fff;
+}
+
+/*-------------------- index --------------------*/
+
+/* background */
+/*
+.bg {
+    position: fixed;
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-image: -o-linear-gradient(to bottom, #1B2735 0%, #090A0F 100%);
+    background-image: -moz-linear-gradient(to bottom, #1B2735 0%, #090A0F 100%);
+    background-image: -webkit-linear-gradient(to bottom, #1B2735 0%, #090A0F 100%);
+    background-image: -ms-linear-gradient(to bottom, #1B2735 0%, #090A0F 100%);
+    background-image: linear-gradient(to bottom, #1B2735 0%, #090A0F 100%);
+    z-index: -1000;
+}
+*/
+
+
+/* background */
+.bg {
+    position: fixed;
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+
+    background-image: linear-gradient(17deg, rgba(253, 181, 206, 1) 3%, rgba(199, 164, 199, 1) 9%, rgba(44, 116, 179, 1) 31%, rgba(32, 82, 149, 1) 46%, rgba(20, 66, 114, 1) 58%, rgba(14, 48, 86, 1) 71%, rgba(10, 38, 71, 1) 83%
+
+    );
+
+    z-index: -1000;
+}
+
+
+/* wrapper */
+.wrapper {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    max-width: 620px;
+    margin: 3rem auto 0;
+    padding: 0 2.5rem;
+}
+@media (min-width: 1024px) {
+    .wrapper {
+        max-width: 800px;
+    }
+}
+
+header {
+    -webkit-filter: drop-shadow(0 0 6px #699bff);
+    filter: drop-shadow(0 0 6px #699bff);
+}
+main {
+    flex: 1;
+    width: 100%;
+    margin: 4rem auto;
+}
+.info, .main, .mail,
+.note .accbox label,
+.light {
+    -webkit-filter: drop-shadow(0 0 6px #699bff);
+    filter: drop-shadow(0 0 6px #699bff);
+}
+section, .section {
+    margin: .5rem auto;
+}
+.inner {
+    margin: 0 1rem;
+}
+footer {
+    text-align: center;
+    margin: 6rem auto 0;
+    padding: .5rem 0;
+}
+
+/* aside */
+aside {
+    text-align: left;
+    margin: 1rem;
+}
+
+/* text */
+h3, .h3 {
+    display: inline-block;
+    padding-bottom: .3rem;
+    border-bottom: 1px solid #fff;
+}
+h4 {
+    text-align: left;
+}
+h5, .h5 {
+    text-align: left;
+    margin: 0;
+}
+h5::before, .h5::before {
+    content: '―';
+    display: inline;
+    padding-right: .2rem;
+}
+
+/* list */
+.float {
+    margin-bottom: 1rem;
+}
+.float li a {
+    border-bottom: none;
+    color: #fff;
+}
+
+/* hr */
+.line {
+    position: relative;
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: .5rem 0;
+}
+.line::before,
+.line::after {
+    content: "";
+    display: block;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    border-bottom: 1px solid #fff;
+}
+.line::before {
+    margin-right: .5rem;
+}
+.line::after {
+    margin-left: .5rem;
+}
+
+/* scroll box */
+.scroll {
+    position: relative;
+    overflow-y: scroll;
+    height: 8rem;
+    width: 100%;
+    margin: 0 auto 0rem;
+    padding: 0;
+    font-size: 0.9rem;
+    border-radius: 0px;
+    border: 1px solid transparent;
+    background: transparent;
+}
+.scroll mark {
+    padding: 0.2em 0.5em;
+    margin-bottom: .4rem;
+    background: linear-gradient(transparent 0%, #fff 0%);
+    color: #141c1c;
+}
+.scroll .list_no {
+    margin: 0;
+}
+.scroll .list_no li {
+    margin: 0 0;
+    padding-left: 0rem;
+}
+
+/* hidden box */
+.accbox {
+    margin: 0.25em 0;
+    padding: 0;
+}
+.accbox label {
+    text-align: center;
+    display: block;
+    margin: .7rem 0;
+    padding : 0;
+    color :#fff;
+    font-weight: normal;
+    background :transparent;
+    cursor :pointer;
+    transition: all 0.5s;
+}
+.accbox label:hover {
+    background :rgba(105, 155, 255,0.3);
+}
+.accbox input[type="checkbox"] {
+    display: none !important;
+}
+.accbox .accshow {
+    height: 0;
+    padding: 0 0 0;
+    margin: 0;
+    overflow: hidden !important;
+    opacity: 0;
+    transition: 0.8s;
+    color: #fff;
+}
+.cssacc:checked + .accshow {
+    height: auto;
+    padding: 5px 5px 5rem;
+    background: transparent;
+    opacity: 1;
+}
+
+/*-------------------- work --------------------*/
+
+.pl {
+    counter-reset: cnt;
+    margin: 4rem 0;
+}
+.pl > div {
+    margin-bottom: 1.5rem;
+}
+.pl h6 {
+    text-align: left;
+    margin: 0 0 0.75rem 0;
+    font-size: 1.15rem;
+}
+
+.pl h6::before {
+    counter-increment: cnt;
+    content: counter(cnt, decimal-leading-zero);
+    margin-right: 10px;
+    padding: .2rem .3rem;
+    border-radius: 0;
+    line-height: 1rem;
+    font-style: italic;
+    border: 1px solid #fff;
+    color: #fff;
+}
+.pl p {
+    margin: 0 1.5rem 0 2.3rem;
+    opacity: .8;
+    font-size: 1rem;
+}
+.main ul {
+    margin: 0 2rem 1rem;
+    font-size: 1rem;
+}
+.main ul li a {
+    border-bottom: none;
+}
+.pl ul.pl-l {
+    counter-reset: num;
+}
+.pl ul.pl-l li::before {
+    counter-increment: num;
+    content: counter(num, decimal-leading-zero);
+    padding-right: 8px;
+}
+.pl a {
+    color: #fff !important;
+}
+.main b {
+    border-bottom: 1px solid #fff;
+    margin-right: .5rem;
+}
+
+/* form */
+.main form {
+    display: inline-block;
+    margin: 1rem -1rem;
+    max-width: 370px;
+}
+.main input[type] {
+    display: inline-block;
+}
+.main input[type=text] {
+    width: 40%;
+    padding: .2rem .3rem;
+    border: 1px solid #fff;
+    background: #fff;
+    color: #141c1c;
+}
+.main input[type=submit] {
+    -webkit-appearance: none;
+    transition: all .5s;
+    padding: .1rem .3rem;
+    border-radius: 2px;
+    border: 1px solid #fff;
+    background: #fff;
+    color: #141c1c;
+}
+.main input[type=submit]:hover {
+    border: 1px solid #fff;
+    background: #fff;
+    color: #fe2b20;
+}
+.main input[type=text]::-webkit-input-placeholder {
+    color: rgba(20, 28, 28,.8);
+}
+.main input[type=text]::-moz-placeholder {
+    color: rgba(20, 28, 28,.8);
+}
+.main input[type=text]:-ms-input-placeholder {
+    color: rgba(20, 28, 28,.8);
+}
+.main input[type=text]::placeholder {
+    color: rgba(20, 28, 28,.8);
+}
+
+@media screen and (min-width: 768px) {
+    h6 {
+        font-size: 14px;
+    }
+}
+
+/*-------------------- note --------------------*/
+
+article {
+    position: relative;
+    text-align: center;
+    margin: 2.5rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0,.525);
+    color: #fff;
+    -webkit-filter: none;
+    filter: none;
+}
+article h6 {
+    display: inline-block;
+    margin-right: 1rem;
+}
+article time {
+    text-align: left;
+    display: inline-block;
+}
+article a {
+    color: #fff !important;
+}
+
+.text {
+    text-align: center;
+    height: 90px;
+    overflow: hidden;
+}
+.text-inner {
+    text-align: left;
+}
+.show_more {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100px;
+    padding-top: 70px;
+    text-align: center;
+    line-height: 30px;
+    background: linear-gradient(to bottom,rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%);
+    background: -moz-linear-gradient(to bottom,rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%);
+    background: -webkit-linear-gradient(to bottom,rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%);
+    cursor: pointer;
+    transition: bottom 0.2s;
+}
+.active {
+    height: 30px;
+    padding-top: 0px;
+    background: none;
+}
+.active-body article {
+    padding-bottom: 30px;
+}
+
+/* pagination */
+ul.pagination {
+    display: inline-block;
+    position: relative;
+    text-align: center !important;
+    margin: 3rem auto 5rem;
+    padding: .3rem 1rem;
+    line-height: 1.9rem;
+    transition: all .5s;
+    background: transparent;
+}
+ul.pagination > li {
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+ul.pagination > li a {
+    border: none;
+}
+ul.pagination > li:last-child {
+    margin: 0 0;
+}
+
+/*-------------------- novel --------------------*/
+
+.cap-af .cssacc:checked + .accshow {
+    padding: 5px;
+}
+
+/* story */
+.novel h5, .novel .h5 {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+.novel {
+    text-align: center !important;
+    padding: 2rem;
+    margin: 2rem -2rem;
+    background: rgba(255,255,255,.125);
+}
+.novel > p {
+    /*小説部分の段落に間隔を作りたくない場合はmargin-topに0を指定してください*/
+    margin-top: 2rem;
+    font-size: 12px;
+    line-height: 2rem; /*小説部分の行間*/
+    letter-spacing: 0.025rem; /*小説部分の文字間隔*/
+}
+.novel > p:first-of-type {
+    margin-top: 0;
+}
+
+/* ruby */
+[data-ruby] {
+    display: inline-block;
+    position: relative;
+}
+[data-ruby]::before {
+  content: attr(data-ruby);
+  display: inline-block;
+  position: absolute;
+  transform: translateX(-50%) scale(.5);
+  white-space: nowrap;
+  top: -.87rem;
+  left: calc(50%);
+  text-align: center;
+  letter-spacing: 0.25em;
+  font-size: 1em;
+  font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif !important;
+}
+[data-ruby] rt {
+    display: none;
+}
+
+/* caption, afterword */
+.cap-af {
+    margin: 2rem 0;
+}
+.cap-af h5, .cap-af .h5 {
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+@media screen and (min-width:768px) {
+    .cap-af,
+    .novel > p{
+        font-size: 12px;
+    }
+}
+
+/*-------------------- article --------------------*/
+
+.novel-div img {
+    display: block;
+    object-fit: cover;
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    margin: 2.5rem auto .5rem;
+}
+.novel-div aside {
+    display: block;
+    text-align: left;
+    margin: 1rem auto;
+    max-width: 300px;
+    opacity: .8;
+    font-size: 10px;
+}
+.sub {
+    display: block;
+    text-align: left;
+    margin: 1rem 0;
+    padding-left: .5rem;
+    border-bottom: 1px solid #fff;
+    border-left: 3px solid #fff;
+    font-size: 15px;
+    color: #fff;
+}
+
+/*-------------------- other --------------------*/
+
+/* pagetop button */
+#page-top {
+    position: fixed;
+    left: 1%;
+    bottom: 1%;
+    z-index: 999;
+}
+#page-top a {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0 0 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border-bottom: none;
+    font-size: 11px;
+    border: 1px solid rgba(255,255,255,.6);
+    color: #699bff;
+    background-color: rgba(255,255,255,.6);
+    -webkit-filter: drop-shadow(0 0 6px #699bff);
+    filter: drop-shadow(0 0 6px #699bff);
+}
+#page-top a:visited,
+#page-top a:hover {
+    color: #699bff !important;
+    background: rgba(255,255,255,.6);
+}
+
+/* loader */
+.page-loader {
+    display: inline-block;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-image: -o-linear-gradient(to bottom, #1B2735 0%, #090A0F 100%);
+    background-image: -moz-linear-gradient(to bottom, #1B2735 0%, #090A0F 100%);
+    background-image: -webkit-linear-gradient(to bottom, #1B2735 0%, #090A0F 100%);
+    background-image: -ms-linear-gradient(to bottom, #1B2735 0%, #090A0F 100%);
+    background-image: linear-gradient(to bottom, #1B2735 0%, #090A0F 100%);
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    -webkit-filter: drop-shadow(0 0 6px #699bff);
+    filter: drop-shadow(0 0 6px #699bff);
+}
+.spinner-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    -webkit-transform : translate(-50%,-50%);
+    transform : translate(-50%,-50%);
+    padding: 0;
+    margin: 0;
+}
+.leo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.blue-orbit {
+    width: 165px;
+    height: 165px;
+    border: 1px solid #91daffa5;
+    -webkit-animation: spin3D 3s linear .2s infinite;
+}
+.green-orbit {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #91ffbfa5;
+    -webkit-animation: spin3D 2s linear 0s infinite;
+}
+.red-orbit {
+    width: 90px;
+    height: 90px;
+    border: 1px solid #ffca91a5;
+    -webkit-animation: spin3D 1s linear 0s infinite;
+}
+.white-orbit {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ffffff;
+    -webkit-animation: spin3D 10s linear 0s infinite;
+}
+.w1 {
+    transform: rotate3D(1, 1, 1, 90deg)
+}
+.w2 {
+    transform: rotate3D(1, 2, .5, 90deg)
+}
+.w3 {
+    transform: rotate3D(.5, 1, 2, 90deg)
+}
+@keyframes spin3D {
+    from {
+        transform: rotate3d(.5,.5,.5, 360deg);
+    }
+    to{
+        transform: rotate3d(0deg);
+    }
+}
+
+/*-------------------- color --------------------*/
+/* yellow */
+.yellow {
+    color: #EBDCDC !important;
+    display: inline;
+}
+/* blue */
+.blue {
+    color: #7583A2 !important;
+    display: inline;
+}
+/* white */
+.white {
+    color: #fff !important;
+    display: inline;
+}
+/* black */
+.gray {
+    color: #555C62 !important;
+    display: inline;
+}
+
+/*-------------------- font size --------------------*/
+.s_12 {
+    font-size: 12px;
+}
+.s_14 {
+    font-size: 14px;
+}
+
+/*-------------------- font family --------------------*/
+
+.serif {
+    font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+.deco {
+    font-family: はんなり明朝, serif !important;
+}
+
+/*--------------------アンダーライン--------------------*/
+.dot {
+    border-bottom: dotted 1px #fff;
+    display: inline;
+}
+.none {
+    border-bottom: none;
+}
+
+/*--------------------マーカー--------------------*/
+/* marker */
+.marker1 {
+    padding: 0;
+    height: 2rem;
+    font-weight: bold;
+    background: linear-gradient(transparent 60%, #7583A2 60%);
+    color: #fff;
+}
+
+/*-------------------- star --------------------*/
+
+.night {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+}
+.shooting_star {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 2px;
+    background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+    border-radius: 999px;
+    -webkit-filter: drop-shadow(0 0 6px #699bff);
+    filter: drop-shadow(0 0 6px #699bff);
+    -webkit-animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+    animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+}
+.shooting_star::before, .shooting_star::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
+    -webkit-transform: translateX(50%) rotateZ(45deg);
+    transform: translateX(50%) rotateZ(45deg);
+    border-radius: 100%;
+    -webkit-animation: shining 3000ms ease-in-out infinite;
+    animation: shining 3000ms ease-in-out infinite;
+}
+.shooting_star::after {
+    -webkit-transform: translateX(50%) rotateZ(-45deg);
+    transform: translateX(50%) rotateZ(-45deg);
+}
+.shooting_star:nth-child(1) {
+    top: calc(50% - 41px);
+    left: calc(50% - 232px);
+    -webkit-animation-delay: 7331ms;
+    animation-delay: 7331ms;
+}
+.shooting_star:nth-child(1)::before, .shooting_star:nth-child(1)::after, .shooting_star:nth-child(1)::after {
+    -webkit-animation-delay: 7331ms;
+    animation-delay: 7331ms;
+}
+.shooting_star:nth-child(2) {
+    top: calc(50% - 145px);
+    left: calc(50% - 256px);
+    -webkit-animation-delay: 8466ms;
+    animation-delay: 8466ms;
+}
+.shooting_star:nth-child(2)::before, .shooting_star:nth-child(2)::after, .shooting_star:nth-child(2)::after {
+    -webkit-animation-delay: 8466ms;
+    animation-delay: 8466ms;
+}
+.shooting_star:nth-child(3) {
+    top: calc(50% - 32px);
+    left: calc(50% - 10px);
+    -webkit-animation-delay: 5243ms;
+    animation-delay: 5243ms;
+}
+.shooting_star:nth-child(3)::before, .shooting_star:nth-child(3)::after, .shooting_star:nth-child(3)::after {
+    -webkit-animation-delay: 5243ms;
+    animation-delay: 5243ms;
+}
+.shooting_star:nth-child(4) {
+    top: calc(50% - 175px);
+    left: calc(50% - 89px);
+    -webkit-animation-delay: 9869ms;
+    animation-delay: 9869ms;
+}
+.shooting_star:nth-child(4)::before, .shooting_star:nth-child(4)::after, .shooting_star:nth-child(4)::after {
+    -webkit-animation-delay: 9869ms;
+    animation-delay: 9869ms;
+}
+.shooting_star:nth-child(5) {
+    top: calc(50% - 46px);
+    left: calc(50% - 93px);
+    -webkit-animation-delay: 7953ms;
+    animation-delay: 7953ms;
+}
+.shooting_star:nth-child(5)::before, .shooting_star:nth-child(5)::after, .shooting_star:nth-child(5)::after {
+    -webkit-animation-delay: 7953ms;
+    animation-delay: 7953ms;
+}
+.shooting_star:nth-child(6) {
+    top: calc(50% - -146px);
+    left: calc(50% - 1px);
+    -webkit-animation-delay: 7835ms;
+    animation-delay: 7835ms;
+}
+.shooting_star:nth-child(6)::before, .shooting_star:nth-child(6)::after, .shooting_star:nth-child(6)::after {
+    -webkit-animation-delay: 7835ms;
+    animation-delay: 7835ms;
+}
+.shooting_star:nth-child(7) {
+    top: calc(50% - -166px);
+    left: calc(50% - 224px);
+    -webkit-animation-delay: 8239ms;
+    animation-delay: 8239ms;
+}
+.shooting_star:nth-child(7)::before, .shooting_star:nth-child(7)::after, .shooting_star:nth-child(7)::after {
+    -webkit-animation-delay: 8239ms;
+    animation-delay: 8239ms;
+}
+.shooting_star:nth-child(8) {
+    top: calc(50% - 144px);
+    left: calc(50% - 28px);
+    -webkit-animation-delay: 8417ms;
+    animation-delay: 8417ms;
+}
+.shooting_star:nth-child(8)::before, .shooting_star:nth-child(8)::after, .shooting_star:nth-child(8)::after {
+    -webkit-animation-delay: 8417ms;
+    animation-delay: 8417ms;
+}
+.shooting_star:nth-child(9) {
+    top: calc(50% - 29px);
+    left: calc(50% - 274px);
+    -webkit-animation-delay: 3899ms;
+    animation-delay: 3899ms;
+}
+.shooting_star:nth-child(9)::before, .shooting_star:nth-child(9)::after, .shooting_star:nth-child(9)::after {
+    -webkit-animation-delay: 3899ms;
+    animation-delay: 3899ms;
+}
+.shooting_star:nth-child(10) {
+    top: calc(50% - 35px);
+    left: calc(50% - 202px);
+    -webkit-animation-delay: 7963ms;
+    animation-delay: 7963ms;
+}
+.shooting_star:nth-child(10)::before, .shooting_star:nth-child(10)::after, .shooting_star:nth-child(10)::after {
+    -webkit-animation-delay: 7963ms;
+    animation-delay: 7963ms;
+}
+.shooting_star:nth-child(11) {
+    top: calc(50% - 120px);
+    left: calc(50% - 173px);
+    -webkit-animation-delay: 453ms;
+    animation-delay: 453ms;
+}
+.shooting_star:nth-child(11)::before, .shooting_star:nth-child(11)::after, .shooting_star:nth-child(11)::after {
+    -webkit-animation-delay: 453ms;
+    animation-delay: 453ms;
+}
+.shooting_star:nth-child(12) {
+    top: calc(50% - 124px);
+    left: calc(50% - 174px);
+    -webkit-animation-delay: 6896ms;
+    animation-delay: 6896ms;
+}
+.shooting_star:nth-child(12)::before, .shooting_star:nth-child(12)::after, .shooting_star:nth-child(12)::after {
+    -webkit-animation-delay: 6896ms;
+    animation-delay: 6896ms;
+}
+.shooting_star:nth-child(13) {
+    top: calc(50% - -172px);
+    left: calc(50% - 81px);
+    -webkit-animation-delay: 668ms;
+    animation-delay: 668ms;
+}
+.shooting_star:nth-child(13)::before, .shooting_star:nth-child(13)::after, .shooting_star:nth-child(13)::after {
+    -webkit-animation-delay: 668ms;
+    animation-delay: 668ms;
+}
+.shooting_star:nth-child(14) {
+    top: calc(50% - -187px);
+    left: calc(50% - 270px);
+    -webkit-animation-delay: 3229ms;
+    animation-delay: 3229ms;
+}
+.shooting_star:nth-child(14)::before, .shooting_star:nth-child(14)::after, .shooting_star:nth-child(14)::after {
+    -webkit-animation-delay: 3229ms;
+    animation-delay: 3229ms;
+}
+.shooting_star:nth-child(15) {
+    top: calc(50% - -107px);
+    left: calc(50% - 244px);
+    -webkit-animation-delay: 2112ms;
+    animation-delay: 2112ms;
+}
+.shooting_star:nth-child(15)::before, .shooting_star:nth-child(15)::after, .shooting_star:nth-child(15)::after {
+    -webkit-animation-delay: 2112ms;
+    animation-delay: 2112ms;
+}
+.shooting_star:nth-child(16) {
+    top: calc(50% - 7px);
+    left: calc(50% - 83px);
+    -webkit-animation-delay: 8247ms;
+    animation-delay: 8247ms;
+}
+.shooting_star:nth-child(16)::before, .shooting_star:nth-child(16)::after, .shooting_star:nth-child(16)::after {
+    -webkit-animation-delay: 8247ms;
+    animation-delay: 8247ms;
+}
+.shooting_star:nth-child(17) {
+    top: calc(50% - -193px);
+    left: calc(50% - 244px);
+    -webkit-animation-delay: 8497ms;
+    animation-delay: 8497ms;
+}
+.shooting_star:nth-child(17)::before, .shooting_star:nth-child(17)::after, .shooting_star:nth-child(17)::after {
+    -webkit-animation-delay: 8497ms;
+    animation-delay: 8497ms;
+}
+.shooting_star:nth-child(18) {
+    top: calc(50% - 130px);
+    left: calc(50% - 211px);
+    -webkit-animation-delay: 768ms;
+    animation-delay: 768ms;
+}
+.shooting_star:nth-child(18)::before, .shooting_star:nth-child(18)::after, .shooting_star:nth-child(18)::after {
+    -webkit-animation-delay: 768ms;
+    animation-delay: 768ms;
+}
+.shooting_star:nth-child(19) {
+    top: calc(50% - -12px);
+    left: calc(50% - 118px);
+    -webkit-animation-delay: 1520ms;
+    animation-delay: 1520ms;
+}
+.shooting_star:nth-child(19)::before, .shooting_star:nth-child(19)::after, .shooting_star:nth-child(19)::after {
+    -webkit-animation-delay: 1520ms;
+    animation-delay: 1520ms;
+}
+.shooting_star:nth-child(20) {
+    top: calc(50% - -190px);
+    left: calc(50% - 76px);
+    -webkit-animation-delay: 3835ms;
+    animation-delay: 3835ms;
+}
+.shooting_star:nth-child(20)::before, .shooting_star:nth-child(20)::after, .shooting_star:nth-child(20)::after {
+    -webkit-animation-delay: 3835ms;
+    animation-delay: 3835ms;
+}
+
+@-webkit-keyframes tail {
+    0% {
+        width: 0;
+    }
+    30% {
+        width: 100px;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes tail {
+    0% {
+        width: 0;
+    }
+    30% {
+        width: 100px;
+    }
+    100% {
+        width: 0;
+    }
+}
+@-webkit-keyframes shining {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 30px;
+    }
+    100% {
+        width: 0;
+    }
+}
+@keyframes shining {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 30px;
+    }
+    100% {
+        width: 0;
+    }
+}
+@-webkit-keyframes shooting {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(300px);
+        transform: translateX(300px);
+    }
+}
+@keyframes shooting {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(300px);
+        transform: translateX(300px);
+    }
+}
+@-webkit-keyframes sky {
+    0% {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    100% {
+        -webkit-transform: rotate(405deg);
+        transform: rotate(405deg);
+    }
+}
+@keyframes sky {
+    0% {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    100% {
+        -webkit-transform: rotate(405deg);
+        transform: rotate(405deg);
+    }
+}
+
+/* PC表示時だけ、星の出現範囲と飛距離を拡張 */
+@media (min-width: 1024px) {
+
+    .night {
+        transform: rotateZ(45deg) scale(1.6);
+    }
+
+    .shooting_star {
+        animation-duration: 5500ms, 5500ms;
+    }
+
+    @keyframes shooting {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(400px); }
+    }
+}
+
+
+.space-sm {
+    height: 0.5rem;  /* 小さめの余白 */
+}
+
+.space-md {
+    height: 1rem;    /* よく使う標準の余白 */
+}
+
+.space-lg {
+    height: 2rem;    /* 見出しの前に使う大きな余白 */
+}
+
+/* nav */
 nav {
     display: block;
     position: relative;
@@ -76,42 +1643,25 @@ nav {
     background: transparent;
     width: 100%;
     z-index: 100;
-    margin: 0 0 6rem;
-    font-family: 'Roboto Condensed', 'Noto Sans JP', sans-serif;
+    margin: 0 0 6rem; /* ← 下の余白を少なく */
+    font-family: 'Roboto Condensed', 'Noto Sans JP';
 }
 
 nav ul {
-    margin: 0 auto;
-    padding-left: 0;
+    margin: 0 auto;       /* 上下マージンなし、左右自動で中央寄せ */
+    padding-left: 0;      /* ← デフォルトの左パディングを削除 */
     display: inline-block;
 }
 
+
 nav ul li {
-    margin: 0 0.6rem; /* メニュー項目間の距離 */
+    margin: 0 0.6rem; /* ← メニュー同士の間隔 */
     display: inline-block;
 }
 
 nav a {
-    border-bottom: none !important;
-    color: #B3C8CF;    /* メニュー文字色 */
+    border-bottom: none !important; /* ← 下線消す */
+    color: #B3C8CF;  /* ← 色変更 */
     font-size: 1.3em;
     text-transform: uppercase;
 }
-nav a:hover {
-    color: #FFF;
-}
-
-/* -------------------------------------------------------------------
-   5. 背景アニメーション（夜空・流れ星）
-   ------------------------------------------------------------------- */
-.bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-    overflow: hidden;
-}
-
-/* 流れ星のタイミングや描画アニメーションキーフレーム記述（保持） */

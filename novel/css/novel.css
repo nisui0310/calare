@@ -644,3 +644,21 @@ aside.n-common {
 }
 
 
+/* スマホ表示時（画面幅768px以下）のみ閲覧設定の文字サイズを小さくする */
+@media screen and (max-width: 768px) {
+
+    /* 「ゴシック」「明朝」「縦書き」などの選択肢テキスト */
+    .n-settings .n-label-radio {
+        font-size: 0.75rem; /* お好みのサイズに微調整してください（例: 11px や 0.8rem） */
+    }
+
+    /* 「向き」「フォント」「背景色」などの見出し文字も小さくする場合（不要なら削除可） */
+    .n-settings .n-collection-item {
+        font-size: 0.8rem;
+    }
+
+    /* 「小さい/大きい」「狭い/広い」などの補助テキストも小さくする場合（不要なら削除可） */
+    .n-settings .n-auxiliary-text {
+        font-size: 0.7rem;
+    }
+}

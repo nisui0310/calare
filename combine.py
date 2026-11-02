@@ -2,7 +2,7 @@ from pathlib import Path
 
 # サイトのフォルダを指定する
 # 例: Path("/Users/yourname/Desktop/my-site")
-SITE_DIR = Path("/Users/rin/Documents/GitHub/Ginevra")
+SITE_DIR = Path("/Users/rin/Documents/GitHub/calare")
 
 # 出力するMarkdownファイル名
 OUTPUT_FILE = Path("all.md")
