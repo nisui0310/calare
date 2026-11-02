@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="まほろばのくにをみていた。">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/mahoroba-OGP.webp">
+    <meta property="og:title" content="まほろばのくに - 落日 | Kagami">
+    <meta property="og:description" content="まほろばのくにをみていた。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://calare.vercel.app/images/mahoroba-OGP.webp">
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <!-- 小説以外で最低限適用するベースのCSS。自分のサイトで使用しているCSSに差し替えても動きます。 -->
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <!-- 小説用のCSS -->
+  <link rel="stylesheet" href="novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+  <script defer src="/assets/js/name.js"></script>
+
+  <!-- ページタイトル -->
+  <title>可惜夜とキス｜まほろばのくに</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン 書き換え-->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">015</span>
+    <h1 class="novel-title">可惜夜とキス</h1>
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション 書き換え　-->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="14.html">前へ</a> ｜ <a href="mahoroba.html">一覧へ戻る</a> ｜ <a href="16.html">次へ</a>
+      </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- ここまで 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+    
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+        <!-- 書き換え -->
+「こっちだ」<br>
+「いや、こっちだ」<br>
+<br>
+　ひそひそと交わされる会話に、ふ、と<span class="user-name"></span>の意識が浮き上がる。目を擦りながら体を起こすと、障子に二人の影が映っていた。もうすぐ満月になるから、スポットライトを当てられたみたいに二人の姿がくっきりと見える。彼らはなにか言い合いをしているようで、「こっちだってば」「いや、だからこっちだよ」と声を落として喋っていた。<br>
+　<span class="user-name"></span>は寝ぼけた頭で、乱れた夜着を軽く整え、ガラリと障子を開ける。背の低い二人の子どもは「わっ」と一瞬大きな声をあげて飛び上がり、ぱっと彼女を見上げた。<br>
+<br>
+「あなたは──忍術学園の新しい事務員兼なんでも屋さん」<br>
+「つまり学園長に都合のいい存在として雇われた」<br>
+「「美味しいご飯を作れると噂の<span class="user-name"></span>さん！」」<br>
+「長ったらしい説明をどうも……」<br>
+<br>
+　起きたばかりなので、<span class="user-name"></span>の声は掠れている。目覚めたばかりの目には月明かりさえも眩しい。うぅん、と唸りながら瞼を軽くこする女を、二人はじっと見上げた。カエルみたいな口をした少年と、前髪だけ色素の抜けた少年。すでに<span class="user-name"></span>は学年ごとの装束の色を覚えていたが、二人は彼女と同じ白い夜着を着ていたため、何年生か判別はできなかった。身長は<span class="user-name"></span>の顎くらいである。<br>
+　ちょうどいいところに頭があるなあ、と思いながら二人の頭に手を乗せる<span class="user-name"></span>。これは忍術学園の皆に言えることだが、長い髪を下ろしていると下級生では男女の判別がつかない者もいる。子どもということ、男女の差があまり出ていないこともあって、<span class="user-name"></span>は下級生の前だとつい気が抜けてしまう癖があった。二人は頭を撫でられる動きに合わせ、おきあがりこぶしみたいにゆらゆら揺れた。ふ、と彼女が笑みをこぼすと、二人は「わらった！」と顔を合わせた。なあに。笑いますよ、私だって。と<span class="user-name"></span>は思う。寝起きだと表情筋がうまく働かないようだ。<br>
+<br>
+「おなまえは？」<br>
+「三年ろ組の神崎左門と」<br>
+「同じくろ組の次屋三之助です」<br>
+「ああ、きみたちが……」<br>
+<br>
+　<span class="user-name"></span>が下級生の子たちと手をつなぐときの鉄板の言い訳、『方向音痴』というワードを出すたびに挙げられる名前だ。「決断力のある子と、無自覚な子？」と訊ねれば、二人はそろって首をかしげる。仲がいいんだね、と心の中で語りかけた。<br>
+<br>
+「決断力がある、って言ったら左門か」<br>
+「じゃあ無自覚なほうは三之助か？」<br>
+「なにが無自覚なんだろう？」<br>
+「ふ、ふふ……」<br>
+<br>
+　子ども特有の会話のテンポに、<span class="user-name"></span>は吐息だけで笑う。花弁から朝露が零れるように、艶のある笑みだ。二人は「また笑った」と声を揃えた。どうも<span class="user-name"></span>のことを珍獣かなにかだと思っているらしい。動物園で観察されるハシビロコウの気分になってきたな、と思う。<br>
+　<span class="user-name"></span>は目を軽く瞬かせ、視力の復活した目で改めて空を見上げた。当然のように真っ暗だ。月もまだ高く、到底子どもが起きるような時間ではない。<br>
+<br>
+「こんな夜中にどうしたの」<br>
+「左門が厠に行きたいって言いだしたんです」<br>
+「それで、作兵衛を起こさないようにこっそり出てきたんですけど」<br>
+「なぜか厠にたどりつけなくて」<br>
+<br>
+　そお、と言いながら頬にかかっている二人の髪の毛を、すっと耳にかけてやる。わずかに触れた指先の感触がくすぐったくて、二人はちょっとドギマギした。<span class="user-name"></span>の髪は長くあでやかで、彼女が体を揺らすたびに絹みたいにさらさらと肩から零れている。たまに見かけるくのたまよりも豊満な体つきが、薄い夜着越しにわかった。<span class="user-name"></span>は普通よりもすこし高い位置で帯を結んでいて、きゅっと締められた帯の上に、ずしりと重そうな胸が乗っている。これは彼女が寝るときに（自作の）ブラジャーをつけておらず、しかし寝返りなどで揺れてしまう不快感を減らすため、胸を支えるような位置に帯を結んでいるというわけなのだが──健全な青少年には、いささか刺激の強い姿でもあった。<br>
+<br>
+「いこうか」<br>
+<br>
+　月から零れ落ちる砂金のような声音で、彼女は二人の手を取って歩き出した。「えっ」と左門、「どこに」と三之助。<br>
+<br>
+「厠に決まってるでしょ。ついていってあげる」<br>
+「も、申し訳ないですよ」<br>
+「私もついでに行くから」<br>
+<br>
+　二人は<span class="user-name"></span>に手を引かれながら、困った顔で互いを見たが、それならまあ、とおとなしくついていくことに決めた。案の定それは二人に遠慮をさせないための嘘であったが、まあ、本当にすればいいだけのことだ。嘘も方便。妹や弟がいる訳じゃないのに、子どもの扱いがとことん上手い女だった。幼いころの気持ちをよく覚えているからだ。<br>
+<br>
+「<span class="user-name"></span>さんは兵庫水軍にいたんですか？」と左門。<br>
+「よく知ってるね。そうだよ」<br>
+「オレも左門も、歩いてると海にたどりつくことが多いんです。兵庫水軍の人にお世話になったこともありますよ」<br>
+「え！　そうなの」<br>
+<br>
+　<span class="user-name"></span>は嬉しそうに声を弾ませた。三之助は明らかに<span class="user-name"></span>が話を聞きたそうに「そっか」と繰り返すので、ちょっと得意になって「確か、お頭さんは第三共栄丸さんですよね」と続ける。左門も負けじと「ぼくだって会ったことありますよ！　えっと、確か、片目の人！」と握られている<span class="user-name"></span>の手を引っ張る。おお、と<span class="user-name"></span>は手加減のない子どもの力に揺さぶられながら歩いた。<br>
+<br>
+「片目の人はたぶん蜉蝣さんだね。陸酔いしてなかった、その人？」<br>
+「してました！」<br>
+「ふ、ふふ」<span class="user-name"></span>はまた笑った。花が擦れ合うような笑みだった。「かわいい人だよね」<br>
+<br>
+　左門は視線をぼんやりと浮かせて、五秒くらいした後に「かわいくないと思います！」とはっきり言った。左門の脳内には、海まで出ていってしまったときに首根っこを摑まえられて「ガキがこんなとこまで何しにきてる」と怖い顔で（蜉蝣にとっては通常の顔だった）言われたくらいしか覚えがない。眼帯のせいで一つしかない目玉の鋭さは、左門の口をも閉じさせた。<br>
+　<span class="user-name"></span>はそれを聞いてぷはっと噴き出し、声を押し殺して笑った。足を止めざるを得ないほどに細かく痙攣する彼女を、左門と三之助が「ぼく、なにか面白いことを言ったか？」「さあ」と会話しながら見上げる。ふ、ふう、と息を整えた彼女は、そりゃそうだと心の中でツッコミを入れる。自分も初対面のときは水軍の人間は全員が恐ろしかったし、あれをかわいいと言えるのは、現代での『かわいい』が基本的になんにでも使える語彙として浸透した後だからこそ、であろう。<br>
+<br>
+　蜉蝣はあれで、酔っぱらうと顔を真っ赤にしたままちょびちょびとお猪口に口をつけていたり、第三共栄丸に褒められるとなんと返せばよいかわからなくなって「あ、ありがとうございます」くらいしか喋れなかったり、疾風と喋るときは少年みたいにくだらないことで笑いあっていたり……、と<span class="user-name"></span>の中のエピソードは無数に存在するのだが、それを彼らに説明しても共感は得られないだろう。「ふつうそうだよね」と<span class="user-name"></span>は笑いすぎて滲んできた涙をぬぐった。左門と三之助は、このひとちょっと変だなあ、と同じことを思っていた。変なのはお前らである。三年間住んでいる長屋の構造を覚えられない人間がいてたまるか。<br>
+<br>
+「はい、ついた」<br>
+「本当だ、ついた」<br>
+「全く、三之助が道に迷ったりするからだぞ」<br>
+「オレがいったいいつ道に迷ったっていうんだ？」<br>
+「もういいから、早く行ってきなさい。入った入った」<br>
+<br>
+　まだまだしゃべり続けそうだった二人の会話を強制的に止めさせ、二人を厠の中へと押しこみ、<span class="user-name"></span>はようやく一息ついた。目はきちんと開くようになったが、まだ気を抜けば眠ってしまいそうだ。今って何時なのかな、とぼんやり考える。時計がない生活にも慣れたが、不便を感じないということでもない。<br>
+　縁側に腰かけると、ひゅおお、と一陣の風が吹く。<span class="user-name"></span>は寒さにぶるりと震えた。昼間はだいぶん温かくなってきたが、太陽の出ていない時間はいまだ冷え込む。両手を擦り合わせ、は、と吐息をかけた。<br>
+<br>
+「寒そうだな」<br>
+「────」<br>
+<br>
+　一気に意識が覚醒した。顔を勢いよくあげ、──その男を視認する。寒さとは別の意味で唇が震え、小さく音を紡いだ。<br>
+<br>
+「な──ななまつ、こへいた……」<br>
+「ふむ」小平太は表情を変えぬまま腕を組む。「小平太とは呼ばないのだな」<br>
+<br>
+　<span class="user-name"></span>は言葉を失った。七松小平太とこうやって言葉を交わすのは二度目だったからだ。顔を合わせる機会がなかったわけではないが、話しかける用事があるわけでもない。それゆえに、──このような状況で自分に話しかけてきた小平太のことが、<span class="user-name"></span>は信じられなかった。だが同時に納得もしていた。<ruby>こ<rp>（</rp><rt>・</rt><rp>）</rp></ruby><ruby>ち<rp>（</rp><rt>・</rt><rp>）</rp></ruby><ruby>ら<rp>（</rp><rt>・</rt><rp>）</rp></ruby>の小平太はどうか知らないが、<span class="user-name"></span>の知る小平太であれば、特定の人間を避けるなんてまだるっこしいことはしなかったからだ。<br>
+　じり、と床に手を突き、わずかでも小平太から距離を取ろうとする<span class="user-name"></span>。そんな様子を見て、小平太は「そう警戒するな」と軽々しく言う。どすん、と彼女の隣に座りこみ、欠けた月を見上げる。<br>
+　小平太の服装は<span class="user-name"></span>たちのような夜着とは違い、深緑の忍び装束を着ている。どうもこんな夜中まで鍛錬をしていたのか、頬は月明かりで見えるほど土で汚れていた。<br>
+<br>
+「あのときは悪かった」<br>
+「……？」<br>
+「泣かせただろう。まあ、悪い……、ううん。いや。……悪いことをした、とは思っていない。ただおまえが泣いたのは私のせいだというのはわかっていたから、それについては謝ろうと思っていたのだ。泣かせて、悪かった」<br>
+<br>
+　<span class="user-name"></span>はきゅっと唇を結び、「ぃ」と声を絞り出した。想像以上に喉が掠れてしまって、まるで病人が出すような不健康な声が出てしまった。けれど小平太はそれを咎めも急かしもせず、<span class="user-name"></span>の次の言葉を待っていた。ああ、やはり。そんなところもそっくりだ。<br>
+<br>
+「い、や。……わたしが、かってに。勝手に……、泣いてしまった、だけだから。あ……あなたの、せいじゃ、ない」<br>
+「……そうか」<br>
+<br>
+　<span class="user-name"></span>のまごついた返答に、小平太は興味のないテストの答えを聞かされたような声音で頷いた。<span class="user-name"></span>は小平太と全然目が合わせられなかった。大丈夫だと、きっとすぐ大丈夫になると──そう思っていたのに、この体たらくだ。何もしていない小平太に、こうして過剰に怯えている。<br>
+　小平太はぽりぽりとボサボサの頭をかいた。怯えられる心当たりが全くなかったからだ。強いていえばあの初対面のときに、滝夜叉丸に触るなと脅したくらいだが、それが原因とも思えぬ怯えようだった。だから小平太にしては珍しく、「部屋はどこにあるんだ」などと世間話を振ってみた。<span class="user-name"></span>は、え、と声を漏らし、ゆるゆると瞳をこちらに向けた。小平太のような獣に似た目ではないし、仙蔵のように触れたらすっぱりと切れてしまいそうな目でもない。弱弱しい月光が、玲瓏とした彼女の顔に落ち、すっと通った鼻筋が頬に影を作っていた。<br>
+<br>
+「……先生たちの、長屋の、端に」<br>
+「なんだ。くのたま長屋のほうじゃないのか？　先生と言っても、男ばかりだろう」<br>
+「いちおう、その……、一番はじっこのところ。くのたま長屋のほうは、なんか、罠がいっぱいあるらしくて。避けれないの危ないから、って、先生長屋のほうになったの。あんまりそういうの、気にしない、し……兵庫水軍でも、男の人しかいなかったから」<br>
+「ふうん」<br>
+<br>
+　小平太は相槌を打った。忍たま長屋とくのたま長屋は学園の中でもかなり遠くに位置している。確かに、忍たまはくのたま長屋の方へ立ち入りはできず、男子禁制となっているくのたま長屋の周辺には危険度もピンキリの罠がありったけあるのだ。忍たまの侵入だけでなく外部からの侵入も考えてあるため、一歩間違えれば大怪我になりかねない罠もある。現在は天才トラパーと名高い、四年い組の綾部喜八郎が罠の監修を務めている。小平太の脳内には「いえーい」と真顔でピースをする喜八郎の図が思い浮かんできた。<br>
+<br>
+「じゃあ、三之助と左門はまた迷子になって先生長屋のほうまで行ったのか」<br>
+「えっ」<br>
+<br>
+　<span class="user-name"></span>はぎょっとした様子で「いつから見てたの、」と小平太に負けず劣らず目を丸くした。さっきまでの怯えようから一転し、ただ純粋な驚きに顔を染めた<span class="user-name"></span>の様子に、小平太は「はは」と笑った。<br>
+<br>
+「なに、ついさっきだ。誰だって簡単に予想がつくだろう。こんな夜更けに方向音痴の二人が揃って、一人の女がそれを先導しているんだ。おまえ、二人に叩き起こされたのか？」<br>
+「ううん……、話し声が聞こえて。目が覚めちゃっただけ」<br>
+「それでここまで送ってきたのか。あいつらにも困ったものだろう」<br>
+「そんなことない」<span class="user-name"></span>は小さく笑い、首を振る。「お転婆かもしれないけど、かわいい子たちだよ」<br>
+<br>
+　──笑った、と、小平太は思った。<br>
+　かわいい笑顔だ、とも思う。もとから女性的な曲線を描いていた目じりが、雪が融けるみたいに柔らかくなった。ほの白い月光を、<span class="user-name"></span>の肌は内側からぼんやりと光るように反射させている。<br>
+　廊下ですれ違うときは顔すら背けられていた。遠くから見ると、<span class="user-name"></span>は小平太の視線にぜんぜん気づきもしないで穏やかな顔を晒してたいたが、間近で彼女の顔を見つめるのは、これが二度目だ。<br>
+<br>
+　──なんだ。ぜんぜん、普通の女じゃないか。<br>
+　いや、変な女だという印象は変わらないけれど（初対面で泣きわめかれたのはさしもの小平太でも初めての経験である）、思っていたよりずっと穏やかな女であるようだった。小平太に見つめられていることに気づき、え、えっ、ときょろきょろ視線を動かすのも、やっぱり普通の女だった。<br>
+<br>
+「あれ？　七松先輩」<br>
+「え？　わ、本当だ。七松先輩、どうしたんですか」<br>
+<br>
+　左門がガラリと厠の扉を開け、続いて三之助が小平太に声をかけた。「どうしたもこうしたもない」と小平太が言い切ると、二人はそろって首を傾げ、「どーしたも」「こーしたもない」と復唱した。<span class="user-name"></span>の唇がまたによによと変に歪んだ。<br>
+<br>
+「三之助。また迷子になっていたのか。作兵衛はどうした」<br>
+「別に迷子になんてなってませんよ。作兵衛は寝てたから、起こすのも悪いと思って」<br>
+「そうか。次からはきちんと起こせ。こんな夜中に女性を連れまわすものじゃない」<br>
+<br>
+　小平太は真夜中だからいつもよりずっと声を落としていた。表情も口調もいつもと変わらないし、元気いっぱいに大きな声で叱られるよりは小さな声の方がいいに決まっているのだが、三之助はこっちの小平太の方が怖かった。「すみません、七松先輩……」とシュンと肩を落とす三之助の頭をわしゃわしゃと撫でる小平太は、ぱかりと口を開けっぱなしにしている左門にデコピンをした。「おまえもだ、左門」と告げられ、左門は尋常じゃなく痛む額を押さえながら「すみません、七松先輩……！」と涙目で謝罪する。<br>
+<br>
+「うん。わかったのならいい。……二人が世話になったな」<br>
+<br>
+　小平太はくるりと振り返り、<span class="user-name"></span>に礼を言った。いや、と<span class="user-name"></span>は首を振る。世話もなにも、本当に厠まで歩いてきただけだ。「二人……のこと、送る？」と訊ねれば、小平太は「ああ、二人は私が責任もって部屋に戻してやる」と頷いたので、<span class="user-name"></span>もほっとして息をついた。<br>
+　三之助はそんな二人の様子を見上げ、「なんだ。お二人は知り合いだったのですね」と呟く。<br>
+<br>
+「七松先輩、<span class="user-name"></span>さんとは全然喋ったこともないって言ってたのに」<br>
+「いや……、それは本当だぞ」<br>
+「え？　……？　ああ、いま自己紹介されたのですか」<br>
+<br>
+　<span class="user-name"></span>と小平太は、きょとんとして互いに見つめあった。三之助と左門は疑問符を浮かべて二人の顔を交互に見比べ、「そういえばしてないな」と言う小平太の言葉に「えー！」と驚きの声をあげた。すごく普通の友達の距離感に見えたのに、自己紹介もしてないなんて意味がわからなかった。<br>
+<br>
+「私は体育委員会委員長の六年ろ組、七松小平太だ」<br>
+<br>
+　にこやかな笑顔とともに、小平太は手を差し出した。<span class="user-name"></span>はその手を見て、息を吸い、吐き、また吸って、「うん」と言った。<br>
+<br>
+「わたし、……ミョウジ<span class="user-name"></span>。あらためて、初めまして」<br>
+「そうか。よろしくな」<br>
+<br>
+　躊躇いがちに握り返した<span class="user-name"></span>の手を、小平太は力強く握ってぶんぶんと振り回した。それは、<span class="user-name"></span>の記憶の中にある小平太の仕草となんら変わりなくて、ちょっとだけ泣きそうになった。けれどすぐにそんな思いを振り払い、小平太に笑いかける。彼は「伊作から同い年だと聞いた。私も<span class="user-name"></span>と呼んでいいか」と丁寧に伺ったので、もちろん、と顎を引く。<br>
+<br>
+「私は……、私は、えっと」<br>
+<br>
+　小平太、とここにいる彼を呼んだことはない。まず彼と出会わなかったし、三人称で呼ぶときは『七松小平太』とフルネームで呼んでいた。小平太──そう呼ぶと、幼馴染と、この男を混同してしまう気がしていたから。<br>
+　迷っている<span class="user-name"></span>に気づいたのか、小平太は「好きに呼んでいい」とつけ加える。彼はあの日、自分のことを『小平太』と呼んでいたことを覚えていたし、その『小平太』という人間にいっとう思い入れのある様子だったことも覚えていた。<br>
+　だが小平太の予想を裏切り、<span class="user-name"></span>は「……小平太、でいいかな」と穏やかに言った。<br>
+<br>
+「他の六年生も名前で呼んでる。あなただけ、違うふうに呼ぶのは」<span class="user-name"></span>は一度言葉を切った。「それは違うと思うから」<br>
+<br>
+　小平太はわずかに顔を傾けたが、そうか、とこちらも穏やかな声音であった。<br>
+「じゃあ」と踵を返そうとした<span class="user-name"></span>に、小平太が「あ、まて」と声をかける。なんだ、と振り向いた彼女の目の前で、小平太は突如として装束の上着を脱ぎだす。「七松先輩！？」と驚く後輩の声を気にもかけず、手早い動きであっという間に黒いタンクトップのような<ruby>肩衣<rp>（</rp><rt>かたぎぬ</rt><rp>）</rp></ruby>姿になった。<br>
+<br>
+「羽織っていけ」<br>
+<br>
+　ん、と装束をわざわざ裏返して手渡す小平太。<span class="user-name"></span>は「い、いや、いらない」と動揺のあまりストレートすぎる物言いをしてしまうが、小平太はなおも「いーから。細かいことは気にするな！」と<span class="user-name"></span>の手に無理やり上着を押しつける。三年生の二人はぽけっとしてそんなやり取りを見ていた。<br>
+<br>
+「別に寒くもないのに」<br>
+「おまえな」小平太はわずかに呆れたような声音で息を吐いた。「女が夜着姿でふらふら出歩くな。学園の中だとしても、ここは男ばかりなのだから警戒心を持て」<br>
+<br>
+　<span class="user-name"></span>は今さらハッとして小平太のくれた上着で咄嗟に体の前を隠す。カ、と顔を赤く染めたまま体のラインを隠そうとする<span class="user-name"></span>の姿は、どちらかというとその前よりも煽情的に映った。そういうことに縁がない三年生ですらちょっと赤くなって目を逸らしたし、小平太は「こいつ本当に何もわかっていなかったのか？」という驚きで逆にまじまじと彼女を見つめた。<br>
+<br>
+「ご……、ごめん。わかった。ありがとう」<br>
+「ああ。おまえ、いつも朝早くに起きてるだろ。そのとき返しにきてくれ。六年の長屋はわかるか？」<br>
+「うん。えっと……、ろ組？　だよね？」<br>
+「そうだ。誰もいなかったら適当に置いといてくれ」<br>
+「わかった」<br>
+<br>
+　さあ戻るぞ、という小平太のかけ声で、方向音痴の二人は「おやすみなさい！」と<span class="user-name"></span>に深々頭を下げてから引きずられていく。やっぱり彼らに道を歩く主導権を与えないというのが一番の対処法のようであった。見えないであろう背中に<span class="user-name"></span>は小さく手を振って、上から羽織った小平太の上衣の胸元を軽く手で押さえながら歩き出す。<br>
+　幼馴染の七松小平太に、ジャージを借りたことがあったのを思い出した。申し訳なかったけれど、『細かいことは気にするな！』とお得意の口癖で押し切られ、結局その日の体育で<span class="user-name"></span>は『七松～』と呼ばれながら過ごした。<br>
+　どんな七松小平太も、やはり七松小平太であるのだ、と思って。大丈夫だ、と何度も思ったくせに、こんなことで涙ぐむ自分がいやになって──その結果。<br>
+<br>
+「……めちゃくちゃ変態じゃん……」<br>
+<br>
+　<span class="user-name"></span>は翌朝、小平太の上着を抱きしめながら寝ていたことに気づき、布団の上で頭を抱えながら呟いた。半泣きになりながら洗ってから返してもいいだろうかとすぐに交渉しにいったのだが、「細かいことは気にするな！」といつもとまったく同じセリフで長屋を追い出され、<span class="user-name"></span>はこれから別の意味で小平太と顔を合わせづらくなるのだった。<br>
+
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="14.html">前へ</a> ｜ <a href="mahoroba.html">一覧へ戻る</a> ｜ <a href="16.html">次へ</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/main.html">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>
