@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="ブルー・クオリア">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/blue-OGP.webp">
+    <meta property="og:title" content="ブルー・クオリア - 落日 | Kagami">
+    <meta property="og:description" content="青い女がいた。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://calare.vercel.app/images/blue-OGP.webp">
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <link rel="stylesheet" href="novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+  <script defer src="/assets/js/name.js"></script>
+
+  <!-- ページタイトル -->
+  <title>驕れよ、少年｜ブルー・クオリア</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン 書き換え-->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">009</span>
+    <h1 class="novel-title">驕れよ、少年</h1>
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション 書き換え　-->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="08.html">前へ</a> ｜ <a href="blue.html">一覧へ戻る</a> ｜ <a href="10.html">次へ</a>
+      </div>
+    </div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここまで 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+    
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+        <!-- 書き換え -->
+        　諏訪洸太郎はヤンキーだ。<br>
+　勿論本人に訊いたら、「はあ！？　ざっけんな誰がそんなこと言ってんだ！　風間か！？　風間だな！？」と叫ぶこと間違いナシであるが、周りの人間に「諏訪洸太郎を一単語で表すならば？」と訊けば大抵この答えが返ってくる。<br>
+<br>
+　そんな諏訪はつい先ほどランク戦を終えたばかりであり、「んあ－……」と言いながら自販機の前に立っていた。何を頼むか悩んでいるのである。ふら、と指があっちにいったりこっちにいったりしている。<br>
+<br>
+「諏訪先輩」<br>
+「うおぉッ」<br>
+<br>
+　急に後ろから声をかけられて肩を跳ねさせる。振り向けば口元にほくろのある美女──加古がそこに立っていた。彼女はニコリと微笑んで、「そんなに驚くことないでしょう」と言う。珍しく六頴館のブレザーを着ていたので生身だとわかった。<br>
+<br>
+　先日加古から連絡があったことを思い出す。「暇な日はあるかしら」と言われて「毎日暇だよ」と返した。春から大学生だと言われてもロクに実感が湧かず、課題のない日々をどうやって暇つぶしするか悩んでいるだけである。<br>
+　それから連絡はなかったので特に大事な用でもなかったのかと思ったが、加古の後ろに二宮もいるところを見るとそうでもないようである。二宮の後ろにも見慣れない人物が、<br>
+<br>
+「────」<br>
+<br>
+　──青い。<br>
+<br>
+　その一言に尽きた。<br>
+　少女の青い髪は中々見ないくらいに長かった。腰よりも長い髪の毛が、彼女がちょっと身体を動かす度にふわふわと揺れ動く。何故かエンジニアの黒い服を着ていたが、そのおかげでことさら青さが強調されていた。<br>
+　気を取られたのは青色だけではない。顔かたちもプログラムされたのかと思うくらいに精巧につくられている。顎を引いた姿勢は唖然とするほどに背筋が伸びていた。<br>
+<br>
+「え……。だれ？」<br>
+<br>
+　意表を突かれたというか、あまりにも想定していなかった人物を見てしまい、口をついて出た言葉に、加古が待ってましたとばかりにニコッと笑った。<br>
+<br>
+「十五年間放浪してた日本人の<span class="user-name"></span>ちゃんです」<br>
+「…………。は？」<br>
+<br>
+　──<span class="user-name"></span>の戸籍が日本にあったからといって、では何故そんなにも日本語の読み書きができないのかと周りの人に訊ねられれば窮するしかない。<br>
+<br>
+　なので上層部は、『<span class="user-name"></span>の戸籍は確かに日本人であるが、生まれてからずっと世界中を放浪しており読み書きができる環境ではなかった』ということにした。<br>
+<br>
+　実はボーダーには他にも<ruby>近界民<rp>（</rp><rt>ネイバー</rt><rp>）</rp></ruby>がおり、ある人間はカナダ人と偽ってこちらで生活をしている。しかし彼はとうに成人済みであり、学校に通う必要がない──つまり『何故カナダ人なのに英語ができないのか』と問われる心配がない。<br>
+　<span class="user-name"></span>の場合は学校の教科に英語があり、なおかつ英語が日本語よりもできないという事態に陥るのが目に見えているため、『カナダ人』と偽ることは悪手にしかならないのだ。<br>
+<br>
+　色々な国を訪れていたといえば、独特の価値観も常識外れなことも納得してもらえる。青い髪は、とある難病の後遺症だといえばいい。義足は鬼怒田がぱっと見ではわからないものを作ってくれる。<br>
+　幸いなことと言えば、以上の設定について、<span class="user-name"></span>が嘘を言う必要が全くないことだ。十五年間放浪していたのは流石に嘘だが、大抵の人間とは比べ物にならないくらい多くの国を知っているし、難病を患っていたのも本当だ。義足も万が一バレたとて、特に後ろめたいことはない。<br>
+<br>
+　そんな設定を加古は諏訪に話した。<br>
+　此処はラウンジから少し離れた休憩スペースなので、いくつか長椅子が置いてある。加古の隣に<span class="user-name"></span>、<span class="user-name"></span>の隣に二宮。高身長の二人に挟まれた<span class="user-name"></span>は随分小さく見えたが、彼女の身長は160センチちょっとある。<br>
+　<span class="user-name"></span>は諏訪に奢られたジュースを美味しそうにちびちび飲んでいた。<span class="user-name"></span>にとっては<ruby>玄界<rp>（</rp><rt>ミデン</rt><rp>）</rp></ruby>のものは何でもかんでも極上の食べ物になるのである。ちなみに諏訪は初対面でこの幸せそうな顔を見たので、こののち普通の<span class="user-name"></span>に接すると「アレ？　こんな表情変わらねぇヤツだったっけ？」と思うこととなる。<br>
+<br>
+「で──読み書きができないから、それを改善するために本を読ませてやろうって？」<br>
+「そういうことです。諏訪先輩ならいい本を知ってるんじゃないかと思い」<br>
+<br>
+「つまりはそういうことだ」とタメか年下相手なら言っていたであろう二宮。ちなみに将来マジで言う。<br>
+　<span class="user-name"></span>が<ruby>近界民<rp>（</rp><rt>ネイバー</rt><rp>）</rp></ruby>だと知っているのは、現状ボーダーの上層部、エンジニア、東隊、風間、玉狛支部の人間達。A級隊員にも話が回っていないのに、一介のB級隊員である諏訪に情報を喋るワケにはいかなかった。<br>
+<br>
+　元々は<span class="user-name"></span>のことを純粋に『<ruby>近界<rp>（</rp><rt>ネイバーフッド</rt><rp>）</rp></ruby>から帰還した日本人』としてメディアに出演させ、ボーダーの株をあげるという話もあった。しかしそれをすると『どうやって帰還したのか』『ほかに<ruby>近界<rp>（</rp><rt>ネイバーフッド</rt><rp>）</rp></ruby>に連れ去られた人はどうなったのか』などという批判混ざりの質問が大量にボーダーに届き風当たりが悪くなる可能性があったため、真実をつまびらかにするという案は退けられた。<br>
+<br>
+　また今まで生きてこられたことについて、<ruby>近界<rp>（</rp><rt>ネイバーフッド</rt><rp>）</rp></ruby>には人が生きられるくらいの文明があると察されてしまう──<ruby>近界民<rp>（</rp><rt>ネイバー</rt><rp>）</rp></ruby>＝トリオン兵ということにしておきたボーダーとしてはそれを望まない。<br>
+<br>
+　諏訪は<span class="user-name"></span>を一瞥して、どうもそれだけには見えねぇけどな、と第六感を見事なまでに働かせながら、「まぁいいぜ」と言った。<br>
+<br>
+「どのくらいのレベルでできねーんだ」<br>
+<br>
+　諏訪の問いに一同が<span class="user-name"></span>を見た。傍から見てるだけではとにかく文章を読むのが遅いということしかわからない。どういう言葉が理解できないとか、どういう本を読みたいとか、そういうことを全然知らなかったのだ。<br>
+　一気に注目を浴びた<span class="user-name"></span>はきょとんとして、遅ればせながらその問いが自分に向けられたものだと気付き(さっきまで二宮と加古が受け答えしてくれていたので)、「あぁ」と声を出した。<br>
+<br>
+「単語の意味がわからないっていうのは、ほとんどねえけど、でも文章が冗長なのはこまる」<br>
+「まぁ、口語が問題ねーならそうか。ってーと海外小説とか昔の作品は無理そうだな……、海外小説読んだことあるか」<br>
+「……？　『海外』のくくりをあまり理解していない」<br>
+「今さっき単語の意味がわからないのはほとんどねーって言ったヤツは誰だ」<br>
+<br>
+　自分である。<br>
+　<span class="user-name"></span>はぐっと眉根を寄せて、「わからないことはないと思ったんだが」と言った。ちなみにこれはばつが悪い時の顔だ。地理的な話が特に苦手なのである。<br>
+　昔にたくさん読んでいた本も虫食い状態で覚えている。あれだけ何回も読んで、あれだけ面白いと思ったはずなのに、先程の『同級生』みたいにどうも詰まってしまうのだ。ちょっと考えてからでないと意味を思い出せないことがあった。<br>
+<br>
+「内容は？　好みがねーなら<ruby>推理小説<rp>（</rp><rt>ミステリ</rt><rp>）</rp></ruby>になるが」<br>
+「──！　それがいい。昔、けっこう読んでいた気がする」<br>
+「お、見る目あんじゃねぇの。……読んでた？　日本語読めねーのにか？」<br>
+<br>
+　研究所の書斎にはありったけの本があった。推理小説のみならず<span class="user-name"></span>は様々なジャンルに手を出していたが(というよりそこにある本を片っ端から読んでいた)、推理小説ほど寝食を忘れるものはないといえたので、<span class="user-name"></span>はそう答えた。<br>
+　しかし先程の説明と矛盾している、と思った諏訪の疑問に加古が「昔は読めたのよ」と咄嗟にフォローを入れた。<br>
+<br>
+「でも数年前から日本語に触れなくなってしまったから、今は読めないの」<br>
+「ア？　なんで──って、聞くのは野暮か」<br>
+<br>
+　諏訪は己の第六感をけっこう信じるタイプの人間である。現状ボーダーの隊の中でトップクラスである東隊がこうも揃って、国籍だけ日本である怪しい少女と行動を共にしているということは、それなりの裏があるのだと思うくらいには諏訪は賢く聡かった。<br>
+　二宮は諏訪の言葉にきょとんとしていたが、加古は諏訪の察しの良さを知っているので「ありがとう」と微笑む。<br>
+<br>
+「十冊くらい見繕ってやらァ。今度隊室寄るわ」<br>
+「わかったわ」<br>
+<br>
+　諏訪は高校生らしからぬニヒルな笑みを浮かべて言った。それから<span class="user-name"></span>の方に視線をやって、「オメー、名前は？」と訊ねる。<br>
+<br>
+「<span class="user-name"></span>だ」<br>
+「あ？　それはさっき聞いただろーがよ」<br>
+「──？」<br>
+<br>
+　何のことだかわからない、という表情をする<span class="user-name"></span>。困惑するのはむしろこちらの方で、諏訪は<span class="user-name"></span>が何を理解できなかったのかわからない。<br>
+　ここでも加古が見事なフォロー力を発揮し、「この子、海外にいたから基本的に名前で生活してたの」と言った。一瞬「ハ？」と言いそうになったが、確かに外国では最初からファーストネームで呼ぶことが多い。それにしたって名字を名乗らないのは妙なことだと思えた。<br>
+<br>
+「ああ、名字……」<span class="user-name"></span>は納得した表情を見せる。「忘れてた。<ruby>狄塚<rp>（</rp><rt>えづか</rt><rp>）</rp></ruby>だ。でも慣れてないから『<span class="user-name"></span>』がいい」<br>
+「わーった」<br>
+<br>
+　ひらり、と諏訪は手を振った。<br>
+<br>
+<br>
+＋　＋<br>
+<br>
+<br>
+　その日の勉強会も無事に終わり、<span class="user-name"></span>は三輪に自室まで送ってもらった。<span class="user-name"></span>はまだボーダー内を移動する時にはボーダーの正隊員と一緒にいることを推奨されている。<br>
+　ピ、とドアの横のパネルを操作して「開いたぞ」といえば「ありがとう」と素直に返ってくる。青色の髪が横を通り抜けた。<br>
+<br>
+「……おまえは、」<br>
+<br>
+　三輪が言いかけた言葉に、<span class="user-name"></span>は「じゃあね」と開こうとしていた口を閉じた。三輪はじっと<span class="user-name"></span>を見ていて、目を逸らす理由がない<span class="user-name"></span>も彼を見ていた。<br>
+　電気を付ける前だったので、部屋の外に立つ三輪の方が明るい。暗がりの中に立っていても明るい青色の髪が外からの光を反射していた。<span class="user-name"></span>の髪も目も、青々しくて眩しいくらいだ。眩しくて、見ていられなくて、足元に視線を落とす。<br>
+<br>
+「俺を──怖がっているんじゃなかったのか」<br>
+<br>
+　拳銃で<span class="user-name"></span>を撃ち抜いた時、すぐさま反撃された。あの時の表情は、正直自分の焦りだけで全く覚えていられなかった。でも、たぶん、怖がっていたのだろう。銃が怖いと──その話は鬼怒田から聞いた。思い返せば、確かに足技は左ばかり使っていた気もする。機械で補強されていて、そちらの方が強かったからという理由かもしれないが。<br>
+<br>
+　四肢の欠損なんて、トリオン体では日常茶飯事だ。だが痛みがないからそういうことに対して鈍感であるだけで、生身でそんなことがあったらと思うと怖気が走る。人を攻撃できない、という隊員は大抵エンジニアかオペレーターに転向するが、そういう人達はたぶんこういう考えをしているのだろうと思った。<br>
+　生身だったら、あんな怪我をすれば死ぬ。生身だったら、殺してしまったことになる。<br>
+<br>
+「あの時はそれが最善だと思った──後悔してるし、反省してる」<br>
+<br>
+　それでもあの時の自分に嘘はつけない。<br>
+　<ruby>近界民<rp>（</rp><rt>ネイバー</rt><rp>）</rp></ruby>は殺さなくてはならないのだ。殺したい気持ちもある。だがどちらかといえば、前者の方が正しい──殺さなくてはならない。そうでなければ、自分の復讐心に嘘をついたことになる。もし彼女が本当に<ruby>近界民<rp>（</rp><rt>ネイバー</rt><rp>）</rp></ruby>であったなら、きっと今の自分より激しく後悔するだろう。<br>
+<br>
+　だから言ったことは本当だ。けれど今回みたいなことがあったとしたら、たぶん同じ行動をとってしまうだろう。<br>
+　刻印みたいなものだ。姉の死と共に魂に刻み付けられたのだ。姉の死を忘れ、復讐心を忘れることなど許さないと。<br>
+<br>
+「悪かったとも思ってる。だけど俺は、たぶんそういう人間のままだ。俺が今お前に斬りかからない理由は、お前が『日本人』だという理由だけだ。そうじゃないと言われたら、きっと今からでも殺せる」<br>
+<br>
+　<span class="user-name"></span>の表情は変わらない。それが、三輪にはわからない。ずっとわからない。殺してくるかもしれない相手を目の前にして「ありがとう」と言える神経が理解できない。<br>
+　ずっと<ruby>近界<rp>（</rp><rt>ネイバーフッド</rt><rp>）</rp></ruby>で過ごしてきたせいだ、と言われれば僅かな同情心も湧く──それでも苦手なことには変わりない。<br>
+<br>
+「殺せるくらい、なんてことないだろ」<br>
+「────」<br>
+<br>
+　<span class="user-name"></span>がようやく口を開いた。<br>
+　彼女の表情は見えなかったが、口調はいつもと変わらなかった。だからこそ彼女の本心だろうと思えた。<br>
+<br>
+「ずっと戦争してんだ。ずっと隣で笑ってる人間殺してきてたんだ。『殺せないヤツ』がいたら、それは普通だし、幸せだよ。人なんて殺せない方がずっといい」<br>
+「────」<br>
+「殺せる私たちがおかしい──痛くなくても、死ななくても、傷つけられる私たちが『異常』なんだ」<br>
+<br>
+　<span class="user-name"></span>がはっきりと断言する。<br>
+　戦争を長く続けていると、精神に異常をきたすことは既にどの世界でも理解されている。どんな能力を持っていてもどんな性格であっても、戦争をする前とは確実にどこかが変わってしまうのだ。<br>
+「だからそれくらいなんてことない」と<span class="user-name"></span>は言った。隣の人間を殺せるくらい、本当になんてことないのだ。自分が助かるためだったら何だってできる人間の方が人間らしい。他人を助けだせる人間は、どこまでも人間性があって人間らしくない。<br>
+<br>
+「それに言ったろ？」<br>
+「──？」<br>
+「私、意見を変える人間は嫌いなんだ」<br>
+<br>
+　<span class="user-name"></span>は微笑んだ。今まで他の人間といる時に笑ったことはあれど、明確に三輪に向けて笑ったのは初めてである。<br>
+　人形のように綺麗であるとは思っていたけれど──存外。<br>
+<br>
+<br>
+「いざって時には、おまえが私を殺せよ」<br>
+<br>
+<br>
+　存外、人間らしいんだなと思った。
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="08.html">前へ</a> ｜ <a href="blue.html">一覧へ戻る</a> ｜ <a href="10.html">次へ</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/main.html#wt">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>

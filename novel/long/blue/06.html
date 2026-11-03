@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="ブルー・クオリア">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/blue-OGP.webp">
+    <meta property="og:title" content="ブルー・クオリア - 落日 | Kagami">
+    <meta property="og:description" content="青い女がいた。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://calare.vercel.app/images/blue-OGP.webp">
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <link rel="stylesheet" href="novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+  <script defer src="/assets/js/name.js"></script>
+
+  <!-- ページタイトル -->
+  <title>近界民の近界民による玄界のための講座｜ブルー・クオリア</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン 書き換え-->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">006</span>
+    <h1 class="novel-title">切り裂かれた銀幕</h1>
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション 書き換え　-->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="05.html">前へ</a> ｜ <a href="blue.html">一覧へ戻る</a> ｜ <a href="07.html">次へ</a>
+      </div>
+    </div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここまで 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+    
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+        <!-- 書き換え -->
+「それ、トリオンを流すと、トリオンでできてる物質を硬化させる作用があんだよ」<br>
+<br>
+　<span class="user-name"></span>はナイフの刃の部分を指さして言った。<br>
+<br>
+　三輪と風間が出て行ったあと、迅といろいろ日本のことや<ruby>近界<rp>（</rp><rt>ネイバーフッド</rt><rp>）</rp></ruby>のことについて喋っていたら、迅が内部通信を受け取った。鬼怒田からの「開発室に来い」という呼び出しだった。<br>
+　迅の後ろをちょこちょこついていけば、<span class="user-name"></span>の愛用サバイバルナイフと歪な形のスコーピオンがあった。その後ろに控えているのが、鬼怒田、風間、エンジニアの隊長格の冬島慎次という男だった。風間とはさっき振りである。<br>
+<br>
+「皆さんお揃いで」と迅がからかうように言えば、「たわけ」と拳骨を落とされていた。アイタタ～、と頭を擦る迅の後ろから飛び出す<span class="user-name"></span>。<br>
+　正しくは飛び出そうとしてそれを予知していた迅に首根っこを掴まれ、「ぐえ」とカエルが潰れたような声を出す<span class="user-name"></span>。<br>
+<br>
+「わ、私の武器！　返してくれ！　船になんか使わせねえぞ！！」<br>
+「使わんわい」<br>
+<br>
+　さっきそんなこと言ってただろうが！　と叫ぶ<span class="user-name"></span>を暴れ出さないように押さえる迅が、「それで？」と言った。訊ねたんじゃなく話を促したかのような喋り方で、話の内容はもうわかっているとでも言いたげである。<br>
+　鬼怒田は並べてあった武器の中で、ポリゴンメッシュで作られた形になってしまっているスコーピオンを指さし、「これのことだ」と言った。<br>
+<br>
+「刃の部分が何故か硬化していて斬れなくなっとるんだ。おまえのナイフと戦り合ってから気付いた、と風間が言っておる。どういう仕組みか説明してくれ」<br>
+<br>
+　──そして冒頭のセリフである。<br>
+　<span class="user-name"></span>が「ナイフ持ってもいい？」と鬼怒田に訊ねる。鬼怒田が迅を見ると、「全然心配ない」と言うように手をひらひら振った。いいぞ、と顎をしゃくると光の速度で机の上にあったナイフを奪い取る。猫かと思うくらい素早かった。<br>
+　かえってきた！！　と思わず叫んで握り締める<span class="user-name"></span>に、風間が冷静に「返ってきてない」とツッコむ。依然として彼女は『捕虜』であり、迅の『未来予知』があるからといって好き放題させていいワケでもないのだ。<br>
+<br>
+「ほら、ちゃんと説明しないとおまえのナイフが遠征艇に使われる未来が視えるよ」<br>
+「ぎゃう」<br>
+<br>
+　尻尾を踏まれた犬の悲鳴みたいな声を出した<span class="user-name"></span>は、名残惜しそうに抱き締めていたナイフ(通常の武器としても使えるのでどう考えても危ない)を皆に見せる。<br>
+　ナイフは先程までと違って、スコーピオンなどのトリガーと同じように薄く発光していた。これが彼女の言う『トリオンが流れた』状態になるのだろう、と全員が興味深そうにナイフをじっくりと眺める。ボーダーが使っている武器は基本トリガーそのものなので、わざわざトリオンを流すなんてものを見たことがなかったのだ。<br>
+<br>
+「<ruby>近界民<rp>（</rp><rt>ネイバー</rt><rp>）</rp></ruby>はこんなものを使っとるんか」<br>
+「いや、相当レアなケースだ。みんな普通にトリガーを使ってる場合が多い」<br>
+<br>
+「私のトリガーは？」と<span class="user-name"></span>が訊ねた。たまたま視線の先にいた冬島がア゜！　という声を出してピャッと飛び跳ね、ビュッと奥の方に消えたかと思うと、音速で戻ってきてトリガーをおいた。<span class="user-name"></span>のトリガーだった。<br>
+<br>
+「起動していい？　別に誰が起動してもいいんだけど」<br>
+「……誰が起動してもいいなら迅か風間が起動しろ。冬島！　おまえは許可もなく何をやっとるんか！」<br>
+「はっ！　いや……女子高生に睨まれたと思ったら身体がつい反射で動いてしまって……」<br>
+「この子まだ女子高生じゃないよ。学校いってないし」<br>
+<br>
+　はたと洗脳から解放されたみたいな顔をした冬島が、「いや……そういう問題じゃないんだ……」と迅に非常に苦労人の顔をして言った。言っておくがこの男、まだ二十六歳である。しかし世間一般では若手と呼ばれていても、ボーダーの中では平均年齢を余裕で超えている。中学生や高校生の戦闘員が大幅に平均年齢を下げていることもあるが。<br>
+<br>
+　風間と迅は一瞬だけ視線を交差させたが、迅の<ruby>黒<rp>（</rp><rt>ブラック</rt><rp>）</rp></ruby>トリガーのことを鑑みて風間が「起動しよう」と言った。<span class="user-name"></span>のトリガーを握る。<br>
+　特に何も起こらない。<br>
+<br>
+「じゃあ、ちょっと刺すぞ」<br>
+「え！？」<br>
+<br>
+　<span class="user-name"></span>がなんだ、とでも言いたげに冬島を睨んだ。<span class="user-name"></span>は相当に綺麗な顔をしているので、蛇に睨まれた蛙、もとい美少女に睨まれた冬島は「なんでもアリマセン……」と言って鬼怒田の後ろに隠れた。冬島は身長が百八十センチを余裕で超えてるので、それよりもニ十センチ低い鬼怒田では全く隠れられていない。<br>
+　冬島の言いたかったことは『換装してないように見えるけどそれで刺すの！？』ということだったのだが、それを完璧に理解した風間は「服装が変わらないな」と呟いた。<br>
+<br>
+「ああ。私軍人じゃねえし、服を設定すんのメンドかったから……、トリガーを起動した状態を毎回スキャンさせて同じ服になるように設定してんだ」<br>
+<br>
+　では別に<span class="user-name"></span>のトリガーでなくともよかったのでは？　とその場の全員が思ったが、何故か誰も口に出さなかったので誰も何も言わなかった。<br>
+　じゃあ刺すぞ、と言って<span class="user-name"></span>は風間の手首を握り、その腕を躊躇なく刺した。<br>
+<br>
+　──刺した部分とその周りがポリゴンデザインのようにカクカクになった。ポリゴンとは多角形のことで、風間の腕──学校のあとだったので制服である──は元からそういうデザインだったかのように落ち着いた。風間が反対の腕で触ってみると、なるほど確かに硬化している。しかもトリオンは漏出しない。<br>
+<br>
+「最初に攻撃を避けていたのはこれが理由か？」<br>
+「まあ。武器使い物にならなくされたら困るだろ──トリオンを流さなければ大丈夫だけど、万が一を想ってさ」<br>
+<br>
+　ザクザクザク、と三回くらいいろんなところに刺す。痛くないとはいえ、だ。全員が『コイツ、ちょっとって言ってたのに結構刺すな……』と思った。<br>
+　<span class="user-name"></span>が刺したところは全部カクカクになって、風間の腕はなんだかそういうアートみたいになった。近代美術館のどっかしらに置いてあるなんかよく意味はわからんけれど芸術性はあるんだろうな、というタイプのアート。しかも硬化すると服と体が一体化するらしく、風間が「脱げん」と普段より若干眉根を寄せた状態で呟いた。<br>
+<br>
+「トリオンを流した状態でしか作用しないから、止血──止トリオン？　みたいに使ってる。後は相手の武器使えなくしたり」<br>
+「そりゃあ、やられる方はたまらんわな。仕組みは？」<br>
+「は？　知るワケねーじゃん。そういう鉱物だってんだろ」<br>
+<br>
+　この小娘本当にどうしてやろうか……。<br>
+　鬼怒田が頭の中で<span class="user-name"></span>を川の真上にワープさせて落とす、試作トリガーの的にする、太刀川の<ruby>ランク戦<rp>（</rp><rt>ひまつぶし</rt><rp>）</rp></ruby>に付き合わせる、などなどの酷い案を頭の中で考えている隣で、風間が「コレどうするんだ」とポリゴン腕を見つめて言った。関節部分も刺されたので曲がらなくなってしまった。<br>
+<br>
+「え？　トリオン体破壊されるまで戻らねえよ。殺してやろうか？」<br>
+「…………」<br>
+<br>
+　風間がわかる人にはわかる不機嫌な顔で、自分より若干高い位置にある<span class="user-name"></span>の顔を睨み上げた。風間の感情の機微がわかるほど親しくなっていない<span class="user-name"></span>は「え？　なに……。スゲー見られてる」などとほざいている。<br>
+　迅は「この子本当に人の神経逆撫でする子だな……」と思っていた。三輪、鬼怒田、風間、と今のところボーダー隊員だったら敵に回したくない人間の機嫌を片っ端から損ねていっている。尊敬すら覚えるレベルである。<br>
+<br>
+　風間は<span class="user-name"></span>の持つナイフをパッと奪った。あ、と<span class="user-name"></span>が声をあげる間に自分で自分の首を掻っ切る。トリオンは流していなかったから、風間の首から血のようにトリオンが溢れ出した。そしてトリオンの漏出がおさまると同時、風間のポリゴン腕も戻った。ぐっぱっ、と何度か握ったり開いたりを繰り返してみる。<br>
+<br>
+「このナイフについてはわかった。では遠征艇の話だ。おまえが乗ってきた遠征艇はどこにある？」<br>
+<br>
+　<span class="user-name"></span>は鬼怒田の言葉に、表情をあまり変えないながらも首を捻る。<br>
+<br>
+「遠征艇、ってちょくちょく言ってたな。それ何の話だ？」<br>
+「はあ？　……いや、スマン。船のことだ」<br>
+「ああ」<br>
+<br>
+　ボーダーでは遠征艇という言葉で十分に伝わるが、そもそも『遠征』だのなんだのを知らない<span class="user-name"></span>からしたら理解のできない話だ。<br>
+　鬼怒田の言葉に<span class="user-name"></span>はちょっと頷くと、ポケットをまさぐった。それから少し怪訝そうな顔をして、「ない」と言い、冬島を見る──冬島はキャ゜！　という声を出してピャッと飛び跳ね、ビュッと奥の方に消えたかと思うと、音速で戻ってきて箱を持ってきた。アレ？　デジャブだな……。とそこにいた全員が思った。冬島は再度鬼怒田に怒鳴られた。<br>
+<br>
+　段ボール箱の中に入っているのは<span class="user-name"></span>の私物だった。といっても、<ruby>戦闘食<rp>（</rp><rt>レーション</rt><rp>）</rp></ruby>やら折り畳みナイフやらマッチやら金貨やら、そんなもんが細々としていろいろあって、よくこんなものをその身体に隠しこんでいたな、という感嘆すら覚える。風間はこの状態で俺たちと戦っていたのか、と微妙な気分になった。<br>
+<br>
+「ん。これだ」<br>
+<br>
+　<span class="user-name"></span>はその中から黒くて細長いものを取り出した。トリガーの半分くらいの小ささだ。手の大きな人間なら、ちょうど片手に握り込めるくらいになっている。それを鬼怒田に手渡す。<br>
+<br>
+「広いところで起動させて。トリガーと同じ要領」<br>
+「……？　見た目はトリガーではないが」<br>
+「ああ。そん中に船が入ってる」<br>
+「コレに！？」<br>
+<br>
+　鬼怒田が目を見開き、冬島に「おい、解析班に回せ」と言う。冬島は中間管理職のような顔をして大人しくその指示に従った。迅と風間は「アイツパシリしかしてねぇな……」と思ったが、口にも顔にも出さなかった。いつの日にもいつの時代にも、犠牲は付き物なのである。<br>
+　鬼怒田は「どういう仕組みなんだ」と言った。<span class="user-name"></span>は青い髪の毛の間に指を入れて、ガシガシと後頭部をかく。言語化できない説明をどうにか外界に表出させようとしているのがよくわかる。困った表情の似合う女だった。<br>
+<br>
+「トリオン体を──起動するだろ？　そしたら、生身はこのトリガーの中にしまわれるよな。そういう原理を応用してるっぽくて」<br>
+「はあ？」<br>
+「いや、知らない……、だから、その──トリオン体と交換になるだろ？　生身が。だったら交換しないでも異空間に保存自体はできるんじゃないかって──なんか、そういう理屈？　らしい」<br>
+<br>
+　全くもって要領を得ない説明だったが、日常的にパソコンを使う人間がパソコンの仕組みを全て説明できるのかと言われたら否である。鬼怒田は彼女からの説明を無駄だと理解し、「あーもういい、わかった」と遮った。<br>
+　トリガーはこちらで解析すればいい。それよりも<ruby>近界<rp>（</rp><rt>ネイバーフッド</rt><rp>）</rp></ruby>での生活の話を聞きたかった鬼怒田だったが、迅が「まぁまぁ」と二人の間に割って入った。青色の仔犬と狸の間に入った予知能力者はへらりと笑う。<br>
+<br>
+「とりあえず彼女お風呂入れてあげようよ。けっこう最初の方から思ってたんだけどさ」<br>
+「────」<br>
+<br>
+　皆が<span class="user-name"></span>を見た。<br>
+　擦り切れて元の色がわからない服、土砂で汚れた靴、くすんだ青い髪、擦過傷だらけの全身──いっせいに皆の視線を浴びた<span class="user-name"></span>はぎょっとした顔で「な、なんだ」と言って迅の後ろに隠れる。どうやらこの中で一番好感度の高い人間は迅であるらしい。<br>
+<br>
+「……いってこい」<br>
+<br>
+　鬼怒田は深い同情心の奥底からひねり出すように言った。<br>
+<br>
+<br>
+＋　＋<br>
+<br>
+<br>
+　風呂に入るのなんて久方ぶりだった。今まで<span class="user-name"></span>が旅をしてきた中でそんなリラックスできるような場所はなかったし、そもそも風呂の文化がない国だってあった。どちらかというと後者の方が多く、大抵の人間がシャワーかタオルの水拭きで日々を終わらせていた。<br>
+<br>
+　家に風呂があり、毎日湯に浸かっていた<span class="user-name"></span>としては、傭兵になり始めの頃は周囲との意識の差に毎日目を見開くことばかりだった。<br>
+　ちなみに、その頃の<span class="user-name"></span>は全くといっていいほど感情を表に出さない子供だったので周りの人間には「驚きしか感情表現がないのか」と揶揄されていた。本人は全く気にしていなかったが。<br>
+<br>
+　風呂にお湯が張り始めると、迅は「あ」と素っ頓狂な声をあげて立ち上がった。服を忘れた、と言う。開発室からエンジニアの服を借りてくる、と席を立った迅の後ろ姿を眺めた。<br>
+　それから自分の服を見下ろした。なるほど、確かに小汚い見た目である。元々何色だったかも思い出せないくらいの服だった。どの国で買ったとか、そういうのも覚えてない。<br>
+<br>
+　部屋を見渡すと、黒い板があった。「──？」と首を傾げる。見覚えがある気がして──ポン、と古い漫画のように手を打った。テレビだ──テレビ。家に、確かあった。これよりだいぶん小さくて厚かったような気がするけれど、こんな形状のものを他で見たことはない。<br>
+　なるほど、日本のものだったのだな──と家にあるものを思い浮かべる。他の国でこういうものをあまり見なかった理由も理解できた。<br>
+<br>
+　そうしたらリモコンがあるはずだ、と<span class="user-name"></span>は部屋をうろうろしてリモコンを探した。こちらは反対に<span class="user-name"></span>が知っているものよりだいぶん大きい。色々書いてある──目をぱちぱちと瞬かせる。<br>
+　日本語だ。<br>
+　書いてあるのは日本語だ。<br>
+<br>
+「────」<br>
+<br>
+　ここでじわり、と懐かしさのあまり涙が滲むような人間であれば、<span class="user-name"></span>はとうのとっくに死んでいただろう。とうのとっくに死んでいるのは心であり、生き残っているのは心なき人間だ。まあ数時間前に号泣したばかりの人間が言うことではないが──本当に泣くのは久し振りだった。痛くて泣くのを除いたら、四年だか五年前に、独りでいるのが寂しくて泣いたくらいだ。<span class="user-name"></span>はそれを黒歴史認定している。<br>
+<br>
+　痛くて泣くのは仕方ないのだ。生理的反応だから。<br>
+　朝に兵士の怒鳴り声で目が覚めるのも、まずい<ruby>戦闘食<rp>（</rp><rt>レーション</rt><rp>）</rp></ruby>の味がしなくなったのも、存在しない左足が痛むのも、仕方ない。<br>
+　それなのに、ただ日本を探し当てたという理由だけで泣いた<span class="user-name"></span>は、今はけっこうな自己嫌悪に陥っているのだ。泣くのが恥ずかしいとかいうワケじゃないけれど、自分はそんな人間だったのか、とか思う。そんなに人間性のある人間だったかと──思う。<br>
+<br>
+「────」<br>
+<br>
+　それはさておき、文字である。パッと見だとサッパリだが、よくよく文字を眺めると、記憶の奥底で埃をかぶった知識が浮かんでくるのがわかった。『電源』『チャンネル』『停止』──見覚えのあるものばかりである。<br>
+　実際に<span class="user-name"></span>の家にあったものは、DVDなどを再生するためだけのテレビだが──故に『チャンネル』『録画』などの意味はよくわからないのだが、それだけでひどく懐かしい気分になっているのは間違いない。<br>
+<br>
+『電源』をつけて、あとはテレビの下のところにある機械にDVDを入れて……、あれ、機械ないな。<br>
+　やっぱり少し違うのだろうか、と思う。でも電源をつけたらなにか変わるかもしれない、と思って、ポチとボタンを押してみた。<br>
+<br>
+『で今回は、この通りにあるワイン屋さんを調査したいと思って──』<br>
+「──！？」<br>
+<br>
+　電源を付けただけでテレビから音声が流れだした。しかも映像も映っている。普段なら機械を入れたりなんやかやしないと何もつかないのに(地上波の話である。彼女の家は<ruby>近界<rp>（</rp><rt>ネイバーフッド</rt><rp>）</rp></ruby>にあり、当然電波など届きようがなかったのだ)。<br>
+　そんなテレビの理屈など知りようもない<span class="user-name"></span>は、あまりの急なことに驚いてもう一度電源ボタンを押した。パッと消えた画面に息をつく。<br>
+<br>
+　扉が開く音がする。迅がソファの上で体育座りをしている<span class="user-name"></span>を見て、「え？」と言った。<br>
+<br>
+「なにしてんの？　なんかあった？」<br>
+「……なにも…………」<br>
+<br>
+　なにもなかったのである。<br>
+<br>
+<br>
+＋　＋<br>
+<br>
+<br>
+「戻ったか」<br>
+<br>
+　ドアの開く音に鬼怒田が視線をやると、迅と後ろの<span class="user-name"></span>が連れ立って歩いてきた。<span class="user-name"></span>を見て、鬼怒田は大きく目を見開いた。<br>
+　<span class="user-name"></span>は驚くくらいに端麗な顔立ちだった。薄汚れた肌が瑞々しい潤いを取り戻していて、鮮烈な青色がくすみをなくしている。頬に貼られたガーゼがいっそう痛々しく見えて、どうにも庇護欲をそそられるような少女である。黒いエンジニアの服に身を包んでいて、先程迅が一度来たのはこれか、と納得して顎を撫でた。<br>
+<br>
+　エンジニアは基本的に男所帯で、女性は少ない──というか現段階では一人もいない。ゆくゆくは有名大学を卒業した美女が来ると夢を持っている職員たちだが、何日も風呂に入らずパソコンと毎日睨めっこをしているこんな世紀末の風景に女性がいる方が問題だ、と鬼怒田は思っている。<br>
+<br>
+　<span class="user-name"></span>の身長は160センチちょっとであり、そんなエンジニアの余っている服のサイズが最低でも170センチ用の服だった。風間のような身長の男は早々いないのだ。いちおう男女兼用のつくりになっているとはいえ、袖やら裾やら肩幅やらが余りまくっているのは仕方がない。<br>
+<br>
+「だいぶ化けたな。……コレ以外はなかったのか？」<br>
+「うん、だから唐沢さんの調べがつくまでコイツこの服で過ごすから」<br>
+<br>
+　鬼怒田の問いに、迅は当然のような顔をして答えた。唐沢が正確な情報を持ってくると予知で視えているのだろう。<br>
+　<span class="user-name"></span>は「動きにくい」としかめっ面をしていたが、エンジニアの服を着ていてくれる方が、ボーダーの中で過ごすにはちょうどいいだろう。他のエンジニアたちが「おぉ」と感動の声をあげながら(彼シャツだとか騒いでいる)わらわらと彼女の周りに集まって、裾の折り曲げ方やズボンのウエストの絞り方を教えていた。その癖誰一人として<span class="user-name"></span>に触ろうとしないのが迅にはめちゃめちゃ面白かった。火のない所に煙は立たぬのだから、僅かな火種でもつけるまいという気持ちなのだろう。<br>
+<br>
+　だが迅のエンジニアの服を着させるという選択肢はかなりの妙手だ。基本的にこれから<span class="user-name"></span>は開発室に通い詰めになるのだし、所属がはっきりしていてわかりやすい。<br>
+　<span class="user-name"></span>はそれを聞いてきょとんとした。<br>
+<br>
+「え。なんで」<br>
+「お前のすっからかんの脳ミソに入っている情報をもらうためだ」<br>
+<br>
+　日本人は助け合いの精神だからな、と鬼怒田が嘯きながら手招きする。機密情報になるから部屋を変える、ということなのだろう。<br>
+　確かに売って困るような情報は何もないし、同族のよしみで助けることはやぶさかではない。だがそんな毎日通い詰めなんてものはやりたくない、と迅の方を見たら、フッ……という微笑で誤魔化された。完全に見捨てやがったコイツ。<br>
+<br>
+「えっ？　イヤだよ普通に。えッないよそんなの」<br>
+「イヤも好きもあるか。冬島！　ソイツをこっちに連れてこい」<br>
+「キェ゜」<br>
+「私が何したってんだ！　知らねぇよそんなの。実家に帰らせてくれッ」<br>
+「日本が実家なんだろ」<br>
+「家っつってんだろうがよ国の話をしてんじゃねぇよォ！」
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="05.html">前へ</a> ｜ <a href="blue.html">一覧へ戻る</a> ｜ <a href="07.html">次へ</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/main.html#wt">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>

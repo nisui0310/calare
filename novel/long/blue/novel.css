@@ -1,50 +1,680 @@
 @charset "utf-8";
+/* 
+  Template & Designed by Asteroid
+  https://asteroid19.netlify.app/
+*/
+/*
+  ※旧バージョンではI'll be NET様のpixiv小説のように縦書き表示する方法-2019版を元に作成していましたが、技術の進化に合わせて全面的に刷新しています。
+*/
+/* ******************************************************************************** */
+/*  I'll be NET jQuery Novel
+/*  作成：I'll be NET（http://illbenet.jp/）
+/* ******************************************************************************** */
 
-/* ===================================================================
-   blue/assets/css/novel.css
-   ・小説本文の表示スタイル（Asteroidテンプレート）
-   ・閲覧設定（縦横切り替え、背景色、文字サイズ、行間）
-   =================================================================== */
+
+
+/* ******************************************************************************** */
+/*  共通設定
+/* ******************************************************************************** */
 
 :root {
-    --n-red: #e81a35;
-    --n-details-bd-color: #222;
-    --n-label-radio-bd-color: #ccc;
-    --n-accent-color: #006aff;      /* 設定パネルのアクセントカラー */
 
-    --n-common-value-1: 1.125em;
-    --n-common-side-padding: min(5%, var(--n-common-value-1));
-    --n-common-max-width: 45em;      /* 本文エリアの最大横幅 */
+    /* 配色 */
+    --n-red: #c4696a;                   /* 断り書き（朱ローズ） */
+    --n-details-bd-color: #2d272f;      /* 枠線（ダークチャコール） */
+    --n-label-radio-bd-color: #d5cebc;  /* ラジオボタン枠線（サンドベージュ） */
+    --n-accent-color: #c4696a;          /* ラジオボタン・スライダー（朱ローズ） */
+
+    /* 共通設定 */
+    --n-common-value-1: 1.125em; /* paddingの横幅の最大値。1em以上を推奨。 */
+    --n-common-side-padding: min(5%, var(--n-common-value-1)); /* paddingの横幅の設定。設定の意味は「5%、ただしvar(--n-common-value-1)以下」 */
+    --n-common-max-width: 45em;   /* 横幅の最大値 */
 }
 
-/* 閲覧設定メニュー (.n-details / .n-collection) */
+.n-common {
+    margin: 3em auto 0;
+    padding: 0 var(--n-common-side-padding);
+    max-width: var(--n-common-max-width);
+}
+
+/* ******************************************************************************** */
+/*  断り書き
+/* ******************************************************************************** */
+
+/* 以下の状況で断り書きを表示する要素
+・JavaScriptが使用不可なとき
+・WebStorageが使用不可なとき */
+.n-announce {
+    padding: var(--n-common-value-1) var(--n-common-side-padding);
+    border: solid 2px var(--n-red);
+}
+
+/* WebStorageが使用不可の場合、またはWebStorageの空き容量がない場合は断り書きを表示する */
+.n-webstorage-unusable,
+.n-webstorage-nospace {
+    display: none;
+}
+
+.n-webstorage-unusable-after,
+.n-webstorage-nospace-after {
+    display: revert;
+}
+
+/* ******************************************************************************** */
+/*  小説閲覧設定切り替えのボタン
+/* ******************************************************************************** */
+/* *********************************** */
+/*  detailsとsummaryで開閉できるボタン
+/* *********************************** */
+/* 右寄せ用指定 */
+aside.n-common {
+    text-align: right;
+}
+
+/* details */
+/* 開いているときのdetails */
+.n-details[open] {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* summary（アイコンサイズ・右寄せ） */
+.n-summary {
+    list-style: none; /* 三角マークを非表示 */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;  /* 【変更】2.5rem → 2.75rem（指で押しやすい約44px） */
+    height: 2.75rem;
+    padding: 0;
+    border: solid 2px var(--n-details-bd-color);  /* 【変更】1px → 2px（見えやすく） */
+    border-radius: 50%;  /* 丸型 */
+    background-color: var(--n-background-color, #fff);  /* 【追加】背景色 */
+    color: var(--n-details-bd-color);  /* 【追加】アイコンの色（枠線と同じ） */
+    cursor: pointer;
+    margin-left: auto;
+    user-select: none;  /* 【追加】連続タップで文字選択されないように */
+    -webkit-tap-highlight-color: transparent;  /* 【追加】スマホで押したときの灰色の四角を消す */
+    transition: 0.2s;  /* 【追加】色の変化をなめらかに */
+}
+
+.n-summary::-webkit-details-marker {
+    display: none;
+}
+
+/* 【追加】アイコンの大きさ。大きくしたい／小さくしたい場合はこの数字を変更 */
+.n-summary i,
+.n-summary svg,
+.n-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* 【追加】マウスを乗せたとき（スマホでは反応しない） */
+@media (hover: hover) {
+    .n-summary:hover {
+        background-color: var(--n-accent-color);
+        border-color: var(--n-accent-color);
+        color: #fff;
+    }
+}
+
+/* 【追加】押した瞬間に少し縮む */
+.n-summary:active {
+    transform: scale(0.94);
+}
+
+/* 【追加】キーボードで選んだときの枠 */
+.n-summary:focus-visible {
+    outline: 3px solid var(--n-accent-color);
+    outline-offset: 3px;
+}
+
+/* 開いているときのsummary */
 .n-details[open] .n-summary {
     border-radius: 50%;
-    margin-bottom: 10px;
+    /* 【追加】開いている間は塗りつぶしたままにして、今開いていることを分かりやすく */
+    background-color: var(--n-accent-color);
+    border-color: var(--n-accent-color);
+    color: #fff;
 }
 
-/* 背景色切り替えテーマ */
-.bg-color-white  { --n-bg-color: #fff;     --n-t-color: #333; }
-.bg-color-black  { --n-bg-color: #1f1f1f;  --n-t-color: #ddd; }
-.bg-color-gray   { --n-bg-color: #f1f1f2;  --n-t-color: #222; }
-.bg-color-blue   { --n-bg-color: #e6f1fa;  --n-t-color: #1c1d1e; }
-.bg-color-yellow { --n-bg-color: #fff8eb;  --n-t-color: #3f2b12; }
+/* summaryに下線を表示するためのspan */
+.n-summary-span {
+    text-decoration: underline;
+}
 
-/* 縦書き・多段組み切り替え設定 */
+/* 開いているときのsummaryからは下線を消す */
+.n-details[open] .n-summary-span {
+    text-decoration: none;
+}
+
+/* ここから開閉アニメーション。アニメーションが不要ならば削除 */
+.n-details .n-collection {
+  animation: unset;
+}
+
+.n-details[open] .n-collection {
+  animation: fadeIn-Animation 0.18s ease-out;  /* 【変更】0.25s → 0.18s（速くした）。もっと速くしたいなら 0.12s、ゆっくりなら 0.3s */
+}
+
+@keyframes fadeIn-Animation {
+  0% {
+    opacity: 0;    /* 透明 */
+    transform: translateY(-8px);    /* 【変更】-10px → -8px（動く幅を少し小さく） */
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 【追加】「動きを減らす」設定にしている人にはアニメーションなし */
+@media (prefers-reduced-motion: reduce) {
+  .n-details[open] .n-collection {
+    animation: none;
+  }
+}
+/* ここまで開閉アニメーション */
+
+/* *********************************** */
+/* 切り替えボタン
+/* ・ラジオボタン(input type="radio")
+/* ・スライダー(input type="range")
+/* *********************************** */
+
+/* 開閉ボタンで展開される箇所を一括でまとめている要素 */
+.n-collection {
+    text-align: left; /* メニュー内の配置は左揃えに維持 */
+    display: grid;
+    row-gap: calc(var(--n-common-value-1) * 1.5); /* 要素の隙間の大きさ */
+    padding: calc(var(--n-common-value-1) * 1.5) var(--n-common-side-padding);
+    border: solid 1px var(--n-details-bd-color);
+    border-radius: 10px;
+    margin-top: 12px;  /* 【追加】アイコンとの間に隙間をあける */
+    background-color: var(--n-background-color, #fff);  /* 【追加】 */
+}
+
+/* 【追加】fieldsetの標準の枠線・余白を消す（向き・フォント・背景色の外側に出る線を無くす） */
+.n-collection fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+}
+
+/* グループ化したラジオボタンのグループ見出し */
+.n-collection-item {
+    font-weight: bold;
+    margin-bottom: calc(var(--n-common-value-1) - 1em);
+}
+
+/* ラジオボタンの個数にかかわらず、均等に1行にまとめる要素 */
+.n-collection-radio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
+}
+
+/* ラジオボタンのラベル */
+.n-label-radio {
+    display: grid;
+    place-items: center;    /* 上下中央寄せ */
+    justify-content: start; /* 左寄せ */
+    grid-auto-flow: column; /* 横に並べる */
+    column-gap: 0.35em; /* 【変更】0.25em → 0.35em ラジオボタンとテキストの間の大きさ */
+    padding: 0.75em 0.4em 0.75em 0.6em;  /* 【変更】押しやすいように上下を広げた */
+    border: solid 1px var(--n-label-radio-bd-color);
+    border-right: 0;
+    cursor: pointer;  /* 【追加】 */
+    transition: background-color 0.15s;  /* 【追加】 */
+}
+
+/* 【追加】マウスを乗せたとき、うっすら色が付く */
+@media (hover: hover) {
+    .n-label-radio:hover {
+        background-color: color-mix(in srgb, var(--n-accent-color) 8%, transparent);
+    }
+}
+
+/* ラジオボタンのラベルの最初のみ左側を角丸 */
+.n-label-radio:first-of-type {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+/* ラジオボタンのラベルの最後のみ右側を角丸 */
+.n-label-radio:last-of-type {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-right: solid 1px var(--n-label-radio-bd-color);
+}
+
+/* ラジオボタンのラベルのうち、ラジオボタンにチェックが入ったときのスタイル */
+.n-label-radio:has(.n-radio:checked) {
+    outline: solid 2px var(--n-accent-color);
+    outline-offset: -1px;
+    background-color: color-mix(in srgb, var(--n-accent-color) 14%, transparent);  /* 【追加】選択中が一目で分かるように色を付ける */
+    font-weight: bold;  /* 【追加】 */
+}
+
+/* ラジオボタンとスライダー */
+.n-radio,
+.n-range {
+    all: revert;
+    box-sizing: border-box;
+    cursor: pointer;
+    font: unset;
+    font-size: max(1em, 1rem);  /* フォントサイズは1em、ただし1rem以上に設定 */
+    margin: unset;
+    padding: unset;
+    accent-color: var(--n-accent-color);    /* アクセントカラー */
+}
+
+/* ラジオボタンの大きさ */
+.n-radio {
+    width: 1em;   /* 【変更】0.85em → 1em（押しやすく） */
+    height: 1em;
+}
+
+/* スライダーのラベル */
+.n-label-range {
+    display: block;
+    width: fit-content;
+}
+
+/* スライダーの大きさ */
+.n-range {
+    display: block;
+    width: 100%;
+    height: 1.75rem;  /* 【追加】つまみを指で掴みやすい高さにする */
+}
+ /* スライダーの補足文章(小さい大きい、狭い広い)のブロック */
+.n-auxiliary {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+/* スライダーの補足文章の大きさ */
+.n-auxiliary-text {
+    font-size: 0.75em;
+}
+/* ******************************************************************************** */
+/*  小説の外観
+/* ******************************************************************************** */
+
+/* *********************************** */
+/*  外枠の共通設定
+/* *********************************** */
+.n-outer {
+
+    /* 小説のフォントサイズの変化量 */
+    --n-f-size-base: 1em;  /* 基本は1em */
+    --n-f-size-step: 1px;  /* 1段階ごとに1px増減する */
+    --n-f-size-delta: calc(var(--n-f-size-step) * var(--n-f-size-step-value)); /* フォントサイズを増減させる値 */
+
+    /* 小説の行間の変化量 */
+    --n-l-height-base: 1.8;    /* 基本は1.8 */
+    --n-l-height-step: 0.1;    /* 1段階ごとに0.1増減する */
+    --n-l-height-delta: calc(var(--n-l-height-step) * var(--n-l-height-step-value)); /* 行間を増減させる値 */
+
+    /* 外枠の共通設定 */
+    border-top: solid 1px var(--n-label-radio-bd-color);
+    border-bottom: solid 1px var(--n-label-radio-bd-color);
+    margin: calc(3 * calc(var(--n-f-size-base) - var(--n-f-size-delta))) auto;
+
+    /* 小説閲覧設定切り替えで選択可能な要素 */
+    /* フォントファミリー */
+    font-family: var(--n-f-family);
+    /* 背景色と文字色 */
+    background-color: var(--n-bg-color);
+    color: var(--n-t-color);
+    /* フォントサイズ */
+    font-size: calc(var(--n-f-size-base) + var(--n-f-size-delta));
+    /* 行間 */
+    line-height: calc(var(--n-l-height-base) + var(--n-l-height-delta));
+
+    /* 小説の向きは別指定 */
+}
+
+/* *********************************** */
+/*  小説のフォントファミリー
+/* *********************************** */
+
+/* 明朝体 */
+/* 指定する順番は、ヒラギノ明朝、Noto Serif JP、OS標準の明朝体 */
+/* いずれも存在しない場合に限り、JavaScriptでWebフォント(Noto Serif JP)をダウンロードする。 */
+.font-family-mincho {
+    --n-f-family: "Hiragino Mincho ProN", "Noto Serif JP", serif;
+}
+
+/* 丸ゴシック体 */
+/* 指定する順番は、ヒラギノ丸ゴシック、Kosugi Maru、ユーザーインターフェイス既定の丸い特性を持ったフォント、OS標準のゴシック体 */
+/* ヒラギノ丸ゴシックが存在しない場合に限り、JavaScriptでWebフォント(Kosugi Maru)をダウンロードする。 */
+.font-family-marugothic {
+    --n-f-family: "Hiragino Maru Gothic ProN", "Kosugi Maru", ui-rounded, sans-serif;
+}
+
+/* ゴシック体 */
+.font-family-gothic {
+    --n-f-family: sans-serif;
+}
+
+/* *********************************** */
+/*  小説の背景色
+/* *********************************** */
+
+/* 白（Webで定番の、真っ白に見えて目に優しいスッキリした白） */
+.bg-color-white {
+    --n-bg-color: #fafafa; /* または #fcfcfc */
+    --n-t-color: #2d272f;
+}
+
+/* 黒 */
+.bg-color-black {
+    --n-bg-color: #1f1f1f;
+    --n-t-color: #ddd;
+}
+
+/* 灰 */
+.bg-color-gray {
+    --n-bg-color: #f5f5f5; /* または #e8e8eb / #f0f0f2 */
+    --n-t-color: #2d272f;  /* ダークチャコール文字 */
+}
+
+/* 青 */
+.bg-color-blue {
+    --n-bg-color: #e8eee8; /* ほんのり青みがかった灰水色 */
+    --n-t-color: #2d272f;  /* ダークチャコール */
+}
+
+/* 黄（ほんのり黄みがかった優しいクリーム・サンドカラー） */
+.bg-color-yellow {
+    --n-bg-color: #fcf9f2; /* サイト基本背景と同じ色 */
+    --n-t-color: #2d272f;
+}
+
+
+
+
+/* *********************************** */
+/*  小説のフォントサイズ
+/* *********************************** */
+
+/* 変化は11段階、数値が大きいほどフォントサイズが大きくなる */
+.font-size-1 {
+    --n-f-size-step-value: -5;
+}
+
+.font-size-2 {
+    --n-f-size-step-value: -4;
+}
+
+.font-size-3 {
+    --n-f-size-step-value: -3;
+}
+
+.font-size-4 {
+    --n-f-size-step-value: -2;
+}
+
+.font-size-5 {
+    --n-f-size-step-value: -1;
+}
+
+.font-size-6 {
+    --n-f-size-step-value: 0;
+}
+
+.font-size-7 {
+    --n-f-size-step-value: 1;
+}
+
+.font-size-8 {
+    --n-f-size-step-value: 2;
+}
+
+.font-size-9 {
+    --n-f-size-step-value: 3;
+}
+
+.font-size-10 {
+    --n-f-size-step-value: 4;
+}
+
+.font-size-11 {
+    --n-f-size-step-value: 5;
+}
+
+/* *********************************** */
+/*  小説の行間
+/* *********************************** */
+
+/* 変化は11段階、数値が大きいほど行間が広くなる */
+.line-height-1 {
+    --n-l-height-step-value: -5;
+}
+
+.line-height-2 {
+    --n-l-height-step-value: -4;
+}
+
+.line-height-3 {
+    --n-l-height-step-value: -3;
+}
+
+.line-height-4 {
+    --n-l-height-step-value: -2;
+}
+
+.line-height-5 {
+    --n-l-height-step-value: -1;
+}
+
+.line-height-6 {
+    --n-l-height-step-value: 0;
+}
+
+.line-height-7 {
+    --n-l-height-step-value: 1;
+}
+
+.line-height-8 {
+    --n-l-height-step-value: 2;
+}
+
+.line-height-9 {
+    --n-l-height-step-value: 3;
+}
+
+.line-height-10 {
+    --n-l-height-step-value: 4;
+}
+
+.line-height-11 {
+    --n-l-height-step-value: 5;
+}
+
+/* *********************************** */
+/*  小説の向き
+/* *********************************** */
+
+/* 1. 縦書き・多段組み・画面高さ固定・縦スクロール */
+/* 外枠 */
 .direction-tate-dan {
-    writing-mode: vertical-rl;
+    writing-mode: vertical-rl;  /* 縦書き */
     width: 100%;
     height: 85vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: calc(var(--n-common-value-1) * 2) var(--n-common-value-1);
+    overflow-x: hidden;
     overflow-y: scroll;
-    column-count: 2;
+    column-gap: calc(var(--n-common-value-1) * 2);  /* 段間の大きさ */
+    column-count: 2;    /* 画面の縦幅が小さい時は1画面に1段組み */
+    hanging-punctuation: allow-end last; /* 句読点と閉じ括弧のぶら下げ。対応ブラウザは少ない。不要ならば削除してください。 */
 }
 
+/* 1のとき内枠は特に指定なし */
+
+/* 画面の横幅が45em以上のときに限定して、.direction-tate-danの設定 */
+@media screen and (min-width: 45em) {
+    .direction-tate-dan {
+        width: calc(100% - calc(calc(var(--n-f-size-base) - var(--n-f-size-delta)) * 6));
+        padding-left: calc(var(--n-common-value-1) * 4);
+        padding-right: calc(var(--n-common-value-1) * 4);
+    }
+}
+
+/* 2. 縦書き・画面高さ固定・横スクロール */
+/* 外枠 */
+.direction-tate {
+    writing-mode: vertical-rl;  /* 縦書き */
+    width: 100%;
+    max-width: 100%;
+    height: 80vh;
+    max-height: var(--n-common-max-width);
+    padding: calc(var(--n-common-value-1) * 2);
+    overflow: auto;
+    hanging-punctuation: allow-end last; /* 句読点と閉じ括弧のぶら下げ。対応ブラウザは少ない。不要ならば削除してください。 */
+}
+
+/* 内枠 */
+/* 2のとき内枠は特に設定なし */
+
+/* 画面の横幅が45em以上のときに限定して、.direction-tateの設定 */
+@media screen and (min-width: 45em) {
+    .direction-tate {
+        width: calc(100% - calc(calc(var(--n-f-size-base) - var(--n-f-size-delta)) * 4));
+    }
+}
+
+/* 3. 横書き */
+/* 外枠 */
+.direction-yoko {
+    width: 100%;
+    max-width: 100%;
+    hanging-punctuation: allow-end; /* 句読点のぶら下げ。対応ブラウザは少ない。不要ならば削除してください。 */
+}
+
+/* 内枠 */
 .direction-yoko .n-inner {
     max-width: var(--n-common-max-width);
     margin: 0 auto;
+    padding: calc(3 * calc(var(--n-f-size-base) - var(--n-f-size-delta))) var(--n-common-side-padding);
+}
+
+/* ******************************************************************************** */
+/*  その他のパーツ
+/* ******************************************************************************** */
+
+
+
+/* 前書きとあとがきの共通枠（線だけを消し、領域・余白は保持） */
+.n-maegaki,
+.n-atogaki {
+    border: none;       /* 線を消去 */
+    margin-bottom: 2em; /* 領域（高さ・間隔）はそのまま保持 */
+}
+
+/* 前書き・あとがき内の余白 */
+.n-maegaki .n-common,
+.n-atogaki .n-common {
+    margin-bottom: 1.5em;
+}
+
+/* ページネーション（前へ ｜ 一覧へ ｜ 次へ） */
+.n-pagenation {
+    text-align: center; /* 中央寄せ */
+    margin: 1em 0;
+}
+/* フッター、簡易版 */
+.n-footer {
+    text-align: center; /* 中央寄せ、不要ならば削除。サイト共通のフッターがあればそれらを適用する */
+    margin-bottom: 3em;
 }
 
 
+
+
+/* タイトル全体を包むエリア */
+.novel-title-header {
+    text-align: center;
+    margin: 3.5rem 0 2.5rem;
+}
+
+
+/* 小説タイトルの1文字目を赤色＆少し強調 */
+.novel-title::first-letter {
+    color: var(--n-link-color);        /* または #c4696a */
+    font-size: 1.15em;        /* ほんの少しだけ大きくして印象的に */
+    font-weight: bold;
+}
+
+
+/* タイトル上の小さなカテゴリ（英語表記） */
+.novel-category {
+    display: block;
+    font-family: var(--san-serif);
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;       /* 文字間隔を広げて現代的に */
+    color: var(--red);            /* テーマカラーの朱ローズ */
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+/* メインの作品タイトル */
+.novel-title {
+    font-family: "Tsukushi A Old Mincho", "貂明朝", var(--serif); /* Adobe Fontsを指定 */
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* スマホ〜PCで大きさを自動調整 */
+    font-weight: 600;             /* 程よい太さ */
+    color: var(--dark);           /* ダークチャコール */
+    letter-spacing: 0.12em;       /* 文字間隔を少し空けて上品に */
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* タイトルの下の短いアクセント線 */
+.novel-title-line {
+    width: 30px;
+    height: 2px;
+    background-color: var(--red); /* 朱ローズの短い線 */
+    margin: 1.2rem auto 0;
+}
+
+
+/* =============================== */
+/* 小説ページ背景設定（固定背景＋透明ヘッダー） */
+/* =============================== */
+
+body:before {
+    background-image: linear-gradient(
+        17deg,
+        rgba(253, 181, 206, 1) 3%,
+        rgba(199, 164, 199, 1) 9%,
+        rgba(44, 116, 179, 1) 31%,
+        rgba(32, 82, 149, 1) 46%,
+        rgba(20, 66, 114, 1) 58%,
+        rgba(14, 48, 86, 1) 71%,
+        rgba(10, 38, 71, 1) 83%
+    );
+    background-size: cover;
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -99;
+    width: 100%;
+    height: 100vh;
+}
+
+
+header, footer {
+  background-color: transparent !important;
+  z-index: 10;
+}
 /* スマホ表示時（画面幅768px以下）のみ閲覧設定の文字サイズを小さくする */
 @media screen and (max-width: 768px) {
 
@@ -62,4 +692,70 @@
     .n-settings .n-auxiliary-text {
         font-size: 0.7rem;
     }
+}
+/* ==========================================
+   全ての小説ページでスクロールバーを表示させる設定
+   ========================================== */
+
+/* 1. ブラウザのスクロールバー非表示設定を強制解除 */
+html, 
+body, 
+#honbun {
+    -ms-overflow-style: auto !important;  /* IE / Edge */
+    scrollbar-width: auto !important;     /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#honbun::-webkit-scrollbar {
+    display: block !important;             /* Chrome / Safari */
+}
+
+/* 2. 横書き表示時もスクロール領域を安定して確保する設定 */
+.direction-yoko {
+    overflow-y: auto;
+}
+
+
+/* ---------------------------------------
+   リンク・文字色
+   --------------------------------------- */
+
+/* 通常のリンク色 */
+.n-pagenation-top a,
+.n-pagenation a {
+    color: #fff;
+}
+
+/* 訪問済みリンクの色 */
+.n-pagenation-top a:visited,
+.n-pagenation a:visited {
+    color: #ccc;
+}
+
+/* ---------------------------------------
+   リンク装飾
+   --------------------------------------- */
+
+/* リンクの下線を消す */
+.no-link-underline a,
+.n-footer a {
+    text-decoration: none;
+}
+
+/* ---------------------------------------
+   見出し・小説タイトル
+   --------------------------------------- */
+
+/* 基本の文字色 */
+h1,
+.novel-title,
+.novel-category,
+.n-atogaki {
+    color: #fff;
+}
+
+/* 小説タイトルの1文字目だけ色を変更 */
+.novel-title::first-letter {
+    color: #A0E0EF;
 }

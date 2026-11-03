@@ -662,3 +662,25 @@ aside.n-common {
         font-size: 0.7rem;
     }
 }
+/* ==========================================
+   全ての小説ページでスクロールバーを表示させる設定
+   ========================================== */
+
+/* 1. ブラウザのスクロールバー非表示設定を強制解除 */
+html, 
+body, 
+#honbun {
+    -ms-overflow-style: auto !important;  /* IE / Edge */
+    scrollbar-width: auto !important;     /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#honbun::-webkit-scrollbar {
+    display: block !important;             /* Chrome / Safari */
+}
+
+/* 2. 横書き表示時もスクロール領域を安定して確保する設定 */
+.direction-yoko {
+    overflow-y: auto;
+}
