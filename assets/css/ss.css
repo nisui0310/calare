@@ -1,0 +1,276 @@
+@charset "UTF-8";
+
+/* =====================================================
+   ss.html 専用スタイル（style.css の後に読み込む）
+   - style.css は変更しません
+   - すべて body.page-ss または .ss-* の中に閉じています
+   - 色・フォントは style.css の変数と既存フォントを使用
+
+   ■ よく触る切り替え（すべて HTML 側の class で行います）
+   1) 1カラム / 2カラム   #ss-list の  ss-cols-2  ⇄  ss-cols-1
+   2) 日付 表示 / 非表示   #ss-list に  ss-hide-date  を足す / 外す
+   3) 選択タグの見た目     #ss-filter に下記を足す
+        （なし）        枠線＋文字が朱ローズ（現在の設定）
+        ss-tag-fill    朱ローズで塗りつぶし＋白文字
+        ss-tag-marker  枠線なし＋マーカー風の下線
+   ===================================================== */
+
+:root {
+    --ss-wrap: 1040px;          /* ページ全体の最大幅（既存は800px） */
+    --ss-col-gap: 3.5rem;       /* 2カラム時の列の間隔 */
+    --ss-body-size: 1rem;     /* 本文サイズ：スマホ（html が12pxのため大きめ） */
+}
+@media screen and (min-width: 768px) {
+    :root { --ss-body-size: 1.05rem; }   /* タブレット */
+}
+@media screen and (min-width: 1280px) {
+    :root { --ss-body-size: 1rem; }      /* PC */
+}
+
+
+/* ---------- ページ幅（このページだけ広げる） ---------- */
+body.page-ss .wrp {
+    max-width: var(--ss-wrap);
+}
+
+
+/* =====================================================
+   ジャンル絞り込み
+   ===================================================== */
+.ss-filter {
+    margin: 0 0 3.5rem;
+    text-align: center;
+}
+
+.ss-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin: 0 0 0.8rem;
+}
+
+.ss-tag {
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 40px;
+    margin: 0;
+    padding: 0.35rem 1.1rem;
+    border: 1px solid var(--gray);
+    border-radius: 0;
+    background: transparent;
+    color: var(--dark-gray);
+    font: inherit;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+    text-align: center;
+    overflow-wrap: anywhere;      /* 長い日本語名でも枠からはみ出さない */
+    cursor: pointer;
+    transition: color .2s, border-color .2s, background-color .2s, box-shadow .2s;
+}
+@media screen and (min-width: 768px) {
+    .ss-tag { min-height: 36px; }
+}
+@media (hover: hover) {
+    .ss-tag:hover {
+        border-color: var(--red);
+        color: var(--red);
+    }
+}
+.ss-tag:focus-visible,
+.ss-genre:focus-visible,
+.ss-clear:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
+}
+
+/* 選択中：枠線＋文字が朱ローズ（枠を内側に1px足して、未選択との差をはっきりさせる） */
+.ss-tag.is-active {
+    border-color: var(--red);
+    color: var(--red);
+    box-shadow: inset 0 0 0 1px var(--red);
+}
+
+/* 選択中（別案A）：塗りつぶし */
+.ss-tag-fill .ss-tag.is-active {
+    background: var(--red);
+    border-color: var(--red);
+    color: #fff;
+    box-shadow: none;
+}
+
+/* 選択中（別案B）：マーカー風 */
+.ss-tag-marker .ss-tag.is-active {
+    border-color: transparent;
+    box-shadow: none;
+    color: var(--dark);
+    background: linear-gradient(transparent 60%, var(--pure-gb) 60%);
+}
+.ss-tag-marker .ss-tag {
+    border-color: transparent;
+}
+
+/* 件数・解除 */
+.ss-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    min-height: 40px;             /* 解除ボタンの出入りで高さが動かないように */
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--dark-gray);
+}
+.ss-clear {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    padding: 0.5rem 0.2rem;
+    border: 0;
+    border-bottom: 1px solid var(--dark-gray);
+    border-radius: 0;
+    background: none;
+    color: var(--dark-gray);
+    font: inherit;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+.ss-clear[hidden] { display: none; }
+@media (hover: hover) {
+    .ss-clear:hover { color: var(--red); border-bottom-color: var(--red); }
+}
+
+
+/* =====================================================
+   作品一覧
+   ===================================================== */
+.ss-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);   /* minmax(0,…) で長い文字列による横はみ出しを防ぐ */
+    align-items: stretch;                    /* 行揃え：同じ行の作品は高さが揃う */
+    text-align: left;
+}
+
+/* 2カラム（900px以上。それ未満は1カラム） */
+@media screen and (min-width: 900px) {
+    .ss-list.ss-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: var(--ss-col-gap);
+    }
+}
+
+/* 1カラム */
+.ss-list.ss-cols-1 {
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+/* 作品1つ分 */
+.ss {
+    padding: 1.6rem 0 3.2rem;
+    border-top: 1px solid var(--gray);
+    animation: ss-fade .2s ease;             /* 絞り込みで再表示された作品だけ、ごく軽くフェード */
+}
+.ss[hidden] { display: none; }
+
+@keyframes ss-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ss { animation: none; }
+    .ss-tag { transition: none; }
+}
+
+/* ジャンル＋日付の行 */
+.ss-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.2rem 1rem;
+    margin: 0 0 0.7rem;
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+.ss-genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.ss-genre {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    padding: 0.3rem 0 0.1rem;
+    border: 0;
+    border-bottom: 1px dotted var(--dark-gray);   /* 点線＝押せることの手がかり */
+    border-radius: 0;
+    background: none;
+    color: var(--dark-gray);
+    font: inherit;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+    transition: color .2s, border-color .2s;
+}
+@media (hover: hover) {
+    .ss-genre:hover { color: var(--red); border-bottom-color: var(--red); }
+}
+.ss-genre.is-active {
+    color: var(--red);
+    border-bottom: 1px solid var(--red);
+}
+
+.ss-date {
+    margin-left: auto;
+    color: var(--dark-gray);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+}
+.ss-list.ss-hide-date .ss-date { display: none; }
+
+/* タイトル（h3 の既定装飾は style.css のまま：頭文字が朱ローズ） */
+.ss-title {
+    margin: 0 0 1.1rem;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    letter-spacing: 0.08em;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+/* 本文 */
+.ss-body p {
+    margin: 0;
+    font-size: var(--ss-body-size);
+    line-height: 2;
+    letter-spacing: 0.06em;
+    text-align: left;
+    line-break: strict;
+    overflow-wrap: anywhere;
+}
+.ss-body p + p {
+    margin-top: 1em;
+}
+
+/* 該当なし */
+.ss-empty {
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+.ss-empty[hidden] { display: none; }

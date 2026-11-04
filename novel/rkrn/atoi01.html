@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="忘れてしまいたい。">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
+    <meta property="og:title" content="落日 | Kagami">
+    <meta property="og:description" content="忘れてしまいたい。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
+
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <!-- 小説以外で最低限適用するベースのCSS。自分のサイトで使用しているCSSに差し替えても動きます。 -->
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <!-- 小説用のCSS -->
+  <link rel="stylesheet" href="/novel/css/novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+　<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+    <script defer src="/assets/js/password.js"></script>
+
+  <!-- ページタイトル -->
+  <title>現パロヒモ網問くんと嫉妬</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン -->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">RKRN short</span>
+    <h1 class="novel-title">現パロヒモ網問くんと嫉妬</h1>
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="komatuda01.html">前へ</a> ｜ <a href="/main.html#rkrn">一覧へ戻る</a> ｜ <a href="yosimaru01.html">次へ</a>
+      </div>
+    </div>
+
+    <!-- 前書き本文（不要な話ではこの div ブロック全体を削除OK） -->
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- ここまで 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+    
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+        <!-- 書き換え -->
+「家まで送りますよ」<br>
+「いや、ほんとに大丈夫です。ここまでで全然、十分だし」<br>
+「でも、もうこんな時間ですし」<br>
+<br>
+　私が首を振るのにも構わず、彼はちょっと前のめりになって言いつのった。私は眉を下げて、どうしたものかと思案する。飲み会の終わりがけ、会社で数回喋ったことがあるくらいの間柄である彼に最寄り駅まで送ってもらったのはいいけど、これ以上ついてこられても困る。なんとなく気まずいし、同じ方向なのでっていうから最寄りまではついてきてもらったけど、大して親しくない人に家まで教えてしまうのはなあ。<br>
+「本当に大丈夫ですから」と言いながら後ずさって、足早に改札を抜けた。さすがに改札抜けてまで追ってこないよね、と思いつつ振り返ると、彼が一瞬電光掲示板と私を焦るように見比べて、それから意を決したように急いでICカードを改札にタッチさせたのが見えた。うそでしょ、まだ来るの？　流石にもうちょっと怖いよ、と思いながらバッグを握りしめる。ヒールのついた靴ではうまく走れないだろうし、これからも顔を合わせることはあるであろう人と関係を悪化させたくはない。<br>
+<br>
+「な、なんで……」<br>
+「いや、やっぱり心配なんで。家の前まで行きますから」<br>
+<br>
+　それが嫌だって思ってるのわからないの、と思うけど、口からは「いえ、そんな、ご心配なんて……」と当たり障りのない言葉しか出てこない。<br>
+　どうしよう、とあたりに視線だけを滑らせたとき、「ねえ」と私に声がかかった。<br>
+<br>
+「なーにしてんの」<br>
+「わ」<br>
+<br>
+　ぼす、と頭に顎が乗っけられるいつもの感覚。そんなことを公共の場でしてくる人間はたった一人しか思い浮かばず、顔の横にさらりと落ちてきた黒髪がそれを誰だか物語っていた。<br>
+<br>
+「あ──網問くん、」<br>
+「おねえさん。この人だれ？」<br>
+<br>
+　網問くんは一九〇を超える自身の身長を優に使い、私の頭の上から顔をのぞきこんでくる。いつも陽気な表情をしている彼の顔に、駅の明かりが逆光となり影を差す。どこか陰のある雰囲気の網問くんに「会社の同僚で、」とどこか早口になりながら返答した。都会というほどでもないが、田舎というほどでもない駅にはそこそこの往来があって、ほとんどバックハグのような姿勢の男女に奇異の視線が向けられていた。やんわりと彼の腕を掴んで離させようとするが、網問くんの筋肉質な体は私のやわな抵抗じゃびくともしない。<br>
+　網問くんは「ふうん」と呟き、目の前の私の同僚を上から下までじろじろ眺めまわした。彼だって男性の平均身長を超えているだろうに、網問くんは身を屈めた状態でもなおかれより背が高いのだ。Ｔシャツとスウェットで、ほとんど部屋着みたいな服装の網問くんだけど、スタイルがよすぎてそういうファッションみたいになってしまっている。しかもちょっとヤンチャ系の若者に寄っているタイプの。<br>
+<br>
+「おれ、網問っていうんですけど」彼は唇だけを横に引き伸ばした。「これ以上おねえさんに用あんの？」<br>
+<br>
+　可哀そうに、そんな網問くんにねめつけられた同僚の彼は完全に固まってしまった。震える唇がなんとか動いて、か、と彼が零す。<br>
+<br>
+「彼氏……いたんすね……」<br>
+「え」<br>
+<br>
+　それを訂正する間もなく、彼は「も、もう帰りますっ」と叫んで、今さっき通ったばかりの改札を走り抜けていった。ぽかんとする私の手を不機嫌そうに引いた網問くんは「かえろ」とぶっきらぼうに呟いて大股で通りを歩いていく。覚束ない足取りでそれを追う私は「なんでここに」と訊ねる。<br>
+<br>
+「おねえさんが帰る電車送ってくれたじゃんか」<br>
+「いや、そうだけど、駅まで迎えに来なくたって」<br>
+「実際来た方がよかったでしょ」<br>
+<br>
+　私は黙った。網問くんに対する反撃の言葉をなくしてしまたというのもあるし、彼の不機嫌を感じ取ったからでもあった。<br>
+<br>
+「あ、網問くん」<br>
+「なに」<br>
+「おこってる……？」<br>
+<br>
+　恐る恐るその背に訊ねれば、網問くんは歩みをわずかに遅らせた。そうして振り返った笑みに、月の光が差している。端正な顔立ちの網問くんは、そういう表情をすると一気に浮世離れした青年のように見える。初対面だったら驚くほど高く思える背丈も、私よりも長い髪の毛も、屈強な体つきとは裏腹なあどけない表情も。<br>
+<br>
+「答え合わせは、家ついてからにしよっか」<br>
+<br>
+　網問くんは指を絡めた。蛇が舌なめずりをするように、「ね」という甘ったるい網問くんのささやきが耳朶にまとわりついていた。<br>
+<br>
+<br>
+　＋　＋<br>
+<br>
+<br>
+「も、やだぁあﾞあ……ッ♡　まっで、あと、あといぐ、い、イﾞ～～ッッ♡♡」<br>
+<br>
+　ぎゅううっと内側の肉棒を食いしめても、網問くんは私を責める手を休めず、乳首をかりっと引っかく。ひぐ、と悲鳴を漏らして背中を逸らすと、壁と私の胸の間に網問くんの手が埋もれた。<br>
+<br>
+「きもちいもんね。おねえさんのなかずーっとうねってるもん」<br>
+「し、しぬう、しんじゃ……ッ♡　うあﾞあ～♡♡　あ、んうっ、うﾞぅ……っ♡」<br>
+「うんうん、そうだね、気持ちいいねえ」<br>
+<br>
+　後ろに手を回して必死に網問くんに懇願しているのに、ぐずぐずの甘ったるい声が耳から流しこまれて無視される。絶対聞こえてるのに、絶対わかってぜんぶ無視してるのに、私はそんなひどいことをしてくる男に縋ることしかできない。<br>
+　家に帰った瞬間から事を始めた網問くんは、そのままベッドにも行かず脱ぎ散らかした衣服の上で私のことを責め立てている。素っ裸になってしまった私を立ったまま貫いて、網問くんはごつごつと私の内側に己の滾る欲望を打ちつけていた。網問くんと私の身長差は三十センチ定規でも計れないのに、である。私の足はつま先立ちもできないほどぷるぷると震えていて、もうほとんど網問くんのなすがままだった。網問くんは背伸びをしても届かない私の身長のせいで、明らかにいつもより苦しい体勢をしているはずなのに、後ろからずうっとねちねちと私をいじめてくる。<br>
+<br>
+「もお、もお立てないから……っ♡　あといくんっ、べ、ベッドぉ、いかせ……♡」<br>
+「まだイきたいの？　もうおねえさんはワガママだなあ」<br>
+「あ、や～～～っっ♡　ちがあﾞっ♡♡　おぐっ、い、いっだぁ♡　イッでうﾞ、イッてゆからッ♡」<br>
+<br>
+　私の言葉をわざと違う意味で解釈した網問くんが、私の腰を掴んだままぐりぐりと下に押す。網問くんのまろい先っぽの部分が、最奥のさらに奥、子宮口のあたりを押し上げた。瞼の裏がチカチカッ、と白く染まって、「あ、あﾞ～～～っ♡♡」とだらしのない嬌声が口から出る。ありえない量の快感に、もうほとんど理性は焼き切れていた。わずかでも快感を逃そうと壁に立てた爪を、網問くんは「あ。こらあ」と言って離させ、震える私の手を勝手に恋人つなぎにした。<br>
+　網問くんは一度陰茎を引き抜く。その剛直と網問くんの手だけで体重を支えられていた私は、それだけでもうガクンと床に座り込んでしまいそうだった。網問くんは壁に向かせていた私の体をくるんとひっくり返して、よだれの垂れた私の首筋に舌を這わす。体は全身敏感になってしまって、簡単にびくびくと震えてしまう私を、網問くんがきゅうっと細めた目で嬉しそうに見つめた。<br>
+<br>
+　蜜を垂らす秘所と、そのいきりたった熱の塊を、網問くんはぬちぬちとこすり合わせた。陰核が触れて快楽に変換されるだけでなく、焦らされている、と浅ましくも思ってしまう自身のはしたなさに涙が出そうだった。いや、もう散々に絶頂させられた反応で泣き喘いでいたのだが。<br>
+　網問くんは私のお尻を掴み、ぬぷ、と蜜壺に先端だけ割り込ませて抜く、という行為を何度か繰り返した。完全に弄ばれていた。それでも、もう散々奥での気持ちよさを教え込まれた体は無意識に腰を揺らす。<br>
+<br>
+「おねえさん、奥までいれてほしい？」<br>
+「う……う、うぁ……っ♡」<br>
+「そしたらさ、言うことあるでしょ。言ってくれたら、おれ、もうひどいことしないよ」<br>
+<br>
+　今日はね、と網問くんは私の胸に吸いつく。ひどいことをしている自覚はあるらしい。や、と身を引かせる私の後ろにはさっきまで縋っていた壁しかなくて、網問くんは悠々と私の乳首を舐めまわし、舌と上あごの間で潰すことができた。足の間から濡れたものが垂れていく感覚に、私はぐすぐすと鼻を鳴らしながら、なぜ自分が年下の男にこんな痴態を見せねばならない地獄にいるのか、と思った。<br>
+<br>
+「ごめ、ごめんなさい、あ、あといくん……♡」<br>
+「……おねえさんさあ、ほんとチョロいんだから、ああいうの気をつけないと。おれおねえさんのために怒ってんだよ」<br>
+「うん、う、うﾞ～～……っ♡　あ、また、はいっ……ふ、ふうﾞ～っ♡」<br>
+<br>
+　お尻を掴んだ網問くんは、ゆっくりとした動きで私の秘部のあわいに擦りつけたり、到底奥には到達しないところまでぐぷぐぷと陰茎を進め、また緩慢な動きで抜いていったりする。さっきまであんなにイかされるのが怖いと思っていたのに、またあの絶頂が欲しくてたまらない。自分の体はいったいどうなってしまったのだろう。<br>
+<br>
+「言わなきゃいけないこと、わかる？」<br>
+<br>
+　網問くんの長い黒髪がぱさり、と垂れて、廊下の光源を遮る。濡れた二人の肌に張りつく髪の感覚が生々しい。<br>
+　……言わなきゃいけないこと？　な、なんだっけ？　わかんない。もう気持ちよくなりたくない。また奥までいれてほしい。イくのは怖い。足がつかないのも怖い。またごちゅんって突いてほしい。キスしたい。<br>
+<br>
+「す、すきぃ……」<br>
+「──は」<br>
+「すき、すきだよぉ、あ、あといくん……すき、」<br>
+<br>
+　飽和状態になったみたいに「すき」ばかりを繰り返す私に、網問くんは一瞬ほうけた顔をして、それからギュ！　と睨みつけるみたいに顔のパーツを中心に寄せた。<br>
+「ああ、もう」と言いながら、網問くんは身を屈めて私の唇を乱暴に奪った。ぐちゅ、にゅる、と聞くに堪えない水音が脳髄を揺らすさなかに、陰茎がずぶ、ずぷんとなかに入っていく。足がぴんっと伸びて、つま先立ちのままどんどん体の中心を持ち上げられた。<br>
+<br>
+「んっ、んっふうﾞ～～～っ♡　んぢゅ、ぷは、くるひ、」<br>
+「おれの気も知らないでさあッ、おねえさんはホンット……！！」<br>
+「あ、あﾞぁ！♡♡　んぐ、う、ひぃ……っ♡　あ、あぁ～～ッ♡　うﾞンッ、ふ、ぎゅっ♡」<br>
+<br>
+　いきなりガツガツとしたストロークでなかを荒らされる。明らかに自分本位な抽挿だというのに、網問くんが腰を押し付けるたびに快楽を拾っている。小刻みに嬌声の漏れる口を、網問くんがまた塞いでじゅるじゅると唾液をすすった。網問くんの腕は私の体重を支えるためにお尻に回されている。その骨ばった硬い指にも感じてしまって、胸がきゅう、と痛いくらい締めつけられた。好き、網問くん。ほんとに好き。ぜんぶ好き。<br>
+　背中に感じる壁の感触が冷たくて、落ちそうになるのが怖くて、必死に目の前の体に抱きついた。網問くんの背中に爪を立てて縋りつき、ああまた彼を傷つけてしまう、と頭の片隅で思った。でもそれに関してはどっちもどっちだ。網問くんだって私に噛みつくし、キスマークをつけるし、腰にあざを残す。<br>
+　さっきまで奥を埋めてほしいと思っていたにも関わらず、私はもうすべての自分の言葉を撤回してここから逃げ出したい気分になっていた。「やら、も、もおや……っ♡」と網問くんの胸板に額を擦りつけて、体を支配する巨大な快楽をどうにかしようとする。「はあ、っ？」と荒く息を零しながら、網問くんの苛立ちがそのまま最奥へぶつけられる。伸ばしっぱなしになっていたつま先がぎゅうっと丸まった。<br>
+<br>
+「おねえさん、もうおれ無しじゃなんにもできないだろ、嫌とか言うな……っ！」<br>
+「あ、ん、ンうﾞ～ッ♡　ひ、ひううﾞっ、あﾞぁ……っっ♡　ごめ、ごえんらﾞさ～～……っ♡」<br>
+「もう顔ぐっちゃぐちゃじゃん、……ハハ……、なあ、おい、こっち見ろ、」<br>
+<br>
+　低い声でいつもよりずっと乱暴な口調の網問くんのことも好きだと思った。頭の中が炭酸みたいにぱちぱちと弾けて、泡が消えるたびに私の理性もなくなっていく。ずっと中途半端に浮いているせいで体の変なところに力が入っていて、明日は絶対に筋肉痛だ、とくらだらないことだけが脳裏に浮かんだ。<br>
+　網問くんは無理やり私の顔を上げさせた後、またちゅうっと口を吸った。網問くんはよく「おねえさんはキスするの好きだからなあ」とか言うけれど、私からしたら彼のほうがキスを好んでいるように思えた。腹の奥が震えて、網問くんがそれに応えるように腰を押しつける。体の隙間がほとんどなくなって、汗ばんだ肌が重なった。彼も絶頂したのだろう、色っぽい溜息とともに、真ん中を陣取っていた熱が硬さを失ったのがわかった。まるで恋を知ったばかりの思春期みたいなセックスだ。<br>
+<br>
+「……つかれた、」<br>
+<br>
+　まだ余韻の抜けきらない、稼働率五パーセントくらいの脳みそで呟く。網問くんは謝りもしなかった。その代わりに私の肩にぐりぐりと頭を押しつけてきたので、ヤンチャな大型犬を飼っている人ってこんな気持ちなのかなあ、と思いながら、彼を許すことにしたのだった。
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+    <!-- あとがきなど。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-common">
+        <p>2025.06.11</p><!-- 書き換え -->
+        <p>現パロ19歳大学生の身長190センチ越えの網問が女の家に勝手に泊まってるヒモの設定です。（属性過多）</p>      
+      </div>
+    </div>
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="komatuda01.html">前へ</a> ｜ <a href="/main.html#rkrn">一覧へ戻る</a> ｜ <a href="yosimaru01.html">次へ</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/index.html">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>

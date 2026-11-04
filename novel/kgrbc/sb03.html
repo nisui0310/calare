@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="忘れてしまいたい。">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
+    <meta property="og:title" content="落日 | Kagami">
+    <meta property="og:description" content="忘れてしまいたい。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
+
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <!-- 小説以外で最低限適用するベースのCSS。自分のサイトで使用しているCSSに差し替えても動きます。 -->
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <!-- 小説用のCSS -->
+  <link rel="stylesheet" href="/novel/css/novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+　<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+
+    <!-- <script defer src="/assets/js/password.js"></script> -->
+
+  <!-- ページタイトル -->
+  <title>わがまま許さぬきみが好き</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン -->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">kgrbc short</span>
+    <h1 class="novel-title">わがまま許さぬきみが好き</h1>
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="sb02.html">前へ</a> ｜ <a href="/main.html#kgrbc">一覧へ戻る</a> ｜ <a href="ibk01.html">次へ</a>
+      </div>
+    </div>
+
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+「え俺言わへんかったっけ？」<br>
+<br>
+　柴はヘラヘラ笑った。大きな手のひらが私の口ごと覆う形で、頬ごとガッチリと掴んでいた。空気が少しでも入ることを許さないような手のひらのせいで、私は必死に鼻で呼吸するしかなかった。しかも微妙に持ち上げられているせいで、踵は若干浮いていた。むぐむぐと声をくぐもらせて喋ろうとする私に、柴はゴミを見る目になった。怖い！　普通に幼馴染が怖いぞ！　そこらへんの刀持って歩いてるヤクザより怖い！<br>
+<br>
+「なに？　田舎と<ruby>違<rt>ちご</rt></ruby>てヤバいやついっぱいおるから、東京来よんなら夜中出歩くなって上京ん時に言ったよな、俺？　え？　何？　今何時？　昼夜逆転しとんのおまえ？」<br>
+<br>
+　ギリギリと口元を締め上げる力が強くなる。バシバシと口を塞ぐ柴の手を叩くが、ビキビキに血管が浮いた柴の腕は全く力が緩む様子がなかった。マジでブチギレているのはわかるし、これを宥めるには即謝罪以外の行動はないのだが、柴にはそもそも謝罪させる気がないのだ。恐怖！　一般成人男性が一般成人女性の口を塞いで道端でブチギレている図！<br>
+<br>
+「えー、はは、もしかして俺舐められとる？」柴が半笑いで言う。目が全然笑ってない。「あー、そうなんや。舐めてるから言うこと聞かへんねや、おまえ。せやんな？」<br>
+<br>
+　いや、ごめん、一旦、舐めてはいる。なんだかんだ、許してねって可愛い顔して上目遣いとかすれば、普通に許してくれるかな？　と思っていた。だが今の柴の様子を見ると全然そんなことはなかったかもしれない、と思う。六平！　助けてくれ！　私の死因が幼馴染の男による窒息死になってしまう！　頭の中でそう叫ぶが、頭の中の六平は下手くそなウインクをするだけで全然助けてくれなかった。薊まで出てきて『おまえが悪いよ』とか言い始める。おい！　うるさいな、私が悪いことは知ってるよ。だからここから入れる保険はあるか聞いてるんだ。<br>
+<br>
+「なあ」柴がずい、と顔を近づけてきた。「聞いとんねんけど」<br>
+<br>
+　ドスの効いた声に、体がびく、と怯える。富士急で乗ったアトラクションの足元にネジが落ちていた時より怖い。単純に命の危機を感じる。<br>
+　だが柴からそんなふうに尋問（詰問を超えている）されても、その柴自身の手によって私は返事ができないのだ。いや、柴の言うことを聞きながら早く解放してくれないかなと思っていたのは事実だが。しかも依然として柴はその手を離す様子はない。私は視線だけで必死に柴に訴えた。普通にすみません。普通に舐めてました。次から言うこと聞きます。<br>
+<br>
+「…………」<br>
+<br>
+　柴はマジで午前四時の歌舞伎町で倒れているホストを見るみたいな目で私を見下ろした。あ、こわ、怖い〜。え？　本当に死ぬのかな、私……。<br>
+<br>
+「………………チッ」<br>
+<br>
+　頭の中で走馬灯が数秒だけ駆け巡る時間があったが、柴はとんでもなく煩い舌打ちをして私を解放してくれた。ぶはあ、と荒く息をする。すごい音だった。チッていうよりヂィッて感じだった。柴の口の中で摩擦で火がついたかと思ったくらい。<br>
+<br>
+「帰るぞ」<br>
+「あ、はい〜……」<br>
+<br>
+　私は歩き始めた柴の隣にそろそろと並んだ。めちゃくちゃイライラしている様子で路上喫煙をする男を見上げる。そんなイライラしながら喫煙して大丈夫なのか？　血圧とかになんらかの影響が出たりしないのかな？<br>
+<br>
+「ちなみに、妖術でビュンッと送ってくれたりは……」<br>
+「あ？」<br>
+「しないよね〜、はい、すいません、はい……」
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+    <!-- あとがきなど。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-common">
+        <p>2026.08.30<br>
+        　怖い柴さんしか見たくないという気持ちで書いた。もっと怖い柴さんが読みたい……。</p>      
+      </div>
+    </div>
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="sb02.html">前へ</a> ｜ <a href="/main.html#kgrbc">一覧へ戻る</a> ｜ <a href="ibk01.html">次へ</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/index.html">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>

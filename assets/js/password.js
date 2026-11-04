@@ -5,7 +5,7 @@
 (function () {
     // ★ パスワードはここだけ変更（グループを増やす場合は行を足す）
     var PASSWORDS = {
-        main: "calare",
+        main: "yes",
         // syura: "別のパスワード",
     };
     var LOGIN = "password.html", HOME = "main.html";

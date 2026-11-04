@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="忘れてしまいたい。">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
+    <meta property="og:title" content="落日 | Kagami">
+    <meta property="og:description" content="忘れてしまいたい。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
+
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <!-- 小説以外で最低限適用するベースのCSS。自分のサイトで使用しているCSSに差し替えても動きます。 -->
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <!-- 小説用のCSS -->
+  <link rel="stylesheet" href="/novel/css/novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+　<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+    <script defer src="/assets/js/password.js"></script>
+
+  <!-- ページタイトル -->
+  <title>主導権はない</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン -->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">RKRN short</span>
+    <h1 class="novel-title">主導権はない</h1>
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="atoi01.html">前へ</a> ｜ <a href="/main.html#rkrn">一覧へ戻る</a> ｜ <a href="hukusu01.html">次へ</a>
+      </div>
+    </div>
+
+    <!-- 前書き本文（不要な話ではこの div ブロック全体を削除OK） -->
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- ここまで 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+    
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+        <!-- 書き換え -->
+　ずぶずぶと内臓が押し上げられていく感覚が恐ろしくて、でも抵抗するほどの力はもうどこにもなく、私は必死に息を吐くばかりだった。涙で滲む視界の中、鍛えあげられた腹筋に手を突くも、彼にその手を握られてしまえばなすすべも無し。<br>
+<br>
+「えらいなあ」<br>
+「う、ふ、ふうﾞ～～ッ♡　ひ、ぎゅ……っ♡」<br>
+「もう少し奥までいれてみるか」<br>
+「ぁ、む、むりﾞぃ……ッ♡　も、もふかいからあﾞぁ……♡」<br>
+<br>
+　くん、と義丸さんが私の腕を引っ張る。突っかかっていた義丸さんの陰茎が、完全に私のお腹に収まった。かは、と肺の中の空気がすべて押し出されて、呼吸の仕方がわからなくなる。寝転がった義丸さんの太ももにぺたりとお尻がついていた。<br>
+　義丸さんは圧迫感と快楽の前兆で訳がわからなくなっている私の顔を見やり、「オイ」と声をかける。<br>
+<br>
+「息」<br>
+<br>
+　片手だけで私のお腹をすっぽりと覆うようなその手が、ぐ、と内臓を押した。ちかちか、と瞼の裏に星が散って、「は、ぎゅううﾞ～～ッ♡♡　う、かふっ、あ、ひ、いﾞ～～～ッ♡♡」と悲鳴とも嬌声ともつかぬ声が喉からほとばしる。強制的に空気を吐き切らされたことで、私は肩を上下させながら呼吸の仕方を思い出した。<br>
+　けれども義丸さんはそんな私の反応が気に入ったようで、ニイ、と口端を引き伸ばしながら、そのままお腹をぐにぐにと按摩する。にぶい喘ぎ声とともに私の体がびくびくと震えるのを、彼は目を細めたまま楽しんでいた。<br>
+<br>
+「こんなうっすい腹に、よくオレのモンが入るもんだよなあ」<br>
+「ひ、ひぐう、ふ～ッ♡　よ、よしまるさんっ♡♡　おなﾞか、こ、こわﾞ……ッ♡」<br>
+「怖いこたァねぇよ。気持ちいいことだけだ。そうだろ？」<br>
+<br>
+　それが恐ろしい。私は義丸さんのものをくわえ込むだけで体力が半分以上削られた気がするのに、義丸さんは余裕そうな顔で私の髪をくすぐることもできる。太ももで挟んだ彼の体は本当にぶ厚くて、全身が筋肉によってでこぼこしているから、体力の差は歴然であるのだけど、いつも私ばかりがひどくなかされている。<br>
+　ぬ、と伸びてきた義丸さんの手が、私の胸をやわやわと撫でた。慣れた手つきだ。胸のふくらみを、真ん中を避けながら持ち上げたりして感触を楽しむ。じれったくなって私が腰を無意識に揺らすと、ふ、と笑んだ。そのまま硬くてタコのある指が、きゅ！　と先端を摘まんだ。甲高い声が喉から飛び出て、そのまま上体が彼の体の上に倒れこんでしまう。義丸さんはそれでもやめてくれなくて、自身の体と私の間に手を差し込んだまま、ぐにぐにと芯を潰した。<br>
+<br>
+「あ、や、やﾞ～～ッ♡♡　む、むね、ひいﾞ、あﾞッ♡」<br>
+「こうするのが好きだろう、嘘つくな」<br>
+「はひっ♡　ごめ、ごえんなさ、あﾞ～～……っっ♡♡　や、まﾞ、まってぇ、」<br>
+「なかがぎゅうぎゅう締まってるぞ。気をやりそうか」<br>
+「ち、ちがぁ、なんでぇﾞ……っ♡　い、いくのやだあﾞ、むねもおやだぁ♡」<br>
+<br>
+　身を引こうとするのに、義丸さんが遠慮なく乳首をつねったり引っ張ったりするので、私はもうぐすぐす泣きながら言葉で彼に懇願するしかない。義丸さんの体に爪を立てて縋っても、彼には何のダメージも入っていないようだった。義丸さん以外には全く経験がない私でも、胸だけでイくなんて恥ずかしい、ということはなんとなくわかった。<br>
+　義丸さんは蛇みたいに舌なめずりをした。「えろい女」と呟かれて、私の羞恥心はもう限界だった。私のせいじゃない！　ぜんぶ義丸さんのせいだ。私をこんなぐずぐずにしたのも、胸だけでイきそうになっているのも、ぜんぶ義丸さんのせいじゃないか。ばか、最低、すけべ。いろんな女に手ぇ出しまくってたくせに。<br>
+<br>
+「ねえ、も、もおやﾞ～～っ♡　やだってゆって、ゆってうﾞっ！♡♡　ち、ちくびやだあ、」<br>
+「わかったわかった、あとちょっとでイけるからな」<br>
+「きいてよおﾞっ♡♡　ねえ、あ、あﾞ～～～っ♡　い、いぐ、イッちゃう……♡　あ、ひ、や、イﾞ、～～～ッッ♡♡」<br>
+<br>
+　中心をカリ、と爪で引っかかれて、倒れたままガクンッと背がのけぞった。義丸さんは、それを世界で一番慈愛の含んだ瞳で見つめた。絶頂の余韻に沈められた私がぐったりと彼の体の上で力を失ってから、ようやく彼は「がんばったなあ」と私の頭を撫でた。<br>
+<br>
+「次はオレの番だな」<br>
+<br>
+　次も何もあるか、と心の中でツッコんだ。こちらに主導権があったときなんてないだろ、このすけべ男！
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+    <!-- あとがきなど。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-common">
+        <p>2025.06.11</p><!-- 書き換え -->   
+      </div>
+    </div>
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="atoi01.html">前へ</a> ｜ <a href="/main.html#rkrn">一覧へ戻る</a> ｜ <a href="hukusu01.html">次へ</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/index.html">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>

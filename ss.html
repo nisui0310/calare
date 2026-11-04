@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html lang="ja" dir="ltr">
+
+<head>
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <!-- title -->
+    <title>SS - 落日 | Kagami</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nemoy" type="text/css" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hilo-deco" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- このページ専用（style.css の後に読み込む） -->
+    <link rel="stylesheet" href="assets/css/ss.css">
+    <!-- Font Awesome 等 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+</head>
+
+<body id="all" class="page-ss">
+
+    <!-- loader -->
+    <div class="page-loader">
+        <div class="intersecting-circles-spinner">
+            <div class="spinnerBlock">
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- header -->
+    <header>
+        <div>
+            <img alt src="images/1.jpg">
+            <aside class="align-center">
+                last up > 20/09/16<br>
+            </aside>
+        </div>
+        <h1><span>c</span><span>a</span><span>l</span><span>a</span><span>r</span><span>e</span></h1>
+        <div class="m_b_1r align-center"></div>
+    </header>
+
+    <!-- nav -->
+    <nav>
+        <ul>
+            <li><a href="index.html#info">infomation</a></li>
+            <li><a href="main.html#main">main contents</a></li>
+            <li><a href="note.html#note">notebook</a></li>
+        </ul>
+    </nav>
+
+    <!-- main -->
+    <div class="wrp">
+        <main>
+            <h2><span>10</span><br>ss</h2>
+            <div class="line"></div>
+
+            <!-- =====================================================
+                 ジャンル絞り込み
+                 ・表示名はここのボタンの文字だけを書き換えれば、各作品の表示にも反映されます
+                   （例：kgrbc → カグラバチ）。data-genre のコードは変えないでください
+                 ・ジャンルを増やすときは <button> を1行複製し、data-genre と表示名を書き換える
+                 ・選択中タグの見た目を変えるときは、下の class に追加：
+                     ss-tag-fill   塗りつぶし
+                     ss-tag-marker マーカー風
+                 ===================================================== -->
+            <section class="ss-filter" id="ss-filter" aria-label="ジャンルで絞り込み">
+                <div class="ss-tags ss-tag-fill" role="group" aria-label="ジャンル">
+                    <button type="button" class="ss-tag" data-genre="kgrbc" aria-pressed="false">kgrbc</button>
+                    <button type="button" class="ss-tag" data-genre="rkrn" aria-pressed="false">rkrn</button>
+                    <button type="button" class="ss-tag" data-genre="wt" aria-pressed="false">wt</button>
+                    <button type="button" class="ss-tag" data-genre="bnst" aria-pressed="false">bnst</button>
+                    <button type="button" class="ss-tag" data-genre="other" aria-pressed="false">other</button>
+                </div>
+                <div class="ss-status">
+                    <span class="ss-count" aria-live="polite"></span>
+                    <button type="button" class="ss-clear" hidden>すべて解除</button>
+                </div>
+            </section>
+
+            <!-- =====================================================
+                 作品一覧（新しい作品を一番上に追加）
+                 ・1カラム／2カラム：下の ss-cols-2 を ss-cols-1 に変える
+                 ・日付を全体で非表示：class に ss-hide-date を足す
+                 　（作品ごとに消すなら、その作品の <time> の行を削除）
+
+                 ▼ 追加するときは、下の <article> 1つ分を複製して書き換えるだけ
+                 ・ジャンル：<li> を複製／削除（複数ジャンル可）。data-genre はタグと同じコード
+                 ・本文：1段落＝1つの <p>。行内で改行したいときは <br>
+                 ・名前変換：<span class="user-your">ミョウジ</span> / <span class="user-name">ナマエ</span>
+                 ===================================================== -->
+            <div class="ss-list ss-cols-2" id="ss-list">
+
+
+                <article class="ss">
+                    <div class="ss-meta">
+                        <ul class="ss-genres">
+                            <li><button type="button" class="ss-genre" data-genre="jb">JB</button></li>
+                        </ul>
+                        <time class="ss-date" datetime="2026-11-03">2026.09.11</time>
+                    </div>
+                    <h3 class="ss-title">憧れてはいけない真経津さん</h3>
+                    <div class="ss-body">
+                        　最近バイト先のファミレスに来るイケメンが気になる。平日のお昼くらいに来て、他に誰が来るわけでもないのに三つも四つもメインメニューを頼んで、結局どれも中途半端に残すのだ。お金と廃棄になる食糧がもったいない、と思う。だから、恋愛的な意味じゃなく、単純に気になる。どんな人なのか、どんな仕事をしているのか──あと、あの、ええと。彼女っているのかな？　とか。<br>
+                        <br>
+                        「……あ、」<br>
+                        「大丈夫だった？」<br>
+                        <br>
+                        　だからといって、こんなふうに助けられたかった訳でも、私を襲おうとした男を殺して欲しかった訳でも、ギャンブラーである彼を守るために銀行が事態を隠蔽することも──知りたかった訳ではないのに！<br>
+                        <br>
+                        「お礼はいらないよ」<br>
+                        <br>
+                        　男は無邪気に、私の感謝を信じて疑わない様子で笑った。<br>
+                        <br>
+                        「ボク、真経津っていうんだ。よろしくね」
+                    </div>
+                </article>
+                <article class="ss">
+                    <div class="ss-meta">
+                        <ul class="ss-genres">
+                            <li><button type="button" class="ss-genre" data-genre="jb">JB</button></li>
+                        </ul>
+                        <time class="ss-date" datetime="2026-11-03">2026.09.11</time>
+                    </div>
+                    <h3 class="ss-title">憧れでは終わらせない黎明</h3>
+                    <div class="ss-body">
+                        　叶黎明が好きすぎて、ゲームチャンネルを作った。<ruby>繋<rt>・</rt></ruby><ruby>が<rt>・</rt></ruby><ruby>り<rt>・</rt></ruby>たいからだ。そんな不純な思いでやり始めた実況だけど、今では順調にアカウントが育ち、正直最近は黎明の配信を追う暇もない。パンプスの先を眺めながら、夜道を歩く。──不意に視界の暗さに顔を上げると、電灯の光を背負った、背の高い男が目の前で私を見下ろして──<br>
+                        <br>
+                        「──レイメイ？」<br>
+                        「覚えててくれたんだな、オレの名前」<br>
+                        <br>
+                        　咄嗟に足をもつれさせて後ろに下がった。レイメイ。叶黎明だ。<br>
+                        <br>
+                        「な、何、なんでここに」<br>
+                        「一生推すって言ってたのは嘘か？」<br>
+                        「は」<br>
+                        「コメントもしないで配信も見ないで自分が見られることに精一杯か？　オレを見るよりお前のゴミみたいに中身のないリスナーのコメントを見て満足か？」<br>
+                        「な、何、何言っ」<br>
+                        <br>
+                        　腕を掴まれる。<br>
+                        <br>
+                        「逃げるなよ。オレを見ないなんて許さない」
+                    </div>
+                </article>
+                <article class="ss">
+                    <div class="ss-meta">
+                        <ul class="ss-genres">
+                            <li><button type="button" class="ss-genre" data-genre="jb">JB</button></li>
+                        </ul>
+                        <time class="ss-date" datetime="2026-11-03">2026.09.11</time>
+                    </div>
+                    <h3 class="ss-title">憧れてた獅子神さん</h3>
+                    <div class="ss-body">
+                        　ねえさんとその人を呼んでいた。二つか三つ年上の女だったから、ねえさん。それだけだった。駄菓子屋でオレにお菓子を奢ってくれたり、傘が壊れて土砂降りの中を歩くオレと一緒に濡れてくれたり、彼女が持ってる漫画を遊具の中で一緒に読んだり、そういうことをしていた。一足先に彼女が中学生になって、オレが薄汚いヨレヨレのTシャツで、彼女がパリッと硬そうな制服姿で一緒に歩く姿を街中のショーウィンドウの反射越しに眺めた時には、まあ、なんというか。住む世界が違ぇんだ、とも思った。<br>
+                        <br>
+                        「……思ってたんだけどなあ……」<br>
+                        <br>
+                        　口元を片手で覆って呟く。<ruby>債<rt>・</rt></ruby><ruby>務<rt>・</rt></ruby><ruby>者<rt>・</rt></ruby>である彼女が、拘束されたまま「……け、けーいち、くん？」と目を見開いて、オレを見上げている。ああ、変わったな。オレもアンタも。<br>
+                        　「……もう戻れねえなあ」
+                    </div>
+                </article>
+
+                <article class="ss">
+                    <div class="ss-meta">
+                        <ul class="ss-genres">
+                            <li><button type="button" class="ss-genre" data-genre="jb">JB</button></li>
+                        </ul>
+                        <time class="ss-date" datetime="2026-11-03">2026.09.11</time>
+                    </div>
+                    <h3 class="ss-title">憧れてはない村雨先生</h3>
+                    <div class="ss-body">
+                        　兄に懸想をする女がいると聞いても、村雨はそれをなんら不思議には思わないし、一人が兄の心を奪い、他の者がそれを成し遂げられなくとも、それらは村雨の知ったことではない。<br>
+                        <br>
+                        「礼二くんは頭がよくてすごいね」<br>
+                        <br>
+                        　女は頭の良くない兄を好きなのに、度々そう言った。村雨はそれについては愚かだと思っていた。兄が好きなら兄に良い顔をすればいい。わざわざ自分のような陰気な人間に話しかける必要はない。<br>
+                        <br>
+                        「礼二くん、医学部行くんだってね！　頑張ってね」<br>
+                        <br>
+                        　必要のない行動を取る意味がわからない。<br>
+                        <br>
+                        「礼二くん、この参考書、もう使わなくなったからあげるね」<br>
+                        <br>
+                        　意味がわからない。<br>
+                        <br>
+                        「一希くん、恋人できたんだってね。……あーあ……」<br>
+                        <br>
+                        　合理的な判断をすればいい。兄に選んでもらえないなら別の者を。例えば。例えば。<br>
+                        <br>
+                        「……貴女はマヌケだ」
+                    </div>
+                </article>
+
+
+
+
+
+
+                <article class="ss">
+                    <div class="ss-meta">
+                        <ul class="ss-genres">
+                            <li><button type="button" class="ss-genre" data-genre="bnst">bnst</button></li>
+                        </ul>
+                        <time class="ss-date" datetime="2026-10-28">2026.11.10</time>
+                    </div>
+                    <h3 class="ss-title">太宰と織田作の話をする</h3>
+                    <div class="ss-body">
+                        「わたしね、太宰のことはそこそこ好きなんだけど」<br>
+                        「……お…………おお、…………、いや、君、動画を撮った方がいいよ。この私が絶句するなんて中々ないことだからね、目の当たりにした君はこれからしばらく運気が向くだろうね」<br>
+                        「太宰が死ななくてよかったと思うの」<br>
+                        「……マア、普通の人間は、そこそこ好きな相手には死んでほしくないんじゃないかい」<br>
+                        「んふ。ふふ。そうだね。でも、太宰は死にたがりじゃん。だからちょっと申し訳ないなー、っていう気持ちもある」<br>
+                        「君のような理解者を持てて私は幸福者だねえ」<br>
+                        「あ、違う、好きだから生きててほしいんじゃなくて」<br>
+                        「この流れで違うことあるんだ」<br>
+                        「太宰は頭がいいでしょ。だから、きっと、織田作のことも守ってくれるじゃん。太宰みたいに頭のいい人間が織田作を守ってくれるなら、きっとあの人は米寿まで生きるよ」<br>
+                        「おお、珍しく事実に即したことを言う」<br>
+                        「んふ！　うん。そう。きっと守ってね。きっとだよ」
+                    </div>
+                </article>
+                <article class="ss">
+                    <div class="ss-meta">
+                        <ul class="ss-genres">
+                            <li><button type="button" class="ss-genre" data-genre="rkrn">rkrn</button></li>
+                        </ul>
+                        <time class="ss-date" datetime="2026-10-28">2025.07.19</time>
+                    </div>
+                    <h3 class="ss-title">死ぬかと思った白南風丸</h3>
+                    <div class="ss-body">
+                        「死んでないんだ……」<br>
+                        <br>
+                        　目覚めて一発目の言葉がそれだった。蜉蝣さんは大爆笑して、義丸さんは呆れたようにため息を吐き、鬼蜘蛛丸さんには拳骨を落とされた。それがメチャクチャ痛くて、生きててよかった、と思った。傷跡は残ったけれど、でも変な感染症にかかったりすることもなく、オレは順調に傷を癒していた。そしたら突然、いつも魚を売買するとき懇意にしてもらっている店の女の子がやってきて、布団で包帯塗れのオレを見るなりぶわっと泣き出したのだ。ばかあ、とかいう罵倒も混じっていたけど、でも彼女は最後にぐすぐす言って「心配した……」と呟いた。<br>
+                        　そしたら急にオレも涙腺がバカになったみたいで、だばっと涙が出た。<br>
+                        　死ぬかと思った。死んだと思った。本当に怖かった。<br>
+                        <br>
+                        「ごめん……」<br>
+                        <br>
+                        　生きててよかった。
+                    </div>
+                </article>
+                <article class="ss">
+                    <div class="ss-meta">
+                        <ul class="ss-genres">
+                            <li><button type="button" class="ss-genre" data-genre="rkrn">rkrn</button></li>
+                        </ul>
+                        <time class="ss-date" datetime="2026-10-28">2025.07.19</time>
+                    </div>
+                    <h3 class="ss-title">約束しない義丸</h3>
+                    <div class="ss-body">
+                        　引き攣れた傷に触れる。<br>
+                        <br>
+                        「おまえは目ざといなあ」と義丸さんが言った。この前に義丸さんがここに来たときには確かになかった傷跡だ。また怪我したのと訊くと、「んー？　まぁな。カッコイイだろ」などとのたまう。そんな歳でもなしに、と思った。窓から朝日が差し込んでいる。義丸さんも私も身につけているものはなく、ただ布団が散らばるばかりだ。義丸さんの体には日焼けの跡がくっきり見えた。<br>
+                        <br>
+                        「次はいつ来るの」<br>
+                        「どうだかなあ」<br>
+                        <br>
+                        　義丸さんは首をひねる。そして誤魔化すように、寂しいのか、と訊ねてきた。女に言わせる気か、と傷を引っかけば、義丸さんは呵々と笑った。かわいい女だな、と言って私の頭を撫でくり回した。<br>
+                        　それでも彼は決して、必ず来る、とは言わなかった。
+                    </div>
+                </article>
+                <article class="ss">
+                    <div class="ss-meta">
+                        <ul class="ss-genres">
+                            <li><button type="button" class="ss-genre" data-genre="rkrn">rkrn</button></li>
+                        </ul>
+                        <time class="ss-date" datetime="2026-10-28">2025.07.19</time>
+                    </div>
+                    <h3 class="ss-title">勲章と思う間切</h3>
+                    <div class="ss-body">
+                        　久々に町で見かけた間切くんに声をかけようとして、でも、声をあげたのは彼が先だった。私の名前を呼んで駆けよってきた間切くんは、「久しぶり」とさわやかに笑った。ところが私の絶句している様子に気づいて「おい……大丈夫か？」と訊ねる。<br>
+                        <br>
+                        「き」<br>
+                        「き？」<br>
+                        「きず……」<br>
+                        <br>
+                        　間切くんはパチ、と目を瞬いて、これかと苦笑いした。唇と一緒に真新しい頬の傷が動いて、すごく痛そうだった。<br>
+                        <br>
+                        「もう痛くねえよ」<br>
+                        <br>
+                        　本当に痛くなさそうだったけど、勝手にじわじわ涙が滲みはじめて、間切くんはギョッと目を見開く。それから困ったようにボサボサの髪をかいた。本当に？　と泣きながら訊ねると「ホントだっつーの」と私の頬を乱暴に拭った。<br>
+                        <br>
+                        「だから、泣くな」<br>
+                        <br>
+                        なんの傷もないほっぺたを撫でる間切くんの手は、やっぱり傷だらけだった。
+                    </div>
+                </article>
+                <article class="ss">
+                    <div class="ss-meta">
+                        <ul class="ss-genres">
+                            <li><button type="button" class="ss-genre" data-genre="rkrn">rkrn</button></li>
+                        </ul>
+                        <time class="ss-date" datetime="2026-10-28">2025.07.19</time>
+                    </div>
+                    <h3 class="ss-title">傷をつけたい網問</h3>
+                    <div class="ss-body">
+                        「あ、網問くん」<br>
+                        「んー？」<br>
+                        「い、いや、嫌だから、それ」<br>
+                        「んー」<br>
+                        <br>
+                        　めそめそ泣くばかりの私のうなじに、彼は口づけを落としていく。刺激に震える私の体を、その尋常ならざる体躯で押さえつける網問くんは、不意に柔肌に歯を立てた。あ！　と甲高い声が出る私に構わず、食いちぎるほどにギリギリと力を籠める網問くん。痛い、嫌だ、とジタバタ暴れる私の両腕を拘束し、長い足で抵抗を封じる。<br>
+                        　ぱ、と網問くんの唇が体から離れると、背筋をつうっと液体が垂れていくのがわかった。それが汗ではないことを、もう知っている。<br>
+                        <br>
+                        「い、嫌だって、言ったのにい……」<br>
+                        <br>
+                        　彼よりも年上なはずなのに、こんなふうに情けなく泣いている女を、網問くんは心底嬉しそうな瞳で見つめた。夜の猫みたいに、爛々と輝く瞳。<br>
+                        <br>
+                        「おれにもつけていいよ」<br>
+                        「しないよお……」
+                    </div>
+                </article>
+
+
+
+
+            </div>
+
+            <p class="ss-empty" id="ss-empty" hidden>該当する作品はありません。</p>
+        </main>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        Template by <a href="https://fantia.jp/ren" target="_blank">KERRY</a>
+    </footer>
+
+    <!-- pagetop button -->
+    <div id="page-top"><a href="#all"><img alt src="images/2.png"></a></div>
+
+    <!--script（読み込み順：jQuery → main.js → name.js → ss.js）-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/name.js"></script>
+    <script src="./assets/js/ss.js"></script>
+</body>
+
+</html>

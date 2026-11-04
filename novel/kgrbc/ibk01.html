@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="忘れてしまいたい。">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
+    <meta property="og:title" content="落日 | Kagami">
+    <meta property="og:description" content="忘れてしまいたい。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
+
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <!-- 小説以外で最低限適用するベースのCSS。自分のサイトで使用しているCSSに差し替えても動きます。 -->
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <!-- 小説用のCSS -->
+  <link rel="stylesheet" href="/novel/css/novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+　<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+
+    <script defer src="/assets/js/password.js"></script> 
+
+  <!-- ページタイトル -->
+  <title>セイ・アンコール！</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン -->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">kgrbc short</span>
+    <h1 class="novel-title">セイ・アンコール！</h1>
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="sb03.html">前へ</a> ｜ <a href="/main.html#kgrbc">一覧へ戻る</a>
+         <!-- ｜ <a href="ibk02.html">次へ</a> -->
+      </div>
+    </div>
+
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+　う、と濁った声が腹の奥から発せられる。体の隅々に疲労が溜まっていて、もう指の一本だって動かせそうになかった。<br>
+<br>
+「動かねーの？」<br>
+<br>
+　だのに、私の真下で悠然とした顔の男がそう問いかけてくるものだから、私は眉を歪めながら「う、……動くっ」と自分で自分の首を絞める言葉を吐き出すしかなかった。<br>
+　体の真ん中を、煮えたぎるような熱杭で貫かれている。恥じるべきは目先の恐怖につられて軽はずみな一言を発してしまったことではなく、私の柔肉が濡れそぼったまま彼の陰茎を食い締めていることだろう。<br>
+　ふうふうと荒く息を吐きながら、伊武基さんの腹筋に手を突く。自分にない筋肉の感触は、まるで皮膚の下に鉄板が仕込まれているみたいで、いつも不思議な気持ちになる。表面は柔らかいのに、肉一枚隔てた筋肉は（伊武基さんが今力を入れているのかもしれないけど）すごく硬い。私の二の腕やお腹とは比べ物にならないと思う。<br>
+　伊武基さんの体をまたがって行う騎乗位は、私は本当に疲れるし、本当に恥ずかしいし、本当にやりたくないけれど、伊武基さんはたまにこうやって私にやらせたがる。普段は私の保護者みたいな面をしているし、保護者みたいなことも言ってくるくせに、こういう時はほんとに意地悪だった。意地悪じゃない伊武基さんにも勝てないのに、意地悪な伊武基さんに私が勝てるはずもない。だからぐだぐだむにゃむにゃ文句を言っても、結局いつもこうなる。<br>
+<br>
+「ふ……ッ、う〜っ」<br>
+<br>
+　下肢に力を入れて、体を持ち上げる。太ももで挟んだ伊武基さんの体はやっぱり硬くって、私の柔らかい太ももの肉が、むにっと潰れていた。ずる、と抜けていく感覚に腰が砕けそうになって、ぶるぶると震える。ある程度抜けたところで、またゆっくり腰を落としていく。控えめに鳴る水音が、羞恥を捨てきれない私を責め立てているみたいで、涙が勝手に滲んだ。<br>
+<br>
+「遅えなあ」<br>
+「っ、あ！　や、さ、さわらないで……」<br>
+<br>
+　するりとお尻をぶ厚い手のひらで撫でられて、びく、と震える。冷や汗か、単なる暑さによる汗かはわからないが、伊武基さんの胸板にぽたりと水滴が落ちた。<br>
+　動かないと。頑張らないと……、ちゃんと、ちゃんとやらないと。その一心で、戯れのように肌をくすぐったりしてくる伊武基さんの上で、なんとか抜き挿しを繰り返す。伊武基さんのまろい先端が私の一番弱いところを押し上げないようにと頑張っているから、完全に力を抜くことができなくて、ずっと中腰みたいな体勢になっているのがつらい。筋肉なんて全然ない下半身と腹筋が悲鳴をあげている。さっきからほとんど腕の力だけで体を持ち上げているようなものだ。それに。<br>
+<br>
+「……い、……いぶきさん、」<br>
+<br>
+　ほとんど泣きそうな声で彼の名前を呼ぶ。伊武基さんはじいっと私を見つめていた目をふっと緩めて、「なに」と柔らかく言った。その柔らかさと、私の腰を捕まえている手の温度は、全然違う。<br>
+<br>
+「も、もう無理です……」<br>
+「無理じゃねえよ」<br>
+<br>
+　私はもう半べそをかいて、「い、いけないんだもん」と子供じみたセリフを口にした。伊武基さんの鋭い瞳がきゅっと細まる。<br>
+　いつもだったら、伊武基さんはほとんど私の言うことを聞かずに、ほとんど獣みたいなセックスをしてくる。私はとにかくそれに翻弄され、めちゃくちゃにされ、ぐでんぐでんにされ、茹で上がったおでんみたいになる。それに慣れきってしまった私の体は、もうこんな児戯みたいな動きでは達することはできなかった。<br>
+<br>
+「イけない？」<br>
+「う、うう……」<br>
+「俺にオナニーを手伝えってこと？」<br>
+「っ、ああ！　や、あ、」<br>
+<br>
+　皮膚の硬い伊武基さんの指先が、私の乳首をキュッと摘んで、咄嗟に声が出る。あまりに直接的な言葉をぶつけられた衝撃もあって、じわ、と涙が滲む。ぐぷ、と伊武基さんのものが中に深く沈んだ。<br>
+<br>
+「そ、……そうじゃ、なくてえ、」<br>
+「じゃなに」<br>
+「う……うう〜〜っ」<br>
+<br>
+　ポロポロと大粒の涙が溢れ始めた。伊武基さんは一瞬驚いたようで、三白眼じみたその目を見開いたけれど、すぐに子供をバカにするような表情に変えて笑った。はは、と嘲りを含んだ笑い声に、羞恥心と性感が同時に高まる。<br>
+<br>
+「泣くのかよ」<br>
+「い、いぶきさんが、意地悪するからっ！」<br>
+「あー悪かった悪かった」<br>
+<br>
+　伊武基さんの手が伸びて、私の後頭部をかき混ぜるみたいに撫でて、するりと頬の方へ辿ってきた。それに少し安心して、犬がじゃれつくみたいに無意識に擦り寄ってしまった。伊武基さんは薄く微笑んで、<br>
+<br>
+「じゃ俺の好きにしていい？」<br>
+<br>
+　と言った。<br>
+<br>
+「…………だ、だめ……」<br>
+<br>
+　全身の力を振り絞って、その一言を口に出す。圧倒的な強者である伊武基さんに反抗するのはいつも恐ろしい。この人が私を甘やかしてくれるのは、私がこの人よりもずっと弱く、この人の指先ひとつ、いや、妖術を使えば指一本さえ動かさないままに私を完封できる自信があるからだ。なけなしの勇気を振り絞った拒否も、この人にとってはなんでもないんだろう。でも、あの目も眩むような、濁流のような快楽に飲まれることは、やはり恐ろしい。<br>
+　伊武基さんは少し首を傾けて、「ふうん」と言った。<br>
+<br>
+「っ、あ！？」<br>
+<br>
+　突然、伊武基さんの手が私の薄い骨盤周りを鷲掴んで、ぐっと下に引き下げた。同時に伊武基さんの腰も力強く押し付けられて、弾き出されるみたいに声が出る。しかも一回で終わりじゃなくて、ばちゅ、ばちゅん、と何度も突き上げられる。<br>
+<br>
+「あ、っぐ、っぅ、〜〜〜っ」<br>
+「いい？」<br>
+「だ、だぇ、……っうあぁ！　は、はーっ」<br>
+「返事しろよ」<br>
+<br>
+　してる！<br>
+　腹の奥を押し上げるような動作に、なかがぎゅうと締まる。足の指が意味もなく閉じたり開いたりを繰り返して、もう絶頂が目の前にあった。いく、と唇が勝手に動く。「いいの？」と伊武基さんが訊ねた。答えはわかりきっているのに。<br>
+<br>
+「い……も、いいからあ、」<br>
+<br>
+　伊武基さんはハッと鼻で笑うような仕草を見せた。<br>
+<br>
+「かわいいやつ」<br>
+「ッ、あ〜〜〜っ……！！」<br>
+<br>
+　両手で腰を掴まれたまま、どちゅ、と下から勢いよく突き上げられた。溜まっていた快感が一気に弾けるみたいに易々と達する。喉を反らして感じ入る私を、伊武基さんは軽い力で押し倒す。内側にあるものの角度が変わって、うあ、とまた呻く破目になった。<br>
+<br>
+「あッ、あ、だめ、それだめ、」<br>
+「いいって言ったろ」<br>
+<br>
+　ほとんど使い物にならなかった足首を掴まれて持ち上げられる。秘部が丸見えになってしまうのと同じく、上半身が後ろに倒れてしまう。シーツの柔らかい感触にぼすん、と沈んだ直後から、伊武基さんの容赦のない挿入が視界に星を散らした。がくっ、と過ぎる快感に足が勝手に跳ねて、マットレスを叩いた。<br>
+<br>
+「あ、っく、う〜……っ！」<br>
+「……こら」<br>
+<br>
+　はしたない声が出てしまうのを我慢しようと唇を噛むと、目ざとく気づいた伊武基さんにたしなめられる。突然唇の中に指先が割って入ってきたから、噛まないように口を開くしかない。伊武基さんの指が自分の唾液でべたついているのを見ると、自分が何かとんでもないことをしてしまっているような罪悪感が勝手に滲んできてしまう。舌を二本の指で挟まれて涙目でえづいても、伊武基さんはどこ吹く風、という様子だった。泣きべそをかいたまま伊武基さんの太い腕を掴んで抵抗してみるも、さっきまで足を持ち上げていた片手で簡単にシーツに押さえつけられる。<br>
+<br>
+「い──いうぅ、」呼吸がうまくできない。いく。イッてしまう、また、私だけ。「っ、ぃ……！　っ、〜〜〜！！」<br>
+<br>
+　がく、と腰が跳ね上がったけれど、同時に伊武基さんが最奥までごちゅんと陰茎を突き入れてきたから、ほとんど快感を逃せなかった。見開いた目からころんと涙が溢れる。伊武基さんはそのままうねる内壁にしごかれるのを耐えるように一瞬だけ顔を顰めた。<br>
+　は、とざらついた声が響いて、伊武基さんの腕の力が緩む。彼も達したのだろう。ぬぽ、と淫猥な音を立てて彼の陰茎が引き抜かれた。ふー、と息をついた伊武基さんは、私の口の中の指でぐにぐにと舌を少しだけ弄ぶ。私が、う、とか、あえ、とか意味のない呻き声を出すと、それで満足したのか、唾液で繋がった糸を垂らしながら口から抜いた。<br>
+　精液の溜まったゴムを自身のものから外す伊武基さんに、ようやく終わった、とベッドの上で脱力する。ただでさえ騎乗位になる前から散々に抱かれていたのだ。足腰はもう限界だった。<br>
+<br>
+「終わった気になってる？」<br>
+「──、え、あ、……」<br>
+「好きにしていいっつったろ」<br>
+<br>
+　伊武基さんが新しくゴムの袋を破って、そのへんに放った。片付けてくださいね、とか怒る気力もなかった。どうせ気絶した私をよそに、事が始まる前より丁寧に片してくれるのだ。それでも喘ぎすぎた喉はガラガラだったし、ふくらはぎはもう攣りそうだった。伊武基さんは手早くゴムを装着して、私に覆い被さる。慈愛と、嗜虐欲と、支配欲と、自制と、いろんなものが混ざった瞳で私を見下ろす。カーテンの隙間から月明かりが差し込んでいる。伊武基さんの色素の薄い髪がきらきらと反射していた。<br>
+<br>
+「いぶ……い、伊武基さん、」<br>
+「なに。やめないよ」<br>
+「す、すきです……」<br>
+<br>
+　好きで、カッコよくて、気持ちよくて、めちゃくちゃだ。伊武基さんに抱かれるといつもこう。私の心も体も伊武基さんにめちゃくちゃにされてしまう。顔を涙と唾液と鼻水でべしゃべしゃにして、とんでもなく不細工な表情のままそう言うと、伊武基さんはわずかに瞠目してから微笑った。それがめちゃくちゃカッコよくて、また涙が出てきた。<br>
+<br>
+「知ってる」<br>
+<br>
+　うわ〜〜〜ん、かっこいい〜〜〜…………。
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+    <!-- あとがきなど。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-common">
+        <p>2026.10.10<br>
+        　伊武基さんのこと好きすぎておかしくなってまう！！　メロメロすぎて頭がおかしくなる。意味がわからない。
+    普通に助けてほしい。もう今すぐ伊武基さんが出てくるところまでアニメ化してほしい。助けて。助けてくれ……。</p>      
+      </div>
+    </div>
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="sb03.html">前へ</a> ｜ <a href="/main.html#kgrbc">一覧へ戻る</a>
+         <!-- ｜ <a href="ibk02.html">次へ</a> -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/index.html">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>

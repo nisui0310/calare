@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="忘れてしまいたい。">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
+    <meta property="og:title" content="落日 | Kagami">
+    <meta property="og:description" content="忘れてしまいたい。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
+
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <!-- 小説以外で最低限適用するベースのCSS。自分のサイトで使用しているCSSに差し替えても動きます。 -->
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <!-- 小説用のCSS -->
+  <link rel="stylesheet" href="/novel/css/novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+　<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+
+    <!-- <script defer src="/assets/js/password.js"></script> -->
+
+  <!-- ページタイトル -->
+  <title>楽園には誰もいない</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン -->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">出禁のモグラ</span>
+    <h1 class="novel-title">楽園には誰もいない</h1>
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="fgo01.html">前へ</a> ｜ <a href="/main.html#other">一覧へ戻る</a> ｜ <a href="dnms01.html">次へ</a>
+      </div>
+    </div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここまで 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+    
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+        <!-- 書き換え -->
+        「先輩」<br>
+<br>
+　声をかけると、彼女はおや、といった様子で振り返った。呼びかけたのが俺であると認識すると、ふわ、と雰囲気を緩める。むずがゆいような心地でわずかに歩を速め、先輩の隣に追いつく。<br>
+<br>
+「ども」コミュニケーション能力に秀でていないことが丸わかりのセリフだ。「……先輩は、帰り、すか」<br>
+<br>
+　下校時刻、校門に向かって制服で歩いているのは帰り以外の何物でもないのに、俺はバカ正直にもそう訊ねた。でも結果としてはその行動は正解だっただろう。先輩は首を振った。黒髪が揺れて、白い耳がのぞく。<br>
+<br>
+「百暗さんのとこ行こうかなって。勉強と、お礼がてら」<br>
+「はあ」<br>
+<br>
+　もぐら。動物のもぐらだったらいくぶんかマシだったかもしれない。けれど彼女が示したのは、間違いなくあのいけ好かない人たらし野郎のことだった。抽斗通りでジジイの道楽みたいな湯屋を営む、あの男。<br>
+　高二の俺の一つ上である先輩は、無論受験生だ。大学に進学するつもりもある。そんな彼女が勉強するのは当然のことといえるが、よりにもよってあそことは。<br>
+　抽斗通り。百暗いわく、刑務所。<br>
+　百暗の家で勉強する気なのか、あの駄菓子屋のところでやるのかは知らないが、中々肝の据わった行動であることに間違いない。自主的にあいつのような男に関わろうとすることも。<br>
+<br>
+「……俺も行きましょうか」<br>
+「え。いやいや、いいよ。梗史郎くん、まっすぐ家に帰るつもりだったでしょ」<br>
+「今月のテスト範囲、夏休み前からで広いんです。今からやっても、別に損はないし」<br>
+<br>
+　ああ、と先輩は声を出した。どの学年もテストの時期は同じだ。ウチの学校は夏休み前のテストはないから、この九月から十月にかけて行われる考査は出題範囲が広い。そうだね、と先輩が納得した声を出す。<br>
+<br>
+「じゃあ、一緒に行こっか」<br>
+<br>
+　ナベシマがぐるぐると喉を鳴らした。先輩は、ぱ、と顔を上げた。でもナベシマの視線とかちあってはいない。先輩は微笑ましそうに口許を緩めた。<br>
+<br>
+「ナベシマさん、機嫌いいのかな」<br>
+「さあ」<br>
+<br>
+　本心だった。だいたいの行動でナベシマの機嫌はわかる。でも実際こいつがどう考えているのかまではわからない。でもたぶん、悪くはない。きっと。<br>
+　俺の機嫌も、別に、悪くない。<br>
+　先輩が髪を耳にかける。耳に形がいいとか悪いとかあるかどうかは知らん。考えたこともなかった。でもたぶん、先輩はの良い形なんだろう、と思った。<br>
+<br>
+「……お礼って？」<br>
+「ん？　ああ、ええと……、これ」<br>
+<br>
+　先輩は髪を避け、自分の耳元を指した。先輩の耳たぶ。そこには以前まではなかった、鈍く光る銀色のピアスがある。<br>
+　俺はそれがあるから声をかけたのだ。授業の合間、移動教室のため廊下を歩いている最中にすれ違った先輩の耳に、そのピアスがあったから。だからわざわざ、下校中の先輩を狙って声をかけた。<br>
+<br>
+「百暗さんがね、ピアスをくれたの。これつけてたら、ちょっとは聞こえにくくなるだろうって」<br>
+<br>
+　先輩は嬉しそうに耳たぶを触った。どこもかしこも骨と皮ばかりの俺とは違って、ちゃんと肉があるんだな、と思うような柔らかさ。<br>
+<br>
+「それで嬉しくなってピアスを開けたはいいんだけど、ファーストピアスって一ヶ月くらいつけっぱなしじゃなきゃいけないらしいね。えへへ。知らなかった……」照れくさそうに笑う。「だから、まあ、百暗さんからもらったのはつけてないんだけど。でもせっかくくれたから、ご飯でも作ってあげようかなって」<br>
+<br>
+　先輩は、[[rb:聞 > ・]][[rb:こ > ・]][[rb:え > ・]][[rb:る > ・]]。見えないけれど、聞こえるタイプの人だ。だからナベシマが唸ったときも──いや、唸ったときにだけ、こいつの存在がわかった。<br>
+<br>
+「百暗が開けたんですか」<br>
+「ああ、穴？　流石にそんなの頼めないよ」先輩は笑って首を振った。「自分でやった。いやあ、痛いねえ」<br>
+<br>
+　なぜだか安心した。<br>
+　安心したのも嫌になった。<br>
+<br>
+「あ、だから、梗史郎くん。百暗さんとこ行く前にスーパーに寄ろうと思うんだけど。いい？」<br>
+「いや、いいもくそも……俺が勝手についてくって言っただけなんで。全然」<br>
+「食べたいのとかある？　あったらそれも一緒に作っちゃうよ」<br>
+「大丈夫ですって」<br>
+<br>
+　そう、と先輩はそれ以上押しつけることなく頷いた。俺が無意味な嘘をつかないことを知っているから。先輩が歩くたびに黒髪が揺れた。俺の視界の端でピアスも揺れた。<br>
+　イライラする。<br>
+<br>
+<br>
+　＋　＋<br>
+<br>
+<br>
+「チャーハンが食いてぇ」<br>
+「なに人様に作ってもらうくせしていっちょ前にリクエストしてんだ」<br>
+「あ痛ぇ！　いやだって、リクエストしてくださいって言うから！　梗ちゃん、そういうこと聞かれたら『なんでもいいです』って答えるのが一番ダメなんだぞ。彼女に『今日のデート、どっちの服が良い？』とか聞かれたら、本当にどっちでもよくてもとりあえずどっちって答えなきゃなんねぇんだよ。わかるか？　彼女できたことねぇからわかんねぇか」<br>
+「ぶっ飛ばすぞ！」<br>
+<br>
+　百暗は案の定百暗だった。いや、俺はこいつに何を期待してたんだ？　そもそも期待してたのか？　わからん。もうなんでもいい。とにかくうぜぇ。<br>
+<br>
+「梗史郎くん、駄菓子屋さんとこでもう勉強してていいよー。私はここでご飯作ってから勉強しにいくから」<br>
+<br>
+　先輩は間延びした声をあげた。そうは言われても、と思ったが、それ以外にすることも見つからない。ナベシマはふわふわ漂って、ゴミ捨て場みてぇな百暗の部屋を物色しておもちゃを探し始める。鳴いてるのが聞こえるのだろう、先輩は「ナベシマさんご機嫌だー」と朗らかに笑った。<br>
+<br>
+「ちょっと多めに作るんで、冷蔵庫の中入れておいてください」<br>
+「うお～ありがてぇ限りだよ。マジで悪ぃな、毎度こんなふうにしてもらって。耳はどうだ？　変に炎症とかなっていなよな。別に今からだって、部品買えばイヤリングに変えてやるのに」<br>
+「いいですよ、もう穴開けちゃったし。元々ピアスやってみたいなと思ってたから」<br>
+「そうか？　それならいいんだが」<br>
+<br>
+　百暗はちょっとだけ困ったように、蓬髪の黒髪に手を差し込んでぽりぽりかいた。先輩は、気にしないでください、と言って微笑った。その表情が明らかに、俺に向けるものと違った。<br>
+　ナベシマが鳴く。なんだよ。うるさいな。<br>
+<br>
+　先輩は百暗に命救ってもらったんだ。俺に向ける感情と違うのは当たり前だろ。<br>
+<br>
+<br>
+　＋　＋<br>
+<br>
+<br>
+　障子を開け放しているから、クーラーはそもそもつけていなかった。駄菓子屋の部屋を借りて、俺は高二の数学の教科書を、先輩は高三の日本史の教科書を広げていた。知らねぇガキが好き放題に部屋を使っていても、この浮雲という人は文句ひとつも言わなかった。百暗がWi-Fi使いにくるのを咎めない時点でお察しだが。<br>
+<br>
+「アイスです。どうぞ」<br>
+「あ。いえ、そんな」<br>
+「もうすぐ賞味期限、切れてしまうんです」<br>
+<br>
+　先輩は迷ったふうに視線をさまよわせ、それじゃあ、と言って遠慮がちにアイスバーを受け取る。後輩の俺が勉強してて、先輩だけが食うのは気まずかろう、と思って俺もおとなしく受け取った。浮雲さんが出ていく。<br>
+<br>
+「まだ暑いねぇ」<br>
+<br>
+　先輩の首筋に汗が滲んでいる。開けたばかりのピアスが気になるのか、手持無沙汰に耳たぶをいじっていた。九月。残暑の滲む季節だ。<br>
+　先輩の両親は死んでる。先輩も、同じとき、死にかけた。そこを百暗が通りがかって、灯を与えた。それから彼女は『こちら側』の存在が見えるようになったし、百暗を慕いはじめた。<br>
+　好きなんだろう。わかるよ、見てれば。こんなクーラーも効かねえようなところに勉強するくらい、必死に貯めたバイト代で百暗にご飯を作ってやろうとするくらい、百暗のことが好きなんだろう。そんなん脳の勘違いだ。たまたまそのときの先輩を助けてやれたのが百暗だっただけで、先輩の頭はその恩を恋だと勘違いしているだけだ。──でも正論なんて誰も救わない。百暗もそれを知っているから、ずっと、曖昧だ。あんなふうに。掴めば溶ける煙みたいに。<br>
+　しゃく、と先輩がアイスを食べる。まあるく広がったスカートから、素足が伸びていた。<br>
+<br>
+「勉強の」<br>
+「うん？」<br>
+「具合は、どうですか」<br>
+<br>
+　先輩のノートを見た。丸ばかりだ。<br>
+　思い出すように首を傾ける先輩。<br>
+<br>
+「夏の……、いや、夏休み前の模試ね。最近返ってきたんだけど」くる、と彼女の指の中でアイスが回る。「第一志望、Ａ判定」<br>
+「……もっと高いところ目指した方がいいんじゃ」<br>
+<br>
+　そうかもね、と先輩は微笑った。<br>
+<br>
+「でも、百暗さんの近くにいたい」<br>
+<br>
+　がつーん。<br>
+　アイスの冷たさが、俺のこめかみを蹴り飛ばした。チクショウ。冷てぇな。限度があるだろ。<br>
+<br>
+「あいつは」口が勝手に開いた。「ひどいやつですよ。第一人間じゃないし。あんたのこと本当に想ってたら、あんなに曖昧な態度をしない。関わっちゃダメだって、俺、ねえ、散々言ってるじゃないですか。こういう世界から遠ざかるのがどんだけ大変か、先輩はわかって──」<br>
+<br>
+　正論は人を救わない。<br>
+<br>
+「────」<br>
+<br>
+　栄養失調の体だと、すぐこうだ。頭に血が上る感覚がわかる。普段、血液がうまく循環していないから、体の一部がぶわっと熱を持つと、そうさせた体の方が驚くのだ。<br>
+<br>
+「すみません」俺は目を逸らした。「言いすぎました」<br>
+「なにが？」先輩は首を振る。眉が寂しそうに下がっている。「本当のことだよ。普通の生活を送りたいなら、こんなところ来るべきじゃないね。……優しいね、梗史郎くんは……」<br>
+<br>
+　百暗を優しいと言う口で俺のことを優しいと言うな。<br>
+<br>
+「わかってる。わかってるんだけどね……。ひどい女だから、私。百暗さんにさあ、私のこと覚えててほしいの」<br>
+「────」<br>
+「百暗さんがさ、私の想いに絶対応えてくれないの、もうわかってるからさ。じゃあ、できる限り仲良くなって、できる限り百暗さんに好いてもらって、私が死んだらずっと覚えててほしいの。そんなのあの人が傷つくだけなのに」<br>
+<br>
+　蝉が鳴く。夏の終わりを告げている。<br>
+　季節が終わるたびに、先輩と百暗の別れが一歩ずつ近づいていく。<br>
+<br>
+「私の恋は、あの人を傷つけることしかできない……」<br>
+<br>
+　先輩は押し殺すように泣いた。ナベシマがナアと鳴き、涙を舐めるようにべろんと舌を出して、先輩の頬を舐った。「わ」と先輩は声を出し、どて、と後ろに尻もちをつく。あれだけ露骨に接触されたら、感触もわかるものらしい。いるんだね、と呟いた先輩は、そのままナベシマの体を撫でようとする。ぼんやり触れて、その手は空をかいた。先輩から触れることは、やはり難しいようだった。<br>
+<br>
+「──ピアス」<br>
+「え」<br>
+「俺の家にも、いくつかあるんで。今度あげます」<br>
+「へ」<br>
+<br>
+　先輩がポカンと間抜け面を晒した。なんとなく気まずい心地になって、ポケットに手を突っ込む。<br>
+<br>
+「うちにあったら、いやでも化け猫の気配とか染みついてるんで……。気配に鋭いヤバいやつだったら、たぶんあんま寄りつかないです。鋭くないなら、たぶん無害なので、そういうのには効きにくいと思うんですけど」<br>
+「あ……、たしかに」<br>
+「いや。こういうのキモイなら、全然」<br>
+<br>
+　先輩はぱちっと瞬きさせる。その拍子にころっと涙の粒が目から飛び出て、でもすぐに笑った。<br>
+<br>
+「キモくないよ。嬉しい。ありがとう」<br>
+「……はい」<br>
+<br>
+　酷い人だ。そうだよ、あんた、酷いやつだ。俺のことに気づきもしない。ちくしょう。<br>
+<br>
+「わ。ナベシマさん、鳴いてる……お腹すいてるのかな？」<br>
+<br>
+　うるさい。いいよ、もう。どんだけ生きてきたか知らねえ百暗だって、こうするくらいしか方法が思いつかないんだろ。じゃあ俺に思いつくわけないだろう。もういいよ。知らねえよ……。勝手にしろよ。百暗が好きなんだろ。じゃあ俺も勝手にする。<br>
+<br>
+　死んでも絶対化けるなよ。<br>
+　あの世にいったら、今度は俺の独壇場だ。
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+    <!-- あとがきなど。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-common">
+        <p>2025.09.07</p><!-- 書き換え --> 
+        <p>出モグドハマりしたフォロワーのために書いた。梗ちゃんにメロメロ。</p>   
+      </div>
+    </div>
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="fgo01.html">前へ</a> ｜ <a href="/main.html#other">一覧へ戻る</a> ｜ <a href="dnms01.html">次へ</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/index.html">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>

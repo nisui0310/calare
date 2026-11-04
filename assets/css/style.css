@@ -1973,3 +1973,9 @@ a.box-link:hover h4 {
     background-color: #effbfe;
     border: 1px solid #c7dade;
 }
+
+/* ダッシュ（──）の字間を詰めて繋げる。main.js が自動で付ける */
+.dash {
+    letter-spacing: 0;
+    white-space: nowrap;   /* 行末でダッシュが途中で切れないように */
+}
