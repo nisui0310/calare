@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="忘れてしまいたい。">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
+    <meta property="og:title" content="落日 | Kagami">
+    <meta property="og:description" content="忘れてしまいたい。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
+
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <!-- 小説以外で最低限適用するベースのCSS。自分のサイトで使用しているCSSに差し替えても動きます。 -->
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <!-- 小説用のCSS -->
+  <link rel="stylesheet" href="/novel/css/novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+　<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+
+  <!-- ページタイトル -->
+  <title>ロック・オブ・ラブ</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン -->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">wt short</span>
+    <h1 class="novel-title">ロック・オブ・ラブ</h1>
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="tatikawa01.html">前へ</a> ｜ 
+        <a href="/main.html#wt">一覧へ戻る</a>
+         ｜ <a href="konami01.html">次へ</a>
+      </div>
+    </div>
+
+
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+        　子供の頃から弓場と一緒だった。<br>
+        　俗にいいう幼馴染というやつで、私は小さい頃は彼のことを「たっくん」と呼んでいたし、彼も私のことを下の名前をちゃん付けにしていた。今じゃ考えられない。小さい頃の弓場はそれはもう可愛かったのだ。ほかの女子なんて目じゃないくらいに丸っこくてふわふわしててさらさらな子供だった。<br>
+        　それがどうしてこんなことになっているんだろうな、と私は目の前の男を見て思う。ぱっと見インテリ系のイケメンに見えるが、眉に刻まれた深い皺とあからさまに堅気ではない雰囲気を醸し出す百八十越えの男。たまにチャラチャラした金髪野郎が弓場に肩をぶつからせたあと「オイオイあんちゃん」と絡むように弓場の顔を見上げてから「アッ……スマセ……」と言うほどの男である。<br>
+        <br>
+        「おら、次の講義遅れんぞ」<br>
+        「えー……？　なんだっけ」<br>
+        <br>
+        　ぼーっとしていたら、弓場がいつの間にか支度を終えていた。私の分のリュックサックも持ってくれている。目の前にあったはずのシャーペンや下敷きやルーズリーフが消えていて、ぱち、と瞬きをしてから再度彼を仰ぎ見た。チカ、と照明が眼鏡に反射する。<br>
+        <br>
+        「柿崎と一緒のヤツだ。立て、荷物もってやるから」<br>
+        「あー、そういやそうだったあ……」<br>
+        <br>
+        　右肩に自分のを、左肩に私のかを持って、弓場はクイッと顎で行先を示す。眠いワケではないけれど、私は行動のがろいのだ。皆が忙しそうにしてる間、一人だけ何をやればいいのかわからずぽつねんとしていることがよくあった。それで周りから遠巻きにされたのは中学までの話だが（高校からはなにかとボーダーの知り合いが世話を焼いてくれた）。<br>
+        　いや、行動がとろいというのとは、また少し違うかもしれない。行動から次の行動に移る時間──行間のようなものが多いのだ。あとは「やれ」と言われたことならやれるんだけど、それ以上のことをしようという気が無い。流されやすいという気質もある。<br>
+        　ガタン、と椅子を鳴らして立ち上がり、一歩踏み出そうとしたところで忘れ物がないか確認しようとして振り返って、「俺が確認した」という言葉にはっとし、こちらを見てじっと待ってくれている弓場に駆け寄る。ただ弓場の元に行くだけで四行に及ぶ描写である。いかに私がいらいら製造機か理解してくれるだろう。<br>
+        　弓場は優しい男だった。<br>
+        　どうしてたかだか幼馴染にこうしてくれるのかわからないくらい優しい男だった──それでも私は、弓場が甘い男でなくてよかったと思う。<br>
+        ＋　＋<br>
+        　同年代や気心が知れた中で集まると、彼女はことさら警戒心がなくなる節があった。警戒心だけでなく、自律心ともだ。しかも酒が人より強いときてる。弓場はそれを小さい頃から見てきたから、彼女が飲み会などに誘われるたびについていったのだ。<br>
+        　年頃の女ならば「鬱陶しい！」と一蹴されてもおかしくはないような状況だが、彼女はいかんせんそういうことにはとことん無頓着で、弓場が「飲み会は俺に報告しろ」と言ったら文句の一つも言わず報告するようになったし、彼が毎度のごとく送り迎えを担当しても、過保護だなんだと言うことなく大人しく従っている。<br>
+        　そのせいで他の人間には「弓場あの子の彼氏じゃないの！？　マジ！？」と驚かれることが何度も有るし、何度かカップル割引のある店に行ったこともあるのだが、付き合っていないのである。告白すらしておらず、この二人は恋人ではないのである。<br>
+        　彼女は恐らく、弓場にそういう感情を一片たりとも持っていないだろう。見ていればわかるし、見ていなくてもわかる。<br>
+        ──そんな彼女に小さい頃から片思いをしている弓場は、恐らく同年学年一の根気強さだろう。<br>
+        <br>
+        「………………」<br>
+        <br>
+        　が、そんな弓場は現在酔いに酔っていた。目の前のグラスの本数を確認できないくらいには。<br>
+        <br>
+        「んがー……、ぐあー……」<br>
+        「もう一本！」<br>
+        「生駒ァ……、起きろおめぇー」<br>
+        <br>
+        　藤丸ののがヤバかった。部隊の話をする時にたまに居酒屋で飲んだりするのだが、毎回この女のどこにあれだけの酒が吸い込まれていくんだという気持ちである。生駒は既に死んでいる。自分生駒が完全に潰れたのに未だにおかわりをしようとする姿勢には脱帽である。<br>
+        　寝落ちした生駒を気合いで引っ張り上げながら、座敷にゴロンと寝かせて「タクシー呼ぶか……」と呟く。しかしこの状態の生駒を一人でタクシーに乗せるのもそれはそれで心配だ。ろくすっぽ動かない頭でぐらぐら考えていると、月見が「大丈夫」と言った。<br>
+        <br>
+        「連絡したら隠岐くんと水上くんが迎えに来てくれるって。しばらくそっとしておきましょう。それにしてもあの子本当に飲むわね」<br>
+        <br>
+        　あんがとよ、と礼を言いながら水を取る。見当違いの方向に手を伸ばしていたのか、月見が「これよ」と言って手渡してくれた。距離感が全く掴めない。あいつぁやべー、と頭の中で思う。もう藤丸に対抗して飲むのはやめよう。<br>
+        　正直自分のことで頭がいっぱいだが、それでも彼女に関することはいつまでも抜け目がない。吐きそうになる頭を押さえつつ、視線をなんとか上にあげる。<br>
+        <br>
+        「ぴよぴよ……ぴよぴよしとる……んふ。あらしゃまはかーいいなぁ。ぴよぴよ……」<br>
+        「かわいいのは副と佐補だ！　桐絵もかわいい！」<br>
+        「あらしゃまもかーいいんだよお」<br>
+        <br>
+        　あいつヤバいな。<br>
+        　端的のその文章だけが弓場の脳内に浮かんだ。どっちが？　と言われても、どっちも、と返すほかない。<br>
+        　彼女の警戒心のなさはこの身をもってとっくに体験しているし、挙句の果てに酒も弱いのだから相当ひどいことになっているのだろうとは思っていたが、天下の嵐山に「ぴよぴよしとる」なんてふざけたことを抜かす女はいなかった。<br>
+        　嵐山も嵐山である。普段学年上と飲み会をする時はほどほどに度数の抑えたアルコールを少し飲むだけなのに、同年代しかいないと気が完全に緩むらしい。あと柿崎がいると九十九パーセントの確率で潰れる。<br>
+        　そうすると大体柿崎が嵐山の面倒を見ることになるので、今回も案の定甲斐甲斐しく世話を焼く柿崎の姿が二重に見えて本格的にヤバいと思った。<br>
+        <br>
+        「おいおまえ、ちょっとくっつくなつて！　はなっ、いや力強いな！？　嵐……、弓場！　弓場助けてくれ！！」<br>
+        「あァ……」<br>
+        <br>
+        　気合いでなんとか返事はしたが、この状態から立ち上がるのがまず難しい。どうやって胃の中のものを戻さずに立ち上がるか思考を巡らせていると、彼女が「ゆばぁ？」と舌ったらずな声で自分の名を呼んだ。柿崎の言葉に応応したようだった。おゥ、と返す。<br>
+        <br>
+        「ゆばはねー、昔はかーいかったの。でもなんか、インテリ系のヤクザになっちゃったんだよなぁ……」<br>
+        <br>
+        　頭のなかに小さい頃の弓場が浮かんでいるのか、彼女ははんほわんと手を動かす。なにを表現しているのかサッパリわからないが、イラッとする仕草であることは確かだ。なんだインテリ系のヤクザって。<br>
+        　自分の身体を叱咤激励して、関節に力を入れて立ち上がる。ぐら、と立ち眩みのようなものがきて一瞬フラッとしたが、根性で持ち堪えた。<br>
+        <br>
+        「水だ！　水飲め！」「かさぎさぁい〜」「水飲めっつってんだろ」という会話をしている横の彼女のところへなんとか辿り着けば、えへ、と気の抜けた笑顔が溢れる。彼女は夏と炭酸が好きだ。<br>
+        <br>
+        「ゆばはやさしいねぇ」<br>
+        <br>
+        　果たしてそうなのだろうかと思う。<br>
+        　本当に優しい男は、彼女のことをこんな風にがんじがらめにしたりしないのではないか。<br>
+        　＋　＋<br>
+        「オイ、鍵」<br>
+        「ぐっ……、ぽすと……」<br>
+        <br>
+        　彼女の家の鍵がポストにあることなどとうに知っている。弓場としては「出せ」という意味で言ったのだが、溜め息を吐きつつ鍵を取り出して、玄関の戸を開けた。<br>
+        　女一人分背負うのは中々の重労働で、家の中に入った瞬間ドッと気が抜ける。膝が笑ってフローリングに倒れ込んだ。もちろん自分のことを下にしてだ──「グッ」と呻き声が漏れるのは耐えられなかったが。<br>
+        　立ち上がる気力もない。眠気が怒涛のように迫って来ている。眠気と酔いでとろんとした目をしている彼女が、「あんがとね」と言った。<br>
+        <br>
+        「やさしいね、ゆばは。かわんないんだねぇ、やっぱり」<br>
+        「────」<br>
+        「もうちょっと、私にあまくなってもいいんだよ……」<br>
+        <br>
+        　そう言い残すと、彼女の口元からは規則正しい寝息が聞こえるだけになった。のしかかられた状態のままの弓場は、彼女の言葉に「は？」と零すだけになる。<br>
+        　醒めやらぬ酔い。瞼が半分以上落ち込んできて、もうこれ以上どうすることもできない。<br>
+        　くそ、と悪態だけが口から出る。<br>
+        <br>
+        「目ェ覚めたら覚えてろよ、この野郎ォ……」
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+    <!-- あとがきなど。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-common">
+        <p>2022.04.30</p><!-- 書き換え -->
+        <p>　2026年に見ると文字が下手すぎて横転しますが、いい黒歴史ということで置いておきます。もっと恥ずかしくなったら消します。
+        </p>      
+      </div>
+    </div>
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="tatikawa01.html">前へ</a> ｜ 
+        <a href="/main.html#wt">一覧へ戻る</a>
+         ｜ <a href="konami01.html">次へ</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/index.html">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>

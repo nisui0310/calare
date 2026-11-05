@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="忘れてしまいたい。">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
+    <meta property="og:title" content="落日 | Kagami">
+    <meta property="og:description" content="忘れてしまいたい。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
+
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <!-- 小説以外で最低限適用するベースのCSS。自分のサイトで使用しているCSSに差し替えても動きます。 -->
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <!-- 小説用のCSS -->
+  <link rel="stylesheet" href="/novel/css/novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+　<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+
+  <!-- ページタイトル -->
+  <title>かわいい女とずるい男</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン -->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">wt short</span>
+    <h1 class="novel-title">かわいい女とずるい男</h1>
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="jin01.html">前へ</a> ｜ 
+        <a href="/main.html#wt">一覧へ戻る</a>
+         ｜ <a href="yuba01.html">次へ</a>
+      </div>
+    </div>
+
+
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+        　太刀川慶が好きだ。好きすぎて自分でもびっくりするくらい、太刀川慶のことが好きだ。<br>
+        あたし、なんであんな男好きになっちゃったんだろ。<br><br>
+        「に。二宮くん……」<br>
+        「いいか、お前はだからダメなんだ。あんなキングオブクズ、いやカスオブクズのどこがいいんだ。だから、太刀川は、……」<br>
+        <br>
+        　二宮くんは酒を飲むと大体太刀川くんの愚痴か自隊の子の良いところを言い始める。あたしはボーダーではないので彼の言っていることはよくわからないけれど、二宮くんがこんなに人を言うのなんて珍しいので相当良い子たちなのだろうなと思う。まあ、ストレートに褒めてるワケじゃないけれど。<br>
+        　あたしはたまに、こうやって二宮くんの飲みに誘われて、太刀川くんとかへの愚痴を「うん」「やでも……」と「えっとお」とかもちゃもちゃ言いながら聞いている。<br>
+        　二宮くんはその度に嫌な顔をするけど、でも毎回懲りずに私のことを誘ってくれる。加古ちゃんなんかは「わかりやすすぎるわね」といつも言っていた。あなたじゃないわよ、と付け加えて。あたし以上にわかりやすい人間なんていなるのだろうか。<br>
+        　潰れてしまった二宮くんを頑張って起こして、起きなかったら堤くんやら来馬用に電話して、起きたらタクシーで送っていくっていうのがいつもの繰り返しだった。今日は起きたので、二宮くんを肩に背負ってひいふう言いいながら、あたしはタクシーさんに彼の住所を伝えて一緒に乗って彼の家まで行った。翌日の朝の講義は当然のごとく欠席をしてしまった。<br>
+        <br>
+        「よう。お前がサボんの珍しいな」<br>
+        「ぴゃ」<br>
+        「はは。どこから出してんだ、その声」<br>
+        <br>
+        　ニココマ目は入れていなかったが三コマ目に必修の講義があったため、私は大学のカフェテリアでぼーっと時間を潰していた。そこに声を掛けてきたのが太刀川慶である。太刀川！　慶である！<br>
+        　あたしはバルーンみたいに気持ちが膨れ上がって舞い上がってしまって、変な声を出しながら顔をぼふんと赤くさせた。真っ赤になったあたしの顔を太刀川くんが掴んで、ぐにぐにと頬を揉んだ。た、たちか、太刀川くん。あたしの世界で一番好きなひと。そんな人が、あたしのほっぺに触れている。あひえ、とかまたもや変な声が出そうになるのをすんでで堪える。<br>
+        　サボってるって、確かにサボっちゃったけど、なんで知ってるんだろ。今朝のは太刀川くん一緒の授業じゃなかったはずなのに。ちなみにあたしは太刀川くんの一週間の講義のコマ割りを全て把握している。だっ……だっていざという時助けてあげたいし……、来年同年学年じゃないってなったらショックで寝込んで留年しちゃうし……。別に太刀川くんの講義把握してるのって私だけじゃないし、ボーダーの人も大抵把握してるし。<br>
+        <br>
+        「おまえ来馬と一緒だったろ。さっき会って聞いた。風邪だかなんだかって心配してたが、元気そうじゃねぇか」<br>
+        「ね、寝坊しちゃって……」<br>
+        「そうか、俺みたいだな」<br>
+        <br>
+        　そんなことを言ったら言のび太くんでさえ太刀川くんみたいになって──いや割とそうだな。でものび太くん最終的にはすごい頭良くなってタイムマシン発明しちゃうからな。まあ太刀川くんの方がカッコいいけど。<br>
+        　太刀川くんはドカンと私の前の開いていた席に座って、カモを見つけた店員さんが光陰のごとく「ご注文は？」と聞いてくるのに「なんか、あー、いいや、一番高い飲み物で」と答えていた。ボーダー隊員は皆ことごとく金がありあまっているようで、望ちゃんなんかもいつもお高い服を身にまとっている。でも全然服に着られている感じがしなくて、彼女は高いものの価値を引き出せるタイプの女の子なのだ。<br>
+        <br>
+        「なに？　もしかして二宮と酒でも飲んでた？」<br>
+        <br>
+        　図星である。気にすることではないはずなのに、太刀川くんにそれを指摘されたあたしは「ほう」と言葉に詰まってばちばち瞬きを繰り返して、悪いことをした子供のように小っちゃく頷いた。太刀川くんは短く「へえ」と目を細めて言った。<br>
+        　そこでちょうど店員さんが私のカプチーノを持ってきてくれる。太刀川くんが子供のような顔をして「え？　俺は？」と言って店員さんを困らせていた。ついさっき注文したばっかなのに来るわけないじゃん……。<br>
+        <br>
+        「……そういやさ、俺告白されたんだよねー」<br>
+        <br>
+        　噴き出しそうになった。<br>
+        　口の中にカプチーノを思い切り含んでいるにも関わらず喉が急激に乾いてごくんと飲み干す。あまりにも何でもないことのように言った太刀川かんに一瞬反応が遅れた。「そういや昨日単位落としたんだよね」と同じようなトーンだったのだ。いやどっちにしても衝撃的発言過ぎるが。<br>
+        　私はわずかに咳き込みながら「ングっ、う、え、なん……なんて？」と訊き返す。そっくり同じ言葉を繰り返されて目玉がぐるんとひっくり返りそうになった。そのまま気を失えたらどれだけ良いか。<br>
+        <br>
+        「お……、おっけー、したの？」<br>
+        「いや、断った」<br>
+        「なんで！？」<br>
+        <br>
+        　めちゃくちゃホッとしたのと同じ時にめちゃくちゃ疑問に思う。太刀川くんは良くも悪くも（主に悪い方で）自分の欲求に忠実だから、ふつうに付き合うんだろうなと思っていた。好きな人の恋愛事情を知ることほどつらいものはないが、彼が何度か付き合ったことがある──というのは二宮くんとか風間さんとかから聞いている。略奪愛なんて無理だ。ふつうの恋だけでこんなに大変なのに。<br>
+        <br>
+        「俺のこと束縛してきそうな女だったから。ほかの女の子と喋らないでほしい、なんて言ってたけど、俺フツーにランク戦とかするし。面倒くせぇなあ、って思って」<br>
+        「へ。へえ」<br>
+        <br>
+        　太刀川くんの前ではどもりっぱなしである。恋人になる人には他の女子と喋らないでほしいのって、面倒な女なんだ……あたし面倒な女なんだ……。<br>
+        　太刀川くんはなんてコメントすれば良いかわからなくなって急に押し黙ったあたしをじっと眺めた。何処を見ているのかいまいち判然としない太刀川くんの目は彼独特のもので好きだけど、それがあたしに向かうこととはまた別であり、自然に喉をくうと鳴らしながら非捕食者の面構えをしてしまう。<br>
+        <br>
+        「おまえは好きなヤツいたら、そういうこと言うの？」<br>
+        <br>
+        　なにが悲しくて好きな人の目の前で好きな人の話をさなきゃいけないんだ……。<br>
+        <br>
+        「い、言わない、とは思うけど……。妬いたりは、しちゃうと思う」<br>
+        「なんで言わねーの？　言えばいいじゃん」<br>
+        「すき、だから。好きだから、自由にしててほしいの」<br>
+        <br>
+        　太刀川くんの世界が誰にも狭められることがありませんように、って思ってる。太刀川くんは良くも悪くも直線的で婉曲的だ。彼はきちんと自分の頭で考えられるけど、でもわずかにも他人に彼の可能性を潰してほしくはない。<br>
+        　彼はあたしの返答がどうも気にならないようだった。あたしはそれ以上太刀川くんと議論を続ける気にはなれなくて、「太刀川くんは」と口を開いた。きゅっと手を袖で覆い隠す。かわいこぶってる、と過去に言われてやらないようにしていた行為。<br>
+        <br>
+        「好きな子には、どうしててほしいの」<br>
+        「……俺？」<br>
+        <br>
+        　まるで自分がそんなことを訊かれるなんて思ってもないような、すっとんきょうな口調だった。<br>
+        <br>
+        「えー、……俺？　俺は──別に。そうだな。俺の好きそうなやつ、かわいいやつだから、かわいければ何でもいいけど」<br>
+        「す……、…………好きな子いたの。太刀川くん、好きな子いたの」<br>
+        <br>
+        　目を丸くしたあたしは妙に冷静だった。告白云々のくだりを聞いた時より心は静かだったけど、それ以上何一つ言葉を発することができない。きょと、と視線を動かして、もう一度太刀川訓に視線を戻す。少年のような顔をしている。<br>
+        <br>
+        「そうなんだ」<br>
+        <br>
+        　ひねり出したのはそれっぽっちで、あたしはとにかくこの場から逃げ出したい気分になった。太刀川くんは何故か少しわらって、「ほら、そういうとこ」と言った。<br>
+        <br>
+        「しょげてんのすげーかわいい」<br>
+        <br>
+        　ぱち、と。目を瞬いて、首を傾げて、「え？」と間抜けた声を出した。まんまるにした視線と太刀川くんの視線がバチリと合った。なんにも理解できてないのに、心臓だけが肋骨の中で勢いよく跳ねた。<br>
+        <br>
+        「か……な、なに……、どう、え？」<br>
+        「え？　いやそのまんまの意味だけど」<br>
+        「あ、ひい、う」<br>
+        <br>
+        　あたしの変な声に、太刀川くんは今度こそ明確に笑う。<br>
+        <br>
+        「ほら、おまえやっぱりかわいいだろ」
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+    <!-- あとがきなど。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-common">
+        <p>2022.09.08</p><!-- 書き換え -->
+        <p>　2026年に見ると文字が下手すぎて横転しますが、いい黒歴史ということで置いておきます。もっと恥ずかしくなったら消します。
+        </p>      
+      </div>
+    </div>
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="jin01.html">前へ</a> ｜ 
+        <a href="/main.html#wt">一覧へ戻る</a>
+         ｜ <a href="yuba01.html">次へ</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/index.html">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>
