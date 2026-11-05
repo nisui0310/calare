@@ -1018,9 +1018,9 @@ aside {
 }
 
 /* max-width */
-.max-600 {
+.max-780 {
     display: block;
-    max-width: 600px;
+    max-width: 780px;
     margin: 0 auto;
 }
 
