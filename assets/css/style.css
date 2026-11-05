@@ -1456,6 +1456,17 @@ ul.pagination > li img  {
     padding: 5px;
     border: 1px solid var(--pure-red);
 }
+
+.a-img img {
+    max-width: 100% !important;   /* 横幅は枠からはみ出さない */
+    max-height: 25rem !important; /* ★縦の長さの上限（お好みで 400px や 70vh に変更可能） */
+    width: auto !important;       /* アスペクト比を崩さない */
+    height: auto !important;      /* アスペクト比を崩さない */
+    display: block;
+    margin: 1.5rem auto;          /* 中央寄せと上下余白 */
+}
+
+
 .a-img,
 [id^="figure-"] a {
     border-bottom: none;
@@ -1519,6 +1530,31 @@ figure:target img{
         height: 40rem;
     }
 }
+
+
+
+
+/* スマホ表示時（767px以下）の note 内本文サイズ調整 */
+@media screen and (max-width: 767px) {
+    note p,
+    note p.ja,
+    .note p,
+    .note p.ja {
+        font-size: 1.25rem !important;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    note p,
+    note p.ja,
+    .note p,
+    .note p.ja {
+        font-size: 1.1rem !important;
+    }
+}
+
+
+
 
 /*-------------------- elements --------------------*/
 
