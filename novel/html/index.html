@@ -200,16 +200,32 @@
     <!-- n-outerが外枠、n-innerが内枠。-->
     <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
     <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
-      <div class="n-inner">
-        <p>　寒い冬が北方から、<ruby>狐<rp>（</rp><rt>きつね</rt><rp>）</rp></ruby>
-          の親子の<ruby>棲<rp>（</rp><rt>す</rt><rp>）</rp></ruby>んでいる森へもやって来ました。</p>
-       
-       
-        <p>　名前は<span class="user-your">ミョウジ</span>
-          <span class="user-name">ナマエ</span>のように書き換わります。</p>
-        <p>
-          <ruby>漢字漢字<rt>ルビルビ</rt></ruby>
-        </p>
+      <!-- data-sep="a"（罫線）／ "b"（記号）を書き換えるだけで切り替わる -->
+      <div class="n-inner" data-sep="a">
+
+        <h2 class="n-subtitle">一　雪の朝</h2>
+        <p>　寒い冬が北方から、……</p>
+        <p>　……</p>
+
+        <div class="n-sep" role="separator"></div>
+
+        <h2 class="n-subtitle">二　町へ</h2>
+        <p>　……</p>
+
+        <div class="n-sep" role="separator"></div>
+
+        <!-- 小見出しなしで区切りだけでもOK -->
+        <p>　……</p>
+            <p>　寒い冬が北方から、<ruby>狐<rp>（</rp><rt>きつね</rt><rp>）</rp></ruby>
+              の親子の<ruby>棲<rp>（</rp><rt>す</rt><rp>）</rp></ruby>んでいる森へもやって来ました。</p>
+          
+          
+            <p>　名前は<span class="user-your">ミョウジ</span>
+              <span class="user-name">ナマエ</span>のように書き換わります。</p>
+            <p>
+              <ruby>漢字漢字<rt>ルビルビ</rt></ruby>
+            </p>
+
 
       </div>
     </div>

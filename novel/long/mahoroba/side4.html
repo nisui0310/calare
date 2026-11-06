@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="まほろばのくにをみていた。">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/mahoroba-OGP.webp">
+    <meta property="og:title" content="まほろばのくに - 落日 | Kagami">
+    <meta property="og:description" content="まほろばのくにをみていた。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://calare.vercel.app/images/mahoroba-OGP.webp">
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <!-- 小説以外で最低限適用するベースのCSS。自分のサイトで使用しているCSSに差し替えても動きます。 -->
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <!-- 小説用のCSS -->
+  <link rel="stylesheet" href="novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+  <script defer src="/assets/js/name.js"></script>
+
+  <!-- ページタイトル -->
+  <title>滝夜叉丸と初めて出会う｜まほろばのくに</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン 書き換え-->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">番外編</span>
+    <h1 class="novel-title">滝夜叉丸と初めて出会う</h1>   
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション 書き換え　-->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="side3.html">前へ</a> ｜ <a href="mahoroba.html">一覧へ戻る</a> ｜ <a href="side5.html">次へ</a>
+      </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- ここまで 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+    
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+　中三に上がってから、小平太はなぜか「もうバレーの試合を見にくるな」と言いはじめた。別に毎回見に行っていたわけではなく、むしろ一年に一、二回という低頻度しか見に行ってなかったので、困るわけではない。来るなと言うのなら行かないが、せめて理由は教えてよと言うと、小平太はほとほと困った顔をした。<br>
+<br>
+『わけは』<br>
+『うん』<br>
+『……わ、訳は言えないんだ』<br>
+<br>
+　小平太が本当に弱りきった顔をするので、今度は私の方が困ってしまったくらいだ。どうしても言えないの、と訊くと、どうしてもだ、と彼は言った。<br>
+<br>
+『すまん。とにかく、来ないでくれ。おまえがなにかしたとかいう訳ではない。ただ私たちの、……いや、私の問題なんだ。すまん。申し訳ない……』<br>
+<br>
+　いつも明朗快活な幼馴染が、ここまでの低姿勢を見せるのは珍しい。謝らないでよ、と私は慌てて言った。私が試合の中で失礼なことをしたのではない、と聞けてとりあえず安心したし、別にそこまで重要な問題として捉えていない。そりゃあ確かに悔しいことはあるけれども、本当に仕方のないことのようだし。気にしていないと告げると、小平太はようやく安心したように笑った。<br>
+　春が過ぎ、初夏になると、多くの部活動で三年生が引退する。先日後輩を持ったばかりなのに、もう私たちは部活動から退かねばならないのだ。それは小平太も例外ではない。小平太の所属するうちのバレー部は、先日の大会で辛勝し、次の大会へと進むことになっている。見に行ってないけど、小平太から聞いた。ちょっと見たかったなあ、と思うのは内緒だ。<br>
+<br>
+「あれ？　今日は早いの」<br>
+「うん。顧問出張で部活できないから」<br>
+<br>
+　太陽が傾きはじめた時間に帰宅すると、リビングから母がひょっこり顔を出した。部活ができるのもあとちょっとだっていうのに、薄情な顧問だ。<br>
+　私の返答を受け納得した様子を見せた母は、そのまま台所に戻ってから私に大きな紙袋を押し付けてきた。な、なに。<br>
+<br>
+「これ七松さんの家に置いてきて。奥さんの代わりにママが買ってきたやつだから」<br>
+「えーっ？　家誰かいるかなあ」<br>
+「さっき庭開いてたの見えたから誰かいるでしょ。ほら、早く」<br>
+<br>
+　隣の家の七松家とうちは家族ぐるみで仲がいい。こうやって買い物の代行を頼んだりすることも珍しいことではなく、たいていは私と小平太がそれぞれの母親のパシリにされている。ちぇ、と口を尖らせた私は、しかしこんなところで口答えをしても母に勝てないことを知っているため、制服姿でそのまま玄関を出た。さっきくぐったばかりだったのに。<br>
+　そのまますぐ隣の七松家へと足を踏み入れる。家の玄関は流石に鍵が締まっているだろうが、庭の鍵はよく開いているのだ。庭に面したカーテンを閉めていないときはリビングが見えるから、いつもそこで家の誰かに気づいてもらい、家にお邪魔させてもらっている。本日もひょい、と庭からガラス張りの扉をのぞく。<br>
+　カーテンは閉じられておらず、七松家のリビングは悠々と見渡すことができた。無駄な壁や柱を排除することで広く見えるリビングには、テーブルとイスのセット、くわえてテレビの前には柔らかいソファがあった。そこに二人の少年が座っていた。一人は、無論この家に住んでいる小平太。もう一人は──知らない人だ。誰だろう？　前髪をセンターで分けた少年だ。<br>
+　二人は随分真剣に話し込んでいるようで、私がいる庭にはちらりとも視線を向けなかった。ソファの前のローテーブルに置かれた紙になにか書き込んだりしている。これは気づかれないな、と思い、私はコンコンとガラス戸をノックした。二人とも、びくっ、と肩を跳ねさせて庭を見る。そして私を視認し──なぜだか唖然とした。<br>
+<br>
+「──！？」<br>
+<br>
+　我を取り戻した小平太が明らかに、やべっという表情をして隣の少年を見た。けれど少年の視線は私に釘付けであり、それはちらりとも小平太の方向に向かなかった。その様子を見て、小平太が頭を抱える。十年以上かけてコツコツとやってきたものが、一気に無に帰したような表情をしていた。<br>
+　なぜだか二人とも扉を開けてくれる気配がないので、私はもう一度ガラス戸をノックする。小平太がちら、と顔をあげ、「入っていいぞ」と声を出した。鍵はやはり開いているようだ。家主の許しを受け、私はいそいそと扉を開けてお邪魔させてもらった。<br>
+<br>
+「夜は涼しいらしいよ。網戸にしたら？」<br>
+「ああ……」<br>
+「これ、お母さんから、小平太のお母さんにって」<br>
+「ああ……」<br>
+「え。なんか元気ない？」<br>
+「今すこしなくなった……」<br>
+<br>
+　こ、小平太の元気がないとは、本当に一大事である。大丈夫か、と声をかけようとした瞬間、<br>
+<br>
+「<span class="user-name">ナマエ</span>さん」<br>
+<br>
+　知らない声で名前を呼ばれ、ふと顔をあげる。<br>
+　瞳の綺麗な子だった。くるんとカールした前髪は綺麗に切り揃えられており、すごく綺麗な顔立ちだ。職人が手がけた作品のような曲線が、その顔にいくつも収まっている。<br>
+<br>
+「<span class="user-name">ナマエ</span>さん……」<br>
+<br>
+　私の名前を、しっかりと確かめるように彼は呼んだ。呆然とし、丸くなった目が突然潤む。ぎょっとして、思わず体が一歩後ろに下がろうとする。それよりも早く、彼はよろよろと立ち上がり、私の方に歩み寄った。逃げなかったのは、それが全然嫌な感じじゃなかったからだ。<br>
+<br>
+「滝夜叉丸」<br>
+<br>
+　小平太がいつの間にか顔をあげて、そう言った。それが彼の名前なのだろう。止める感じじゃなかった。ただ他にどうすればいいかわからなかったから、名前を呼んだだけのように見えた。揺れる小平太の瞳が、私と少年を映している。<br>
+<br>
+「よくぞ」<br>
+<br>
+　彼は私の手を取り、握った。私のものよりも厚く大きい。それでも同い年くらいには違いないだろう。<br>
+<br>
+「よくぞ、ご健勝で……！！」<br>
+<br>
+　ぼろぼろと彼の綺麗な瞳から大粒の涙があふれた。彼は私の手を、まるで祈りをささげるかのように、力を入れたら壊れてしまう繊細なガラス細工のように、そっと握った。ぐ、と嗚咽を漏らす少年。握られた手に水滴が落ちてくる。<br>
+　私は完全に困ってしまい、えっと、と小平太を見た。小平太はなんとも言い難い表情でこの一連の様子を見つめていたが、私が助けを求める視線を送っていることに気づき、ぽりぽりと頭をかいた。「滝夜叉丸」と今度は意思のある声で、彼の名前を呼ぶ。<br>
+<br>
+「そいつは十四だ」<br>
+「────」<br>
+<br>
+　少年は──滝夜叉丸くんは、その声でハッと目を瞠り、後ろの小平太を見やる。小平太は凪いだ瞳で滝夜叉丸くんを見た。<br>
+<br>
+「そうか」彼は頷く。「そうですか……」<br>
+<br>
+　滝夜叉丸くんは複雑そうな表情を浮かべた。泣き出す直前の顔にも見えたし、安心したような顔にも見えた。どうすればいいかわからなくなった口角がゆるやかに引き伸ばされている。綺麗だった。すごく綺麗な男の子だった。そんなに綺麗な人を見たことがなかったものだから、私はなんだかものすごくドキドキしてしまって、ちょっと上擦った声で「大丈夫？」と声をかける。<br>
+<br>
+「なにも」深い声音だった。「なにを憂うことがありましょうや。今さら、なにを」<br>
+<br>
+　桜みたいに柔らかい表情だった。滝夜叉丸くんは微笑った。女の子よりもずっとずっと肌が綺麗で、眉毛が凜々しくて、テレビに出てくるアイドルみたいだ。唇がつやつやしてて、まつ毛は閉じれば音がしそうだ。<br>
+　彼はすっと私の手を離した。ドキドキしすぎて手汗が出そうだったから、それはほんとにありがたかった。<br>
+<br>
+「平滝夜叉丸と申します」彼はたったまま、深々と頭を下げる。「軽々に女性の名を呼んでしまい、申し訳ありません。お話は七松先輩より度々うかがっておりました。ご無礼をどうかお許しください」<br>
+「え……えっ！？　や、全然。そんな。大丈夫ですから」<br>
+<br>
+　ていうか小平太、私のことなんて言ってんの！？<br>
+<br>
+「バレー部の後輩なんだ」小平太は体重を深々とソファに預けて言った。「私たちの二つ下。今年入ってきた。別に悪口なんか言ってないぞ」<br>
+「当たり前でしょっ」まるで私の内心を見透かしたような物言いである。「てか、こ、後輩か。そっか……」<br>
+「はい。どうぞ、お気遣いなく」<br>
+「あ、うん。はい……、じゃあ、あの、滝夜叉丸くん」<br>
+<br>
+　長いなあ、名前が。カッコよくて良い名前だと思うけど、呼ぶときに噛んじゃいそう。<br>
+<br>
+「滝くんって呼んでもいい？」<br>
+<br>
+　私がそう言うと。<br>
+　滝夜叉丸くんは、その大きい瞳をまあるく見開いて、またぽろっと涙を零した。さっきみたいに溢れる感じじゃなくって、その大きな一粒が彼の頬を伝って、カーペットの上の染みになった。<br>
+　唖然とする私に、滝夜叉丸くんは「わたしは」と寂しそうに笑った。<br>
+<br>
+<br>
+「ずっとあなたに、そう呼ばれたかったのかもしれません」
+
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+    <!-- あとがきなど。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-common">
+        <p></p>      
+      </div>
+    </div>
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="side3.html">前へ</a> ｜ <a href="mahoroba.html">一覧へ戻る</a> ｜ <a href="side5.html">次へ</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/main.html">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>

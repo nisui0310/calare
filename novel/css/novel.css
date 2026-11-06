@@ -684,3 +684,55 @@ body::-webkit-scrollbar,
 .direction-yoko {
     overflow-y: auto;
 }
+
+
+
+/* ******************************************************************************** */
+/*  場面区切り・小見出し（1ページ完結用）
+/*  ※ 論理プロパティを使っているため、縦書き／横書きどちらでも崩れない
+/* ******************************************************************************** */
+
+/* 小見出し（副タイトル） */
+.n-subtitle {
+    margin-block: 3em 1.5em;
+    font-size: 1.05em;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-combine-upright: digits 2; /* 縦書きで数字（例：「1」「12」）を正立させる */
+    break-after: avoid;             /* 段組みで見出しだけ段末に残らないように */
+}
+
+/* 区切り装飾の共通部分（A・B共通） */
+.n-sep {
+    display: block;
+    margin-block: 3em;
+    margin-inline: auto;
+    opacity: 0.4;
+    break-inside: avoid;
+}
+/* 区切りの直後に小見出しが来る場合は、余白を二重にしない */
+.n-sep + .n-subtitle {
+    margin-block-start: 0;
+}
+
+/* ------------------------------------------
+   A案：細い罫線
+   横書き＝横線 ／ 縦書き＝縦線（行の流れに直交する向き）
+   長さは --n-sep-length で調整可
+   ------------------------------------------ */
+.n-inner[data-sep="a"] .n-sep {
+    inline-size: min(100%, var(--n-sep-length, 10em));
+    block-size: 0;
+    border-block-start: 1px solid currentColor;
+}
+
+/* ------------------------------------------
+   B案：小さな記号（ひし形）
+   向きに関係なく同じ見た目。サイズは em 指定
+   ------------------------------------------ */
+.n-inner[data-sep="b"] .n-sep {
+    inline-size: 0.5em;
+    block-size: 0.5em;
+    background: currentColor;
+    transform: rotate(45deg);
+}

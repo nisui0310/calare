@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 検索避け -->
+    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <!-- OGP設定 -->
+    <meta name="description" content="まほろばのくにをみていた。">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://calare.vercel.app/images/mahoroba-OGP.webp">
+    <meta property="og:title" content="まほろばのくに - 落日 | Kagami">
+    <meta property="og:description" content="まほろばのくにをみていた。">
+    <meta property="og:url" content="https://calare.vercel.app/">
+    <meta property="og:site_name" content="落日">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://calare.vercel.app/images/mahoroba-OGP.webp">
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="/novel/css/reset.css">
+  <!-- 小説以外で最低限適用するベースのCSS。自分のサイトで使用しているCSSに差し替えても動きます。 -->
+  <link rel="stylesheet" href="/novel/css/base.css">
+  <!-- 小説用のCSS -->
+  <link rel="stylesheet" href="novel.css">
+  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- 閲覧設定切り替えのためのJavaScript -->
+  <script defer src="/novel/js/novel.js"></script>
+  <script defer src="/assets/js/name.js"></script>
+
+  <!-- ページタイトル -->
+  <title>滝夜叉丸がお守りをくれる｜まほろばのくに</title>
+</head>
+<body>
+  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
+  <noscript>
+    <div class="n-common">
+      <div class="n-announce">
+        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
+      </div>
+    </div>
+  </noscript>
+  <!-- WebStorageが使用不可なときに断り書きを表示する -->
+  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
+    <!-- WebStorageが使用不可なときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-unusable">
+      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
+    </div>
+    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
+    <div class="n-announce n-webstorage-nospace">
+      ※WebStorageの空き容量がありません。
+    </div>
+  </div>
+
+  <!-- ここから 小説閲覧設定切り替えのボタン -->
+<aside class="n-common n-settings">
+  <details class="n-details">
+    <!-- summaryで開閉ボタン（アイコン化） -->
+    <summary class="n-summary" aria-label="表示設定を開く">
+      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
+      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
+    </summary>
+    <!-- ここから 切り替えボタンの一覧 -->
+    <div class="n-collection">
+
+      <!-- ここから 向きの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">向き</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 向きの切り替えボタン -->
+
+      <!-- ここから フォントファミリーの切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">フォント</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで フォントファミリーの切り替えボタン -->
+
+      <!-- ここから 背景色の切り替えボタン -->
+      <fieldset>
+        <legend class="n-collection-item">背景色</legend>
+        <div class="n-collection-radio">
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="white">白
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="black">黒
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="blue">青
+          </label>
+          <label class="n-label-radio">
+            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
+          </label>
+        </div>
+      </fieldset>
+      <!-- ここまで 背景色の切り替えボタン -->
+
+      <!-- ここから フォントサイズの切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
+        </div>
+        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで フォントサイズの切り替えボタン -->
+
+      <!-- ここから 行間の切り替えボタン -->
+      <div>
+        <label class="n-collection-item n-label-range" for="line-height">行間</label>
+        <div class="n-auxiliary">
+          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
+        </div>
+        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
+      </div>
+      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
+      <!-- ここまで 行間の切り替えボタン -->
+
+    </div>
+    <!-- ここまで 切り替えボタンの一覧 -->
+  </details>
+</aside>
+  <!-- ここまで 小説閲覧設定切り替えのボタン 書き換え-->
+
+  <main>
+
+
+    <div class="novel-title-header">
+    <span class="novel-category">番外編</span>
+    <h1 class="novel-title">滝夜叉丸がお守りをくれる</h1>   
+    <div class="novel-title-line"></div>
+</div>
+
+
+
+    <!-- ========================================== -->
+    <!-- ここから 前書き＆上部ページネーション 書き換え　-->
+    <!-- ========================================== -->
+
+    <!-- 上部ページネーション -->
+    <div class="n-maegaki">
+      <div class="n-pagenation">
+        <a href="31.html">前へ</a> ｜ <a href="mahoroba.html">一覧へ戻る</a> ｜ <a href="side2.html">次へ</a>
+      </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- ここまで 前書き＆上部ページネーション -->
+    <!-- ========================================== -->
+    
+
+
+    <!-- ここから 小説の本文 -->
+    <!-- n-outerが外枠、n-innerが内枠。-->
+    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
+    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
+      <div class="n-inner">
+　夏休みが終わると、三年生の空気もすこし変わったように思う。受験の話や塾の話が増えて、休憩時間に一度も席を立たないで勉強している人だっていた。私はそこまでじゃないけど、でもこのままエスカレーターで大学に行くつもりはないから、内部進学組より多少の焦りは感じている。<br>
+　全ての授業が終わると、学校に残ってそのまま自習する人と、塾や家で勉強する人に別れる。わたしは家よりは塾派で、塾よりは学校派だった。学校で自習する人は数人しかおらず、私は自分の席から離れた窓際の人の席を勝手に借りて、そこから移ろっていく風景を見ながら勉強するのがこの頃の日課だった。<br>
+　有機化学の反応を参考書を見ながらノートに写す。私はどうしても見るだけでは覚えられず、写経のようにノートに書いた方が覚えやすかったので、高校受験をしたころからそうしていた。<br>
+　不意にポケットのスマホが震えて、私は勉強時間を計っていたタイマーを止めて通知を見る。後輩の滝くんからのメッセージだった。<br>
+　滝くんは幼馴染の小平太の後輩で、昔小平太の家に勝手にお邪魔したときに出会ったのが初対面だった。自慢家であることが玉に瑕だが、その自信の源は確かに彼の実力に裏打ちされているので、私はけっこう好感を持っている。この学校で学年首位を取り続けることは難しいなんてものじゃないのに、滝くんは中等部のころから首位を逃したことはなかったという。<br>
+<br>
+『放課後、この後お暇ですか』<br>
+<br>
+　開いたメッセージにはそう書かれていて、相変わらず礼儀の正しい子だな、と思いつつ『教室で自習してるだけだから、ほとんど暇だよ』と打ち込んだ。『どうかした？』<br>
+『お渡ししたいものがあって。今日は六時ごろに部活が終わる予定なので、それまで教室にいて頂けますか』<br>
+『元からそのくらいまではいるつもりだったし、大丈夫』<br>
+『ありがとうございます！　存分に勉学に励んでください、応援しております』<br>
+<br>
+　滝夜叉丸の名札をつけた男の子が、がんばってください、と書かれた旗を振っているスタンプが送られてきた。これ小平太から聞いたんだけど、滝くん自作のスタンプらしい。今時の子ってそういうことするの？　って小平太に聞いたけど、「いや。あいつだけだ」とすげない回答が返ってきた。小平太、絶妙に滝くんに塩対応なんだよなあ。<br>
+　そこから教室で空間を共にするクラスメートたちと勉強時間を共にして、六時まで黙々とシャーペンを走らせた。<br>
+<br>
+『おわりました！』<br>
+『教室いらっしゃいますか』<br>
+『うん、ていうか私が体育館寄ろうか』<br>
+『先輩の貴重な勉強時間を削る訳にはいきませんよ。もう体育館を出てしまったので、教室で待っていてください』<br>
+<br>
+　滝くんのメッセージに、浮かせかけていた腰をまた椅子へ下ろした。ふと窓を見上げると、窓の右半分は赤色の夕焼けに染まっており、左側は藍色の闇が迫ってきていた。カラスが視界の端を通り、悠々と太陽へ向かって飛んでいく。クラスメートたちに心の中で謝りながら僅かに窓を開けて、手を出してみた。エアコンで冷え切った室内に、外からの生温い風が入ってくる。夏の去る気配が確かにしていて、私はそれを惜しみながら手を引っ込め、窓を閉じた。<br>
+<br>
+「せんぱい」<br>
+<br>
+　小声だけれど特徴的な声音が、遠慮がちに教室に響く。ちら、とみんなそちらの方を向いたけれど、それも一瞬のことで各々すぐに机に向き直った。私は無論すぐに立ち上がり、小走りで声の主の元へ向かう。<br>
+<br>
+「滝くん。部活お疲れ、あつかったでしょ」<br>
+「夏休みにクーラーが壊れたときよりずっとマシですよ」<br>
+<br>
+　その話は小平太から聞いた。夏真っ盛り、最高気温が三十度を余裕で超える真夏日に体育館のクーラーが壊れ、しかしバレー強豪校である我が校が部活を停止することはなく、バレー部と体育館を共有しているバスケ部は死にそうになりながら（実際熱中症の人も出たらしい）練習していたらしい。七月の文化祭で文化部を引退した私からしたら、本当にご愁傷様としか言えない事件である。<br>
+　体育館からここまで走ってきたのだろうか、まだ息の上がっている滝くんは額から垂れてきた汗を服を引っ張って拭った。「ああ、汗の滴る私も美しい……」と呟くが、もうとっくに滝くんの扱いに慣れた私は一切それに反応しないままニコニコと続きを待つ。<br>
+<br>
+「あ。それで、渡すものなんですが」<br>
+「うん」<br>
+「お守りです」<br>
+<br>
+　え、と間抜けな声が出た。お守り？　と繰り返すと、滝くんはただでさえ整った顔をニッと完璧な形にして笑った。「心ばかりのものですが」と言いながらポケットから小さな紙袋を取り出し、私に手渡す。<br>
+<br>
+「あけてもいい？」<br>
+「もうあなたのものですよ」<br>
+<br>
+　紙袋を勢いよく破ってしまわないように、丁寧にテープを剥がして開く。それは有名な神社の合格祈願のお守りで、私は目を見開いた。<br>
+<br>
+「まあ、こんなお守りなぞなくたって先輩は合格を手にされると思うのですが──先輩の心の支えになれば、とも思いまして」<br>
+「え、えーっ、嬉しい……！　嬉しいよ滝くん、ありがとう！」<br>
+<br>
+　お守りを胸にぎゅっと押し当てながら小さく飛び跳ねる私を見て、滝くんはキョトン、と目をまん丸くしたかと思うと、フハ、とこぼすように笑った。いつもの自信満々な滝くんの笑顔も元気がもらえるけれど、こういう気の抜けたような彼の笑みも嬉しい。<br>
+<br>
+「マァ……、私からの贈り物が嬉しいのは、当然でしょうが。七松先輩にも頂いたでしょう？」<br>
+「え？　なんで？　もらってないよ」<br>
+「ハ？」<br>
+<br>
+　ぽかん、と口を丸く開けた滝くんは、眉間にゆっくりと皺を刻みこみ、「ハァー……」と眉頭に手を当てながら息を吐いた。<br>
+<br>
+「……なるほど。わかりました。七松先輩には後で私から言っておきますので」<br>
+「え。いいよ、別に。『頑張れって言って』って言ったら、小平太は言ってくれるもん」<br>
+「────」<br>
+「それで充分」<br>
+<br>
+　私が笑うと、滝くんもつられたように微笑んだ。普段はツリ眉な柳眉が柔らかく下がっていると、滝くんは一気に穏やかな表情になる。この表情を知っているのは、きっと滝くんの知り合いの中でも少数だろう。<br>
+<br>
+「──そうですね。あなたたちは昔からそうだった」<br>
+「？　まあ、そうかもね」<br>
+<br>
+　私も覚えていないような昔のことを滝くんが覚えているのは、珍しいことではなかった。小平太がいろいろと私との思い出を喋っているらしくて、滝くんは私の記憶に残っていないことを知っていることもある。<br>
+<br>
+「……それでは、私はそろそろお暇いたします。先輩はまだ残られますか？」<br>
+「うん。下校時刻まで残るつもり」<br>
+「そうですか。七松先輩も時間いっぱいまで自主練をしていると思いますので、どうぞご一緒に」<br>
+<br>
+　滝くんは小平太と同じく、過保護な節があった。はいはい、と軽く流しておく。滝くんは自分の忠告がいなされたことには気付いていたみたいだが、全くこの人は、というくらいの表情をするだけで許してくれた。<br>
+<br>
+「先輩。──努力をする人間の姿が、世界で一番美しいのです。もちろん世界で一番美しいのはこの滝夜叉丸、私しかいませんが、努力する人間の輝きには敵わないこともあります」<br>
+「────」<br>
+「応援しております。先輩が望む結果を得られますよう、この滝夜叉丸、心から願っております」<br>
+<br>
+　これまた古臭い言い方で、滝くんは深々と頭を下げた。滝くんは時々、こうやってものすごく丁寧な言い方をすることがあった。小平太も同じだ。そしてそういうとき、二人は似たような瞳をしていた。遠く霞む松のように、深く沈む船のように、どこかこことは離れたところの目だ。そしてそんな目をしているときの二人が、私はどうもむずがゆかった。<br>
+　顔を上げた滝くんは、「それでは！」と満面の笑みを浮かべて踵を返した。じゃあね、と私も小さく手を振る。<br>
+　彼の背が見えなくなって、私はもう一度手にしたお守りを見た。お守りは願いのかたちだ。誰かが強く祈る、願いのかたち。<br>
+　私はその場で無意味にくるりと一回転した。良い後輩を持った。本当に。
+
+      </div>
+    </div>
+    <!-- ここまで 小説の本文 -->
+
+    <!-- あとがきなど。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-common">
+        <p></p>      
+      </div>
+    </div>
+
+    <!-- ページネーション。不要ならば削除 -->
+    <div class="n-atogaki">
+      <div class="n-pagenation">
+        <a href="31.html">前へ</a> ｜ <a href="mahoroba.html">一覧へ戻る</a> ｜ <a href="side2.html">次へ</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター。不要ならば削除 -->
+  <footer class="n-common n-footer">
+    <div>
+      <a href="/main.html">落日</a>
+    </div>
+    <div>
+      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
+    </div>
+  </footer>
+
+</body>
+</html>
