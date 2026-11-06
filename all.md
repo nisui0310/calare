@@ -2,7 +2,7 @@
 
 対象フォルダ: `/Users/rin/Documents/GitHub/calare`
 
-ファイル数: 158
+ファイル数: 157
 
 ## article.html
 
@@ -3913,7 +3913,7 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
                     <h6>出禁のモグラ</h6>
                     <ul class="list_no float">
                         <li><span class="border-a">梗史郎　</span></li>
-                        <li><a href="novel/other/demogu1.html">楽園には誰もいない</a></li>
+                        <li><a href="novel/other/dmg.html">楽園には誰もいない</a></li>
                     </ul>
                     <h6>鬼滅の刃</h6>
                     <ul class="list_no float">
@@ -3937,7 +3937,7 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
                     <h6>Thisコミュニケーション</h6>
                     <ul class="list_no float">
                         <li><span class="border-a">デルウハ　</span></li>
-                        <li><a href="novel/other/this1.html"><span class="marker5">デルウハ殿と出られない部屋</span></a></li>
+                        <li><a href="novel/other/this01.html"><span class="marker5">デルウハ殿と出られない部屋</span></a></li>
                     </ul>
                     <h6>文豪ストレイドッグス</h6>
                     <ul class="list_no float">
@@ -41332,7 +41332,7 @@ body::-webkit-scrollbar,
   <script defer src="/assets/js/name.js"></script>
 
   <!-- ページタイトル -->
-  <title>プロローグ｜あどけない修羅</title>
+  <title>朝にきらめいた涙｜あどけない修羅</title>
 </head>
 <body>
   <!-- JavaScriptが使用不可なときに断り書きを表示する -->
@@ -41849,7 +41849,7 @@ body::-webkit-scrollbar,
   <script defer src="/assets/js/name.js"></script>
 
   <!-- ページタイトル -->
-  <title>プロローグ｜あどけない修羅</title>
+  <title>エピローグ｜あどけない修羅</title>
 </head>
 <body>
   <!-- JavaScriptが使用不可なときに断り書きを表示する -->
@@ -44562,7 +44562,7 @@ body::-webkit-scrollbar,
     <!-- 上部ページネーション -->
     <div class="n-maegaki">
       <div class="n-pagenation">
-        <a href="1.html">前へ</a> ｜ <a href="syura.html">一覧へ戻る</a> ｜ <a href="3.html">次へ</a>
+        <a href="6.html">前へ</a> ｜ <a href="syura.html">一覧へ戻る</a> ｜ <a href="8.html">次へ</a>
       </div>
     </div>
 
@@ -49300,7 +49300,7 @@ input[type=submit] {
     <!-- 上部ページネーション -->
     <div class="n-maegaki">
       <div class="n-pagenation">
-        <a href="fgo01.html">前へ</a> ｜ <a href="/main.html#other">一覧へ戻る</a> ｜ <a href="dmg.html">次へ</a>
+        <a href="dmg.html">前へ</a> ｜ <a href="/main.html#other">一覧へ戻る</a> ｜ <a href="dnms01.html">次へ</a>
       </div>
     </div>
 
@@ -49368,7 +49368,7 @@ input[type=submit] {
     <!-- ページネーション。不要ならば削除 -->
     <div class="n-atogaki">
       <div class="n-pagenation">
-        <a href="fgo01.html">前へ</a> ｜ <a href="/main.html#other">一覧へ戻る</a> ｜ <a href="dmg.html">次へ</a>
+        <a href="dmg.html">前へ</a> ｜ <a href="/main.html#other">一覧へ戻る</a> ｜ <a href="dnms01.html">次へ</a>
       </div>
     </div>
 
@@ -53436,252 +53436,6 @@ VS海千山千<br>
 </html>
 ```
 
-## novel/wt/ikoma01.html
-
-```html
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <!-- 検索避け -->
-    <meta NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-
-    <!-- OGP設定 -->
-    <meta name="description" content="忘れてしまいたい。">
-    <meta property="og:locale" content="ja_JP">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://calare.vercel.app/images/OGP.webp">
-    <meta property="og:title" content="落日 | Kagami">
-    <meta property="og:description" content="忘れてしまいたい。">
-    <meta property="og:url" content="https://calare.vercel.app/">
-    <meta property="og:site_name" content="落日">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name=”twitter:image” content="https://calare.vercel.app/images/OGP.webp">
-
-
-
-  <!-- リセットCSS -->
-  <link rel="stylesheet" href="/novel/css/reset.css">
-  <!-- 小説以外で最低限適用するベースのCSS。自分のサイトで使用しているCSSに差し替えても動きます。 -->
-  <link rel="stylesheet" href="/novel/css/base.css">
-  <!-- 小説用のCSS -->
-  <link rel="stylesheet" href="/novel/css/novel.css">
-  <!-- Font Awesome（アイコン表示用ライブラリ）の読み込み -->
-　<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- 閲覧設定切り替えのためのJavaScript -->
-  <script defer src="/novel/js/novel.js"></script>
-
-  <!-- ページタイトル -->
-  <title>やさしくってなみだがでたの</title>
-</head>
-<body>
-  <!-- JavaScriptが使用不可なときに断り書きを表示する -->
-  <noscript>
-    <div class="n-common">
-      <div class="n-announce">
-        小説閲覧設定の切り替えのためにJavaScriptとWebStorageを使用しています。
-      </div>
-    </div>
-  </noscript>
-  <!-- WebStorageが使用不可なときに断り書きを表示する -->
-  <div class="n-common n-webstorage-unusable n-webstorage-nospace">
-    <!-- WebStorageが使用不可なときに断り書きを表示する -->
-    <div class="n-announce n-webstorage-unusable">
-      ※小説閲覧設定の切り替えのためにWebStorageを使用しています。ご利用される場合はWebStorageをオンにしたのち、再読み込みをしてください。
-    </div>
-    <!-- WebStorageの空き容量がないときに断り書きを表示する -->
-    <div class="n-announce n-webstorage-nospace">
-      ※WebStorageの空き容量がありません。
-    </div>
-  </div>
-
-  <!-- ここから 小説閲覧設定切り替えのボタン -->
-<aside class="n-common n-settings">
-  <details class="n-details">
-    <!-- summaryで開閉ボタン（アイコン化） -->
-    <summary class="n-summary" aria-label="表示設定を開く">
-      <i class="fa-solid fa-book n-icon" aria-hidden="true"></i>
-      <!-- 歯車マークにしたい場合は fa-book を fa-gear に変更 -->
-    </summary>
-    <!-- ここから 切り替えボタンの一覧 -->
-    <div class="n-collection">
-
-      <!-- ここから 向きの切り替えボタン -->
-      <fieldset>
-        <legend class="n-collection-item">向き</legend>
-        <div class="n-collection-radio">
-          <label class="n-label-radio">
-            <input class="n-radio" type="radio" name="direction" value="tate-dan">縦書き(段)
-          </label>
-          <label class="n-label-radio">
-            <input class="n-radio" type="radio" name="direction" value="tate">縦書き
-          </label>
-          <label class="n-label-radio">
-            <input class="n-radio" type="radio" name="direction" value="yoko">横書き
-          </label>
-        </div>
-      </fieldset>
-      <!-- ここまで 向きの切り替えボタン -->
-
-      <!-- ここから フォントファミリーの切り替えボタン -->
-      <fieldset>
-        <legend class="n-collection-item">フォント</legend>
-        <div class="n-collection-radio">
-          <label class="n-label-radio">
-            <input class="n-radio" type="radio" name="font-family" value="mincho">明朝
-          </label>
-          <label class="n-label-radio">
-            <input class="n-radio" type="radio" name="font-family" value="marugothic">丸ゴシック
-          </label>
-          <label class="n-label-radio">
-            <input class="n-radio" type="radio" name="font-family" value="gothic">ゴシック
-          </label>
-        </div>
-      </fieldset>
-      <!-- ここまで フォントファミリーの切り替えボタン -->
-
-      <!-- ここから 背景色の切り替えボタン -->
-      <fieldset>
-        <legend class="n-collection-item">背景色</legend>
-        <div class="n-collection-radio">
-          <label class="n-label-radio">
-            <input class="n-radio" type="radio" name="bg-color" value="white">白
-          </label>
-          <label class="n-label-radio">
-            <input class="n-radio" type="radio" name="bg-color" value="black">黒
-          </label>
-          <label class="n-label-radio">
-            <input class="n-radio" type="radio" name="bg-color" value="gray">灰
-          </label>
-          <label class="n-label-radio">
-            <input class="n-radio" type="radio" name="bg-color" value="blue">青
-          </label>
-          <label class="n-label-radio">
-            <input class="n-radio" type="radio" name="bg-color" value="yellow">黄
-          </label>
-        </div>
-      </fieldset>
-      <!-- ここまで 背景色の切り替えボタン -->
-
-      <!-- ここから フォントサイズの切り替えボタン -->
-      <div>
-        <label class="n-collection-item n-label-range" for="font-size">サイズ</label>
-        <div class="n-auxiliary">
-          <div class="n-auxiliary-text">小さい</div><div class="n-auxiliary-text">大きい</div>
-        </div>
-        <input class="n-range" type="range" id="font-size" name="font-size" min="1" max="11" step="1">
-      </div>
-      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
-      <!-- ここまで フォントサイズの切り替えボタン -->
-
-      <!-- ここから 行間の切り替えボタン -->
-      <div>
-        <label class="n-collection-item n-label-range" for="line-height">行間</label>
-        <div class="n-auxiliary">
-          <div class="n-auxiliary-text">狭い</div><div class="n-auxiliary-text">広い</div>
-        </div>
-        <input class="n-range" type="range" id="line-height" name="line-height" min="1" max="11" step="1">
-      </div>
-      <!-- labelタグのfor属性とinputのid属性でフォームパーツとラベルを紐づける -->
-      <!-- ここまで 行間の切り替えボタン -->
-
-    </div>
-    <!-- ここまで 切り替えボタンの一覧 -->
-  </details>
-</aside>
-  <!-- ここまで 小説閲覧設定切り替えのボタン -->
-
-  <main>
-
-
-    <div class="novel-title-header">
-    <span class="novel-category">RKRN short</span>
-    <h1 class="novel-title">やさしくってなみだがでたの</h1>
-    <div class="novel-title-line"></div>
-</div>
-
-
-
-    <!-- ========================================== -->
-    <!-- ここから 前書き＆上部ページネーション -->
-    <!-- ========================================== -->
-
-    <!-- 上部ページネーション -->
-    <div class="n-maegaki">
-      <div class="n-pagenation">
-        <a href="komatuda01.html">前へ</a> ｜ 
-        <a href="/main.html#wt">一覧へ戻る</a>
-         ｜ <a href="yosimaru01.html">次へ</a>
-      </div>
-    </div>
-
-    <!-- 前書き本文（不要な話ではこの div ブロック全体を削除OK） -->
-    <div class="n-maegaki">
-      <div class="n-common">
-        <!-- ↓ここから前書き本文↓ -->
-        <p>「死神うどんカフェ１号店」という小説のパロディ。</p>
-        <!-- ↑ここまで前書き本文↑ -->
-      </div>
-    </div>
-    <!-- ========================================== -->
-    <!-- ここまで 前書き＆上部ページネーション -->
-    <!-- ========================================== -->
-    
-
-
-    <!-- ここから 小説の本文 -->
-    <!-- n-outerが外枠、n-innerが内枠。-->
-    <!-- 閲覧のデフォルトのスタイルをここで設定する。デフォルト設定の内容は、「向き：横書き、フォントファミリー：ゴシック、背景色：灰色、フォントサイズ：6段階目、行間：6段階目」。 -->
-    <div id="honbun" class="n-outer direction-yoko font-family-gothic bg-color-gray font-size-6 line-height-6">
-      <div class="n-inner">
-
-        本文
-      </div>
-    </div>
-    <!-- ここまで 小説の本文 -->
-
-    <!-- あとがきなど。不要ならば削除 -->
-    <div class="n-atogaki">
-      <div class="n-common">
-        <p>2023.09.17</p><!-- 書き換え -->
-        <p>　パロディ元の死神うどんカフェの話が本当に大好きで、久々に思い出したので書いたものです。
-            ヤングアダルト向けの話ですが、大人が読んでも楽しめるのでぜひ元の話も読んで欲しいです。
-            この作者さんの話が大好きで、他にもいろいろ読んでいました。
-        </p>      
-      </div>
-    </div>
-
-    <!-- ページネーション。不要ならば削除 -->
-    <div class="n-atogaki">
-      <div class="n-pagenation">
-        <a href="komatuda01.html">前へ</a> ｜ 
-        <a href="/main.html#wt">一覧へ戻る</a>
-         ｜ <a href="yosimaru01.html">次へ</a>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- フッター。不要ならば削除 -->
-  <footer class="n-common n-footer">
-    <div>
-      <a href="/index.html">落日</a>
-    </div>
-    <div>
-      Template by <a href="https://asteroid19.netlify.app/">Asteroid</a>
-    </div>
-  </footer>
-
-</body>
-</html>
-```
-
 ## novel/wt/jin01.html
 
 ```html
@@ -55079,7 +54833,7 @@ VS海千山千<br>
                 <!-- pagination -->
                 <ul class="pagination">
                     <li><a href=""><i class="lni lni-chevron-left"></i></a></li>
-                    <li><a href="note.html"><img alt src="images/2.webp"></a></li>
+                    <li><a href="text.html"><img alt src="images/2.webp"></a></li>
                     <li><a href=""><i class="lni lni-chevron-right"></i></a></li>
                 </ul>
             </div>
