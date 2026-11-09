@@ -2,10 +2,10 @@ from pathlib import Path
 
 # サイトのフォルダを指定する
 # 例: Path("/Users/yourname/Desktop/my-site")
-SITE_DIR = Path("/Users/rin/Documents/GitHub/calare")
+SITE_DIR = Path("/Users/rin/Documents/GitHub/calare/rakuyo")
 
 # 出力するMarkdownファイル名
-OUTPUT_FILE = Path("all.md")
+OUTPUT_FILE = Path("rakuyo.md")
 
 # まとめるファイルの拡張子
 EXTENSIONS = {".html", ".htm", ".css", ".js"}
